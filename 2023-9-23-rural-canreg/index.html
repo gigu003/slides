@@ -1,0 +1,3038 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/quarto-contrib/reveal-header-1.0.0/add_header.js" defer="true"></script>
+<link href="../site_libs/quarto-contrib/reveal-header-1.0.0/add_header.css" rel="stylesheet">
+<script src="../site_libs/quarto-contrib/roughnotation-0.5.1/rough-notation.iife.js"></script>
+<script src="../site_libs/quarto-contrib/roughnotation-init-1.0.0/rough.js"></script>
+<script src="../site_libs/quarto-contrib/sc-sb-title-1.0.0/sc_sb_title.js" defer="true"></script>
+<link href="../site_libs/quarto-contrib/grid-no-htext-1.0.0/grid_no_htext.css" rel="stylesheet"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.4.161">
+
+  <meta name="author" content="👨‍⚕️陈琼，博士，副主任医师">
+  <title>普癌新声 - 农村地区肿瘤登记技术与方法</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-attribution/attribution.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-titled.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-titled) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-titled .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-titled .callout-title  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-titled.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-titled.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-title {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-title {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-title {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-titled .callout-body > .callout-content > :last-child {
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  .callout.callout-titled .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-titled) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-title {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-title {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-title {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-title {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-title {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+  <script src="../site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<meta property="og:title" content="普癌新声 - 农村地区肿瘤登记技术与方法">
+<meta property="og:description" content="这个幻灯介绍了肿瘤登记的历史、登记处的建立与发展、肿瘤登记的质量控制、肿瘤登记报告的撰写与发布等。">
+<meta property="og:site_name" content="普癌新声">
+<meta name="twitter:title" content="普癌新声 - 农村地区肿瘤登记技术与方法">
+<meta name="twitter:description" content="这个幻灯介绍了肿瘤登记的历史、登记处的建立与发展、肿瘤登记的质量控制、肿瘤登记报告的撰写与发布等。">
+<meta name="twitter:card" content="summary">
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-color="lightblue" class="center">
+  <h1 class="title">农村地区肿瘤登记技术与方法</h1>
+  <p class="subtitle">河南省肿瘤登记工作实践</p>
+  <p class="author">👨‍⚕️陈琼，博士，副主任医师</p>
+  <p class="institute">🏥河南省癌症中心 河南省肿瘤医院</p>
+  <p class="date">Saturday Sep 23, 2023</p>
+</section>
+<section id="人群肿瘤登记的目的" class="slide level2">
+<h2>人群肿瘤登记的目的</h2>
+<p><br></p>
+<blockquote>
+<p>肿瘤登记是系统性、经常性收集有关肿瘤及肿瘤患者信息的统计制度。</p>
+</blockquote>
+<p><br></p>
+<ul>
+<li>了解癌症<span class="important">流行情况</span></li>
+<li>掌握癌症疾病负担<span class="important">变化趋势</span></li>
+<li>了解癌症<span class="important">分布特征</span></li>
+</ul>
+</section>
+<section id="人群肿瘤登记的意义" class="slide level2">
+<h2>人群肿瘤登记的意义</h2>
+<p><br></p>
+<blockquote>
+<p>肿瘤登记是系统性、经常性收集有关肿瘤及肿瘤患者信息的统计制度。</p>
+</blockquote>
+<p><br></p>
+<ul>
+<li>确定癌症防控优化<span class="important">干预方向</span></li>
+<li>评价癌症<span class="important">防控效果</span></li>
+<li>助力癌症<span class="important">临床研究</span></li>
+</ul>
+</section>
+<section>
+<section id="发展历史" class="title-slide slide level1 center" data-background="lightblue" data-align="center">
+<h1>发展历史</h1>
+<p><span class="important">1959-2023</span></p>
+</section>
+<section id="第一个农村肿瘤登记处" class="slide level2 smaller">
+<h2>第一个农村肿瘤登记处</h2>
+<p><br></p>
+<ul>
+<li>1957年，林县<span class="important"><strong>三不通</strong></span>引起重视</li>
+<li>1959年，林县建立全国第一个农村肿瘤登记处</li>
+</ul>
+<p><br></p>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div id="fig-hitory3" class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/history3.png"></p>
+<figcaption>图&nbsp;1: 会议</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div id="fig-history1" class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/history1.png"></p>
+<figcaption>图&nbsp;2: 流行调查</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div id="fig-history2" class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/history2.png"></p>
+<figcaption>图&nbsp;3: 食管拉网</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="开展第一次死因调查" class="slide level2">
+<h2>开展第一次死因调查</h2>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>1970年代，全国第一次死因调查</li>
+<li>全省人口的1/10</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/death-investigate.jpg" style="width:75.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="高发区的确立" class="slide level2 smaller">
+<h2>高发区的确立</h2>
+<ul>
+<li>豫西北太行山，豫西秦岭、伏牛山，豫南大别山</li>
+</ul>
+<div id="fig-map" class="quarto-layout-panel">
+<figure>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-male" class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/map-male.jpg" data-ref-parent="fig-map"></p>
+<figcaption>(a) 男性</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-female" class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/map-female.jpg" data-ref-parent="fig-map"></p>
+<figcaption>(b) 女性</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p></p><figcaption>图&nbsp;4: 第一次死因调查</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="全死因报告体系的形成" class="slide level2">
+<h2>全死因报告体系的形成</h2>
+<p><br></p>
+<ul>
+<li>1977年，林县、禹州开展常规全死因登记报告制度</li>
+<li>1983年，建立河南省1/10人口的全死因登记报告体系</li>
+<li>1988年，林县开展全癌种肿瘤登记工作</li>
+<li>2004年，成立河南省癌症与生命统计中心，逐步规划河南省肿瘤登记报告系统建立</li>
+<li>2008年，肿瘤登记处扩展至偃师、禹州、内乡、开封、鲁山</li>
+<li>2009年，肿瘤登记项目纳入中央财政转移支付地方项目</li>
+</ul>
+</section>
+<section id="颁布肿瘤登记管理办法" class="slide level2">
+<h2>颁布肿瘤登记管理办法</h2>
+<p><br></p>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/file-nation.png"></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/file-henan.png"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+
+<aside><div>
+<p>2015年国家下发《肿瘤登记管理办法》</p>
+</div></aside></section>
+<section id="中国肿瘤登记工作指导手册" class="slide level2">
+<h2>中国肿瘤登记工作指导手册</h2>
+<p><br></p>
+<p><span class="smaller">肿瘤登记工作的工具书</span></p>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>登记资料的收集</li>
+<li>登记资料的整理</li>
+<li>数据分析和报告撰写</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/guide.png"></p>
+</div>
+</div>
+
+<aside><div>
+<p>2016年国家癌症中心组织编写《中国肿瘤登记工作指导手册》</p>
+</div></aside></section>
+<section id="健康中国行动" class="slide level2">
+<h2>健康中国行动</h2>
+<blockquote>
+<p>健康中国(2019-2030)癌症防治行动的实施，再一次促进了肿瘤登记工作的开展。</p>
+</blockquote>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="images/health-china1.jpg"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="images/health-china2.jpg"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="健康中原行动" class="slide level2">
+<h2>健康中原行动</h2>
+<blockquote>
+<p>健康中国(2019-2030)癌症防治行动的实施，再一次促进了肿瘤登记工作的开展。</p>
+</blockquote>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="images/health-henan1.png"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="images/health-henan2.png"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="images/map.png"></p>
+</div>
+</div>
+</div>
+
+<aside><div>
+
+</div></aside></section>
+<section id="出版肿瘤登记年报" class="slide level2">
+<h2>出版肿瘤登记年报</h2>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 20.0%;justify-content: center;">
+<p><img data-src="images/cover/2013.jpg"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 20.0%;justify-content: center;">
+<p><img data-src="images/cover/2014.jpg"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 20.0%;justify-content: center;">
+<p><img data-src="images/cover/2015.jpg"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 20.0%;justify-content: center;">
+<p><img data-src="images/cover/2016.jpg"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 20.0%;justify-content: center;">
+<p><img data-src="images/cover/2017.jpg"></p>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 20.0%;justify-content: center;">
+<p><img data-src="images/cover/2018.jpg"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 20.0%;justify-content: center;">
+<p><img data-src="images/cover/2019.jpg"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 20.0%;justify-content: center;">
+<p><img data-src="images/cover/2020.jpg"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 20.0%;justify-content: center;">
+<p><img data-src="images/cover/2021.jpeg"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 20.0%;justify-content: center;">
+<p><img data-src="images/cover/2022.jpg"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="发布线上年报" class="slide level2 smaller">
+<h2>发布线上年报</h2>
+<iframe width="1200" height="530" src="https://chenq.site/report/2021" title="河南省肿瘤登记年报"></iframe>
+
+<aside><div>
+<p>自2020年开始，我们发布<span class="important">线上年报</span>，促进数据的<span class="important">共享与利用</span></p>
+</div></aside></section>
+<section id="五大洲癌症发病率" class="slide level2 smaller">
+<h2>五大洲癌症发病率</h2>
+<p><br></p>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 16.7%;justify-content: center;">
+<p><img data-src="images/five-conti/r1.jpg"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 16.7%;justify-content: center;">
+<p><img data-src="images/five-conti/r2.jpg"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 16.7%;justify-content: center;">
+<p><img data-src="images/five-conti/r3.jpg"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 16.7%;justify-content: center;">
+<p><img data-src="images/five-conti/r4.jpg"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 16.7%;justify-content: center;">
+<p><img data-src="images/five-conti/r5.jpg"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 16.7%;justify-content: center;">
+<p><img data-src="images/five-conti/r6.jpg"></p>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 16.7%;justify-content: center;">
+<p><img data-src="images/five-conti/r7.jpg"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 16.7%;justify-content: center;">
+<p><img data-src="images/five-conti/r8.jpg"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 16.7%;justify-content: center;">
+<p><img data-src="images/five-conti/r9.jpg"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 16.7%;justify-content: center;">
+<p><img data-src="images/five-conti/r10.jpg"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 16.7%;justify-content: center;">
+<p><img data-src="images/five-conti/r11.jpg"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 16.7%;justify-content: center;">
+<p><img data-src="images/five-conti/r12.jpg"></p>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 16.7%;justify-content: center;">
+<p><img data-src="images/five-conti/r13.jpg"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 16.7%;justify-content: center;">
+<p><img data-src="images/five-conti/r14.jpg"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 16.7%;justify-content: center;">
+<p><img data-src="images/five-conti/r15.jpg"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 16.7%;justify-content: center;">
+<p><img data-src="images/five-conti/r16.jpg"></p>
+</div>
+</div>
+</div>
+
+<aside><div>
+<p>16个肿瘤登记处数据被<span class="important">《五大洲癌症发病率第12卷》</span>收录</p>
+</div></aside></section></section>
+<section>
+<section id="农村登记处的建立与发展" class="title-slide slide level1 center" data-background="lightblue">
+<h1>农村登记处的建立与发展</h1>
+
+</section>
+<section id="肿瘤登记与肿瘤登记处" class="slide level2">
+<h2>肿瘤登记与肿瘤登记处</h2>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>肿瘤登记</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>一定人群中收集肿瘤新发病例资料的操作方法。</li>
+<li>主要目的是获得限定人群中肿瘤发生、转归统计指标，为评价癌症危害程度，制定防控措施及评价效果提供基础信息。</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>肿瘤登记<span class="important">处</span></strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>是肿瘤登记的实施机构，进行病例资料的收集、保存、整理、统计和分析。</li>
+<li>获得肿瘤发病率、患病率、死亡率及生存率等统计指标。</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="肿瘤登记处的类型" class="slide level2">
+<h2>肿瘤登记处的类型</h2>
+<ul>
+<li>以人群为基础的肿瘤登记(Population Based Cancer Registration, PBCR)</li>
+<li>以医院为基础的肿瘤登记(Hospital Based Cancer Registration, HBCR)</li>
+<li>特殊目的肿瘤登记(Special Purpose Cancer Registration)
+<ul>
+<li>儿童肿瘤登记</li>
+<li>白血病肿瘤登记</li>
+</ul></li>
+</ul>
+</section>
+<section id="全球肿瘤登记历史" class="slide level2 smaller">
+<h2>全球肿瘤登记历史</h2>
+<ul>
+<li>1927 汉堡</li>
+<li>1941 康涅狄格州肿瘤登记处</li>
+<li>1950-80s 欧洲和其他地区肿瘤登记处</li>
+<li>1966 IACR成立</li>
+<li>1966 《五大洲癌症发病》第一卷</li>
+<li>1973 SEER项目设立</li>
+<li>1992 美国CDC国家癌症登记计划</li>
+<li>1960-1980年代中国部分地区的肿瘤登记</li>
+<li>1974～ 1992 中国，三次以肿瘤为主的死因调查</li>
+<li>2002 中国全国肿瘤登记中心建立</li>
+<li>2019 全国肿瘤随访登记处数700，覆盖人群4亿多</li>
+</ul>
+</section>
+<section id="中国部分农村肿瘤登记处的建立" class="slide level2">
+<h2>中国部分农村肿瘤登记处的建立</h2>
+<p><br></p>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/rural-registry1.png"></p>
+<figcaption>磁县肿瘤登记处</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/rural-registry2.jpg"></p>
+<figcaption>全国肿瘤登记处</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/rural-registry3.jpg"></p>
+<figcaption>肿瘤登记会议</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="人群肿瘤登记处的基本条件" class="slide level2">
+<h2>人群肿瘤登记处的基本条件</h2>
+<ul>
+<li>政府及行政管理部门的政策与法规</li>
+<li>具有诊治癌症病例的医疗资源</li>
+<li>可获得当地居民在外地诊治的癌症病例相关信息</li>
+<li>准确、有效的人口数据，区分户籍和外来人口</li>
+<li>完整、有效的生命统计系统（死因报告系统）</li>
+</ul>
+</section>
+<section id="人群肿瘤登记处的人员配置" class="slide level2">
+<h2>人群肿瘤登记处的人员配置</h2>
+<ul>
+<li>人员数量： 3-5名职员/ 100万人群</li>
+<li>条件要求：公共卫生（流行病、卫生统计）、临床医学及数据管理</li>
+<li>登记处主任：流行病学或公共卫生背景的医学人员，对肿瘤学有一定了解</li>
+</ul>
+</section>
+<section id="农村地区疾病负担的特点" class="slide level2 smaller">
+<h2>农村地区疾病负担的特点</h2>
+<p><img data-src="images/incidence.jpg"></p>
+
+<aside><div>
+<p>国家癌症中心. 2018中国肿瘤年报[M]. 北京:人民卫生出版社,2019,北京.</p>
+</div></aside></section>
+<section id="农村肿瘤登记处的特点" class="slide level2 smaller">
+<h2>农村肿瘤登记处的特点</h2>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h4 id="数据收集方法">1️⃣数据收集方法</h4>
+<ul>
+<li>主动与被动相结合</li>
+<li><span class="illustration">县-乡-村三级防癌网</span></li>
+</ul>
+<p><br></p>
+<h4 id="覆盖人群相对较小">2️⃣覆盖人群相对较小</h4>
+<ul>
+<li>村医相对熟悉病人的基本情况，更利于数据收集和生存随访</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<h4 id="数据来源多样">3️⃣数据来源多样</h4>
+<ul>
+<li>人群相对稳定</li>
+<li>数据收集相对容易</li>
+</ul>
+<p><br></p>
+<h4 id="经济条件相对落后">4️⃣经济条件相对落后</h4>
+<ul>
+<li>诊断和治疗水平相对较低，对罕见肿瘤和儿童肿瘤的漏报率较高</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="人群肿瘤登记" class="slide level2">
+<h2>人群肿瘤登记</h2>
+<blockquote>
+<p>是在某一限定的人群中收集全部恶性肿瘤新发病例的资料</p>
+</blockquote>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>目的</strong></p>
+</div>
+<div class="callout-content">
+<p>获得一定人群中癌症发生的各项统计指标，着重点在流行病学和公共卫生学领域</p>
+</div>
+</div>
+</div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>用途</strong></p>
+</div>
+<div class="callout-content">
+<ol type="1">
+<li>描述社会中癌症危害的范围和特征，帮助建立优先的公共卫生策略。</li>
+<li>病因学研究的原始资料。</li>
+<li>帮助监测和评价癌症控制措施的效果。</li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section id="人群范围的确定" class="slide level2">
+<h2>人群范围的确定</h2>
+<blockquote>
+<p>确定<span class="important">源人群</span></p>
+</blockquote>
+<ul>
+<li><span class="illustration">户籍人口</span></li>
+<li>常住人口</li>
+</ul>
+<blockquote>
+<p>这两类人群（病例与人口）能有效区分，我国肿瘤登记统计报告户籍人口的结果(分子与分母一致，分子是分母的一部分)</p>
+</blockquote>
+
+<aside><div>
+<p>国家癌症中心，中国肿瘤登记指导手册(2016),北京.</p>
+</div></aside></section>
+<section id="肿瘤登记收集基本变量信息" class="slide level2 smaller">
+<h2>肿瘤登记收集基本变量信息</h2>
+<div class="columns">
+<div class="column" style="width:30%;">
+<blockquote>
+<p>肿瘤登记收集的变量包括以下7个部分（<a href="#/肿瘤登记收集基本变量信息" class="quarto-xref">图&nbsp;5</a>）</p>
+</blockquote>
+<ul>
+<li>个人识别信息</li>
+<li>人口学信息</li>
+<li>肿瘤信息</li>
+<li>治疗信息</li>
+<li>随访信息</li>
+<li>预后信息</li>
+<li>信息来源</li>
+</ul>
+</div><div class="column" style="width:70%;">
+<div class="cell" data-reveal="true">
+<div class="cell-output-display">
+<div id="fig-items" class="quarto-figure quarto-figure-center">
+<figure>
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-items">classDiagram
+    class 个人识别信息 {
+    登记处编号
+    身份证号
+    姓名
+    户籍地址
+    常住地址
+}
+    class 人口学信息 {
+    性别
+    年龄
+    出生日期
+    婚姻状态
+    职业
+    民族
+}
+    class 肿瘤信息 {
+    发病日期
+    诊断依据
+    原发部位ICDO3
+    形态学ICDO3
+    行为ICDO3
+    分级ICDO3
+    临床分期/TNM分期
+    多原发状态
+    双边性
+}
+    class 治疗信息 {
+    治疗方法
+}
+    class 随访相关信息 {
+    联系电话
+    联系人
+    联系人电话
+    常住地址
+}
+    class 结局信息 {
+    最后接触日期
+    生存状态
+    死亡日期
+    死亡原因
+    死亡地点
+}
+    class 信息来源 {
+    报告医院
+    住院号/门诊号
+    报告医师
+    报告日期
+}
+
+    个人识别信息 --|&gt; 人口学信息
+    个人识别信息 --|&gt; 肿瘤信息
+    个人识别信息 --|&gt; 治疗信息
+    个人识别信息 --|&gt; 随访相关信息
+    个人识别信息 --|&gt; 结局信息
+    个人识别信息 --|&gt; 信息来源
+</pre>
+</div>
+<figcaption>图&nbsp;5: 人群肿瘤登记收集数据项目</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<aside><div>
+<p>国家癌症中心，中国肿瘤登记指导手册(2016),北京.</p>
+</div></aside></section>
+<section id="肿瘤登记收集其他信息" class="slide level2 smaller">
+<h2>肿瘤登记收集其他信息</h2>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:45%;">
+<h4 id="人口数据">人口数据</h4>
+<blockquote>
+<p>以县区为单位收集登记处覆盖人群分年龄、分性别<span class="important">户籍人口数</span></p>
+</blockquote>
+</div><div class="column" style="width:45%;">
+<h4 id="寿命表数据">寿命表数据</h4>
+<blockquote>
+<p>以县区为单位收集登记处覆盖人群分年龄、分性别全死因死亡数以估计寿命表</p>
+</blockquote>
+</div>
+</div>
+</section>
+<section id="病例发现来源" class="slide level2">
+<h2>病例发现来源</h2>
+<blockquote>
+<p>肿瘤登记强调<span class="important"><strong>多源上报</strong></span>、数据来源于医院、医保系统、县-乡-村医师网、全死因数据等。（<a href="#/病例发现来源" class="quarto-xref">图&nbsp;6</a> ）</p>
+</blockquote>
+<div class="cell" data-reveal="true" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-1" class="quarto-figure quarto-figure-center">
+<figure>
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-1">flowchart TD
+  A[(肿瘤登记数据库)] --&gt; B(医院)
+  A --&gt; B
+  A --&gt; C(县-乡-村三级医师网络)
+  A --&gt; D(医疗保险)
+  A --&gt; E(死因监测)
+  A --&gt; F(殡葬系统)
+  A --&gt; G(公安系统)
+  B --&gt; b1(住院患者数据)
+  B --&gt; b2(门诊患者数据)
+  B --&gt; b3(病案部门)
+  B --&gt; b4(病理诊断部门)
+  D --&gt; d1(新农合)
+  D --&gt; d2(城镇医保)
+  D --&gt; d3(职工医保)
+</pre>
+</div>
+<figcaption>图&nbsp;6: 肿瘤登记数据来源渠道</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="病例发现来源城市vs农村" class="slide level2 smaller">
+<h2>病例发现来源：城市VS农村</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<blockquote>
+<p>农村地区和城市地区数据来源略有不同</p>
+</blockquote>
+<p><br> <br></p>
+<blockquote>
+<p>城市地区数据更依赖医院，农村地区数据来源在医院的基础上，还要有县-乡-村医师网络的数据 （<a href="#/病例发现来源城市vs农村" class="quarto-xref">图&nbsp;7</a> ， <a href="#/病例发现来源城市vs农村" class="quarto-xref">图&nbsp;8</a>）</p>
+</blockquote>
+</div><div class="column" style="width:60%;">
+<div class="cell" data-reveal="true" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-city" class="quarto-figure quarto-figure-center">
+<figure>
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-city">flowchart TD
+  A[(城市登记处)] --&gt; B(主要来源)
+  A --&gt; C(补充来源)
+  B --&gt; D(临床医生)
+  B --&gt; E(病案室)
+  B --&gt; F(病理科)
+  C --&gt; G(城镇医保)
+  C --&gt; H(死因监测)
+  C --&gt; I(殡葬系统)
+  C --&gt; J(公安系统)
+</pre>
+</div>
+<figcaption>图&nbsp;7: 城市地区肿瘤登记数据来源情况</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell" data-reveal="true" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-rural" class="quarto-figure quarto-figure-center">
+<figure>
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-rural">flowchart TD
+  A[(农村登记处)] --&gt; B(主要来源)
+  A --&gt; C(补充来源)
+  B --&gt; D(医院)
+  B --&gt; E(村医)
+  B --&gt; F(新农合)
+  B --&gt; G(城镇医保)
+  C --&gt; H(死因监测)
+  C --&gt; I(殡葬系统)
+  C --&gt; J(公安系统)
+</pre>
+</div>
+<figcaption>图&nbsp;8: 农村地区肿瘤登记数据来源情况</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><br></p>
+</div>
+</div>
+</section>
+<section id="其他病例发现来源" class="slide level2">
+<h2>其他病例发现来源</h2>
+<ul>
+<li>癌症筛查(城癌、农癌、两癌)</li>
+<li>健康体检</li>
+<li>尸检发现</li>
+</ul>
+</section>
+<section id="人口数据来源" class="slide level2">
+<h2>人口数据来源</h2>
+<blockquote>
+<p>目前，国内的人口数据需要多途径，多种方法结 合的方式方可获得较准确的数据。在大部分地 区，单一来源的人口数据及构成均存在较大的误差</p>
+</blockquote>
+<ol type="1">
+<li>人口普查资料(统计部门）</li>
+<li>户籍管理部门获取</li>
+<li>计划生育、妇幼保健及疾控中心</li>
+<li>通过调查收集</li>
+</ol>
+</section>
+<section id="人口数据来源-1" class="slide level2">
+<h2>人口数据来源</h2>
+<blockquote>
+<p>其他可利用的人口数据来源：</p>
+</blockquote>
+<ol type="1">
+<li>计划免疫资料</li>
+<li>健康档案数据</li>
+<li>农合医保数据</li>
+</ol>
+</section>
+<section id="人口数据来源-2" class="slide level2">
+<h2>人口数据来源</h2>
+<blockquote>
+<p>通过多途径混合方式获取人口数据</p>
+</blockquote>
+<ol type="1">
+<li>通过公安户籍获取相应年份的户籍人口数</li>
+<li>利用其它数据源获取分性别的年龄构成（百岁表数据最好）</li>
+<li>总人口乘构成获取分性别的年龄组人口数</li>
+</ol>
+
+<aside><div>
+<p>每年的人口数是变量（非常量），同时年龄构成是变数 无整体人口迁移及行政区重新划定，人口总数一般呈平稳增长趋势</p>
+</div></aside></section>
+<section id="建立多源报告制度" class="slide level2">
+<h2>建立多源报告制度</h2>
+<blockquote>
+<p>基于肿瘤发病报告资料的有效性和完整性，多源性报告制度是必要的</p>
+</blockquote>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>多源性含义</strong></p>
+</div>
+<div class="callout-content">
+<p>医院内不仅治疗科室要报告，诊断科室也要报告；登记地区内不仅做出诊断的医院要报告，其他进行治疗处理的医院也要报告。</p>
+</div>
+</div>
+</div>
+
+<aside><div>
+<p>多源报告是肿瘤登记的核心制度！</p>
+</div></aside></section>
+<section id="组织架构" class="slide level2 smaller">
+<h2>组织架构</h2>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:33%;">
+<h4 id="省级登记处">省级登记处</h4>
+<p><em>河南省癌症中心</em></p>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>职责</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>制定全省工作计划、实施方案、质量控制</li>
+<li>建立和完善肿瘤登记信息系统</li>
+<li>技术指导、人员培训、考核评价</li>
+<li>督导检查</li>
+<li>数据分析和报告</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:33%;">
+<h4 id="市级登记处">市级登记处</h4>
+<p><em>市级CDC/肿瘤医院</em></p>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>职责</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>区域内技术指导、人员培训</li>
+<li>市级质量控制</li>
+<li>督导检查</li>
+<li>数据分析和报告</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:33%;">
+<h4 id="县区级登记处">县区级登记处</h4>
+<p><em>县区级CDC</em></p>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>职责</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>技术指导、人员培训</li>
+<li>质量控制</li>
+<li>督导检查</li>
+<li>统计分析、数据发布</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<aside><div>
+<p>数据来源: 河南省肿瘤登记管理办法</p>
+</div></aside></section>
+<section id="实施的癌种范围" class="slide level2">
+<h2>实施的癌种范围</h2>
+<blockquote>
+<p>肿瘤登记收集一定人群中<span class="illustration">所有恶性肿瘤</span>、<span class="illustration">中枢神经系统良性肿瘤</span>以及<span class="illustration">原位癌</span>。 <br></p>
+</blockquote>
+<ul>
+<li>C00-C97</li>
+<li>D32-D33</li>
+<li>D42-D43</li>
+<li>D45-D47</li>
+<li>原位癌</li>
+</ul>
+</section>
+<section id="生命统计系统的信息利用" class="slide level2">
+<h2>生命统计系统的信息利用</h2>
+<blockquote>
+<p>完善的全死因登记报告系统是高质量肿瘤登记的基础</p>
+</blockquote>
+<div class="cell" data-reveal="true" data-layout-align="center">
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
+  A[(全死因数据)] --&gt; B(新发病例的补充)
+  A --&gt; C(被动随访的主要来源)
+  A --&gt; D(质量控制)
+</pre>
+</div>
+</div>
+</div>
+</div>
+<blockquote>
+<p>不以死亡证明书中的发病到死亡的时间推算发病日期，生命统计系统数据的完整，死亡证明书填写准确，根本死亡因和伴随死因为肿瘤的报告记录均做补发流程</p>
+</blockquote>
+</section>
+<section id="通过死亡证明书补充新发病例流程" class="slide level2">
+<h2>通过死亡证明书补充新发病例流程</h2>
+<div class="cell" data-reveal="true">
+<div class="cell-output-display">
+<div id="fig-dco" class="quarto-figure quarto-figure-center">
+<figure>
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-dco">flowchart LR
+  A[(全死因数据)] --&gt; C[与肿瘤发病数据匹配]
+  C --&gt; D{判断是否匹配}
+  D -- 匹配 --&gt; E[被动随访成功]
+  E --&gt; E1[添加死亡信息]
+  D -- 肿瘤死亡未匹配 --&gt; F[临床医学追访]
+  a(医院) --&gt; F1[信息来源]
+  b(医保系统) --&gt; F1
+  c(县-乡-村-医生) --&gt; F1
+  F1 --&gt; F
+  F --&gt; G[(确认癌症)]
+  G --&gt; G1[补发报告]
+  F --&gt; H[(非癌症病例)]
+  H --&gt; H1[排除]
+  F --&gt; I[(无临床信息)]
+  I --&gt; I1[排除]
+  
+</pre>
+</div>
+<figcaption>图&nbsp;9: 河南省肿瘤登记死亡补发病流程</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="肿瘤分类与编码" class="slide level2">
+<h2>肿瘤分类与编码</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<blockquote>
+<p>肿瘤登记采用<strong>双编码系统</strong></p>
+</blockquote>
+<h4 id="分类标准">分类标准</h4>
+<ul>
+<li>ICD-O-3 ：数据收集</li>
+<li>ICD10 ：统计分析</li>
+</ul>
+<blockquote>
+<p>《肿瘤登记年报》采用ICD10进行肿瘤分类（<a href="#/肿瘤分类与编码" class="quarto-xref">表&nbsp;1</a>）</p>
+</blockquote>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div id="tbl-category">
+<table class="table" data-quarto-postprocess="true" style="font-size: 12px; margin-left: auto; margin-right: auto;">
+<caption>表&nbsp;1: 常用癌症分类统计表（大类）</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">部位</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">ICD10</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">口腔和咽 (除外鼻咽癌和喉)</td>
+<td style="text-align: left;">C00-10,C12-14（除外C10.1）</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">鼻咽癌</td>
+<td style="text-align: left;">C11</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">食管</td>
+<td style="text-align: left;">C15</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">胃</td>
+<td style="text-align: left;">C16</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">结直肠肛门</td>
+<td style="text-align: left;">C18-21</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">肝脏</td>
+<td style="text-align: left;">C22</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">胆囊及其他</td>
+<td style="text-align: left;">C23-C24</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">胰腺</td>
+<td style="text-align: left;">C25</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">喉</td>
+<td style="text-align: left;">C32，C10.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">气管、支气管、肺</td>
+<td style="text-align: left;">C33-C34</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">骨</td>
+<td style="text-align: left;">C40-C41</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">乳房</td>
+<td style="text-align: left;">C50</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">子宫颈</td>
+<td style="text-align: left;">C53</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">子宫体及子宫部位不明</td>
+<td style="text-align: left;">C54-55</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">卵巢</td>
+<td style="text-align: left;">C56</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">前列腺</td>
+<td style="text-align: left;">C61</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">睾丸</td>
+<td style="text-align: left;">C62</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">肾及泌尿系统不明</td>
+<td style="text-align: left;">C64-66，68</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">膀胱</td>
+<td style="text-align: left;">C67</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">脑,神经系统</td>
+<td style="text-align: left;">C70-C72</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">甲状腺</td>
+<td style="text-align: left;">C73</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">淋巴瘤</td>
+<td style="text-align: left;">C81-85,88,90,96</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">白血病</td>
+<td style="text-align: left;">C91-C95</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">其它</td>
+<td style="text-align: left;">Other（除外以上）</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">所有部位合计</td>
+<td style="text-align: left;">ALL</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="肿瘤分类与编码-1" class="slide level2">
+<h2>肿瘤分类与编码</h2>
+<h3 id="icd-o-3-编码">ICD-O-3 编码</h3>
+<blockquote>
+<p>ICD-O-3编码是由4位解剖学部位编码、4位形态学编码、1位行为编码和1位分级编码共十位编码组成的肿瘤分类编码。</p>
+</blockquote>
+<ul>
+<li>解剖学部位编码(Topo)：C34.9</li>
+<li>形态学编码：M8140</li>
+<li>行为编码：3</li>
+<li>分级编码：1</li>
+</ul>
+</section>
+<section id="肿瘤分类与编码-2" class="slide level2">
+<h2>肿瘤分类与编码</h2>
+<h3 id="icd-o-3-解剖学部位编码topo">ICD-O-3 解剖学部位编码(Topo)</h3>
+<p><br></p>
+<blockquote>
+<p>解剖学部位编码(Topo)由写大写字母<strong>C</strong>开头+两位数字+小数点+一位数字组成，用来描述肿瘤发生部位相关信息。</p>
+</blockquote>
+<ul>
+<li>C34.1 (小数点之前描述主要部位，小数点之后描述亚部位)</li>
+<li>C34：肺</li>
+<li>1：上叶</li>
+</ul>
+</section>
+<section id="肿瘤分类与编码-3" class="slide level2">
+<h2>肿瘤分类与编码</h2>
+<h3 id="icd-o-3-形态学编码morp">ICD-O-3 形态学编码(Morp)</h3>
+<blockquote>
+<p>ICDO3形态学编码由组织学、行为和分级编码组成，以描述肿瘤发生的性质。</p>
+</blockquote>
+<ul>
+<li>M组织学/行为/分级</li>
+<li>M8070/33</li>
+<li>鳞状细胞癌 恶性 低分化</li>
+</ul>
+</section>
+<section id="肿瘤分类与编码-4" class="slide level2">
+<h2>肿瘤分类与编码</h2>
+<h3 id="icd-o-3-行为编码">ICD-O-3 行为编码</h3>
+<ul>
+<li>0 ：良性</li>
+<li>1 ：良性或恶性未肯定</li>
+<li>2 ：原位癌</li>
+<li>3 ：恶性，原发部位</li>
+<li>6 ：恶性，原发部位/恶性，继发部位</li>
+<li>9 ：恶性，原发部位或转移部位未肯定</li>
+</ul>
+</section>
+<section id="肿瘤分类与编码-5" class="slide level2">
+<h2>肿瘤分类与编码</h2>
+<h3 id="icd-o-3-分化程度编码">ICD-O-3 分化程度编码</h3>
+<div class="cell">
+<div class="cell-output-display">
+<table data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">编码</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">意义</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">高分化</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">中分化</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">低分化</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">未分化</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">T-细胞</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">B-细胞</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">非T-非B</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">NK细胞</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">分化程度未确定</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</section>
+<section id="肿瘤分类与编码-6" class="slide level2">
+<h2>肿瘤分类与编码</h2>
+<h3 id="icd-o-3解剖学部位与icd10有何异同">ICD-O-3解剖学部位与ICD10有何异同？</h3>
+<div class="cell">
+<iframe src="https://www.chenq.site/qsight/2022-03-09-icdo3-icd10/" width="960" height="400px" data-external="1">
+</iframe>
+</div>
+</section>
+<section id="发病时间的定义" class="slide level2">
+<h2>发病时间的定义</h2>
+<p><br></p>
+<ol type="1">
+<li>首次就癌症问题到医院就诊咨询的时间</li>
+<li>首次诊断时间: 医生诊断 或 病理报告时间</li>
+<li>死亡时间: 死亡医学证明书，且无法追访</li>
+<li>解剖时间: 之前从未怀疑过患肿瘤</li>
+</ol>
+
+<aside><div>
+<p>来源：IARC, Cancer registration: principals and methods</p>
+</div></aside></section>
+<section id="重复病例的发现与处理" class="slide level2">
+<h2>重复病例的发现与处理</h2>
+<blockquote>
+<p>肿瘤登记基于多源报告制度，发现和处理重复病例是保证数据真实性的必要措施</p>
+</blockquote>
+<ul>
+<li>实施的环节要求在各级上报单位</li>
+</ul>
+<div class="cell" data-reveal="true" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-system-flow" class="quarto-figure quarto-figure-center">
+<figure>
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-system-flow">flowchart LR
+  x[肿瘤数据上报] --&gt; A[更新人口信息]
+  y[全死因数据上报] --&gt; A
+  z[肿瘤协查数据上报] --&gt; A
+  A --&gt; B[人口信息查重]
+  B --&gt; C[查重肿瘤信息]
+  C --&gt; D[标记多原发肿瘤]
+</pre>
+</div>
+<figcaption>图&nbsp;10: 新系统数据操作流程（建议）</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="多原发肿瘤" class="slide level2">
+<h2>多原发肿瘤</h2>
+<blockquote>
+<p>个体有发生一个以上癌症的可能，多部位原发癌纪录为新发病病例，与登记地区医疗水平有关，也与登记质量有关，登记处应注意多部位原发肿瘤病例资料的收集</p>
+</blockquote>
+<p><br></p>
+<ul>
+<li>国际上不同登记地区采用的判断规则不一样，例如北美地区与欧盟国家分别用不同的规则</li>
+</ul>
+</section>
+<section id="iacr多原发判断规则" class="slide level2">
+<h2>IACR多原发判断规则</h2>
+<ul>
+<li>两个以上肿瘤，不依据发病时间判断多原发</li>
+<li>每个原发肿瘤起源一个原发部位或组织，非扩散、复发或转移</li>
+<li>一个肿瘤被诊断一个（对）器官，有些不同的部位编码被认定为同一部位肿瘤（不判定为多原发）；同样，一些- 形态学编码也归为同组编码（不认定为组织形态学不同，形态学编码记录大数）</li>
+<li>系统性肿瘤（卡波西肉瘤、淋巴瘤等）侵袭多个不同器官，只记录为一个肿瘤（非多原发）</li>
+</ul>
+</section>
+<section id="多部位原发肿瘤的确定标准" class="slide level2">
+<h2>多部位原发肿瘤的确定标准</h2>
+
+<img data-src="images/multicancer.png" class="r-stretch quarto-figure-center"></section>
+<section id="section" class="slide level2" data-background-image="images/flow.png" data-background-size="95%">
+<h2></h2>
+</section>
+<section id="肿瘤登记处的发展" class="slide level2">
+<h2>肿瘤登记处的发展</h2>
+<blockquote>
+<p>质量控制是肿瘤登记处发展的核心，开展可比性、完整性、有效性、时效性为主要指标的质量控制工作。</p>
+</blockquote>
+<ul>
+<li>加强数据分析与利用，年报、5年报、研究论文</li>
+<li>推进医院肿瘤登记系统的建立、实施和数据利用</li>
+<li>扩大城市地区肿瘤登记处的覆盖比例</li>
+<li>加强信息化数据收集系统的开发自动抓取，数据链接，各类结果指标自动生成等）</li>
+</ul>
+</section></section>
+<section>
+<section id="肿瘤登记数据质量控制" class="title-slide slide level1 center" data-background="lightblue">
+<h1>肿瘤登记数据质量控制</h1>
+<p><span class="important">肿瘤登记的质量控制是获取高质量数据的核心</span></p>
+</section>
+<section id="质量控制的意义" class="slide level2">
+<h2>质量控制的意义</h2>
+<ul>
+<li>使不同地区之间的数据具有可比性</li>
+<li>代表登记处所在地区的癌症人群</li>
+<li>使癌症数据真实有效</li>
+</ul>
+
+<aside><div>
+<p>采用IARC/IACR国际质量控制标准</p>
+</div></aside></section>
+<section id="质量控制指标体系" class="slide level2">
+<h2>质量控制指标体系</h2>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-reveal="true">
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+  B(可比性) --&gt; b1(发病的定义)
+  B --&gt; b2(多原发判断)
+  B --&gt; b3(分类与编码)
+  B --&gt; b4(死亡证明)
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-reveal="true">
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+  D(有效性) --&gt; d1(组织学确诊比例)
+  D --&gt; d2(只有死亡医学证明书比例DC\%)
+  D --&gt; d3(部位不明比例UB%)
+  D --&gt; d4(数据内部一致性)
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell" data-reveal="true">
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
+  C(完整性) --&gt; c1(死亡发病比M:I)
+  C --&gt; c2(只有死亡医学证明书比例DCO%)
+  C --&gt; c3(组织学确诊比例MV%)
+  C --&gt; c4(不同时间发病率的稳定性)
+  C --&gt; c5(年龄别发病率曲线)
+</pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="质量控制" class="slide level2 smaller">
+<h2>质量控制</h2>
+<blockquote>
+<p>肿瘤登记收集的变量或者变量组合之间存在一定的逻辑关系，通过对单个变量或变量组合之间的逻辑关系进行审查，以提高肿瘤登记数据有效性。</p>
+</blockquote>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>单个项目</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>出生日期</li>
+<li>发病日期</li>
+<li>年龄、性别</li>
+<li>发病部位</li>
+<li>形态学</li>
+<li>行为和分级</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:40%;">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>项目组合</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>性别/部位</li>
+<li>部位/组织学学</li>
+<li>年龄/部位/组织学</li>
+<li>行为/部位</li>
+<li>行为/组织学</li>
+<li>性别/组织学</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:20%;">
+<div class="callout callout-caution callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>校验结果</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>正确✅</li>
+<li>警告⚠️</li>
+<li>错误❌</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="质量控制-1" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">质量控制</h2>
+<h3 id="完整性指标">完整性指标</h3>
+<div class="r-hstack">
+<div data-id="box1" data-auto-animate-delay="0" style="background: #2780e3; width: 200px; height: 150px; margin: 10px;">
+<p>癌症患者</p>
+</div>
+<div data-id="box2" data-auto-animate-delay="0.1" style="background: #3fb618; width: 200px; height: 150px; margin: 10px;">
+<p>诊断患者</p>
+</div>
+<div data-id="box3" data-auto-animate-delay="0.2" style="background: #e83e8c; width: 200px; height: 150px; margin: 10px;">
+<p>肿瘤登记</p>
+</div>
+</div>
+</section>
+<section id="质量控制-2" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">质量控制</h2>
+<h3 id="完整性指标-1">完整性指标</h3>
+<div class="r-stack">
+<div data-id="box1" style="background: #2780e3; width: 350px; height: 350px; border-radius: 200px;">
+<p>癌症患者</p>
+</div>
+<div data-id="box2" style="background: #3fb618; width: 250px; height: 250px; border-radius: 200px;">
+<p>诊断患者</p>
+</div>
+<div data-id="box3" style="background: #e83e8c; width: 150px; height: 150px; border-radius: 200px;">
+<p>肿瘤登记</p>
+</div>
+</div>
+</section>
+<section id="质量控制-完整性指标" class="slide level2">
+<h2>质量控制-完整性指标</h2>
+<h3 id="率的连续性">率的连续性</h3>
+
+<img data-src="images/incitrend.jpg" class="r-stretch quarto-figure-center"></section>
+<section id="质量控制-完整性指标-1" class="slide level2">
+<h2>质量控制-完整性指标</h2>
+<h3 id="率的连续性-1">率的连续性</h3>
+
+<img data-src="images/sitetrend.jpg" class="r-stretch quarto-figure-center"></section>
+<section id="质量控制-完整性指标-2" class="slide level2">
+<h2>质量控制-完整性指标</h2>
+<h3 id="相邻区域率的比较">相邻区域率的比较</h3>
+
+<img data-src="images/sitecompare.jpg" class="r-stretch quarto-figure-center"></section>
+<section id="质量控制-完整性指标-3" class="slide level2">
+<h2>质量控制-完整性指标</h2>
+<h3 id="年龄别发病率">年龄别发病率</h3>
+
+<img data-src="images/agespecific.jpg" class="r-stretch quarto-figure-center"></section>
+<section id="质量控制-完整性指标-4" class="slide level2">
+<h2>质量控制-完整性指标</h2>
+<h3 id="死亡发病比mi-连续性">死亡发病比(M:I)-连续性</h3>
+
+<img data-src="images/mi.jpg" class="r-stretch quarto-figure-center"></section>
+<section id="质量控制-完整性指标-5" class="slide level2">
+<h2>质量控制-完整性指标</h2>
+<h3 id="死亡发病比mi-比较">死亡发病比(M:I)-比较</h3>
+
+<img data-src="images/micompare.jpg" class="r-stretch quarto-figure-center"></section>
+<section id="质量控制-有效性指标" class="slide level2">
+<h2>质量控制-有效性指标</h2>
+<h3 id="病理诊断比例mv-连续性">病理诊断比例(MV%)-连续性</h3>
+
+<img data-src="images/mv.jpg" class="r-stretch quarto-figure-center"></section>
+<section id="质量控制-有效性指标-1" class="slide level2">
+<h2>质量控制-有效性指标</h2>
+<h3 id="病理诊断比例mv-比较">病理诊断比例(MV%)-比较</h3>
+
+<img data-src="images/mvcompare.jpg" class="r-stretch quarto-figure-center"></section>
+<section id="质量控制报告" class="slide level2">
+<h2>质量控制报告</h2>
+<div class="cell">
+<iframe src="https://www.chenq.site/slides/2023-5-16-canreg-report/example.html" width="960" height="600px" data-external="1">
+</iframe>
+</div>
+</section></section>
+<section>
+<section id="开发信息化肿瘤登记数据收集系统" class="title-slide slide level1 center" data-background-color="lightblue">
+<h1>开发信息化肿瘤登记数据收集系统</h1>
+<p><span class="important">提高肿瘤登记数据收集信息化、智能化水平</span></p>
+</section>
+<section id="数据收集系统的发展" class="slide level2">
+<h2>数据收集系统的发展</h2>
+<p><br></p>
+
+<img data-src="./images/system.png" width="1836" class="r-stretch"></section>
+<section id="最新肿瘤登记系统登录界面" class="slide level2" data-background-image="images/sys-cover.jpg">
+<h2>最新肿瘤登记系统登录界面</h2>
+</section>
+<section id="实现专业功能" class="slide level2 smaller" data-background-color="lightblue">
+<h2>实现专业功能</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="已升级功能">已升级功能</h3>
+<ul>
+<li>数据上报</li>
+<li>重卡判断</li>
+<li>多原发卡判断</li>
+<li>被动随访</li>
+<li>随访管理</li>
+<li>机构管理</li>
+<li>其他辅助功能</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<h3 id="待升级功能">待升级功能</h3>
+<ul>
+<li>常规数据分析</li>
+<li>质量控制可视化</li>
+<li>发病地理信息管理</li>
+<li>就医历史纵向追踪</li>
+</ul>
+</div>
+</div>
+<blockquote>
+<p>磨刀不误砍柴工，我们将继续不断完善升级肿瘤随访登记信息收集系统，提高数据收集效率</p>
+</blockquote>
+</section>
+<section id="系统设计思路" class="slide level2">
+<h2>系统设计思路</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<blockquote>
+<p>新系统围绕<strong>人口身份识别信息</strong>，不断更新肿瘤信息、随访信息、地理信息等（<a href="#/系统设计思路" class="quarto-xref">图&nbsp;11</a>）</p>
+</blockquote>
+<ul>
+<li>追踪就医历史记录</li>
+<li>多渠道更新随访信息</li>
+<li>追踪患者地理信息</li>
+<li>多渠道数据来源上报</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-reveal="true" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-system" class="quarto-figure quarto-figure-center">
+<figure>
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-system">flowchart LR
+  A[人口身份识别信息] --&gt; B[肿瘤信息]
+  A --&gt; C[随访信息]
+  A --&gt; D[信息来源]
+  A --&gt; E[地理信息]
+  x[肿瘤数据上报] --&gt; A
+  y[全死因数据上报] --&gt; A
+  z[肿瘤协查数据上报] --&gt; A
+  
+</pre>
+</div>
+<figcaption>图&nbsp;11: 河南省肿瘤随访登记信息平台</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<blockquote>
+<p>保证人口信息数据的<span style="color: red; text-size: 3.5em; ">唯一性</span>特别重要，也是重卡合并、多原发标记和更新随访数据的基础。</p>
+</blockquote>
+</section>
+<section id="数据协查功能" class="slide level2">
+<h2>数据协查功能</h2>
+<blockquote>
+<p>在实际数据上报过程中，一些大型医院的病例数较多，通常每月肿瘤病例超过1万例， 这样会造成无法高质量完成数据上报任务。</p>
+</blockquote>
+<p><br></p>
+<ul>
+<li>无需数据的逻辑核查即可上传</li>
+<li>按照户籍地址推送至相应的登记处</li>
+<li>由户籍所在地登记处进行重新编码和填报等操作</li>
+</ul>
+</section>
+<section id="数据查重" class="slide level2">
+<h2>数据查重</h2>
+<h3 id="查重推荐操作流程">查重推荐操作流程</h3>
+<p><br></p>
+<blockquote>
+<p><strong>人口信息的查重</strong>特别重要，在肿瘤病例的查重之前，需要先做人口信息查重（<a href="#/重复病例的发现与处理" class="quarto-xref">图&nbsp;12</a>）</p>
+</blockquote>
+<p><br></p>
+<div class="cell" data-reveal="true" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-system-flow" class="quarto-figure quarto-figure-center">
+<figure>
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-system-flow">flowchart LR
+  x[肿瘤数据上报] --&gt; A[更新人口信息]
+  y[全死因数据上报] --&gt; A
+  z[肿瘤协查数据上报] --&gt; A
+  A --&gt; B[人口信息查重]
+  B --&gt; C[查重肿瘤信息]
+  C --&gt; D[标记多原发肿瘤]
+</pre>
+</div>
+<figcaption>图&nbsp;12: 新系统数据操作流程（建议）</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="死亡补发病" class="slide level2">
+<h2>死亡补发病</h2>
+<blockquote>
+<p><strong>死亡补发病</strong>流程是提高肿瘤登记处数据完整性的关键措施，每年应在上传<strong>全死因数据</strong>之后，应通过系统查找关键词<strong>肿瘤|未匹配</strong>，然后，点击后面的编辑按钮，补充相应的发病信息。</p>
+</blockquote>
+
+<img data-src="./images/dco.jpg" width="1834" class="r-stretch"></section></section>
+<section>
+<section id="肿瘤登记报告" class="title-slide slide level1 center" data-background="lightblue">
+<h1>肿瘤登记报告</h1>
+<p><span class="important">开发自动化指标生成工具</span></p>
+</section>
+<section id="为什么" class="slide level2">
+<h2>为什么?</h2>
+<ul>
+<li>登记处的主要目标之一就是产生肿瘤发病、死亡、生存相关的统计指标</li>
+<li>促进癌症防控政策的产生</li>
+<li>促进数据的共享和利用（专业人员和大众）</li>
+</ul>
+</section>
+<section id="为什么-1" class="slide level2">
+<h2>为什么？</h2>
+<ul>
+<li>疾病负担</li>
+<li>病因学</li>
+<li>癌症筛查</li>
+<li>预后</li>
+<li>政策</li>
+</ul>
+</section>
+<section id="肿瘤登记报告的类型" class="slide level2">
+<h2>肿瘤登记报告的类型</h2>
+<blockquote>
+<p>肿瘤发病报告(肿瘤登记年报)</p>
+</blockquote>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 16.7%;justify-content: center;">
+<p><img data-src="images/cover/nation-2018.png"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 16.7%;justify-content: center;">
+<p><img data-src="images/cover/nation-2019.jpg"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 16.7%;justify-content: center;">
+<p><img data-src="images/cover/neimeng.jpg"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 16.7%;justify-content: center;">
+<p><img data-src="images/cover/2022.jpg"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 16.7%;justify-content: center;">
+<p><img data-src="images/cover/2021.jpeg"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 16.7%;justify-content: center;">
+<p><img data-src="images/cover/iarc.jpeg"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="肿瘤登记报告的类型-1" class="slide level2">
+<h2>肿瘤登记报告的类型</h2>
+<blockquote>
+<p>肿瘤登记网站</p>
+</blockquote>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/cover/globocan.jpg"></p>
+<figcaption>GLOBOCAN 2020</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/cover/seer.jpg"></p>
+<figcaption>SEER</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="肿瘤登记报告的类型-2" class="slide level2">
+<h2>肿瘤登记报告的类型</h2>
+<blockquote>
+<p>研究论文</p>
+</blockquote>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/cover/article1.jpg"></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/cover/article2.jpg"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="肿瘤登记报告的类型-3" class="slide level2">
+<h2>肿瘤登记报告的类型</h2>
+<blockquote>
+<p>新闻发布</p>
+</blockquote>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/cover/article1.jpg"></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/cover/article2.jpg"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="肿瘤登记报告流程" class="slide level2 smaller">
+<h2>肿瘤登记报告流程</h2>
+<div class="cell" data-reveal="true" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-report" class="quarto-figure quarto-figure-center">
+<figure>
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-report">flowchart LR
+  A(数据来源单位) --&gt; B(县区级登记处)
+  B --&gt; C(市级登记处)
+  C --&gt; D(省级登记处)
+  D --&gt; E(质量控制)
+  E --&gt; B
+  B --&gt; A
+  E --&gt; C
+  E --&gt; F(综合评估)
+  F --&gt; G(年报撰写及发布)
+</pre>
+</div>
+<figcaption>图&nbsp;13: 肿瘤登记报告流程</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="肿瘤登记报告的内容" class="slide level2">
+<h2>肿瘤登记报告的内容</h2>
+<blockquote>
+<p>基础信息</p>
+</blockquote>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><span class="important">登记处描述和登记流程</span></li>
+<li>覆盖区域(人口和地区)</li>
+<li>统计术语</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>组织架构</li>
+<li>专业人员</li>
+<li>数据来源与报告程序</li>
+<li>疾病编码</li>
+<li>癌症的定义</li>
+<li>多原发癌</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="肿瘤登记报告的内容-1" class="slide level2">
+<h2>肿瘤登记报告的内容</h2>
+<blockquote>
+<p>基础信息</p>
+</blockquote>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>登记处描述和登记流程</li>
+<li><span class="important">覆盖区域(人口和地区)</span></li>
+<li>统计术语</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>地理区域描述</li>
+<li>城乡定义</li>
+<li>人口数据来源</li>
+<li>人口金字塔</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="肿瘤登记报告的内容-2" class="slide level2">
+<h2>肿瘤登记报告的内容</h2>
+<blockquote>
+<p>基础信息</p>
+</blockquote>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>登记处描述和登记流程</li>
+<li>覆盖区域(人口和地区)</li>
+<li><span class="important">统计术语</span></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>粗率</li>
+<li>年龄别率</li>
+<li>年龄标化率</li>
+<li>截缩率</li>
+<li>生存率</li>
+<li>标准人口</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="肿瘤登记报告的内容-3" class="slide level2">
+<h2>肿瘤登记报告的内容</h2>
+<blockquote>
+<p>结果评估</p>
+</blockquote>
+<ul>
+<li>不同年份之间病例的一致性</li>
+<li>癌症部位分布与构成</li>
+<li>诊断有效性指标</li>
+<li>相邻区域的指标比较</li>
+</ul>
+</section>
+<section id="肿瘤登记报告的内容-4" class="slide level2">
+<h2>肿瘤登记报告的内容</h2>
+<blockquote>
+<p>结果展现</p>
+</blockquote>
+<ul>
+<li>表格</li>
+<li>图 (条形图、饼图、线图、等)</li>
+</ul>
+</section>
+<section id="如何制作肿瘤登记报告" class="slide level2">
+<h2>如何制作肿瘤登记报告</h2>
+<h3 id="数据准备">数据准备</h3>
+<ul>
+<li>原始个案数据(按照上报国家癌症中心的格式准备)</li>
+<li>统计结果</li>
+</ul>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="images/submit.jpg"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="images/report-make.jpg"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="如何制作肿瘤登记报告-1" class="slide level2">
+<h2>如何制作肿瘤登记报告</h2>
+<h3 id="制作工具">制作工具</h3>
+<ul>
+<li>Word</li>
+<li>SAS</li>
+<li>R &amp; Rstudio</li>
+</ul>
+</section>
+<section id="如何制作肿瘤登记报告-2" class="slide level2">
+<h2>如何制作肿瘤登记报告</h2>
+<h3 id="sas程序">SAS程序</h3>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>思路</strong></p>
+</div>
+<div class="callout-content">
+<p>利用SAS生成统计结果，再利用R &amp; Rstudio把统计结果进行展现，包括文字描述和可视化展现(各种统计图形)</p>
+</div>
+</div>
+</div>
+<ul>
+<li>SAS程序分享： <a href="https://github.com/gigu003/sascreate_report">https://github.com/gigu003/sascreate_report</a></li>
+</ul>
+</section>
+<section id="如何制作肿瘤登记报告-3" class="slide level2">
+<h2>如何制作肿瘤登记报告</h2>
+<h3 id="sas">SAS</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource sas number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a>/***************************************************************************************/</span>
+<span id="cb1-2"><a href="#cb1-2"></a>/**************************************************************************************/</span>
+<span id="cb1-3"><a href="#cb1-3"></a>/*************************************************************************************/</span>
+<span id="cb1-4"><a href="#cb1-4"></a>dm "log; clear; output; clear;odsresult;clear";</span>
+<span id="cb1-5"><a href="#cb1-5"></a>/*%let path=%substr(%sysget(SAS_EXECFILEPATH),1,%eval(%index(%sysget(SAS_EXECFILEPATH),%sysget(SAS_EXECFILENAME))-1));*/</span>
+<span id="cb1-6"><a href="#cb1-6"></a>options noxwait xsync mprint mstored sasmstore=cMacros validvarname=any;</span>
+<span id="cb1-7"><a href="#cb1-7"></a>/*Set the Library of Variable Value Formats.*/</span>
+<span id="cb1-8"><a href="#cb1-8"></a>%if %eval(%sysfunc(libref(cMacros)) ^= 0)  %then %do;libname cMacros "D:\CanReg\Statistic\code\Create_report\MacrosFormats\";%end;</span>
+<span id="cb1-9"><a href="#cb1-9"></a>options fmtsearch=(cMacros work);</span>
+<span id="cb1-10"><a href="#cb1-10"></a>/*设置历史数据储存路径*/</span>
+<span id="cb1-11"><a href="#cb1-11"></a>libname hisdata "D:\CanReg\Statistic\code\Create_report\data\hisdata.accdb";</span>
+<span id="cb1-12"><a href="#cb1-12"></a>/*设置登记处编码表路径*/</span>
+<span id="cb1-13"><a href="#cb1-13"></a>libname code "D:\CanReg\Statistic\code\Create_report\codedata\code.mdb";</span>
+<span id="cb1-14"><a href="#cb1-14"></a>/*设置ICD10编码对应表储存路径*/</span>
+<span id="cb1-15"><a href="#cb1-15"></a>libname icd  "D:\CanReg\Statistic\code\Create_report\codedata\";</span>
+<span id="cb1-16"><a href="#cb1-16"></a></span>
+<span id="cb1-17"><a href="#cb1-17"></a>/* Type:  hj 户籍人口; sj 实际人口*/</span>
+<span id="cb1-18"><a href="#cb1-18"></a>%let type=sj; </span>
+<span id="cb1-19"><a href="#cb1-19"></a>/*******report宏变量,是否进行肿瘤登记年报数据分析：yes：年报数据分析；no：常规分析;******/</span>
+<span id="cb1-20"><a href="#cb1-20"></a>/***当report为yes时,必须在code.registry里指定 变量 哪些areacode收录年报，变量名为report+年份;*/</span>
+<span id="cb1-21"><a href="#cb1-21"></a>%let report=no;</span>
+<span id="cb1-22"><a href="#cb1-22"></a>/*from指定开始统计的年份*/</span>
+<span id="cb1-23"><a href="#cb1-23"></a>%let from=2015;</span>
+<span id="cb1-24"><a href="#cb1-24"></a>/*to指定统计结束的年份*/</span>
+<span id="cb1-25"><a href="#cb1-25"></a>%let to=2019;</span>
+<span id="cb1-26"><a href="#cb1-26"></a>/*period为fixed时按照2008-2012;2013-2017;2018-2022时期分组统计*/</span>
+<span id="cb1-27"><a href="#cb1-27"></a>/*period为depend时从from年份到to年份合并时期统计*/</span>
+<span id="cb1-28"><a href="#cb1-28"></a>/*period为其他值时不合并时期统计*/</span>
+<span id="cb1-29"><a href="#cb1-29"></a>%let period=depend;</span>
+<span id="cb1-30"><a href="#cb1-30"></a>/*按照yearselect指定的变量值决定开始从哪一年份开始统计登记处数据，当report=yes时，yearselect变量失效*/</span>
+<span id="cb1-31"><a href="#cb1-31"></a>%let yearselect=select;</span>
+<span id="cb1-32"><a href="#cb1-32"></a></span>
+<span id="cb1-33"><a href="#cb1-33"></a>%let label=no;</span>
+<span id="cb1-34"><a href="#cb1-34"></a>%if  &amp;label=yes %then %do;</span>
+<span id="cb1-35"><a href="#cb1-35"></a>%include "&amp;path.MacrosFormats\labelfmt.sas";%end;</span>
+<span id="cb1-36"><a href="#cb1-36"></a></span>
+<span id="cb1-37"><a href="#cb1-37"></a>/*输出2019年数据审核结果*/</span>
+<span id="cb1-38"><a href="#cb1-38"></a>libname data "D:\CanReg\Statistic\code\Create_report\tmpdata\report\2019\";</span>
+<span id="cb1-39"><a href="#cb1-39"></a>%let type=sj;</span>
+<span id="cb1-40"><a href="#cb1-40"></a>%let report=no;</span>
+<span id="cb1-41"><a href="#cb1-41"></a>%let from=2015;</span>
+<span id="cb1-42"><a href="#cb1-42"></a>%let to=2019;</span>
+<span id="cb1-43"><a href="#cb1-43"></a>%let period=depend;</span>
+<span id="cb1-44"><a href="#cb1-44"></a>%let yearselect=select;</span>
+<span id="cb1-45"><a href="#cb1-45"></a>proc datasets noprint lib=work mt=data kill;run;</span>
+<span id="cb1-46"><a href="#cb1-46"></a>options noxwait xsync;</span>
+<span id="cb1-47"><a href="#cb1-47"></a>%create_report;</span>
+<span id="cb1-48"><a href="#cb1-48"></a>libname data clear;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="如何制作肿瘤登记报告-4" class="slide level2">
+<h2>如何制作肿瘤登记报告</h2>
+<h3 id="r-rstudio">R &amp; Rstudio</h3>
+<ul>
+<li><p>统计图形</p></li>
+<li><p>输出综合报告</p></li>
+<li><p>基于R包：bookdown</p></li>
+<li><p>年报图形的自动生成</p></li>
+<li><p>整体年报自动输出word、pdf、html</p></li>
+</ul>
+</section>
+<section id="如何制作肿瘤登记报告-5" class="slide level2">
+<h2>如何制作肿瘤登记报告</h2>
+<p>部分程序：</p>
+
+<img data-src="images/report.jpg" style="width:50.0%" class="r-stretch"></section>
+<section id="如何制作肿瘤登记报告-6" class="slide level2">
+<h2>如何制作肿瘤登记报告</h2>
+<blockquote>
+<p>内嵌的rscripts自动生成所有图</p>
+</blockquote>
+
+<img data-src="images/charts.jpg" class="r-stretch quarto-figure-center"></section>
+<section id="如何制作肿瘤登记报告-7" class="slide level2">
+<h2>如何制作肿瘤登记报告</h2>
+<blockquote>
+<p>以markdown + R 行内代码方式(Rmarkdown)生成文字描述</p>
+</blockquote>
+
+<img data-src="images/markdown.jpg" class="r-stretch quarto-figure-center"></section>
+<section id="线下和线上肿瘤登记年报" class="slide level2">
+<h2>线下和线上肿瘤登记年报</h2>
+<iframe width="1200" height="530" src="https://chenq.site/report/2021" title="河南省肿瘤登记年报"></iframe>
+</section>
+<section id="肿瘤登记质量控制报告" class="slide level2 smaller">
+<h2>肿瘤登记质量控制报告</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="主要内容">主要内容</h3>
+<ul>
+<li>质量控制报告撰写</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<h3 id="特点">特点</h3>
+<ul>
+<li>登记处数量多(130个县区)</li>
+<li>县区级专业人员能力不足</li>
+<li>质控报告反馈至市级和县区级</li>
+</ul>
+</div>
+</div>
+<blockquote>
+<p>我们基于Rmarkdown编写了系列质量控制、年报生成工具</p>
+</blockquote>
+</section>
+<section id="质量控制rmarkdown工具" class="slide level2">
+<h2>质量控制Rmarkdown工具</h2>
+<ul>
+<li>五大洲癌症发病率质量控制报告</li>
+<li>年度数据审核质量控制报告</li>
+</ul>
+</section>
+<section id="五大洲癌症发病率质量控制报告" class="slide level2">
+<h2>五大洲癌症发病率质量控制报告</h2>
+<p>程序：</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="sc">---</span> </span>
+<span id="cb2-2"><a href="#cb2-2"></a>title<span class="sc">:</span> <span class="st">"河南省《五大洲发病率第12卷》数据上报审核程序"</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a>subtitle<span class="sc">:</span> <span class="st">"登记处："</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a>author<span class="sc">:</span> </span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="sc">-</span> <span class="st">"2013-2017年"</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="sc">-</span> <span class="st">"Qiong Chen @ Henan Cancer Center/Henan Cancer Hospital"</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a>date<span class="sc">:</span> <span class="st">"2023-09-25"</span></span>
+<span id="cb2-8"><a href="#cb2-8"></a>output<span class="sc">:</span></span>
+<span id="cb2-9"><a href="#cb2-9"></a>  prettydoc<span class="sc">::</span>html_pretty<span class="sc">:</span></span>
+<span id="cb2-10"><a href="#cb2-10"></a>    theme<span class="sc">:</span> cayman</span>
+<span id="cb2-11"><a href="#cb2-11"></a>    number_section<span class="sc">:</span> <span class="cn">TRUE</span></span>
+<span id="cb2-12"><a href="#cb2-12"></a>    highlight<span class="sc">:</span> github</span>
+<span id="cb2-13"><a href="#cb2-13"></a>vignette<span class="sc">:</span> <span class="er">&gt;</span></span>
+<span id="cb2-14"><a href="#cb2-14"></a>  %\VignetteIndexEntry{Vignette Title}</span>
+<span id="cb2-15"><a href="#cb2-15"></a>  %\VignetteEncoding{UTF<span class="dv">-8</span>}</span>
+<span id="cb2-16"><a href="#cb2-16"></a>  %\VignetteEngine{knitr<span class="sc">::</span>rmarkdown}</span>
+<span id="cb2-17"><a href="#cb2-17"></a>editor_options<span class="sc">:</span> </span>
+<span id="cb2-18"><a href="#cb2-18"></a>  chunk_output_type<span class="sc">:</span> console</span>
+<span id="cb2-19"><a href="#cb2-19"></a><span class="sc">---</span></span>
+<span id="cb2-20"><a href="#cb2-20"></a><span class="er">&lt;</span>img src<span class="ot">=</span><span class="st">"./logo-hospital.png"</span> style<span class="ot">=</span><span class="st">"position:absolute;top:0px;right:0px;width:250px;padding-right:50px;padding-top:10px;transform: translateY(-60px); filter:drop-shadow(rgb(255, 255, 255) 0 60px)"</span> <span class="sc">/</span><span class="er">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="五大洲癌症发病率质量控制报告-1" class="slide level2">
+<h2>五大洲癌症发病率质量控制报告</h2>
+<div class="cell">
+<iframe src="https://www.chenq.site/slides/2023-5-16-canreg-report/example.html" width="960" height="600px" data-external="1">
+</iframe>
+</div>
+</section>
+<section id="年度肿瘤登记数据审核" class="slide level2">
+<h2>年度肿瘤登记数据审核</h2>
+<p>程序：</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="do">#####</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="co"># 年度数据审核##</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="do">#####</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb3-6"><a href="#cb3-6"></a></span>
+<span id="cb3-7"><a href="#cb3-7"></a>report<span class="ot">&lt;-</span>haven<span class="sc">::</span><span class="fu">read_sas</span>(<span class="st">"./input_data/report.sas7bdat"</span>) </span>
+<span id="cb3-8"><a href="#cb3-8"></a>report <span class="ot">&lt;-</span>report<span class="sc">%&gt;%</span></span>
+<span id="cb3-9"><a href="#cb3-9"></a>  <span class="fu">filter</span>(<span class="fu">substr</span>(areacode,<span class="dv">1</span>,<span class="dv">1</span>) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"4"</span>,<span class="st">"5"</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb3-10"><a href="#cb3-10"></a>  <span class="fu">mutate</span>(<span class="at">city=</span><span class="fu">ifelse</span>(city <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"1"</span>,<span class="st">"11"</span>),<span class="st">"1"</span>,<span class="st">"2"</span>))</span>
+<span id="cb3-11"><a href="#cb3-11"></a>         </span>
+<span id="cb3-12"><a href="#cb3-12"></a>report<span class="sc">%&gt;%</span></span>
+<span id="cb3-13"><a href="#cb3-13"></a>  <span class="fu">select</span>(areacode,name)<span class="sc">%&gt;%</span></span>
+<span id="cb3-14"><a href="#cb3-14"></a>  <span class="fu">filter</span>(<span class="fu">substr</span>(areacode,<span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">==</span><span class="st">"4"</span>,<span class="sc">!</span>(<span class="fu">substr</span>(areacode,<span class="dv">5</span>,<span class="dv">6</span>)<span class="sc">==</span><span class="st">"00"</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb3-15"><a href="#cb3-15"></a>  <span class="fu">unique</span>()<span class="ot">-&gt;</span>registry</span>
+<span id="cb3-16"><a href="#cb3-16"></a></span>
+<span id="cb3-17"><a href="#cb3-17"></a></span>
+<span id="cb3-18"><a href="#cb3-18"></a>quality <span class="ot">&lt;-</span> haven<span class="sc">::</span><span class="fu">read_sas</span>(<span class="st">"./input_data/quality.sas7bdat"</span>)</span>
+<span id="cb3-19"><a href="#cb3-19"></a>quality <span class="ot">&lt;-</span> quality<span class="sc">%&gt;%</span><span class="fu">mutate</span>(<span class="at">city=</span><span class="fu">as.character</span>(city),</span>
+<span id="cb3-20"><a href="#cb3-20"></a>                            <span class="at">city=</span><span class="fu">ifelse</span>(city<span class="sc">==</span><span class="st">"1"</span>,<span class="st">"1"</span>,<span class="st">"2"</span>))</span>
+<span id="cb3-21"><a href="#cb3-21"></a></span>
+<span id="cb3-22"><a href="#cb3-22"></a><span class="co">#areacodes&lt;-c("411081","410224","411322","411422","411425","411521","411624","411625")</span></span>
+<span id="cb3-23"><a href="#cb3-23"></a></span>
+<span id="cb3-24"><a href="#cb3-24"></a>areacodes<span class="ot">&lt;-</span>registry<span class="sc">$</span>areacode </span>
+<span id="cb3-25"><a href="#cb3-25"></a></span>
+<span id="cb3-26"><a href="#cb3-26"></a></span>
+<span id="cb3-27"><a href="#cb3-27"></a>lifetable <span class="ot">&lt;-</span> haven<span class="sc">::</span><span class="fu">read_sas</span>(<span class="st">"./input_data/lifetable.sas7bdat"</span>)</span>
+<span id="cb3-28"><a href="#cb3-28"></a></span>
+<span id="cb3-29"><a href="#cb3-29"></a><span class="co">#列出各登记处质量控制列表</span></span>
+<span id="cb3-30"><a href="#cb3-30"></a>rmarkdown<span class="sc">::</span><span class="fu">render</span>(</span>
+<span id="cb3-31"><a href="#cb3-31"></a>  <span class="at">input =</span> <span class="st">'./rmd_template/annualmainpage.Rmd'</span>,</span>
+<span id="cb3-32"><a href="#cb3-32"></a>  <span class="at">output_file =</span> <span class="st">'index.html'</span>,</span>
+<span id="cb3-33"><a href="#cb3-33"></a>  <span class="at">output_dir =</span> <span class="st">"./output/annualcheck/"</span></span>
+<span id="cb3-34"><a href="#cb3-34"></a>)</span>
+<span id="cb3-35"><a href="#cb3-35"></a></span>
+<span id="cb3-36"><a href="#cb3-36"></a><span class="cf">for</span> (code <span class="cf">in</span> areacodes) {</span>
+<span id="cb3-37"><a href="#cb3-37"></a>  state<span class="ot">&lt;-</span>registry[registry<span class="sc">$</span>areacode<span class="sc">==</span>code,<span class="fu">c</span>(<span class="st">"name"</span>)]<span class="sc">$</span>name</span>
+<span id="cb3-38"><a href="#cb3-38"></a>  <span class="fu">dir.create</span>(<span class="fu">paste0</span>(<span class="st">"./output/annualcheck/"</span>,code,state))</span>
+<span id="cb3-39"><a href="#cb3-39"></a>  rmarkdown<span class="sc">::</span><span class="fu">render</span>(</span>
+<span id="cb3-40"><a href="#cb3-40"></a>    <span class="at">input =</span> <span class="st">'./rmd_template/annualcheck.Rmd'</span>,</span>
+<span id="cb3-41"><a href="#cb3-41"></a>    <span class="at">output_file =</span> <span class="st">'index.html'</span>,</span>
+<span id="cb3-42"><a href="#cb3-42"></a>    <span class="at">output_dir =</span> <span class="fu">paste0</span>(<span class="st">"./output/annualcheck/"</span>,code,state)</span>
+<span id="cb3-43"><a href="#cb3-43"></a>  )</span>
+<span id="cb3-44"><a href="#cb3-44"></a>}</span>
+<span id="cb3-45"><a href="#cb3-45"></a></span>
+<span id="cb3-46"><a href="#cb3-46"></a> </span>
+<span id="cb3-47"><a href="#cb3-47"></a>fetable <span class="ot">&lt;-</span> haven<span class="sc">::</span><span class="fu">read_sas</span>(<span class="st">"Y:/CanReg/statistic/data/lifetable.sas7bdat"</span>)</span>
+<span id="cb3-48"><a href="#cb3-48"></a></span>
+<span id="cb3-49"><a href="#cb3-49"></a>rmarkdown<span class="sc">::</span><span class="fu">render</span>(</span>
+<span id="cb3-50"><a href="#cb3-50"></a>  <span class="at">input =</span> <span class="st">'./Rmd_template/Annualmainpage.Rmd'</span>,</span>
+<span id="cb3-51"><a href="#cb3-51"></a>  <span class="at">output_file =</span> <span class="st">'index.html'</span>,</span>
+<span id="cb3-52"><a href="#cb3-52"></a>  <span class="at">output_dir =</span> <span class="st">"./output/annualCheck/"</span></span>
+<span id="cb3-53"><a href="#cb3-53"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="年度肿瘤登记数据审核-1" class="slide level2">
+<h2>年度肿瘤登记数据审核</h2>
+<blockquote>
+<p>主页显示所有登记处<span class="important">质量控制指标一览表</span>,详细页面显示具体指标的详细信息。</p>
+</blockquote>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/quality1.jpg"></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/quality2.jpg"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="r包canregtools" class="slide level2 smaller">
+<h2>R包：canregtools</h2>
+<p><img src="images/logo.png" align="right" height="150"></p>
+<!-- badges: start -->
+<p><a href="https://app.codecov.io/gh/gigu003/canregtools?branch=main"><img data-src="https://codecov.io/gh/gigu003/canregtools/branch/main/graph/badge.svg" alt="Codecov test coverage"></a> <a href="https://github.com/gigu003/canregtools/actions/workflows/R-CMD-check.yaml"><img data-src="https://github.com/gigu003/canregtools/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a> <a href="https://lifecycle.r-lib.org/articles/stages.html#experimental"><img data-src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="Lifecycle: experimental"></a> <!-- badges: end --></p>
+<blockquote>
+<p>我们想尽量把前面所有的功能都集成到这个R包里，读入原始数据后，可以通过各种方式展现肿瘤登记数据，我们的目的是使基层登记处的工作人员能更方便的开展工作。</p>
+</blockquote>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>各种统计计算</li>
+<li>可视化</li>
+<li>自动化报告</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>版本: 0.2.1</li>
+<li>网站地址: <a href="https://gigu003.github.io/canregtools/">https://gigu003.github.io/canregtools/</a></li>
+<li>github: <a href="https://github.com/gigu003/canregtools">https://github.com/gigu003/canregtools</a></li>
+<li>作者: 陈 琼</li>
+</ul>
+</div>
+</div>
+</section></section>
+<section>
+<section id="河南省疾病负担情况" class="title-slide slide level1 center" data-background="lightblue">
+<h1>河南省疾病负担情况</h1>
+
+</section>
+<section id="发病情况" class="slide level2">
+<h2>发病情况</h2>
+
+<img data-src="images/incidence.png" class="r-stretch quarto-figure-center"></section>
+<section id="死亡情况" class="slide level2">
+<h2>死亡情况</h2>
+
+<img data-src="images/mortality.png" class="r-stretch quarto-figure-center"></section>
+<section id="变化趋势" class="slide level2">
+<h2>变化趋势</h2>
+
+<img data-src="images/trend.png" class="r-stretch quarto-figure-center"></section>
+<section id="生存情况" class="slide level2">
+<h2>生存情况</h2>
+
+<img data-src="images/survival.png" class="r-stretch quarto-figure-center"><p class="caption">不同年龄癌症5年生存率情况(2017-2019)</p></section>
+<section id="生存情况-1" class="slide level2">
+<h2>生存情况</h2>
+
+<img data-src="images/survival1.png" class="r-stretch quarto-figure-center"><p class="caption">河南省不同癌症部位5年生存率情况(2017-2019)</p></section>
+<section id="生存情况-2" class="slide level2">
+<h2>生存情况</h2>
+
+<img data-src="images/survival2.png" class="r-stretch quarto-figure-center"><p class="caption">河南省不同地区癌症5年生存率情况(2017-2019)</p></section>
+<section id="肿瘤登记的发展方向" class="slide level2">
+<h2>肿瘤登记的发展方向</h2>
+<p><br></p>
+
+<img data-src="images/future.png" class="r-stretch quarto-figure-center"></section></section>
+<section id="section-1" class="title-slide slide level1 center" data-background-color="lightblue" style="text-align: center;color: white;">
+<h1></h1>
+
+</section>
+
+<section id="谢-谢-关-注" class="title-slide slide level1 center" data-background-color="lightblue" style="text-align: center;color: white;">
+<h1>谢 谢 关 注 !</h1>
+<p>陈 琼 博士</p>
+<p>chenq08@126.com</p>
+<div class="footer">
+<p>个人网站：<a href="https://chenq.site">普癌新声https://www.chenq.site</a></p>
+</div>
+
+<div class="footer footer-default">
+<p>河南省肿瘤登记工作实践</p>
+</div>
+<div class="reveal-header">
+<div class="header-logo">
+<img data-src="">
+</div>
+<div class="sc-title">
+<p> </p>
+</div>
+<div class="header-text">
+<p> </p>
+</div>
+<div class="sb-title">
+<p> </p>
+</div>
+</div>
+</section>
+    </div>
+  </div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-attribution/attribution.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'smaller': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealAttribution, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button', {
+        text: function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+      });
+      clipboard.on('success', function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      });
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          return note.innerHTML;
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>
