@@ -10,7 +10,7 @@
 <atom:link href="https://slides.chenq.site/index.xml" rel="self" type="application/rss+xml"/>
 <description>一个公共卫生医师的个人网站</description>
 <generator>quarto-1.4.161</generator>
-<lastBuildDate>Fri, 22 Sep 2023 16:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sat, 23 Sep 2023 00:00:00 GMT</lastBuildDate>
 <item>
   <title></title>
   <dc:creator>👨‍⚕️陈琼，博士，副主任医师 </dc:creator>
@@ -19,7 +19,7 @@
   <category>技术与方法</category>
   <category>综合应用</category>
   <guid>https://slides.chenq.site/2023-9-23-rural-canreg/index.html</guid>
-  <pubDate>Fri, 22 Sep 2023 16:00:00 GMT</pubDate>
+  <pubDate>Sat, 23 Sep 2023 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title></title>
@@ -29,7 +29,7 @@
   <category>肿瘤登记</category>
   <category>R语言</category>
   <guid>https://slides.chenq.site/2023-9-23-Rpackage-canregtools/index.html</guid>
-  <pubDate>Fri, 22 Sep 2023 16:00:00 GMT</pubDate>
+  <pubDate>Sat, 23 Sep 2023 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title></title>
@@ -37,15 +37,7 @@
   <link>https://slides.chenq.site/2023-5-16-canreg-report/index.html</link>
   <description><![CDATA[ undefined ]]></description>
   <guid>https://slides.chenq.site/2023-5-16-canreg-report/index.html</guid>
-  <pubDate>Mon, 15 May 2023 16:00:00 GMT</pubDate>
-</item>
-<item>
-  <title></title>
-  <dc:creator>👨‍⚕️陈琼，博士，副主任医师 </dc:creator>
-  <link>https://slides.chenq.site/2023-5-11-system/index.html</link>
-  <description><![CDATA[ undefined ]]></description>
-  <guid>https://slides.chenq.site/2023-5-11-system/index.html</guid>
-  <pubDate>Wed, 10 May 2023 16:00:00 GMT</pubDate>
+  <pubDate>Tue, 16 May 2023 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title></title>
@@ -53,7 +45,15 @@
   <link>https://slides.chenq.site/2023-5-11-area-canreg/index.html</link>
   <description><![CDATA[ undefined ]]></description>
   <guid>https://slides.chenq.site/2023-5-11-area-canreg/index.html</guid>
-  <pubDate>Wed, 10 May 2023 16:00:00 GMT</pubDate>
+  <pubDate>Thu, 11 May 2023 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title></title>
+  <dc:creator>👨‍⚕️陈琼，博士，副主任医师 </dc:creator>
+  <link>https://slides.chenq.site/2023-5-11-system/index.html</link>
+  <description><![CDATA[ undefined ]]></description>
+  <guid>https://slides.chenq.site/2023-5-11-system/index.html</guid>
+  <pubDate>Thu, 11 May 2023 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title></title>
@@ -61,7 +61,7 @@
   <link>https://slides.chenq.site/2023-4-20-cancer-registration/index.html</link>
   <description><![CDATA[ undefined ]]></description>
   <guid>https://slides.chenq.site/2023-4-20-cancer-registration/index.html</guid>
-  <pubDate>Wed, 19 Apr 2023 16:00:00 GMT</pubDate>
+  <pubDate>Thu, 20 Apr 2023 00:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
