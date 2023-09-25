@@ -1,0 +1,40 @@
+---
+pagetitle: "Slides"
+listing:
+  - id: quarto
+    type: table
+    contents: "."
+    fields: [date, title, address, reading-time]
+    field-display-names:
+      title: "报告题目"
+      date: "日期"
+      author: "讲者"
+      address: "地点"
+      description: "摘要"
+      reading-time: "预计阅读时间"
+    sort: "date desc"
+    categories: true
+    feed: true
+    filter-ui: [date, title]
+    table-striped: true
+    table-hover: true
+    date-format: "YYYY-MM-DD"
+
+page-layout: full
+
+language:
+  listing-page-field-categories: "分类"
+  title-block-author-single: "作者"
+  title-block-published: "更新"
+---
+
+## 讲座幻灯
+
+这里分享的是部分曾经参与的讲座 ......
+
+<br>
+
+::: {#quarto}
+:::
+
+

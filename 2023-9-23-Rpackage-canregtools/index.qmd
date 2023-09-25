@@ -1,0 +1,504 @@
+---
+title: "R包: canregtools"
+subtitle: "肿瘤登记(逻辑核查、数据分析、数据可视化、肿瘤报告)"
+author: "👨‍⚕️陈琼，博士，副主任医师"
+date: 2023-9-23
+date-modified: last-modified
+date-format: "dddd MMM D, YYYY"
+institute: "🏥河南省癌症中心\n河南省肿瘤医院"
+format: 
+  revealjs:
+    slide-number: true
+    smaller: true
+    scrollable: true
+    footer: "R package: canregtools"
+    subtitle-as-header: true
+title-slide-attributes:
+  data-background-color: "lightblue"
+categories: ["肿瘤登记", "R语言"]
+address: "呼和浩特"
+---
+
+## 实际需求
+
+<br>
+
+> 肿瘤登记是我国恶性肿瘤监测的一项常规工作内容，它定期收集人群中恶性肿瘤发病、死亡及生存数据并进行统计分析，从而为肿瘤防控工作提供参考数据。
+
+<br>
+
+- 质量控制（五大洲发病率、年度数据质量审核）
+- 统计分析（粗率、标化率等）
+- 撰写报告（肿瘤登记年报）
+- 科技论文
+
+:::{.callout-important}
+## 缺少工具
+目前还没有一款公开发布的肿瘤登记数据分析工具来方便快捷的实现上述功能。
+:::
+
+
+## 软件平台选择
+
+<br>
+
+> *R语言*是一种用于统计分析和数据可视化的编程语言和环境。它是一个开源的、免费的软件，广泛用于统计学、数据分析、数据挖掘和生物信息学等领域。
+
+<br>
+
+```{mermaid}
+%%| label: fig-1
+%%| fig-cap: 软件平台选择
+%%| fig-align: center
+flowchart TD
+  A[(工具)] --> B(R语言)
+  A --> C(SAS)
+  A --> D(SPSS)
+  A --> E(STATA)
+  A --> F(Python)
+```
+
+
+## 软件平台选择
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+- 免费
+- 便于分享(CRAN, github)
+- R包
+- 跨平台(Windows、macOS、Linux、unix)
+:::
+
+::: {.column width="50%"}
+![](images/r-packages.png)
+
+:::
+
+::::
+
+
+## 功能设计
+
+
+```{mermaid}
+
+%%| fig-align: center
+flowchart TD
+  A[(肿瘤登记R包)] --> B(数据读入与转换)
+  A --> C(数据处理)
+  A --> D(质量控制)
+  A --> E(统计分析)
+  A --> F(可视化)
+  A --> G(报表)
+  B --> b1(常规报告)
+  B --> b2(寿命表)
+  C --> c1(标准转换)
+  C --> c2(分类)
+  C --> c3(语种)
+  C --> c4(人口数据)
+  
+```
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{mermaid}
+%%| fig-align: center
+flowchart TD
+  A[(统计分析)] --> B(统计计算)
+  A --> C(统计学检验)
+  B --> b1(寿命表)
+  B --> b2(截缩率)
+  B --> b3(标化率)
+  B --> b4(年龄别率)
+```
+:::
+
+::: {.column width="50%"}
+```{mermaid}
+%%| fig-align: center
+flowchart TD
+  A[(可视化)] --> B(人口金字塔)
+  A --> C(线图)
+  A --> D(双向条形图)
+  A --> E(玫瑰图)
+  A --> F(哑铃图)
+  A --> G(癌症地图)
+```
+:::
+
+::::
+
+## 包的安装
+
+可以通过devtools安装
+
+```r
+library(devtools)
+install_github("gigu003/canregtools")
+```
+
+![](images/github.jpg)
+
+也可以通过remotes包进行安装
+
+```r
+install.packages("remotes")
+library(remotes)
+install_github("gigu003/canregtoools")
+```
+
+## 读取数据
+
+```{r}
+#| echo: fenced
+library(canregtools)
+file <- system.file("extdata", "411721.xls", package = "canregtools")
+data <- read_canreg(file)
+data
+```
+
+## 常用数据处理函数
+
+### 年龄重新分组--cutage()
+
+
+cutage(
+  x,
+  
+  method = "distance",
+  
+  length = 5,
+  
+  maxage = 85,
+  
+  sep_zero = TRUE,
+  
+  breaks = c(seq(0, 85, 5)),
+  
+  labels = NULL,
+  
+  lang = "cn",
+  
+  label_tail = NULL,
+  
+  right = FALSE
+)
+
+
+## 常用数据处理函数
+
+### 年龄重新分组--cutage()
+
+::: {.panel-tabset}
+## distance方法  
+```{r}
+#| echo: fenced
+library(canregtools)
+age <- sample(0:101, 200, replace = TRUE)
+agegrp <- cutage(age, method = "distance", length = 5, maxage = 60, sep_zero = TRUE)
+as.data.frame(table(agegrp))
+```
+
+## interval方法
+```{r}
+#| echo: fenced
+library(canregtools)
+age <- sample(0:101, 200, replace = TRUE)
+agegrp <- cutage(age, method = "interval", breaks = seq(0, 85, 5),lang = "en")
+as.data.frame(table(agegrp))
+```
+:::
+
+## 常用数据处理函数
+
+### 扩充人口数据-- expand_age_pop()
+
+<br>
+
+expand_age_pop(x, method = "linear")
+
+<br>
+
+x	Vector, population for each age group.
+
+method	Method for expanding, options are 'linear', 'constant', 'periodic',
+or 'natural'. Default is 'linear'.
+
+
+## 常用数据处理函数
+
+### 扩充人口数据-- expand_age_pop() 
+```{r}
+#| echo: fenced
+#| output-location: slide 
+age <- c(0, 1, seq(5, 85, 5))
+pops <- c(5053, 17743, 25541, 32509, 30530, 34806, 36846, 38691, 40056,
+   39252, 37349, 30507, 26363, 21684, 15362, 11725, 7461, 3260, 915)
+
+pop <- pops
+pop[2] <- pop[2]/4
+pop[3:19] <- pop[3:19]/5
+#把人口数据从5岁组扩充至1岁组
+age2 <- expand_age_pop(pops)
+#绘制拟合曲线
+par(family="STKaiti")
+plot(age2, pch = 19, xlab= "年龄组", ylab = "人口数", type = "l")
+lines(age, pop, type = "p", col="red")
+```
+
+
+## 常用数据处理函数
+### ICDO3转换ICD10编码
+
+```{r}
+#| echo: fenced
+topo <- c("C001", "C15.1", "C349")
+morp <- c("8140", "8000", "8070")
+beha <- rep("3", 3)
+icdo3to10(topo, morp, beha)
+```
+
+## 常用数据处理函数
+### 肿瘤的分类
+
+
+```{r}
+#| echo: fenced
+file <- system.file("extdata", "411721.xls", package = "canregtools")
+data <- read_canreg(file)
+icd10 <- data$FBcases$icd10
+head(icd10)
+```
+
+## 常用数据处理函数
+### 肿瘤的分类-- classify_icd10
+
+<br>
+
+classify_icd10(icd10, type = "big", lang = "cn")
+
+## 常用数据处理函数
+### 肿瘤的分类-- classify_icd10
+
+::: {.panel-tabset}
+## 26类(中文)
+```{r}
+#| echo: fenced
+c1 <- classify_icd10(icd10, type = "big", lang = "cn")
+as.data.frame(table(c1))
+```
+
+## 59类(英文)
+```{r}
+#| echo: fenced
+c1 <- classify_icd10(icd10, type = "small", lang = "en")
+as.data.frame(table(c1))
+```
+
+## 按系统分类(中文)
+```{r}
+#| echo: fenced
+c1 <- classify_icd10(icd10, type = "system", lang = "cn")
+as.data.frame(table(c1))
+```
+
+:::
+
+
+## 常用数据处理函数
+### 儿童肿瘤的分类-- classify_childhood
+
+<br>
+
+classify_childhood(topo, morp, type = "main", lang = "cn")
+
+
+## 常用数据处理函数
+### 儿童肿瘤的分类-- classify_childhood
+
+```{r}
+#| echo: fenced
+fbcases <- data$FBcases
+fbcases <- fbcases[fbcases$age <= 14,]
+
+classify_childhood(fbcases$topo, fbcases$morp, lang = "cn")
+
+classify_childhood(fbcases$topo, fbcases$morp, type = "sub", lang = "en")
+```
+
+
+## counts
+
+```{r}
+#| echo: fenced
+#| output-location: slide 
+file <- system.file("extdata", "411721.xls", package = "canregtools")
+data <- read_canreg(file)
+fbsw <- count_canreg(data, cutage_method = "interval")
+fbsw
+```
+
+## 年龄别率
+
+```{r}
+#| echo: fenced
+create_age_rate(fbsw, event = sws, year, sex, icd_cat)
+```
+
+## 质量控制报表
+```{r}
+#| echo: fenced
+create_quality(fbsw, year, sex)
+```
+
+```{r}
+#| echo: fenced
+create_quality(fbsw, year, sex, icd_cat)
+```
+
+## 标化率
+
+```{r}
+#| echo: fenced
+asr_rate(data, year, sex, icd_cat, lang = "en" )
+```
+
+## 标化率
+
+```{r}
+#| echo: fenced
+asr_rate(data, year, icd_cat, type = "system", lang = "en" )
+```
+
+## 简略寿命表
+
+```{r}
+#| echo: fenced
+#| output-location: slide
+
+px <- c(
+  20005, 86920, 102502, 151494, 182932,
+  203107, 240289, 247076, 199665, 163820,
+  145382, 86789, 69368, 51207, 39112, 20509,
+  12301, 6586, 1909
+)
+dx <- c(
+  156, 58, 47, 49, 48, 68, 120, 162, 160, 294,
+  417, 522, 546, 628, 891, 831, 926, 731, 269
+)
+mx <- dx / px
+
+lt <- lt(mx, sage = 0, agegrp = 5, sex = "total")
+lt$ex <- round(lt$ex, 2)
+lt
+```
+
+## 简略寿命表-->完全寿命表
+```{r}
+#| echo: fenced
+lx <- c(
+  100000, 99498.39, 99294.62, 99173.88, 99047.59, 98840.46,
+  98521.16, 98161.25, 97636.99, 96900.13, 95718.96, 93930.91,
+  91463.21, 87131.41, 80525.02, 70907.59, 58090.75, 41630.48,
+  24019.33
+)
+lx <- lx / 100000
+expand_lifetable(lx)
+```
+
+## 人口金字塔图
+
+```{r}
+#| echo: fenced
+#| output-location: slide
+#| fig-height: 6
+left <- c(
+  5053, 17743, 25541, 32509, 30530, 34806, 36846, 38691, 40056,
+  39252, 37349, 30507, 26363, 21684, 15362, 11725, 7461, 3260, 915
+)
+right <- c(
+  4728, 15330, 22633, 27784, 28082, 32605, 32964, 35732, 36234,
+  37123, 34242, 29152, 24667, 18940, 15406, 12355, 10206, 5634,
+  2547
+)
+agegrp <- c(
+  "0", "1-4", "5-9", "10-14", "15-19", "20-24", "25-29", "30-34",
+  "35-39", "40-44", "45-49", "50-54", "55-59", "60-64", "65-69",
+  "70-74", "75-79", "80-84", "85+"
+)
+pop <- data.frame(left = left, right = right, row.names = agegrp)
+par(family="STKaiti", mar=c(0,0,0,0))
+pyramid(pop, main = "Population pyramid in China.", csize = 0.8, cgap = 0.3)
+```
+
+## 双向条形图
+```{r}
+#| echo: fenced
+#| output-location: slide
+#| fig-height: 5
+file <- system.file("extdata", "411721.xls", package = "canregtools")
+data <- read_canreg(file)
+rate <- asr_rate(data, icd_cat, event = sws)
+par(family="STKaiti", mar=c(0,0,0,0))
+dulbar_chart(rate[,c(1, 3, 6, 9, 10)])
+```
+
+## 线图
+
+```{r}
+#| echo: fenced
+#| output-location: slide
+#| fig-height: 5
+file <- system.file("extdata", "411721.xls", package = "canregtools")
+data <- read_canreg(file)
+fbsw <- count_canreg(data)
+age <- create_age_rate(fbsw, sex, event = sws)
+par(family="STKaiti", mar=c(0,0,0,0))
+line_chart(age, agegrp, rate, sex)
+```
+
+
+## 哑铃图
+
+```{r}
+#| echo: fenced
+#| output-location: slide
+#| fig-height: 5
+file <- system.file("extdata", "411721.xls", package = "canregtools")
+data <- read_canreg(file)
+rate <- asr_rate(data,icd_cat)
+par(family="STKaiti", mar=c(0,0,0,0))
+dumbbell_chart(rate, icd_cat, cr_lower, cr_upper)
+```
+
+## 下一步计划
+
+<br>
+
+- 登记处合并运算功能
+- 基于Rmarkdown年度报告撰写模板
+- 基于Rmarkdown质量控制报告模板
+- 统计地图功能
+- 肿瘤登记质量控制监测面板
+
+##  {background-image="images/canregtools.jpg"}
+
+<br>
+
+<br>
+
+<br>
+
+[地址：https://gigu003.github.io/canregtools/](https://gigu003.github.io/canregtools/)
+
+# 谢 谢 关 注 ! {background-color="lightblue"  style="text-align: center;color: white;"}
+
+陈 琼 博士
+
+chenq08@126.com
+
+https:://www.chenq.site/qsight/
