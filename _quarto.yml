@@ -39,8 +39,10 @@ website:
         aria-label: Qiong@GitHub
       - icon: rss
         href: /index.xml
-        aria-label: RSS     
-freeze: auto
+        aria-label: RSS
+execute: 
+  freeze: auto
+
 format:
   html:
     theme: [flatly, custom.scss]
