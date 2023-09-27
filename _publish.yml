@@ -1,0 +1,4 @@
+- source: project
+  netlify:
+    - id: bbf168e7-c18a-45f8-8ca5-48e046d3eb7b
+      url: 'https://slides-qiong.netlify.app'
