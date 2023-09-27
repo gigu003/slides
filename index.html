@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-Hans" xml:lang="zh-Hans"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.4.161">
@@ -54,16 +54,16 @@ ul.task-list li input[type="checkbox"] {
     "s"
   ],
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-no-results-text": "没有结果",
+    "search-matching-documents-text": "匹配的文档",
+    "search-copy-link-title": "复制搜索链接",
+    "search-hide-matches-text": "隐藏其它匹配结果",
+    "search-more-match-text": "更多匹配结果",
+    "search-more-matches-text": "更多匹配结果",
+    "search-clear-button-title": "清除",
+    "search-detached-cancel-button-title": "取消",
+    "search-submit-button-title": "提交",
+    "search-label": "搜索"
   }
 }</script>
 <script>
@@ -76,9 +76,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-address','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      valueNames: ['listing-project','listing-website','listing-execute','listing-format','listing-language','listing-title','listing-subtitle','listing-author','listing-date','listing-date-modified','listing-date-format','listing-institute','listing-address','listing-filters','listing-slide-level','listing-title-slide-style','listing-crossref','listing-title-slide-attributes','listing-path','listing-outputHref','listing-description','listing-filename','listing-file-modified','listing-reading-time','listing-revealjs-plugins','listing-auto-agenda','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] }],
       
-      searchColumns: ["listing-date","listing-title"],
+      searchColumns: ["listing-project","listing-website","listing-execute","listing-format","listing-language","listing-title","listing-subtitle","listing-author","listing-date","listing-date-modified","listing-date-format","listing-institute","listing-address","listing-filters","listing-slide-level","listing-title-slide-style","listing-crossref","listing-title-slide-attributes","listing-path","listing-outputHref","listing-description","listing-filename","listing-file-modified","listing-reading-time","listing-revealjs-plugins","listing-auto-agenda","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -118,8 +118,8 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">普癌新声</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="搜索"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="切换导航" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -161,156 +161,74 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">分类</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(6)</span></div><div class="category" data-category="R语言">R语言 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="技术与方法">技术与方法 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="综合应用">综合应用 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="肿瘤登记">肿瘤登记 <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">类别</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">所有 <span class="quarto-category-count">(6)</span></div><div class="category" data-category="R语言">R语言 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="技术与方法">技术与方法 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="综合应用">综合应用 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="肿瘤登记">肿瘤登记 <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 
 
 <section id="讲座幻灯" class="level2">
 <h2 class="anchored" data-anchor-id="讲座幻灯">讲座幻灯</h2>
-<p>这里分享的是部分曾经参与的讲座 ……</p>
-<p><br></p>
-<div id="listing-quarto" class="quarto-listing quarto-listing-container-table">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-quarto-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-quarto'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-       <option value="" disabled="" selected="" hidden="">Order By</option>
-       <option value="index" data-direction="asc">Default</option>
-         <option value="listing-date-sort" data-direction="asc">
-          日期 - Oldest
-        </option>
-         <option value="listing-date-sort" data-direction="desc">
-          日期 - Newest
-        </option>
-         <option value="listing-title-sort" data-direction="asc">
-          报告题目
-        </option>
-     </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
-</div>
-<table class="quarto-listing-table table table-striped table-hover">
-<thead>
-<tr>
-<th>
-<a class="sort" data-sort="listing-date-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">日期</a>
-</th>
-<th>
-<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">报告题目</a>
-</th>
-<th>
-地点
-</th>
-<th>
-预计阅读时间
-</th>
-</tr>
-</thead>
-<tbody class="list">
-<tr data-index="0" data-categories="技术与方法,综合应用" data-listing-date-sort="1695427200000" data-listing-file-modified-sort="1695626518194" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-title-sort="农村地区肿瘤登记技术与方法" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
- if (href) { window.location=href ; return false; }">
-<td>
-<span class="listing-date">2023-09-23</span>
-</td>
-<td>
-<a href="./2023-9-23-rural-canreg/index.html" class="title listing-title">农村地区肿瘤登记技术与方法</a>
-</td>
-<td>
-<span class="listing-address">呼和浩特</span>
-</td>
-<td>
-<span class="listing-reading-time">9 min</span>
-</td>
-</tr>
-<tr data-index="1" data-categories="肿瘤登记,R语言" data-listing-date-sort="1695427200000" data-listing-file-modified-sort="1695626518074" data-listing-date-modified-sort="1695626518000" data-listing-reading-time-sort="5" data-listing-title-sort="R包: canregtools" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
- if (href) { window.location=href ; return false; }">
-<td>
-<span class="listing-date">2023-09-23</span>
-</td>
-<td>
-<a href="./2023-9-23-Rpackage-canregtools/index.html" class="title listing-title">R包: canregtools</a>
-</td>
-<td>
-<span class="listing-address">呼和浩特</span>
-</td>
-<td>
-<span class="listing-reading-time">5 min</span>
-</td>
-</tr>
-<tr data-index="2" data-listing-date-sort="1684195200000" data-listing-file-modified-sort="1695626518070" data-listing-date-modified-sort="1695626518000" data-listing-reading-time-sort="23" data-listing-title-sort="R语言促进高效率肿瘤登记报告" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
- if (href) { window.location=href ; return false; }">
-<td>
-<span class="listing-date">2023-05-16</span>
-</td>
-<td>
-<a href="./2023-5-16-canreg-report/index.html" class="title listing-title">R语言促进高效率肿瘤登记报告</a>
-</td>
-<td>
-<span class="listing-address">郑州</span>
-</td>
-<td>
-<span class="listing-reading-time">23 min</span>
-</td>
-</tr>
-<tr data-index="3" data-listing-date-sort="1683763200000" data-listing-file-modified-sort="1695626517994" data-listing-date-modified-sort="1695626517000" data-listing-reading-time-sort="1" data-listing-title-sort="河南省2020年度肿瘤登记数据质控情况" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
- if (href) { window.location=href ; return false; }">
-<td>
-<span class="listing-date">2023-05-11</span>
-</td>
-<td>
-<a href="./2023-5-11-area-canreg/index.html" class="title listing-title">河南省2020年度肿瘤登记数据质控情况</a>
-</td>
-<td>
-<span class="listing-address">郑州</span>
-</td>
-<td>
-<span class="listing-reading-time">1 min</span>
-</td>
-</tr>
-<tr data-index="4" data-listing-date-sort="1683763200000" data-listing-file-modified-sort="1695626518042" data-listing-date-modified-sort="1695626518000" data-listing-reading-time-sort="3" data-listing-title-sort="河南肿瘤随访登记平台" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
- if (href) { window.location=href ; return false; }">
-<td>
-<span class="listing-date">2023-05-11</span>
-</td>
-<td>
-<a href="./2023-5-11-system/index.html" class="title listing-title">河南肿瘤随访登记平台</a>
-</td>
-<td>
-<span class="listing-address">郑州</span>
-</td>
-<td>
-<span class="listing-reading-time">3 min</span>
-</td>
-</tr>
-<tr data-index="5" data-listing-date-sort="1681948800000" data-listing-file-modified-sort="1695626517982" data-listing-date-modified-sort="1695626517000" data-listing-reading-time-sort="6" data-listing-title-sort="人群肿瘤随访登记" data-listing-filename-sort="index.qmd" onclick="href = this.querySelector('a').getAttribute('href');
- if (href) { window.location=href ; return false; }">
-<td>
-<span class="listing-date">2023-04-20</span>
-</td>
-<td>
-<a href="./2023-4-20-cancer-registration/index.html" class="title listing-title">人群肿瘤随访登记</a>
-</td>
-<td>
-<span class="listing-address">郑州</span>
-</td>
-<td>
-<span class="listing-reading-time">6 min</span>
-</td>
-</tr>
-</tbody>
-</table>
+<p>这里分享的是部分曾经参与的<span class="important">讲座</span> ……</p>
+<div id="listing-quarto" class="quarto-listing quarto-listing-container-custom">
+<ol class="list" reversed="">
+    <li data-index="0" data-categories="技术与方法,综合应用" data-listing-date-sort="1695427200000" data-listing-file-modified-sort="1695804086034" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" class="listing-slides">
+    <span class="listing-date">2023-09-23</span>
+      <a href="./2023-9-23-rural-canreg/index.html">
+        <span class="listing-title">农村地区肿瘤登记技术与方法</span>&nbsp;,
+      </a>
+         (<span class="listing-subtitle">河南省肿瘤登记工作实践</span>)&nbsp;, 
+      <span class="listing-address important">呼和浩特</span>&nbsp;
+    </li>
+    <li data-index="1" data-categories="肿瘤登记,R语言" data-listing-date-sort="1695427200000" data-listing-file-modified-sort="1695804085894" data-listing-date-modified-sort="1695804085000" data-listing-reading-time-sort="5" class="listing-slides">
+    <span class="listing-date">2023-09-23</span>
+      <a href="./2023-9-23-Rpackage-canregtools/index.html">
+        <span class="listing-title">R包: canregtools</span>&nbsp;,
+      </a>
+         (<span class="listing-subtitle">肿瘤登记(逻辑核查、数据分析、数据可视化、肿瘤报告)</span>)&nbsp;, 
+      <span class="listing-address important">呼和浩特</span>&nbsp;
+    </li>
+    <li data-index="2" data-listing-date-sort="1684195200000" data-listing-file-modified-sort="1695804085894" data-listing-date-modified-sort="1695804085000" data-listing-reading-time-sort="23" class="listing-slides">
+    <span class="listing-date">2023-05-16</span>
+      <a href="./2023-5-16-canreg-report/index.html">
+        <span class="listing-title">R语言促进高效率肿瘤登记报告</span>&nbsp;,
+      </a>
+         (<span class="listing-subtitle">基于R Markdown / Quarto的可重复性报告撰写</span>)&nbsp;, 
+      <span class="listing-address important">郑州</span>&nbsp;
+    </li>
+    <li data-index="3" data-listing-date-sort="1683763200000" data-listing-file-modified-sort="1695804085806" data-listing-date-modified-sort="1695804085000" data-listing-reading-time-sort="1" class="listing-slides">
+    <span class="listing-date">2023-05-11</span>
+      <a href="./2023-5-11-area-canreg/index.html">
+        <span class="listing-title">河南省2020年度肿瘤登记数据质控情况</span>&nbsp;,
+      </a>
+         (<span class="listing-subtitle">发现问题、核实更新、提高质量</span>)&nbsp;, 
+      <span class="listing-address important">郑州</span>&nbsp;
+    </li>
+    <li data-index="4" data-listing-date-sort="1683763200000" data-listing-file-modified-sort="1695804085862" data-listing-date-modified-sort="1695804085000" data-listing-reading-time-sort="3" class="listing-slides">
+    <span class="listing-date">2023-05-11</span>
+      <a href="./2023-5-11-system/index.html">
+        <span class="listing-title">河南肿瘤随访登记平台</span>&nbsp;,
+      </a>
+         (<span class="listing-subtitle">设计思路、系统框架、推荐操作流程</span>)&nbsp;, 
+      <span class="listing-address important">郑州</span>&nbsp;
+    </li>
+    <li data-index="5" data-listing-date-sort="1681948800000" data-listing-file-modified-sort="1695804085790" data-listing-date-modified-sort="1695804085000" data-listing-reading-time-sort="6" class="listing-slides">
+    <span class="listing-date">2023-04-20</span>
+      <a href="./2023-4-20-cancer-registration/index.html">
+        <span class="listing-title">人群肿瘤随访登记</span>&nbsp;,
+      </a>
+         (<span class="listing-subtitle">肿瘤登记内容、方法、流程和数据上报</span>)&nbsp;, 
+      <span class="listing-address important">郑州</span>&nbsp;
+    </li>
+</ol>
+
 <div class="listing-no-matching d-none">
-No matching items
+无匹配项
 </div>
 </div>
 
@@ -373,12 +291,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
+    button.setAttribute("title", "已复制");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
+      button.setAttribute("data-bs-title", "已复制");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",
