@@ -1,11 +1,13 @@
 project:
   type: website
+  
 website:
   title: "普癌新声"
   description: "一个公共卫生医师的个人网站"
   twitter-card: true
   open-graph: true
   site-url: https://slides.chenq.site
+  
 
   navbar:
     background: primary
@@ -45,4 +47,7 @@ execute:
 
 format:
   html:
-    theme: [flatly, custom.scss]
+    lang: zh
+    theme:
+      - flatly
+      - styles.scss

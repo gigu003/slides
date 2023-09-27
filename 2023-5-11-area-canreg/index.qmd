@@ -16,7 +16,7 @@ format:
     footer: "河南省人群肿瘤登记"
     #header-logo: logo.gif
     #sc-sb-title: h1
-    subtitle-as-header: true
+    #subtitle-as-header: true
 filters:
   - reveal-header
 slide-level: 2

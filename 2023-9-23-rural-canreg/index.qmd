@@ -8,6 +8,7 @@ date: 2023-9-23
 date-format: "dddd MMM D, YYYY"
 format:
   revealjs:
+    theme: []
     slide-number: true
     scrollable: false
     sc-sb-title: h1
@@ -17,6 +18,10 @@ revealjs-plugins:
 filters:
    - roughnotation
    - reveal-header
+   - reveal-auto-agenda
+auto-agenda:
+  bullets: numbered
+  heading: 目录
 slide-level: 2
 title-slide-style: pandoc
 crossref:
@@ -60,8 +65,6 @@ description: 这个幻灯介绍了肿瘤登记的历史、登记处的建立与�
 
 
 # 发展历史{background="lightblue" align="center"}
-
-[1959-2023]{.important}
 
 ## 第一个农村肿瘤登记处 {.smaller}
 
@@ -1784,9 +1787,7 @@ rmarkdown::render(
 ![](images/future.png){fig-align="center"}
 
 
-# {background-color="lightblue"  style="text-align: center;color: white;"}
-
-# 谢 谢 关 注 ! {background-color="lightblue"  style="text-align: center;color: white;"}
+# 谢 谢 关 注 ! {.no-auto-agenda background-color="lightblue"  style="text-align: center;color: white;"}
 
 陈 琼 博士
 
