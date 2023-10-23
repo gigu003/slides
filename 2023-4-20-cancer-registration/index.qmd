@@ -14,7 +14,7 @@ format:
     smaller: true
     scrollable: true
     footer: "河南省人群肿瘤登记"
-    subtitle-as-header: true
+    subtitle-as-header: false
 filters:
   - reveal-header
 slide-level: 2
