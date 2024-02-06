@@ -1,0 +1,135 @@
+---
+title: "工作总结"
+subtitle: "Summary 2023 | Plan 2024"
+author: "陈琼"
+date: 2023-2-7
+date-format: "dddd MMM D, YYYY"
+format:
+  revealjs:
+    theme: [custom.scss]
+    logo: logo2.png
+    slide-number: true
+    scrollable: false
+    sc-sb-title: h1
+    footer: "Summary of 2023, Plans for 2024"
+revealjs-plugins:
+  - attribution
+filters:
+   - roughnotation
+   - reveal-header
+   - reveal-auto-agenda
+auto-agenda:
+  bullets: numbered
+  heading: 主要内容
+slide-level: 2
+title-slide-style: pandoc
+title-slide-attributes:
+  data-background-color: "lightblue"
+  data-background-image: "dragon.jpg"
+  data-background-size: 100%, cover
+---
+
+# 以人群为基础的肿瘤登记
+
+## 完成工作内容{.smaller}
+
+> 完成常规工作内容是做好其他工作的前提和基础
+
+1. 完成《2023河南省肿瘤随访登记专业人员能力提升培训班》 
+1. 数据质量的季度和年度评估和质量控制工作
+1. 2020年度肿瘤登记数据的正式上报工作
+1. 部分登记处的现场督导和质量控制
+1. 网络直报信息管理系统的升级和维护
+1. 国家肿瘤登记处下达的其他任务
+
+## 工作产出情况{.smaller}
+
+#### 书籍
+
+1. 出版《2022河南省肿瘤登记年报》
+1. 撰写《2023河南省肿瘤登记年报》
+1. 16个登记处数据被《五大洲癌症发病率第12卷》收录
+
+#### 论文
+
+1. 张明霞, 陈琼, 郭兰伟,等. 2018年河南省恶性肿瘤发病与死亡情况及2014-2018年趋势分析 [J]. 中国肿瘤,2023,32(8).
+1. 张明霞, 陈琼, 等. 河南省2010-2019年癌症发病和死亡趋势分析[J]. 中国肿瘤.
+1. 陈琼, 张明霞, 郭兰伟, 等.河南省恶性肿瘤2017-2019年5年相对生存率分析 [J]. 中华肿瘤杂志
+
+#### 工具
+
+1. An R package for data analysis and visualiation of cancer registration.
+
+## 成绩与荣誉
+
+1. 省级单位杰出贡献奖
+1. 肿瘤登记杰出贡献奖(13)
+1. 肿瘤登记工作优秀奖(12)
+1. 肿瘤登记工作进步奖(8)
+1. 五大洲发病率第十二卷贡献奖(16)
+1. 全国肿瘤登记工作先进个人(12)
+
+## 2024年计划
+
+1. 发布《2023河南省肿瘤登记年报》
+1. 河南省肿瘤登记实施方案的撰写及发布
+1. 河南省肿瘤登记专业人员综合能力提升培训项目
+1. 编写《基于R语言的肿瘤登记数据分析与利用》
+1. 投稿 IARC meeting (R package for data analysis in cancer registration)
+
+# 癌症一级预防危险因素调查研究
+
+## 完成工作内容
+
+- 完成实施方案及工作手册的编写
+- 筹备及完成《癌症一级预防危险因素调查启动及培训会议》
+- 目前已经完成48719例合格问卷的收集(项目目标:47000)
+
+## 2024计划
+
+- 开展癌症一级预防危险因素调查总结及随访启动会(6-7月)
+- 数据分析及论文撰写
+
+# 以医院为基础肿瘤登记工作
+
+## 进展情况
+
+- 完成主要癌种调查表的初步设计
+- 健康中国把医院肿瘤登记纳入内容
+- 开展医院肿瘤登记信息系统建设的讨论会
+- 完成35000例肿瘤数据的上报(院内肿瘤登记)
+
+## 2024年计划
+
+- 组织专家开展主要癌症的医院肿瘤登记调查内容讨论
+- 开始医院肿瘤登记信息系统的开发
+
+
+# 科研工作
+
+## 进展情况
+
+- 多中心常见高发癌种以医院为基础肿瘤登记数据标准构建研究
+- Global Health related
+  - Estimation of lifetime risk of developing cancer and dying of cancer
+  - PYLL due to cancer adjusting for main risk factors
+  
+## 2024计划
+
+- Lifetime risk of developing cancer among residents in middle China.
+- Temporal trends on lifetime risk of esophageal cancer in high-risk areas in China.
+- Evaluation of the effectiveness of the AMP Model in adjusting for multiple primary cancers in estimating Lifetime cancer risk.
+
+# 
+
+# 谢 谢 ! {.no-auto-agenda background-color="lightblue"  style="text-align: center;color: white;"}
+
+陈 琼 博士
+
+chenq08@126.com
+
+
+
+::: footer
+个人网站：[普癌新声https://www.chenq.site](https://chenq.site)
+:::
