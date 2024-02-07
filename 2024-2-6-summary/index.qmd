@@ -2,12 +2,12 @@
 title: "工作总结"
 subtitle: "Summary 2023 | Plan 2024"
 author: "陈琼"
-date: 2023-2-7
+date: 2024-2-7
 date-format: "dddd MMM D, YYYY"
 format:
   revealjs:
     theme: [custom.scss]
-    logo: logo2.png
+    #logo: logo2.jpg
     slide-number: true
     scrollable: false
     sc-sb-title: h1
@@ -25,8 +25,9 @@ slide-level: 2
 title-slide-style: pandoc
 title-slide-attributes:
   data-background-color: "lightblue"
-  data-background-image: "dragon.jpg"
+  #data-background-image: "dragon.jpg"
   data-background-size: 100%, cover
+  background-opacity: 0.3
 ---
 
 # 以人群为基础的肿瘤登记
@@ -120,13 +121,8 @@ title-slide-attributes:
 - Temporal trends on lifetime risk of esophageal cancer in high-risk areas in China.
 - Evaluation of the effectiveness of the AMP Model in adjusting for multiple primary cancers in estimating Lifetime cancer risk.
 
-# 
 
-# 谢 谢 ! {.no-auto-agenda background-color="lightblue"  style="text-align: center;color: white;"}
-
-陈 琼 博士
-
-chenq08@126.com
+# 新年快乐 {.no-auto-agenda background-image="thanks.jpg" background-opacity=0.5  style="text-align: center;color: white;"}
 
 
 
