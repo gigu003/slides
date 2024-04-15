@@ -1,9 +1,9 @@
 ---
 title: "质量控制和自动化报告"
-subtitle: "质量控制-报告撰写"
+subtitle: "如何快速发布质控报告和年度报告？"
 author: "陈琼"
 date: 2024-4-17
-date-format: "dddd MMM D, YYYY"
+date-format: long
 address: "安徽泾县"
 categories:
   - 肿瘤登记
@@ -13,7 +13,7 @@ format:
     slide-number: true
     scrollable: false
     sc-sb-title: h1
-    footer: "从质量控制到报告撰写"
+    footer: "https://slides.chenq.site"
 revealjs-plugins:
   - attribution
 filters:
@@ -26,7 +26,9 @@ auto-agenda:
 slide-level: 2
 title-slide-style: pandoc
 title-slide-attributes:
-  data-background-color: "lightblue"
+  data-background-image: https://cdn.jsdelivr.net/gh/gigu003/db/images/title-pic1.jpg
+  data-background-size: contain
+  data-background-opacity: "0.5"
 ---
 
 # 质量控制应该怎么做?{background="lightblue"}
