@@ -1,0 +1,153 @@
+## 主要内容{.smaller}
+> 通过可视化的方法,尽量简单的肿瘤登记数据中存在的问题展示出来.
+
+- 人口数据
+- 总体发病数、死亡数
+- 总体发病率、死亡率
+- 不同部位癌症发病率、死亡率
+- 年龄别发病率、死亡率
+- 癌种数
+- 病理诊断比例的时间变化和区域比较
+- 死亡发病比的时间变化和区域比较
+- 只有死亡医学证明书比例的时间变化的区域比较
+
+## 人口总数
+![](https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/pop-total.jpg)
+
+## 人口比例
+![](https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/pop-ratio.jpg)
+
+
+## 人口结构
+![](https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/pyramid.jpg)
+
+## 人口结构
+![](https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/pyramid.gif){width='80%' fig-align="center"}
+
+## 癌症发病和死亡总数
+![](https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/total.jpg){fig-align="center"}
+
+## 总体癌症发病率
+![](https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/incidence.jpg){fig-align="center"}
+
+## 不同部位癌症发病率
+![](https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/incidence-sites.jpg){width='75%' fig-align="center"}
+
+## 年龄别癌症发病率
+![](https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/incidence-age.jpg){width='75%' fig-align="center"}
+
+## 总体癌症死亡率
+![](https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/mortality.jpg){width='75%' fig-align="center"}
+
+## 不同部位癌症死亡率
+![](https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/mortality-sites.jpg){width='75%' fig-align="center"}
+
+## 年龄别癌症死亡率
+![](https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/mortality-age.jpg){width='75%' fig-align="center"}
+
+## 儿童肿瘤发病率
+![](https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/childhood-trend.jpg){width='75%' fig-align="center"}
+
+## 儿童肿瘤发病率
+![](https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/childhood-iarc.jpg){width='75%' fig-align="center"}
+
+## 癌症种类数量
+![](https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/cancers.jpg){width='75%' fig-align="center"}
+
+## 病理诊断比例
+![](https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/mv-trend.jpg){width='75%' fig-align="center"}
+
+## 病理诊断比例
+![](https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/mv-com.jpg){width='75%' fig-align="center"}
+
+## 死亡发病比
+![](https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/mi-trend.jpg){width='75%' fig-align="center"}
+
+## 死亡发病比
+![](https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/mi-com.jpg){width='75%' fig-align="center"}
+
+## 只有死亡医学证明书比例
+![](https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/dco-trend.jpg){width='75%' fig-align="center"}
+
+## 只有死亡医学证明书比例
+![](https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/dco-com.jpg){width='75%' fig-align="center"}
+
+## 质量控制报告{.smaller}
+> 我们定期(每季度)生成每个登记处的质量控制报告,并发布至网络直报信息系统。
+
+- 可以通过网页、手机查看
+- 报告可以基于县级生成
+
+![](https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/report.jpg){width='75%' fig-align="center"}
+
+## 质量控制列表
+![](https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/report-prov.jpg){width='75%' fig-align="center"}
+
+## 怎么实现{.smaller}
+> 基于Rmarkdown的可重复性报告
+
+- 软件： R语言
+- R包： Rmarkdown ggplot2 cowplot tidyverse
+- 思路： 统计分析相关指标，在Rmarkdown中把相关指标可视化并制作成报告模板，基于基本模板批量生成报告。
+
+## 未来方向{.smaller}
+> 让肿瘤登记报告生成更简单, 越简单越好！！！
+
+缺点：
+
+- 程序移植性不强
+- 依赖程序包较多
+
+解决：
+
+- 工具化，比如R包
+- 市级报告模板
+- 基于单位的报告模板
+
+
+
+## Some Work in progress !!!{.smaller}
+> [canregtools 一个用于肿瘤登记数据分析、可视化和自动化报告的R包。](https://canregtools.chenq.site)
+
+<img src="https://cdn.jsdelivr.net/gh/gigu003/db/images/logo.png" alt="canregtools" style="position: absolute; top: 0; right: 0; width: 100px;">
+
+目前实现的函数：
+
+:::{.columns}
+:::{.column width="34%"}
+- read_canreg()
+- read_map()
+- clean_canreg()
+- count_canreg()
+- ageadjust()
+- create_asr()
+- create_age_rate()
+- create_quality()
+
+:::
+:::{.column width="33%"}
+- cutage()
+- expand_age_pop()
+- expand_lifetable()
+- calc_age()
+- check_id()
+- classify_icd10()
+- classify_childhood()
+- tidy_address()
+- lt()
+:::
+:::{.column width="33%"}
+- pyramid()
+- line_chart()
+- create_map()
+- dulbar_chart()
+- dumbbell_chart()
+- tidy_age()
+- tidy_occu()
+- tidy_sex()
+:::
+:::
+
+::: aside
+网址: https://canregtools.chenq.site
+:::

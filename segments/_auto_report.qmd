@@ -1,0 +1,209 @@
+## 为什么?{.smaller}
+
+> 肿瘤登记处的主要目标之一就是产生肿瘤发病、死亡、生存相关的统计指标, 并通过一定的渠道发布数据,促进数据的共享和利用（专业人员和大众）,从而促进癌症防控政策的产生。
+
+- 了解疾病负担
+- 支持病因学研究
+- 预后研究
+- 为癌症防控政策提供基础数据
+
+
+## 肿瘤登记报告流程{.smaller}
+
+```{mermaid}
+%%| label: fig-report
+%%| fig-cap: 肿瘤登记报告流程
+%%| fig-align: center
+flowchart TD
+  A(数据来源单位) --> B(县区级登记处)
+  B --> C(市级登记处)
+  C --> D(省级质量控制)
+  D --> B
+  B --> A
+  D --> C
+  D --> F(综合评估)
+  F --> G(年报撰写及发布)
+```
+
+## 年报该如何撰写?
+>把统计分析数据转换为文字的过程。
+
+```{mermaid}
+flowchart LR
+  A(统计分析) --> B(制作表格)
+  B --> C(绘制统计图)
+  C --> D(专家撰写)
+  D --> E(初稿)
+    E --> F(审核定版)
+```
+
+
+::: columns
+::: {.column width="40%"}
+::: callout-tip
+## 年报特点
+- 客观描述
+- 要求文字描述风格的一致性
+- 有图有表
+- 无讨论，无观点
+- 需要专家码字
+:::
+:::
+
+::: {.column width="40%"}
+::: callout-important
+## 自动化？
+- Scientific writing？
+- 可重复性报告
+- Rmarkdown
+- Quarto
+:::
+:::
+:::
+
+## 可重复性报告技术
+>基于现有年报的特点,以及随着可重复性报告技术的成熟,可以实现自动化撰写的需求?
+
+:::{.callout-note}
+## 思路
+利用Bookdown包把统计结果进行展现，包括文字描述和可视化展现(各种统计图表)
+:::
+
+
+## 可重复性报告技术
+![](../2023-9-23-rural-canreg/images/report.jpg)
+
+
+## 可重复性报告技术{.smaller}
+> Bookdown程序由按照章节区分的Rmd文件组成，每个Rmd文件可以输出相应章节的文字描述，从而形成最终的文本。
+
+::: {.columns}
+:::{.column width="30%"}
+1. index.Rmd
+1. 01-summary.Rmd
+1. 02-method.Rmd
+1. 03-quality.Rmd
+1. 04-total_cancer.Rmd
+1. 05-eachsite.Rmd
+:::
+:::{.column width="20%"}
+- 行内代码插入数据
+- 文字描述
+:::
+:::{.column width="50%"}
+![](https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/codes.jpg){width='75%' fig-align="center"}
+
+:::
+:::
+
+## 可重复性报告技术{.smaller}
+
+![](https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/letters.jpg){width='75%' fig-align="center"}
+
+## 表格如何实现？
+
+```{r}
+#| eval: false
+#| echo: true
+data<-inciden
+header<-data.frame(
+    col_keys=colnames(data),
+    second=c("地区","性别","发病数","发病率","中标率","世标率","累积率\n0-74(%)"))
+data%>%flextable()%>%
+  set_header_df( mapping = header, key = "col_keys" )%>%
+  compose(j=4,value=as_paragraph("发病率\n(1/10",as_sup("5"),")"),part="header")%>%
+  compose(j=5,value=as_paragraph("中标率\n(1/10",as_sup("5"),")"),part="header")%>%
+  compose(j=6,value=as_paragraph("世标率\n(1/10",as_sup("5"),")"),part="header")%>%
+  colformat_num(j=4:7,digits = 5.2)%>%
+  set_caption(caption= paste(year.data,"年河南省肿瘤登记地区恶性肿瘤（C00-C96）发病主要指标",""))%>% 
+  align(align="center",part="all")%>%
+  bold(bold=TRUE,part="header")%>%
+  width(j=1:2,width=0.5)%>%
+  width(j=3:7,width=1.0)%>%
+  theme_booktabs()
+```
+
+
+## 表格如何实现？
+![](https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/tables.jpg){fig-align="center"}
+
+## 批量化生成各章节统计图
+
+```{r}
+#| eval: false
+#| echo: true
+yearpub<-2023
+report<-haven::read_sas("./report.sas7bdat")
+areacode1 <- c("410902","411202","411303","411502","419001","411002")
+areacode2 <- c("410901","411001","411201","411301","411501")
+report <-report%>%
+  filter(city %in% c("11","2","33")|areacode %in% areacode1,
+         !(areacode %in% areacode2))%>%
+  mutate(year = as.numeric(year),
+         city = as.numeric(city))
+source("./rscripts/gen_annual_report_plot.R")
+```
+
+## 批量化生成各章节统计图{.smaller}
+
+![](../2023-9-23-rural-canreg/images/charts.jpg){fig-align="center"}
+
+
+## 生成年报只需一次点击 {.smaller}
+> 大约需要一分钟的时间!!!
+
+::: {.columns}
+::: {.column width="30%"}
+- 一次点击Build
+- 同时输出多种形式
+  - Word
+  - PDF
+  - Epub
+  - 网页
+:::
+
+::: {.column width="70%"}
+![](https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/gen-bookk.gif)
+:::
+:::
+
+## 线上发布{.smaller}
+> 在线发布的年报更容易传播和共享
+
+```{r}
+#| echo: false
+library(knitr)
+include_url("https://chenq.site/report/2021/")
+```
+
+## 现有方法
+
+::: columns
+::: {.column width="50%"}
+::: callout-tip
+## 不足之处
+- 可移植性不足
+- 需要了解一点编程知识
+- 整合性不足
+:::
+:::
+
+::: {.column width="50%"}
+::: callout-important
+## 待开发
+- R包
+- 输出Fact Sheet（按照癌种、人群）
+:::
+:::
+:::
+
+## 现有肿瘤登记年报的特点{.smaller}
+> 随着肿瘤登记处数量的增加以及数据质量的提升,国家及大部分省份开始发布国家级或省级的肿瘤登记年报。
+
+- 以传统书籍的形式出版
+- 以白皮书的形式发布报告
+- 把传统书籍搬到线上（线上年报）
+- 价格较高
+- 不利于数据共享和传播
+
+> 我们真的需要每年发布纸质年报吗？

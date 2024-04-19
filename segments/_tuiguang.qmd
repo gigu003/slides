@@ -1,0 +1,18 @@
+# 谢谢关注！{.no-auto-agenda}
+
+```{css}
+/*| echo: false */
+figcaption {
+  margin: auto;
+  text-align: center;
+}
+```
+
+::: {layout-ncol=3}
+![所有幻灯片](https://cdn.jsdelivr.net/gh/gigu003/db/images/slides.png)
+
+![微信公众号](https://cdn.jsdelivr.net/gh/gigu003/db/images/wechat.jpg)
+
+![个人网站](https://cdn.jsdelivr.net/gh/gigu003/db/images/website.png)
+
+:::

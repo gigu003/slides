@@ -1,0 +1,37 @@
+## { .smaller}
+
+```{css}
+/*| echo: false */
+figcaption {
+  margin: auto;
+  text-align: center;
+}
+
+.about-pic{
+  border-radius: 50%;
+  width: 250px; 
+  height: 330px; 
+  object-fit: cover;
+}
+
+```
+
+::: {.columns}
+::: {.column width='40%'}
+![陈琼博士](https://cdn.jsdelivr.net/gh/gigu003/db/images/cq.png){.about-pic}
+:::
+::: {.column width='60%' style="color=gray;font-size=55%;"}
+> 陈琼，博士，副主任医师，硕士研究生导师
+
+- 河南省癌症中心、郑州大学附属肿瘤医院/河南省肿瘤医院
+- 美国耶鲁大学访问学者
+- 社会兼职情况
+  - 中国抗癌协会食管癌防筛专委会委员
+  - 中国抗癌协会癌症筛查与早诊早治专委会青年委员
+  - 北京慢性病防治与健康教育研究会癌症患者院后管理专业委员会第一届委员会常务委员
+  - 河南省预防医学会肿瘤预防与控制专业委员会常务委员
+-《河南省肿瘤登记年报》副主编，中华肿瘤防治杂志青年编委，社区医学杂志编委
+- 长期从事肿瘤流行病学、恶性肿瘤监测以及筛查效果评价相关工作，发表相关专业论文30余篇，SCI论文十余篇。
+
+:::
+:::

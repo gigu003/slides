@@ -1,0 +1,392 @@
+## Why ?
+
+> 确保肿瘤登记准确、完整、可靠, 从而为癌症防控、科学研究、医疗质量评估等提供真实、完整、有效、具有科学价值的基础数据。
+
+-   [肿瘤登记的质量控制是获取高质量数据的核心]{.important}
+
+-   使不同地区之间的数据具有可比性
+
+-   代表登记处所在地区的癌症人群
+
+-   使癌症数据真实有效
+
+## 个体水平的质控-内部一致性 {.smaller}
+
+> 肿瘤登记收集的变量或者变量组合之间存在一定的逻辑关系，通过对单个变量或变量组合之间的逻辑关系进行审查，以提高肿瘤登记数据有效性。
+
+::: columns
+::: {.column width="40%"}
+::: callout-tip
+## 单个项目
+
+-   出生日期
+-   发病日期
+-   年龄、性别
+-   发病部位
+-   形态学
+-   行为和分级
+:::
+:::
+
+::: {.column width="40%"}
+::: callout-important
+## 项目组合
+
+-   性别/部位
+-   部位/组织学
+-   年龄/部位/组织学
+-   行为/部位
+-   行为/组织学
+-   性别/组织学
+:::
+:::
+
+::: {.column width="20%"}
+::: callout-caution
+## 校验结果
+
+-   正确✅
+-   警告⚠️
+-   错误❌
+:::
+:::
+:::
+
+
+## 逻辑核查-iarccrgtools{.smaller}
+
+:::{.columns} 
+:::{.column width='60%'}
+- IARC/IACR CHECK Program--iarccrgtools^[Check and conversion programs for cancer registries (IARC/IACR Tools for Cancer Registries) J.Ferlay, C. Burkhard, S.Whelon, D.M. Parkin IARC Technical Report No. 42 Lyon, 2005]
+- R包: iarccrgtools [FinnishCancerRegistry
+/ iarccrgtools](https://github.com/FinnishCancerRegistry/iarccrgtools)
+
+```r
+devtools::install_github(
+  "FinnishCancerRegistry/iarccrgtools",
+  ref = readline("enter latest tag on github: ")
+)
+```
+
+:::
+
+:::{.column width='40%'}
+::: {layout-ncol=1}
+![iarccrgtools](https://cdn.jsdelivr.net/gh/gigu003/db/images/iarc-tools.jpg){width="80%" .lightbox}
+
+![R package](https://cdn.jsdelivr.net/gh/gigu003/db/images/iarc-r.jpg){width="80%" .lightbox}
+:::
+
+:::
+:::
+
+
+## 质量控制指标体系{.smaller}
+
+> 可比性、有效性、时效性[^1]和完整性是当前肿瘤登记质量控制的主要指标[^2]
+
+::: columns
+::: {.column width="30%"}
+```{mermaid}
+flowchart LR
+  B(可比性) --> b1(发病日期的定义)
+  B --> b2(多原发判断)
+  B --> b3(分类与编码)
+  B --> b4(死亡证明)
+```
+:::
+::: {.column width="30%"}
+```{mermaid}
+flowchart LR
+  D(有效性) --> d1(组织学确诊比例)
+  D --> d2(只有死亡医学证明书比例)
+  D --> d3(部位不明比例)
+  D --> d4(数据内部一致性)
+```
+:::
+::: {.column width="40%"}
+```{mermaid}
+flowchart LR
+  C(完整性) --> c1(死亡发病比)
+  C --> c3(组织学确诊比例)
+  C --> c4(不同时间发病率的稳定性)
+  C --> c5(年龄别发病率曲线)
+```
+:::
+:::
+
+[^1]:Bray, F. and Parkin, D.M. (2009) ‘Evaluation of data quality in the cancer registry: Principles and methods. part I: Comparability, validity and timeliness’, European Journal of Cancer, 45(5), pp. 747–755.
+
+[^2]:Parkin, D.M. and Bray, F. (2009) ‘Evaluation of data quality in the cancer registry: Principles and methods part II. completeness’, European Journal of Cancer, 45(5), pp. 756–764.
+
+
+## 可比性 - 发病时间的定义{.smaller}
+
+
+:::{.columns}
+
+:::{.column width="40%"}
+> 癌症的发生是一个可能需要数十年的过程，而发病日期的定义则相对武断,因此,遵循统一的标准特别重要.
+
+- 应选择七个列出的事件中按时间顺序首先发生的日期作为发病日期。
+- 如果优先级较高的事件在最初选择的日期之后三个月内发生，则应优先考虑优先级较高事件的日期。
+:::
+
+:::{.column width="60%"}
+![](https://cdn.jsdelivr.net/gh/gigu003/db/images/incidence-rule.jpg)
+:::
+:::
+
+
+::: aside
+Source：ENCR Recommendation ▪ Coding Incidence Date ▪ 2022 [https://encr.eu/sites/default/files/Recommendations/ENCR%20Recommendation%20DOI_Mar2022_0.pdf](https://encr.eu/sites/default/files/Recommendations/ENCR%20Recommendation%20DOI_Mar2022_0.pdf)
+:::
+
+## 可比性 - 分类与编码
+
+::: columns
+::: {.column width="50%"}
+> 肿瘤登记采用**双编码系统**
+
+#### 分类标准
+
+-   ICD-O-3 ：数据收集
+-   ICD10 ：统计分析
+
+> 《肿瘤登记年报》采用ICD10进行肿瘤分类（@tbl-category）
+:::
+
+::: {.column width="50%"}
+```{r}
+#| label: tbl-category
+#| tbl-cap: 常用癌症分类统计表（大类）
+library(haven)
+library(dplyr)
+library(kableExtra)
+names_ <- c("部位","编码范围(ICD10)")
+ haven::read_sas("../2023-9-23-rural-canreg/data/category2.sas7bdat") %>%
+   kbl(col.names = c("部位","ICD10")) %>% 
+   kable_styling(font_size = 10)
+```
+:::
+:::
+
+## 可比性-多原发肿瘤 {.smaller}
+
+> 个体有发生一个以上癌症的可能，多部位原发癌纪录为新发病病例，与登记地区医疗水平有关，也与登记质量有关，登记处应注意多部位原发肿瘤病例资料的收集
+
+<br>
+
+-   北美地区采取了与全球其他地区不同的多元发判断规则
+-   SEER: <https://seer.cancer.gov/tools/mphrules/>[^3]
+-   IARC/ENUR: <https://www.encr.eu/sites/default/files/pdf/MPrules_july2004.pdf>[^4]
+
+[^3]: A review of the definition for multiple primary cancers in the United States. http://prdupl02.ynet.co.il/ forumfiles_2/ 19207389.pdf.
+
+[^4]: Working Group R. International rules for multiple primary cancers (ICD-0 third edition) Eur J Cancer Prev. 2005;14(4):307–308.
+
+## 可比性-IACR多原发癌规则 {.smaller}
+> 全球大部分地区采取了IARC的多原发癌判断规则
+
+::: columns
+::: {.column width="60%"}
+
+<br>
+
+1. 两个或以上多原发癌的判断**不依赖时间**
+1. 每个原发癌起源一个原发部位或组织(非扩散、复发或转移)
+1. 肿瘤起源于在同一个或一对器官或组织时认为是一个肿瘤
+   1. 部分成组部位码认为是一个器官
+   1. 多灶肿瘤认为是一个肿瘤
+:::
+
+::: {.column width="40%"}
+| ICDO3-Topo              | Site  |
+|-------------------------|-------|
+| C01, C02                | C02.9 |
+| C00, C03, C04, C05, C06 | C06.9 |
+| C09, C10, C12, C13, C14 | C14.0 |
+| C19, C20                | C20.9 |
+| C23, C24                | C24.9 |
+| C33, C34                | C34.9 |
+| C40, C41                | C41.9 |
+| C65, C66, C67, C68      | C68.9 |
+
+: ICDO3部位码分组
+:::
+:::
+
+
+## 可比性-IACR多原发癌规则 {.smaller}
+
+
+- 对于系统性肿瘤涉及到不同器官时,只记录一个(如Kaposi、血液造血系统肿瘤)
+- 不同的组织学应该被记录为两个或多个肿瘤^[Berg, J. W. (1982) Morphologic classification of human cancer. In: Schottenfeld, D. &
+Fraumeni, J. F., Jr, eds, Cancer Epidemiology and Prevention, Philadelphia, Saunders, pp.
+74-89]
+
+![](https://cdn.jsdelivr.net/gh/gigu003/db/images/morp-group.jpg){width=70%}
+
+
+
+## 有效性-组织学确诊比例(MV%){.smaller}
+
+> MV%的绝对值可能没有意义, 只有通过与“预期值”进行比较才能除非与合理的“预期”值进行比较才有意义。
+
+<br>
+
+-   不同性别、部位MV%情况
+-   与相邻区域(区域平均值)比较
+-   与国家平均值的比较
+-   组织学确诊比例的连续性情况
+
+::: aside
+***MV%预期值***是根据登记处所在地区（医疗技术水平，当地临床实践）合理设定的。
+:::
+
+
+## 有效性-组织学确诊比例(MV%){.smaller}
+
+> 如何判断登记处的MV%与区域内的均值是否存在差异?
+
+基于二项分布, 存在 $E(y_i)=pd_i$ 和 $Var(y_i)=p(1p)d_i$, 参数可以做如下估计:
+
+:::{.columns}
+:::{.column width='40%'}
+$Z^2 = \frac{(y_j - \hat{p} d_j)^2}{\hat{\phi} \hat{p}(1- \hat{p}) d_j} \approx \chi_1^2$
+:::
+:::{.column width='30%'}
+$\hat{p}=\frac{\sum_{i=1}^n y_i}{\sum_{i=1}^n d_i}$
+:::
+:::{.column width='30%'}
+$\hat(\phi)=\frac{1}{n-1}\sum_{i=1}^n \frac{(y_i-pd_i)^2}{d_ip(1-p)}$
+:::
+:::
+
+
+- $i$ 同一个国家或地区的不同登记处分别用i=1,...,n表示
+- $p$ 病理学诊断比例(MV%)
+- $y_i$ 登记处i的病理学诊断病例数
+- $d_i$ 登记处i的总病例数
+
+> 如果$Z^2 \geq 3.84$ 则认为登记处MV%与区域均值存在有统计学意义的差异。
+
+## 有效性-只有死亡医学证明书比例(DCO%){.smaller}
+
+> 标记为DCO的记录指示该记录的数据质量较差，诸多信息存在缺失，比如诊断时间以死亡时间来代替，无法在生存分析时被利用。
+
+```{mermaid}
+%%| label: fig-dco
+%%| fig-cap: "利用死亡证明发现肿瘤病例信息."
+flowchart LR
+  a(死亡证明提及癌症) --> b(与肿瘤登记数据库匹配)
+  b -->c(未登记)
+  b -->d(已登记)
+  c --> e1(从其他来源获取信息)
+  c --> e2(无其他来源)
+  e2 --> f1(未追踪到:DCO)
+  e2 --> f2(追踪到)
+  e2 --> f3(追踪到,非癌)
+```
+
+
+## 完整性 {auto-animate="true" auto-animate-easing="ease-in-out"}
+
+> 肿瘤登记收集到的癌症病人数占一定区域内所有诊断癌症病人的比例
+
+::: r-hstack
+::: {data-id="box1" auto-animate-delay="0" style="background: #2780e3; width: 200px; height: 150px; margin: 10px;"}
+癌症患者
+:::
+
+::: {data-id="box2" auto-animate-delay="0.1" style="background: #3fb618; width: 200px; height: 150px; margin: 10px;"}
+诊断患者
+:::
+
+::: {data-id="box3" auto-animate-delay="0.2" style="background: #e83e8c; width: 200px; height: 150px; margin: 10px;"}
+肿瘤登记
+:::
+:::
+
+## 完整性 {auto-animate="true" auto-animate-easing="ease-in-out"}
+
+> 肿瘤登记收集到的癌症病人数占一定区域内所有诊断癌症病人的比例
+
+::: r-stack
+::: {data-id="box1" style="background: #2780e3; width: 350px; height: 350px; border-radius: 200px;"}
+癌症患者
+:::
+
+::: {data-id="box2" style="background: #3fb618; width: 250px; height: 250px; border-radius: 200px;"}
+诊断患者
+:::
+
+::: {data-id="box3" style="background: #e83e8c; width: 150px; height: 150px; border-radius: 200px;"}
+肿瘤登记
+:::
+:::
+
+## 完整性- 历史数据方法{.smaller}
+> 通过对比历史数据发病率发现异常波动,从而体现可能登记处完整性的变化。
+
+> 假设: 来自同一地区特定癌症的发病率倾向于相似。
+
+- 发病率随时间变化的稳定性
+- 比较不同人群癌症发病率
+- 年龄别发病率曲线
+- 儿童肿瘤发病率
+
+::: aside
+通过与**区域内标准值**进行比较是CI5评估数据质量的常用做法.
+:::
+
+## 完整性- 死亡发病比(M:I){.smaller}
+> M:I是反映完整的重要指标，它反映癌症生存情况，与该地区的经济、医疗等发展水平有关，当它***预期值***^[预期值通常是区域内的均值]存在差异时，往往提示完整性存在问题。
+
+$$M:I=\frac{Mortality}{Incidence} \approx1-5Survial$$
+
+- M:I 大于***预期值***提示完整性不足
+- M:I 小于***预期值***提示可能存在重卡
+
+::: aside
+注: 全死因数据的质量会影响M:I和完整性的关系.
+:::
+
+## 完整性-平均数据来源数
+## 完整性- 组织学确诊比例(MV%){.smaller}
+> MV%是有效性评估的指标, 但是通过与预期值比较,也可以判断其完整性,过高的MV%提示数据过度依赖病理诊断，可能存在完整性不足。
+
+<br>
+
+- 同一登记处的MV%的历史变化情况
+- MV%与预期值的比较
+- 不同癌种MV%与预期值的比较
+
+::: aside
+注：预期值可以是国家或省级的MV%均值，也可以是相似地区（城市或农村）的均值。
+:::
+
+## 完整性- 组织学确诊比例(MV%){.smaller}
+> 如何判断MV%与预期值是否存在差异？
+
+:::{.columns}
+:::{.column width='40%'}
+$Z^2 = \frac{(m_j - \hat{\theta} d_j)}{\hat{\phi}n_j\hat{\theta}} \approx \chi_1^2$
+:::
+:::{.column width='30%'}
+$\hat{\theta}=\frac{\sum_{i=1}^n m_i}{\sum_{i=1}^n d_i}$
+:::
+:::{.column width='30%'}
+$\hat(\phi)=\frac{1}{n-1}\sum_{i=1}^n \frac{(m_i-\hat{\theta}d_i)^2}{n_i\hat{\theta}}$
+:::
+:::
+
+<br>
+
+- i指示不同登记处的编号, i=1,....,n
+- $d_i$登记处i的发病记录数
+- $m_i$登记处i的死亡记录数
+
+::: aside
+注：$Z^2\geq3.84$提示差异存在统计学意义。
+:::
