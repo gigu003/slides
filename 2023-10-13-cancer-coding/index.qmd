@@ -193,7 +193,7 @@ gt(modi)|>
 timeline
   title ICDO3版本更新
       1976 : ICD-O1
-      1992 : ICD-O1
+      1992 : ICD-O2
       2000 : ICD-O3
       2019 : ICD-O3.2
 ```
