@@ -1,0 +1,28 @@
+/*-- scss:defaults --*/
+@import url(https://fonts.googleapis.com/css?family=Montserrat:300,300i&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Fira+Mono&display=swap);
+
+/*-- scss:rules --*/
+.smaller60{
+  font-size: 60%;
+}
+.smaller70{
+  font-size: 70%;
+}
+.smaller80{
+  font-size: 80%;
+}
+.red{
+  color: darkred;
+  font-weight: bold;
+}
+.blue{
+  color: darkblue;
+}
+.bg-gray {
+  border-radius: 15px;
+  background-color: lightgray;
+  padding-left: 10px;
+  box-sizing: border-box;
+}

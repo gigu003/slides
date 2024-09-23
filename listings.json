@@ -2,11 +2,16 @@
   {
     "listing": "/index.html",
     "items": [
-      "/2023-9-23-rural-canreg/index.html",
+      "/2024-7-10-summary/index.html",
+      "/2024-4-17-quality-control/index.html",
+      "/2024-2-6-summary/index.html",
+      "/2023-11-13-what-why-how/index.html",
+      "/2023-10-13-cancer-coding/index.html",
       "/2023-9-23-Rpackage-canregtools/index.html",
+      "/2023-9-23-rural-canreg/index.html",
       "/2023-5-16-canreg-report/index.html",
-      "/2023-5-11-area-canreg/index.html",
       "/2023-5-11-system/index.html",
+      "/2023-5-11-area-canreg/index.html",
       "/2023-4-20-cancer-registration/index.html"
     ]
   }

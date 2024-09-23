@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh-Hans" xml:lang="zh-Hans"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.161">
+<meta name="generator" content="quarto-1.6.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Slides</title>
+<title>Slides – 普癌新声</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -37,22 +37,23 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-79bb3942e891885f9f7af119cd221462.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b940fa09edfecbf8d57776b5aa2a44d3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
   "keyboard-shortcut": [
     "f",
     "/",
     "s"
   ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "没有结果",
     "search-matching-documents-text": "匹配的文档",
@@ -61,6 +62,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "更多匹配结果",
     "search-more-matches-text": "更多匹配结果",
     "search-clear-button-title": "清除",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "取消",
     "search-submit-button-title": "提交",
     "search-label": "搜索"
@@ -76,9 +78,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-project','listing-website','listing-execute','listing-format','listing-language','listing-title','listing-subtitle','listing-author','listing-date','listing-date-modified','listing-date-format','listing-institute','listing-address','listing-filters','listing-slide-level','listing-title-slide-style','listing-crossref','listing-title-slide-attributes','listing-path','listing-outputHref','listing-description','listing-filename','listing-file-modified','listing-reading-time','listing-revealjs-plugins','listing-auto-agenda','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] }],
+      valueNames: ['listing-project','listing-website','listing-execute','listing-format','listing-language','listing-title','listing-subtitle','listing-author','listing-date','listing-date-modified','listing-date-format','listing-institute','listing-title-slide-attributes','listing-categories','listing-address','listing-path','listing-outputHref','listing-description','listing-filename','listing-file-modified','listing-reading-time','listing-word-count','listing-filters','listing-slide-level','listing-title-slide-style','listing-crossref','listing-revealjs-plugins','listing-auto-agenda',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
       
-      searchColumns: ["listing-project","listing-website","listing-execute","listing-format","listing-language","listing-title","listing-subtitle","listing-author","listing-date","listing-date-modified","listing-date-format","listing-institute","listing-address","listing-filters","listing-slide-level","listing-title-slide-style","listing-crossref","listing-title-slide-attributes","listing-path","listing-outputHref","listing-description","listing-filename","listing-file-modified","listing-reading-time","listing-revealjs-plugins","listing-auto-agenda","listing-categories"],
+      searchColumns: ["listing-project","listing-website","listing-execute","listing-format","listing-language","listing-title","listing-subtitle","listing-author","listing-date","listing-date-modified","listing-date-format","listing-institute","listing-title-slide-attributes","listing-categories","listing-address","listing-path","listing-outputHref","listing-description","listing-filename","listing-file-modified","listing-reading-time","listing-word-count","listing-filters","listing-slide-level","listing-title-slide-style","listing-crossref","listing-revealjs-plugins","listing-auto-agenda"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -96,8 +98,35 @@ ul.task-list li input[type="checkbox"] {
   })
   </script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="alternate" type="application/rss+xml" title="普癌新声" href="index.xml" data-external="1"><meta property="og:title" content="Slides">
 <meta property="og:description" content="一个公共卫生医师的个人网站">
@@ -111,7 +140,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
@@ -119,43 +148,43 @@ ul.task-list li input[type="checkbox"] {
     </a>
   </div>
             <div id="quarto-search" class="" title="搜索"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="切换导航" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="展开或折叠导航栏" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page"><i class="bi bi-house" role="img">
+    <a class="nav-link active" href="./index.html" aria-current="page"> <i class="bi bi-house" role="img">
 </i> 
- <span class="menu-text">Home</span></a>
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://chenq.site/qsight" rel="" target=""><i class="bi bi-tropical-storm" role="img">
+    <a class="nav-link" href="https://chenq.site/qsight"> <i class="bi bi-tropical-storm" role="img">
 </i> 
- <span class="menu-text">Qsight博客</span></a>
+<span class="menu-text">Qsight博客</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://diary.chenq.site" rel="" target=""><i class="bi bi-pen" role="img">
+    <a class="nav-link" href="https://diary.chenq.site"> <i class="bi bi-pen" role="img">
 </i> 
- <span class="menu-text">随笔录</span></a>
+<span class="menu-text">随笔录</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://gigu003.github.io/canregtools" rel="" target=""><i class="bi bi-hexagon" role="img">
+    <a class="nav-link" href="https://gigu003.github.io/canregtools"> <i class="bi bi-hexagon" role="img">
 </i> 
- <span class="menu-text">Packages</span></a>
+<span class="menu-text">Packages</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://chenq.site/publications" rel="" target=""><i class="bi bi-journal-medical" role="img">
+    <a class="nav-link" href="https://chenq.site/publications"> <i class="bi bi-journal-medical" role="img">
 </i> 
- <span class="menu-text">出版作品</span></a>
+<span class="menu-text">出版作品</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://chenq.site/about.html" rel="" target="">
- <span class="menu-text">关于</span></a>
+    <a class="nav-link" href="https://chenq.site/about.html"> 
+<span class="menu-text">关于</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -166,70 +195,232 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">类别</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">所有 <span class="quarto-category-count">(6)</span></div><div class="category" data-category="R语言">R语言 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="技术与方法">技术与方法 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="综合应用">综合应用 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="肿瘤登记">肿瘤登记 <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">分类</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">全部 <span class="quarto-category-count">(11)</span></div><div class="category" data-category="R语言">R语言 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="技术与方法">技术与方法 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="肿瘤登记">肿瘤登记 <span class="quarto-category-count">(5)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
 
+
 <section id="讲座幻灯" class="level2">
 <h2 class="anchored" data-anchor-id="讲座幻灯">讲座幻灯</h2>
-<p>这里分享的是部分曾经参与的<span class="important">讲座</span> ……</p>
+<p>这里分享和肿瘤登记与统计分析相关的<span class="important">讲座幻灯</span>，希望我的分享对你有所帮助……</p>
 <div id="listing-quarto" class="quarto-listing quarto-listing-container-custom">
-<ol class="list" reversed="">
-    <li data-index="0" data-categories="技术与方法,综合应用" data-listing-date-sort="1695427200000" data-listing-file-modified-sort="1695804086034" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" class="listing-slides">
+
+  
+  
+    <h2 class="anchored">2024</h2>
+    <ol class="list">
+  
+  <li data-index="0" data-listing-date-sort="1720569600000" data-listing-file-modified-sort="1727082363434" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="172" class="listing-slides">
+    <span class="listing-date">2024-07-10</span>
+    <a href="./2024-7-10-summary/index.html">
+      <span class="listing-title">年中工作总结</span>&nbsp;,
+    </a>
+    
+    
+      (<span class="listing-subtitle">Mid-Year Work Summary</span>)&nbsp;, 
+    
+    
+    
+    
+    <span class="listing-address important"></span>&nbsp;
+  </li>
+  
+
+  
+  
+  <li data-index="1" data-categories="肿瘤登记" data-listing-date-sort="1713312000000" data-listing-file-modified-sort="1727082363434" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="27" class="listing-slides">
+    <span class="listing-date">2024-04-17</span>
+    <a href="./2024-4-17-quality-control/index.html">
+      <span class="listing-title">肿瘤登记质控和自动化报告</span>&nbsp;,
+    </a>
+    
+    
+      (<span class="listing-subtitle">如何快速发布质控报告和年度报告？</span>)&nbsp;, 
+    
+    
+    
+    
+    <span class="listing-address important">安徽泾县</span>&nbsp;
+  </li>
+  
+
+  
+  
+  <li data-index="2" data-listing-date-sort="1707264000000" data-listing-file-modified-sort="1727082363423" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="169" class="listing-slides">
+    <span class="listing-date">2024-02-07</span>
+    <a href="./2024-2-6-summary/index.html">
+      <span class="listing-title">工作总结</span>&nbsp;,
+    </a>
+    
+    
+      (<span class="listing-subtitle">Summary 2023 | Plan 2024</span>)&nbsp;, 
+    
+    
+    
+    
+    <span class="listing-address important"></span>&nbsp;
+  </li>
+  
+    </ol>
+  
+
+  
+  
+    <h2 class="anchored">2023</h2>
+    <ol class="list">
+  
+  <li data-index="3" data-categories="肿瘤登记" data-listing-date-sort="1699833600000" data-listing-file-modified-sort="1727082363190" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="11" class="listing-slides">
+    <span class="listing-date">2023-11-13</span>
+    <a href="./2023-11-13-what-why-how/index.html">
+      <span class="listing-title">如何做好肿瘤登记工作?</span>&nbsp;,
+    </a>
+    
+    
+      (<span class="listing-subtitle">河南省肿瘤登记工作实践</span>)&nbsp;, 
+    
+    
+    
+    
+    <span class="listing-address important">南阳</span>&nbsp;
+  </li>
+  
+
+  
+  
+  <li data-index="4" data-categories="肿瘤登记" data-listing-date-sort="1697155200000" data-listing-file-modified-sort="1727082363190" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="15" data-listing-word-count-sort="2872" class="listing-slides">
+    <span class="listing-date">2023-10-13</span>
+    <a href="./2023-10-13-cancer-coding/index.html">
+      <span class="listing-title">肿瘤分类与编码</span>&nbsp;,
+    </a>
+    
+    
+      (<span class="listing-subtitle">ICD10/ICDO3编码在肿瘤登记中的应用</span>)&nbsp;, 
+    
+    
+    
+    
+    <span class="listing-address important">郑州</span>&nbsp;
+  </li>
+  
+
+  
+  
+  <li data-index="5" data-categories="肿瘤登记,R语言" data-listing-date-sort="1695427200000" data-listing-file-modified-sort="1727082363320" data-listing-date-modified-sort="1727082363000" data-listing-reading-time-sort="5" data-listing-word-count-sort="831" class="listing-slides">
     <span class="listing-date">2023-09-23</span>
-      <a href="./2023-9-23-rural-canreg/index.html">
-        <span class="listing-title">农村地区肿瘤登记技术与方法</span>&nbsp;,
-      </a>
-         (<span class="listing-subtitle">河南省肿瘤登记工作实践</span>)&nbsp;, 
-      <span class="listing-address important">呼和浩特</span>&nbsp;
-    </li>
-    <li data-index="1" data-categories="肿瘤登记,R语言" data-listing-date-sort="1695427200000" data-listing-file-modified-sort="1695804085894" data-listing-date-modified-sort="1695804085000" data-listing-reading-time-sort="5" class="listing-slides">
+    <a href="./2023-9-23-Rpackage-canregtools/index.html">
+      <span class="listing-title">R包: canregtools</span>&nbsp;,
+    </a>
+    
+    
+      (<span class="listing-subtitle">肿瘤登记(逻辑核查、数据分析、数据可视化、肿瘤报告)</span>)&nbsp;, 
+    
+    
+    
+    
+    <span class="listing-address important">呼和浩特</span>&nbsp;
+  </li>
+  
+
+  
+  
+  <li data-index="6" data-categories="技术与方法,肿瘤登记" data-listing-date-sort="1695427200000" data-listing-file-modified-sort="1727082363423" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1761" class="listing-slides">
     <span class="listing-date">2023-09-23</span>
-      <a href="./2023-9-23-Rpackage-canregtools/index.html">
-        <span class="listing-title">R包: canregtools</span>&nbsp;,
-      </a>
-         (<span class="listing-subtitle">肿瘤登记(逻辑核查、数据分析、数据可视化、肿瘤报告)</span>)&nbsp;, 
-      <span class="listing-address important">呼和浩特</span>&nbsp;
-    </li>
-    <li data-index="2" data-listing-date-sort="1684195200000" data-listing-file-modified-sort="1695804085894" data-listing-date-modified-sort="1695804085000" data-listing-reading-time-sort="23" class="listing-slides">
+    <a href="./2023-9-23-rural-canreg/index.html">
+      <span class="listing-title">农村地区肿瘤登记技术与方法</span>&nbsp;,
+    </a>
+    
+    
+      (<span class="listing-subtitle">河南省肿瘤登记工作实践</span>)&nbsp;, 
+    
+    
+    
+    
+    <span class="listing-address important">呼和浩特</span>&nbsp;
+  </li>
+  
+
+  
+  
+  <li data-index="7" data-listing-date-sort="1684195200000" data-listing-file-modified-sort="1727082363318" data-listing-date-modified-sort="1727082363000" data-listing-reading-time-sort="23" data-listing-word-count-sort="4585" class="listing-slides">
     <span class="listing-date">2023-05-16</span>
-      <a href="./2023-5-16-canreg-report/index.html">
-        <span class="listing-title">R语言促进高效率肿瘤登记报告</span>&nbsp;,
-      </a>
-         (<span class="listing-subtitle">基于R Markdown / Quarto的可重复性报告撰写</span>)&nbsp;, 
-      <span class="listing-address important">郑州</span>&nbsp;
-    </li>
-    <li data-index="3" data-listing-date-sort="1683763200000" data-listing-file-modified-sort="1695804085806" data-listing-date-modified-sort="1695804085000" data-listing-reading-time-sort="1" class="listing-slides">
+    <a href="./2023-5-16-canreg-report/index.html">
+      <span class="listing-title">R语言促进高效率肿瘤登记报告</span>&nbsp;,
+    </a>
+    
+    
+      (<span class="listing-subtitle">基于R Markdown / Quarto的可重复性报告撰写</span>)&nbsp;, 
+    
+    
+    
+    
+    <span class="listing-address important">郑州</span>&nbsp;
+  </li>
+  
+
+  
+  
+  <li data-index="8" data-listing-date-sort="1683763200000" data-listing-file-modified-sort="1727082363295" data-listing-date-modified-sort="1727082363000" data-listing-reading-time-sort="3" data-listing-word-count-sort="479" class="listing-slides">
     <span class="listing-date">2023-05-11</span>
-      <a href="./2023-5-11-area-canreg/index.html">
-        <span class="listing-title">河南省2020年度肿瘤登记数据质控情况</span>&nbsp;,
-      </a>
-         (<span class="listing-subtitle">发现问题、核实更新、提高质量</span>)&nbsp;, 
-      <span class="listing-address important">郑州</span>&nbsp;
-    </li>
-    <li data-index="4" data-listing-date-sort="1683763200000" data-listing-file-modified-sort="1695804085862" data-listing-date-modified-sort="1695804085000" data-listing-reading-time-sort="3" class="listing-slides">
+    <a href="./2023-5-11-system/index.html">
+      <span class="listing-title">河南肿瘤随访登记平台</span>&nbsp;,
+    </a>
+    
+    
+      (<span class="listing-subtitle">设计思路、系统框架、推荐操作流程</span>)&nbsp;, 
+    
+    
+    
+    
+    <span class="listing-address important">郑州</span>&nbsp;
+  </li>
+  
+
+  
+  
+  <li data-index="9" data-listing-date-sort="1683763200000" data-listing-file-modified-sort="1727082363255" data-listing-date-modified-sort="1727082363000" data-listing-reading-time-sort="1" data-listing-word-count-sort="61" class="listing-slides">
     <span class="listing-date">2023-05-11</span>
-      <a href="./2023-5-11-system/index.html">
-        <span class="listing-title">河南肿瘤随访登记平台</span>&nbsp;,
-      </a>
-         (<span class="listing-subtitle">设计思路、系统框架、推荐操作流程</span>)&nbsp;, 
-      <span class="listing-address important">郑州</span>&nbsp;
-    </li>
-    <li data-index="5" data-listing-date-sort="1681948800000" data-listing-file-modified-sort="1695804085790" data-listing-date-modified-sort="1695804085000" data-listing-reading-time-sort="6" class="listing-slides">
+    <a href="./2023-5-11-area-canreg/index.html">
+      <span class="listing-title">河南省2020年度肿瘤登记数据质控情况</span>&nbsp;,
+    </a>
+    
+    
+      (<span class="listing-subtitle">发现问题、核实更新、提高质量</span>)&nbsp;, 
+    
+    
+    
+    
+    <span class="listing-address important">郑州</span>&nbsp;
+  </li>
+  
+
+  
+  
+  <li data-index="10" data-listing-date-sort="1681948800000" data-listing-file-modified-sort="1727082363243" data-listing-date-modified-sort="1727082363000" data-listing-reading-time-sort="6" data-listing-word-count-sort="1072" class="listing-slides">
     <span class="listing-date">2023-04-20</span>
-      <a href="./2023-4-20-cancer-registration/index.html">
-        <span class="listing-title">人群肿瘤随访登记</span>&nbsp;,
-      </a>
-         (<span class="listing-subtitle">肿瘤登记内容、方法、流程和数据上报</span>)&nbsp;, 
-      <span class="listing-address important">郑州</span>&nbsp;
-    </li>
-</ol>
+    <a href="./2023-4-20-cancer-registration/index.html">
+      <span class="listing-title">人群肿瘤随访登记</span>&nbsp;,
+    </a>
+    
+    
+      (<span class="listing-subtitle">肿瘤登记内容、方法、流程和数据上报</span>)&nbsp;, 
+    
+    
+    
+    
+    <span class="listing-address important">郑州</span>&nbsp;
+  </li>
+  
+    </ol>
+  
 
 <div class="listing-no-matching d-none">
 无匹配项
 </div>
+</div>
+<div class="footnote">
+<p>注：以上幻灯中部分幻灯在多个场合分享，但仅在这里显示一次……</p>
 </div>
 
 
@@ -272,18 +463,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -315,7 +495,47 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/slides\.chenq\.site");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -350,24 +570,64 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
   const processXRef = (id, note) => {
-    if (id.startsWith('sec-')) {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
       if (note.children && note.children.length > 2) {
-        for (let i = 0; i < 2; i++) {
-          container.appendChild(note.children[i].cloneNode(true));
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
         }
         return container.innerHTML
       } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
         return note.innerHTML;
       }
     } else {
-      return note.innerHTML;
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
     }
   }
   for (var i=0; i<xrefs.length; i++) {
@@ -376,27 +636,56 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       instance.disable();
       let url = xref.getAttribute('href');
       let hash = undefined; 
-      try { hash = new URL(url).hash; } catch {}
-      const id = hash.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note !== null) {
-        try {
-          const html = processXRef(id, note);
-          instance.setContent(html);
-        } finally {
-          instance.enable();
-          instance.show();
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
         }
       } else {
-        // See if we can fetch this
-        fetch(url.split('#')[0])
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
         .then(res => res.text())
         .then(html => {
           const parser = new DOMParser();
           const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.getElementById(id);
+          const note = htmlDoc.querySelector('main.content');
           if (note !== null) {
-            const html = processXRef(id, note);
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
             instance.setContent(html);
           } 
         }).finally(() => {
@@ -474,6 +763,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {

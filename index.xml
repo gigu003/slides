@@ -6,61 +6,104 @@
       version="2.0">
 <channel>
 <title>普癌新声</title>
-<link>https://slides.chenq.site/index.html</link>
+<link>https://slides.chenq.site/</link>
 <atom:link href="https://slides.chenq.site/index.xml" rel="self" type="application/rss+xml"/>
 <description>一个公共卫生医师的个人网站</description>
-<generator>quarto-1.4.161</generator>
-<lastBuildDate>Sat, 23 Sep 2023 00:00:00 GMT</lastBuildDate>
+<generator>quarto-1.6.9</generator>
+<lastBuildDate>Wed, 10 Jul 2024 00:00:00 GMT</lastBuildDate>
+<item>
+  <title></title>
+  <dc:creator>陈琼 </dc:creator>
+  <link>https://slides.chenq.site/2024-7-10-summary/</link>
+  <description><![CDATA[ undefined ]]></description>
+  <guid>https://slides.chenq.site/2024-7-10-summary/</guid>
+  <pubDate>Wed, 10 Jul 2024 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title></title>
+  <dc:creator>陈琼 </dc:creator>
+  <link>https://slides.chenq.site/2024-4-17-quality-control/</link>
+  <description><![CDATA[ undefined ]]></description>
+  <category>肿瘤登记</category>
+  <guid>https://slides.chenq.site/2024-4-17-quality-control/</guid>
+  <pubDate>Wed, 17 Apr 2024 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title></title>
+  <dc:creator>陈琼 </dc:creator>
+  <link>https://slides.chenq.site/2024-2-6-summary/</link>
+  <description><![CDATA[ undefined ]]></description>
+  <guid>https://slides.chenq.site/2024-2-6-summary/</guid>
+  <pubDate>Wed, 07 Feb 2024 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title></title>
+  <dc:creator>陈琼 </dc:creator>
+  <link>https://slides.chenq.site/2023-11-13-what-why-how/</link>
+  <description><![CDATA[ undefined ]]></description>
+  <category>肿瘤登记</category>
+  <guid>https://slides.chenq.site/2023-11-13-what-why-how/</guid>
+  <pubDate>Mon, 13 Nov 2023 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title></title>
+  <dc:creator>陈琼 </dc:creator>
+  <link>https://slides.chenq.site/2023-10-13-cancer-coding/</link>
+  <description><![CDATA[ undefined ]]></description>
+  <category>肿瘤登记</category>
+  <guid>https://slides.chenq.site/2023-10-13-cancer-coding/</guid>
+  <pubDate>Fri, 13 Oct 2023 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title></title>
   <dc:creator>👨‍⚕️陈琼，博士，副主任医师 </dc:creator>
-  <link>https://slides.chenq.site/2023-9-23-rural-canreg/index.html</link>
+  <link>https://slides.chenq.site/2023-9-23-Rpackage-canregtools/</link>
   <description><![CDATA[ undefined ]]></description>
-  <category>技术与方法</category>
-  <category>综合应用</category>
-  <guid>https://slides.chenq.site/2023-9-23-rural-canreg/index.html</guid>
+  <category>肿瘤登记</category>
+  <category>R语言</category>
+  <guid>https://slides.chenq.site/2023-9-23-Rpackage-canregtools/</guid>
   <pubDate>Sat, 23 Sep 2023 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title></title>
   <dc:creator>👨‍⚕️陈琼，博士，副主任医师 </dc:creator>
-  <link>https://slides.chenq.site/2023-9-23-Rpackage-canregtools/index.html</link>
+  <link>https://slides.chenq.site/2023-9-23-rural-canreg/</link>
   <description><![CDATA[ undefined ]]></description>
+  <category>技术与方法</category>
   <category>肿瘤登记</category>
-  <category>R语言</category>
-  <guid>https://slides.chenq.site/2023-9-23-Rpackage-canregtools/index.html</guid>
+  <guid>https://slides.chenq.site/2023-9-23-rural-canreg/</guid>
   <pubDate>Sat, 23 Sep 2023 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title></title>
   <dc:creator>陈琼 </dc:creator>
-  <link>https://slides.chenq.site/2023-5-16-canreg-report/index.html</link>
+  <link>https://slides.chenq.site/2023-5-16-canreg-report/</link>
   <description><![CDATA[ undefined ]]></description>
-  <guid>https://slides.chenq.site/2023-5-16-canreg-report/index.html</guid>
+  <guid>https://slides.chenq.site/2023-5-16-canreg-report/</guid>
   <pubDate>Tue, 16 May 2023 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title></title>
   <dc:creator>👨‍⚕️陈琼，博士，副主任医师 </dc:creator>
-  <link>https://slides.chenq.site/2023-5-11-area-canreg/index.html</link>
+  <link>https://slides.chenq.site/2023-5-11-system/</link>
   <description><![CDATA[ undefined ]]></description>
-  <guid>https://slides.chenq.site/2023-5-11-area-canreg/index.html</guid>
+  <guid>https://slides.chenq.site/2023-5-11-system/</guid>
   <pubDate>Thu, 11 May 2023 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title></title>
   <dc:creator>👨‍⚕️陈琼，博士，副主任医师 </dc:creator>
-  <link>https://slides.chenq.site/2023-5-11-system/index.html</link>
+  <link>https://slides.chenq.site/2023-5-11-area-canreg/</link>
   <description><![CDATA[ undefined ]]></description>
-  <guid>https://slides.chenq.site/2023-5-11-system/index.html</guid>
+  <guid>https://slides.chenq.site/2023-5-11-area-canreg/</guid>
   <pubDate>Thu, 11 May 2023 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title></title>
   <dc:creator>👨‍⚕️陈琼，博士，副主任医师 </dc:creator>
-  <link>https://slides.chenq.site/2023-4-20-cancer-registration/index.html</link>
+  <link>https://slides.chenq.site/2023-4-20-cancer-registration/</link>
   <description><![CDATA[ undefined ]]></description>
-  <guid>https://slides.chenq.site/2023-4-20-cancer-registration/index.html</guid>
+  <guid>https://slides.chenq.site/2023-4-20-cancer-registration/</guid>
   <pubDate>Thu, 20 Apr 2023 00:00:00 GMT</pubDate>
 </item>
 </channel>

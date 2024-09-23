@@ -10,11 +10,15 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-79bb3942e891885f9f7af119cd221462.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/reveal-header-1.0.0/add_header.js" defer="true"></script>
 <link href="../site_libs/quarto-contrib/reveal-header-1.0.0/add_header.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/grid-no-htext-1.0.0/grid_no_htext.css" rel="stylesheet"><meta charset="utf-8">
+<script src="../site_libs/quarto-contrib/roughnotation-0.5.1/rough-notation.iife.js"></script>
+<script src="../site_libs/quarto-contrib/roughnotation-init-1.0.0/rough.js"></script>
+<script src="../site_libs/quarto-contrib/sc-sb-title-1.0.0/sc_sb_title.js" defer="true"></script>
+<link href="../site_libs/quarto-contrib/grid-no-htext-1.0.0/grid_no_htext.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/reveal-auto-agenda-0.0.3/reveal-auto-agenda.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.9">
 
-  <meta name="author" content="👨‍⚕️陈琼，博士，副主任医师">
-  <title>普癌新声 – 河南肿瘤随访登记平台</title>
+  <meta name="author" content="陈琼">
+  <title>普癌新声 – 工作总结</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -33,10 +37,11 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-492c5038a531c95dfcac2e3703f3eba9.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-271abe61773db36968ea08d26c956fb5.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-attribution/attribution.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
@@ -247,7 +252,6 @@
     }
     .reveal .slide:not(.center) {
       height: 100%;
-      overflow-y: auto;
     }
     .reveal .slide.scrollable {
       overflow-y: auto;
@@ -324,432 +328,240 @@
       margin-right: 0; 
     }
   </style>
-  <script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
-  <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
-  <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
-<meta property="og:title" content="河南肿瘤随访登记平台 – 普癌新声">
-<meta property="og:description" content="设计思路、系统框架、推荐操作流程">
+<meta property="og:title" content="工作总结 – 普癌新声">
+<meta property="og:description" content="Summary 2023 | Plan 2024">
 <meta property="og:site_name" content="普癌新声">
-<meta name="twitter:title" content="河南肿瘤随访登记平台 – 普癌新声">
-<meta name="twitter:description" content="设计思路、系统框架、推荐操作流程">
+<meta name="twitter:title" content="工作总结 – 普癌新声">
+<meta name="twitter:description" content="Summary 2023 | Plan 2024">
 <meta name="twitter:card" content="summary">
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-background-color="lightblue" class="center">
-  <h1 class="title">河南肿瘤随访登记平台</h1>
-  <p class="subtitle">设计思路、系统框架、推荐操作流程</p>
-  <p class="author">👨‍⚕️陈琼，博士，副主任医师</p>
-  <p class="institute">🏥河南省癌症中心 河南省肿瘤医院</p>
-  <p class="date">Thursday May 11, 2023</p>
+<section id="title-slide" background-opacity="0.3" data-background-color="lightblue" data-background-size="100%, cover" class="center">
+  <h1 class="title">工作总结</h1>
+  <p class="subtitle">Summary 2023 | Plan 2024</p>
+  <p class="author">陈琼</p>
+  <p class="date">Wednesday Feb 7, 2024</p>
 </section>
 <section>
-<section id="人群肿瘤登记数据收集系统" class="title-slide slide level1 center" data-background-color="lightblue">
-<h1>人群肿瘤登记数据收集系统</h1>
-<p>提高肿瘤登记数据收集信息化、智能化水平</p>
+<section id="以人群为基础的肿瘤登记" class="title-slide slide level1 agenda-slide center">
+<h1>以人群为基础的肿瘤登记</h1>
+<div class="agenda-heading">
+<p>主要内容</p>
+</div>
+<div class="agenda">
+<ol>
+<li><div class="agenda-active">
+<p>以人群为基础的肿瘤登记</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>癌症一级预防危险因素调查研究</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>以医院为基础肿瘤登记工作</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>科研工作</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>新年快乐</p>
+</div></li>
+</ol>
+</div>
 </section>
-<section id="数据收集系统的发展" class="slide level2">
-<h2>数据收集系统的发展</h2>
-<p><br></p>
-
-<img data-src="./images/system.png" class="r-stretch"></section>
-<section id="最新肿瘤登记系统登录界面" class="slide level2" data-background-image="images/sys-cover.jpg">
-<h2>最新肿瘤登记系统登录界面</h2>
-<p><a href="http://218.28.13.204:35556">http://218.28.13.204:35556</a></p>
-</section>
-<section id="实现专业功能" class="slide level2" data-background-color="lightblue">
-<h2>实现专业功能</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><br></p>
-<h3 id="已升级功能">已升级功能</h3>
-<ul>
-<li>数据上报</li>
-<li>重卡判断</li>
-<li>多原发卡判断</li>
-<li>被动随访</li>
-<li>随访管理</li>
-<li>机构管理</li>
-<li>其他辅助功能</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<p><br></p>
-<h3 id="待升级功能">待升级功能</h3>
-<ul>
-<li>常规数据分析</li>
-<li>质量控制可视化</li>
-<li>发病地理信息管理</li>
-<li>就医历史纵向追踪</li>
-</ul>
-</div></div>
-</section>
-<section id="数据项目" class="slide level2">
-<h2>数据项目</h2>
-<div class="columns">
-<div class="column" style="width:30%;">
+<section id="完成工作内容" class="slide level2 smaller">
+<h2>完成工作内容</h2>
 <blockquote>
-<p>肿瘤登记收集的变量包括以下7个部分（<a href="#/数据项目" class="quarto-xref">图&nbsp;1</a>）</p>
+<p>完成常规工作内容是做好其他工作的前提和基础</p>
 </blockquote>
-<ul>
-<li>个人识别信息</li>
-<li>人口学信息</li>
-<li>肿瘤信息</li>
-<li>治疗信息</li>
-<li>随访信息</li>
-<li>预后信息</li>
-<li>信息来源</li>
-</ul>
-</div><div class="column" style="width:70%;">
-<div class="cell" data-reveal="true" data-layout-align="default">
-<div class="cell-output-display">
-<div id="fig-items" class="quarto-float quarto-figure quarto-figure-center">
-<figure class="quarto-float quarto-float-fig">
-<div aria-describedby="fig-items-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div>
-<pre class="mermaid mermaid-js" data-label="fig-items">classDiagram
-    class 个人识别信息 {
-    登记处编号
-    身份证号
-    姓名
-    户籍地址
-    常住地址
-}
-    class 人口学信息 {
-    性别
-    年龄
-    出生日期
-    婚姻状态
-    职业
-    民族
-}
-    class 肿瘤信息 {
-    发病日期
-    诊断依据
-    原发部位ICDO3
-    形态学ICDO3
-    行为ICDO3
-    分级ICDO3
-    临床分期/TNM分期
-    多原发状态
-    双边性
-}
-    class 治疗信息 {
-    治疗方法
-}
-    class 随访相关信息 {
-    联系电话
-    联系人
-    联系人电话
-    常住地址
-}
-    class 结局信息 {
-    最后接触日期
-    生存状态
-    死亡日期
-    死亡原因
-    死亡地点
-}
-    class 信息来源 {
-    报告医院
-    住院号/门诊号
-    报告医师
-    报告日期
-}
-
-    个人识别信息 --|&gt; 人口学信息
-    个人识别信息 --|&gt; 肿瘤信息
-    个人识别信息 --|&gt; 治疗信息
-    个人识别信息 --|&gt; 随访相关信息
-    个人识别信息 --|&gt; 结局信息
-    个人识别信息 --|&gt; 信息来源
-</pre>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-items-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-图&nbsp;1: 人群肿瘤登记收集数据项目
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div></div>
+<ol type="1">
+<li>完成《2023河南省肿瘤随访登记专业人员能力提升培训班》</li>
+<li>数据质量的季度和年度评估和质量控制工作</li>
+<li>2020年度肿瘤登记数据的正式上报工作</li>
+<li>部分登记处的现场督导和质量控制</li>
+<li>网络直报信息管理系统的升级和维护</li>
+<li>国家肿瘤登记处下达的其他任务</li>
+</ol>
 </section>
-<section id="新系统设计思路" class="slide level2">
-<h2>新系统设计思路</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><br></p>
-<blockquote>
-<p>新系统围绕<strong>人口身份识别信息</strong>，不断更新肿瘤信息、随访信息、地理信息等（<a href="#/新系统设计思路" class="quarto-xref">图&nbsp;2</a>）</p>
-</blockquote>
-<p><br></p>
-<ul>
-<li>追踪就医历史记录</li>
-<li>多渠道更新随访信息</li>
-<li>追踪患者地理信息</li>
-<li>多渠道数据来源上报</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<div class="cell" data-reveal="true" data-layout-align="center">
-<div class="cell-output-display">
-<div id="fig-system" class="quarto-float quarto-figure quarto-figure-center">
-<figure class="quarto-float quarto-float-fig">
-<div aria-describedby="fig-system-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div>
-<pre class="mermaid mermaid-js" data-label="fig-system">flowchart LR
-  A[人口身份识别信息] --&gt; B[肿瘤信息]
-  A --&gt; C[随访信息]
-  A --&gt; D[信息来源]
-  A --&gt; E[地理信息]
-  x[肿瘤数据上报] --&gt; A
-  y[全死因数据上报] --&gt; A
-  z[肿瘤协查数据上报] --&gt; A
-  
-</pre>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-system-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-图&nbsp;2: 河南省肿瘤随访登记信息平台
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div></div>
-<p><br></p>
-<blockquote>
-<p>保证人口信息数据的<span style="color: red; text-size: 3.5em; ">唯一性</span>特别重要，也是重卡合并、多原发标记和更新随访数据的基础。</p>
-</blockquote>
+<section id="工作产出情况" class="slide level2 smaller">
+<h2>工作产出情况</h2>
+<h4 id="书籍">书籍</h4>
+<ol type="1">
+<li>出版《2022河南省肿瘤登记年报》</li>
+<li>撰写《2023河南省肿瘤登记年报》</li>
+<li>16个登记处数据被《五大洲癌症发病率第12卷》收录</li>
+</ol>
+<h4 id="论文">论文</h4>
+<ol type="1">
+<li>张明霞, 陈琼, 郭兰伟,等. 2018年河南省恶性肿瘤发病与死亡情况及2014-2018年趋势分析 [J]. 中国肿瘤,2023,32(8).</li>
+<li>张明霞, 陈琼, 等. 河南省2010-2019年癌症发病和死亡趋势分析[J]. 中国肿瘤.</li>
+<li>陈琼, 张明霞, 郭兰伟, 等.河南省恶性肿瘤2017-2019年5年相对生存率分析 [J]. 中华肿瘤杂志</li>
+</ol>
+<h4 id="工具">工具</h4>
+<ol type="1">
+<li>An R package for data analysis and visualiation of cancer registration.</li>
+</ol>
 </section>
-<section id="数据操作流程推荐" class="slide level2">
-<h2>数据操作流程（推荐）</h2>
-<p><br></p>
-<blockquote>
-<p><strong>人口信息的查重</strong>特别重要，在肿瘤病例的查重之前，需要先做人口信息查重（<a href="#/数据操作流程推荐" class="quarto-xref">图&nbsp;3</a>）</p>
-</blockquote>
-<p><br></p>
-<div class="cell" data-reveal="true" data-layout-align="center">
-<div class="cell-output-display">
-<div id="fig-system-flow" class="quarto-float quarto-figure quarto-figure-center">
-<figure class="quarto-float quarto-float-fig">
-<div aria-describedby="fig-system-flow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div>
-<pre class="mermaid mermaid-js" data-label="fig-system-flow">flowchart LR
-  x[肿瘤数据上报] --&gt; A[更新人口信息]
-  y[全死因数据上报] --&gt; A
-  z[肿瘤协查数据上报] --&gt; A
-  A --&gt; B[人口信息查重]
-  B --&gt; C[查重肿瘤信息]
-  C --&gt; D[标记多原发肿瘤]
-</pre>
+<section id="成绩与荣誉" class="slide level2">
+<h2>成绩与荣誉</h2>
+<ol type="1">
+<li>省级单位杰出贡献奖</li>
+<li>肿瘤登记杰出贡献奖(13)</li>
+<li>肿瘤登记工作优秀奖(12)</li>
+<li>肿瘤登记工作进步奖(8)</li>
+<li>五大洲发病率第十二卷贡献奖(16)</li>
+<li>全国肿瘤登记工作先进个人(12)</li>
+</ol>
+</section>
+<section id="年计划" class="slide level2">
+<h2>2024年计划</h2>
+<ol type="1">
+<li>发布《2023河南省肿瘤登记年报》</li>
+<li>河南省肿瘤登记实施方案的撰写及发布</li>
+<li>河南省肿瘤登记专业人员综合能力提升培训项目</li>
+<li>编写《基于R语言的肿瘤登记数据分析与利用》</li>
+<li>投稿 IARC meeting (R package for data analysis in cancer registration)</li>
+</ol>
+</section></section>
+<section>
+<section id="癌症一级预防危险因素调查研究" class="title-slide slide level1 agenda-slide center">
+<h1>癌症一级预防危险因素调查研究</h1>
+<div class="agenda-heading">
+<p>主要内容</p>
 </div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-system-flow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-图&nbsp;3: 新系统数据操作流程（建议）
-</figcaption>
-</figure>
-</div>
-</div>
+<div class="agenda">
+<ol>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>以人群为基础的肿瘤登记</p>
+</div></li>
+<li><div class="agenda-active">
+<p>癌症一级预防危险因素调查研究</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>以医院为基础肿瘤登记工作</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>科研工作</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>新年快乐</p>
+</div></li>
+</ol>
 </div>
 </section>
-<section id="肿瘤数据上传操作" class="slide level2">
-<h2>肿瘤数据上传操作</h2>
-<p><br> <br></p>
-<div class="columns">
-<div class="column" style="width:30%;">
-<h3 id="上传渠道">✅上传渠道</h3>
+<section id="完成工作内容-1" class="slide level2">
+<h2>完成工作内容</h2>
 <ul>
-<li>手动录入</li>
-<li>批量导入(医院，HIS)</li>
-<li>批量导入(全死因，CAUS)</li>
-<li>数据协查(其他医院共享数据)</li>
+<li>完成实施方案及工作手册的编写</li>
+<li>筹备及完成《癌症一级预防危险因素调查启动及培训会议》</li>
+<li>目前已经完成48719例合格问卷的收集(项目目标:47000)</li>
 </ul>
-</div><div class="column" style="width:70%;">
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-record1" class="quarto-float quarto-figure quarto-figure-center">
-<figure class="quarto-float quarto-float-fig">
-<div aria-describedby="fig-record1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="./images/record1.jpg">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-record1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-图&nbsp;4: 手工录入界面
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div></div>
 </section>
-<section id="肿瘤数据上传操作-1" class="slide level2">
-<h2>肿瘤数据上传操作</h2>
-
-<img data-src="./images/record2.jpg" title="Title: HIS数据上传" class="r-stretch"></section>
-<section id="肿瘤数据上传操作-2" class="slide level2">
-<h2>肿瘤数据上传操作</h2>
-
-<img data-src="./images/record3.jpg" title="Title: 死因数据上传" class="r-stretch"></section>
-<section id="肿瘤数据上传操作-3" class="slide level2">
-<h2>肿瘤数据上传操作</h2>
-
-<img data-src="./images/xiecha.jpg" class="r-stretch"></section>
-<section id="数据查重" class="slide level2">
-<h2>数据查重</h2>
-<h3 id="人口信息查重">人口信息查重</h3>
-
-<img data-src="./images/dup-pop.jpg" class="r-stretch"></section>
-<section id="数据查重-1" class="slide level2">
-<h2>数据查重</h2>
-<h3 id="肿瘤信息查重">肿瘤信息查重</h3>
-
-<img data-src="./images/dup-tumor.jpg" class="r-stretch"></section>
-<section id="数据查重-2" class="slide level2">
-<h2>数据查重</h2>
-<h3 id="肿瘤信息查重-1">肿瘤信息查重</h3>
-
-<img data-src="./images/dup-tumor1.jpg" class="r-stretch"></section>
-<section id="数据查重-3" class="slide level2">
-<h2>数据查重</h2>
-<h3 id="肿瘤信息查重-2">肿瘤信息查重</h3>
-
-<img data-src="./images/dup-tumor2.jpg" class="r-stretch"></section>
-<section id="死亡补发病" class="slide level2">
-<h2>死亡补发病</h2>
-<blockquote>
-<p><strong>死亡补发病</strong>流程是提高肿瘤登记处数据完整性的关键措施，每年应在上传<strong>全死因数据</strong>之后，应通过系统查找关键词<strong>肿瘤|未匹配</strong>，然后，点击后面的编辑按钮，补充相应的发病信息。</p>
-</blockquote>
-
-<img data-src="./images/dco.jpg" class="r-stretch"></section>
-<section id="死亡补发病流程" class="slide level2">
-<h2>死亡补发病流程</h2>
-<div class="cell" data-reveal="true" data-layout-align="default">
-<div class="cell-output-display">
-<div id="fig-dco" class="quarto-float quarto-figure quarto-figure-center">
-<figure class="quarto-float quarto-float-fig">
-<div aria-describedby="fig-dco-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div>
-<pre class="mermaid mermaid-js" data-label="fig-dco">flowchart LR
-  A[全死因数据] --&gt; B[上传至信息系统]
-  B --&gt; C[与肿瘤发病数据匹配]
-  C --&gt; D{判断是否匹配}
-  D -- 匹配 --&gt; E[被动随访成功]
-  D -- 肿瘤死亡未匹配 --&gt; F[追溯病例发病信息]
-  a(医院) --&gt; F
-  b(医保系统) --&gt; F
-  c(县-乡-村-医生) --&gt; F
-  F --&gt; G[(补充肿瘤发病数据库)]
-  
-</pre>
+<section id="计划" class="slide level2">
+<h2>2024计划</h2>
+<ul>
+<li>开展癌症一级预防危险因素调查总结及随访启动会(6-7月)</li>
+<li>数据分析及论文撰写</li>
+</ul>
+</section></section>
+<section>
+<section id="以医院为基础肿瘤登记工作" class="title-slide slide level1 agenda-slide center">
+<h1>以医院为基础肿瘤登记工作</h1>
+<div class="agenda-heading">
+<p>主要内容</p>
 </div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dco-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-图&nbsp;5: 河南省肿瘤登记死亡补发病流程
-</figcaption>
-</figure>
-</div>
-</div>
+<div class="agenda">
+<ol>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>以人群为基础的肿瘤登记</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>癌症一级预防危险因素调查研究</p>
+</div></li>
+<li><div class="agenda-active">
+<p>以医院为基础肿瘤登记工作</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>科研工作</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>新年快乐</p>
+</div></li>
+</ol>
 </div>
 </section>
-<section id="质量控制" class="slide level2">
-<h2>质量控制</h2>
-<p><br></p>
-<blockquote>
-<p>肿瘤登记收集的变量或者变量组合之间存在一定的逻辑关系，通过对单个变量或变量组合之间的逻辑关系进行审查，以提高肿瘤登记数据有效性。</p>
-</blockquote>
-<div class="columns">
-<div class="column" style="width:40%;">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>单个项目</strong></p>
-</div>
-<div class="callout-content">
+<section id="进展情况" class="slide level2">
+<h2>进展情况</h2>
 <ul>
-<li>出生日期</li>
-<li>发病日期</li>
-<li>年龄、性别</li>
-<li>发病部位</li>
-<li>形态学</li>
-<li>行为和分级</li>
+<li>完成主要癌种调查表的初步设计</li>
+<li>健康中国把医院肿瘤登记纳入内容</li>
+<li>开展医院肿瘤登记信息系统建设的讨论会</li>
+<li>完成35000例肿瘤数据的上报(院内肿瘤登记)</li>
 </ul>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:40%;">
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>项目组合</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>性别/部位</li>
-<li>部位/组织学学</li>
-<li>年龄/部位/组织学</li>
-<li>行为/部位</li>
-<li>行为/组织学</li>
-<li>性别/组织学</li>
-</ul>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:20%;">
-<div class="callout callout-caution callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>校验结果</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>正确✅</li>
-<li>警告⚠️</li>
-<li>错误❌</li>
-</ul>
-</div>
-</div>
-</div>
-</div></div>
 </section>
-<section id="随访功能" class="slide level2">
-<h2>随访功能</h2>
-<h3 id="被动随访">被动随访</h3>
-
-<img data-src="./images/followup1.jpg" class="r-stretch"></section>
-<section id="随访功能-1" class="slide level2">
-<h2>随访功能</h2>
-<h3 id="主动随访">主动随访</h3>
-
-<img data-src="./images/followup2.jpg" class="r-stretch"></section>
-<section id="随访功能-2" class="slide level2">
-<h2>随访功能</h2>
-<h3 id="主动随访-1">主动随访</h3>
-
-<img data-src="./images/followup3.jpg" class="r-stretch"></section>
-<section id="人口数据上报" class="slide level2">
-<h2>人口数据上报</h2>
-
-<img data-src="./images/pop.jpg" class="r-stretch"></section>
-<section id="寿命表数据上报" class="slide level2">
-<h2>寿命表数据上报</h2>
-
-<img data-src="./images/death.jpg" class="r-stretch"></section></section>
-<section id="谢-谢-关-注" class="title-slide slide level1 center" data-background-color="lightblue" style="text-align: center;color: white;">
-<h1>谢 谢 关 注</h1>
+<section id="年计划-1" class="slide level2">
+<h2>2024年计划</h2>
+<ul>
+<li>组织专家开展主要癌症的医院肿瘤登记调查内容讨论</li>
+<li>开始医院肿瘤登记信息系统的开发</li>
+</ul>
+</section></section>
+<section>
+<section id="科研工作" class="title-slide slide level1 agenda-slide center">
+<h1>科研工作</h1>
+<div class="agenda-heading">
+<p>主要内容</p>
+</div>
+<div class="agenda">
+<ol>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>以人群为基础的肿瘤登记</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>癌症一级预防危险因素调查研究</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>以医院为基础肿瘤登记工作</p>
+</div></li>
+<li><div class="agenda-active">
+<p>科研工作</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>新年快乐</p>
+</div></li>
+</ol>
+</div>
+</section>
+<section id="进展情况-1" class="slide level2">
+<h2>进展情况</h2>
+<ul>
+<li>多中心常见高发癌种以医院为基础肿瘤登记数据标准构建研究</li>
+<li>Global Health related
+<ul>
+<li>Estimation of lifetime risk of developing cancer and dying of cancer</li>
+<li>PYLL due to cancer adjusting for main risk factors</li>
+</ul></li>
+</ul>
+</section>
+<section id="计划-1" class="slide level2">
+<h2>2024计划</h2>
+<ul>
+<li>Lifetime risk of developing cancer among residents in middle China.</li>
+<li>Temporal trends on lifetime risk of esophageal cancer in high-risk areas in China.</li>
+<li>Evaluation of the effectiveness of the AMP Model in adjusting for multiple primary cancers in estimating Lifetime cancer risk.</li>
+</ul>
+</section></section>
+<section id="新年快乐" class="title-slide slide level1 no-auto-agenda center" data-background-image="thanks.jpg" data-background-opacity="0.5" style="text-align: center;color: white;">
+<h1>新年快乐</h1>
+<div class="footer">
+<p>个人网站：<a href="https://chenq.site">普癌新声https://www.chenq.site</a></p>
+</div>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
-<p>河南省人群肿瘤登记</p>
+<p>Summary of 2023, Plans for 2024</p>
 </div>
 </div>
 <div class="reveal-header">
@@ -759,8 +571,8 @@
 <div class="sc-title">
 <p> </p>
 </div>
-<div class="header-text title-text">
-<p>设计思路、系统框架、推荐操作流程</p>
+<div class="header-text">
+<p> </p>
 </div>
 <div class="sb-title">
 <p> </p>
@@ -777,6 +589,7 @@
   <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
   <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-attribution/attribution.js"></script>
   <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -798,7 +611,7 @@
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
-'smaller': true,
+'smaller': false,
  
         // Display controls in the bottom right corner
         controls: false,
@@ -968,7 +781,7 @@
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealAttribution, QuartoSupport,
 
           RevealMath,
           RevealNotes,
@@ -977,44 +790,6 @@
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

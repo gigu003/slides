@@ -1,0 +1,47 @@
+---
+title: "肿瘤登记质控和自动化报告"
+subtitle: "如何快速发布质控报告和年度报告？"
+author: "陈琼"
+date: 2024-4-17
+date-format: long
+address: "安徽泾县"
+categories:
+  - 肿瘤登记
+format:
+  revealjs:
+    slide-number: true
+    scrollable: false
+    sc-sb-title: h1
+    footer: "https://slides.chenq.site"
+revealjs-plugins:
+  - attribution
+filters:
+   - reveal-header
+   - reveal-auto-agenda
+auto-agenda:
+  bullets: numbered
+  heading: 主要内容
+slide-level: 2
+title-slide-style: pandoc
+title-slide-attributes:
+  data-background-image: https://cdn.jsdelivr.net/gh/gigu003/db/images/title-pic1.jpg
+  data-background-size: contain
+  data-background-opacity: "0.5"
+---
+
+# 质量控制应该怎么做?{background="lightblue"}
+
+{{< include /segments/_quality_theory.qmd >}}
+
+# 可视化批量化的质控报告?{background="lightblue"}
+
+{{< include /segments/_quality_practice.qmd >}}
+
+# 自动化的肿瘤登记年报输出{background="lightblue"}
+
+{{< include /segments/_auto_report.qmd >}}
+
+{{< include /segments/_tuiguang.qmd >}}
+
+{{< include /segments/_about_me.qmd >}}   
+      

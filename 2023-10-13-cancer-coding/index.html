@@ -1,0 +1,3518 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-html-68b329da9893e34099c7d8ad5cb9c940.min.css" rel="stylesheet" append-hash="true" data-mode="light">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-79bb3942e891885f9f7af119cd221462.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/quarto-contrib/reveal-header-1.0.0/add_header.js" defer="true"></script>
+<link href="../site_libs/quarto-contrib/reveal-header-1.0.0/add_header.css" rel="stylesheet">
+<script src="../site_libs/quarto-contrib/roughnotation-0.5.1/rough-notation.iife.js"></script>
+<script src="../site_libs/quarto-contrib/roughnotation-init-1.0.0/rough.js"></script>
+<script src="../site_libs/quarto-contrib/sc-sb-title-1.0.0/sc_sb_title.js" defer="true"></script>
+<link href="../site_libs/quarto-contrib/grid-no-htext-1.0.0/grid_no_htext.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/reveal-auto-agenda-0.0.3/reveal-auto-agenda.css" rel="stylesheet"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.9">
+
+  <meta name="author" content="陈琼">
+  <title>普癌新声 – 肿瘤分类与编码</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-4bf6ab75189180265fa2733c46132b23.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-attribution/attribution.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-titled.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-titled) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-titled .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-titled .callout-title  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-titled.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-titled.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-title {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-title {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-title {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-titled .callout-body > .callout-content > :last-child {
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  .callout.callout-titled .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-titled) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-title {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-title {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-title {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-title {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-title {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+<meta property="og:title" content="肿瘤分类与编码 – 普癌新声">
+<meta property="og:description" content="ICD10/ICDO3编码在肿瘤登记中的应用">
+<meta property="og:site_name" content="普癌新声">
+<meta name="twitter:title" content="肿瘤分类与编码 – 普癌新声">
+<meta name="twitter:description" content="ICD10/ICDO3编码在肿瘤登记中的应用">
+<meta name="twitter:card" content="summary">
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-color="lightblue" class="center">
+  <h1 class="title">肿瘤分类与编码</h1>
+  <p class="subtitle">ICD10/ICDO3编码在肿瘤登记中的应用</p>
+  <p class="author">陈琼</p>
+  <p class="date">Friday Oct 13, 2023</p>
+</section>
+<section>
+<section id="分类与编码的意义" class="title-slide slide level1 agenda-slide center">
+<h1>分类与编码的意义</h1>
+<div class="agenda-heading">
+<p>目录</p>
+</div>
+<div class="agenda">
+<ol>
+<li><div class="agenda-active">
+<p>分类与编码的意义</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>ICD10(国际疾病与相关健康问题统计分类第十版)</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>ICDO3(国际疾病分类肿瘤学专辑第三版)</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>ICDO3编码的基本规则</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>谢 谢 关 注 !</p>
+</div></li>
+</ol>
+</div>
+</section>
+<section id="意义" class="slide level2">
+<h2>意义</h2>
+<blockquote>
+<p>依据疾病的某些特征，按照规则将疾病分门别类，并用编码的方法来表示。</p>
+</blockquote>
+<ul>
+<li>把疾病诊断和其他健康问题的文字描述转换成字母和数字 编码，便于储存、检索与分析</li>
+<li>分类提供了编码的规则</li>
+</ul>
+</section>
+<section id="意义-1" class="slide level2">
+<h2>意义</h2>
+<ul>
+<li>标准化: (ICD使得疾病名称标准化、格式化，是医学信息化、医院信息管理等临床信息系统应用的基础)</li>
+<li>共享性: (ICD使得疾病信息得到最大范围的共享，可以反映国家卫生状况、还是医学科研和教学的工具和资料)</li>
+<li>利于管理: (医院医疗和行政管理的依据)</li>
+</ul>
+</section>
+<section id="分类标准及用途" class="slide level2">
+<h2>分类标准及用途</h2>
+<ul>
+<li>病案首页（ICD10）</li>
+<li>死因登记编码（ICD10）</li>
+<li>肿瘤登记数据收集和分析（ICDO3）</li>
+<li>病案首页（ICDO3）</li>
+</ul>
+</section></section>
+<section>
+<section id="icd10国际疾病与相关健康问题统计分类第十版" class="title-slide slide level1 agenda-slide center">
+<h1>ICD10(国际疾病与相关健康问题统计分类第十版)</h1>
+<div class="agenda-heading">
+<p>目录</p>
+</div>
+<div class="agenda">
+<ol>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>分类与编码的意义</p>
+</div></li>
+<li><div class="agenda-active">
+<p>ICD10(国际疾病与相关健康问题统计分类第十版)</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>ICDO3(国际疾病分类肿瘤学专辑第三版)</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>ICDO3编码的基本规则</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>谢 谢 关 注 !</p>
+</div></li>
+</ol>
+</div>
+</section>
+<section id="定义" class="slide level2">
+<h2>定义</h2>
+<p><br></p>
+<blockquote>
+<p>国际疾病分类,是依据疾病的某些特征，按照规则将疾病分门别类，并用编码的方法来表示的系统。</p>
+</blockquote>
+</section>
+<section id="分类依据" class="slide level2">
+<h2>分类依据</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<blockquote>
+<p>ICD分类依据疾病的4个主要特征，即病因、解剖学部位、病理及临床表现.</p>
+</blockquote>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">mindmap
+  root(分类依据)
+    病因
+    :::urgent large
+    解剖学部位
+    病理及临床表现
+      症状体征
+      分期
+      分型
+      性别
+      年龄
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</div></div>
+<ul>
+<li>每一特性构成了一个分类标准，形成一个分类轴心</li>
+<li>ICD是一个多轴心的分类系统。</li>
+</ul>
+</section>
+<section id="发展历史" class="slide level2">
+<h2>发展历史</h2>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{init: { 'logLevel': 'debug', 'theme': 'forest' } }%%
+timeline
+  title ICD发展历史
+      1893 : 美国芝加哥&lt;br&gt;国际统计学大会&lt;br&gt;《伯蒂隆死因分类法》  : ICD-1 
+      1909&lt;br&gt;1920&lt;br&gt;1929 : ICD-2 : ICD-3 : ICD-4
+      1938&lt;br&gt;1948&lt;br&gt; : ICD-5 : ICD-6
+      1955&lt;br&gt;1965&lt;br&gt;1975 : ICD-7 : ICD-8 : ICD-9
+      1994 : ICD-10
+      2018 : ICD-11
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="icd10编码基本结构" class="slide level2">
+<h2>ICD10编码基本结构</h2>
+<blockquote>
+<p><span style="font-size:2em;color: darkred;">A 0 0 . 0</span></p>
+</blockquote>
+<ul>
+<li>字母+数字的编码形式(A00.0-Z99.9)</li>
+<li>分类由22章组成(疾病、损伤中毒等)</li>
+</ul>
+</section>
+<section id="icd10编码" class="slide level2">
+<h2>ICD10编码</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div id="ypmxjoaaup" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ypmxjoaaup table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#ypmxjoaaup thead, #ypmxjoaaup tbody, #ypmxjoaaup tfoot, #ypmxjoaaup tr, #ypmxjoaaup td, #ypmxjoaaup th {
+  border-style: none;
+}
+
+#ypmxjoaaup p {
+  margin: 0;
+  padding: 0;
+}
+
+#ypmxjoaaup .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#ypmxjoaaup .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#ypmxjoaaup .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#ypmxjoaaup .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#ypmxjoaaup .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ypmxjoaaup .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ypmxjoaaup .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ypmxjoaaup .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#ypmxjoaaup .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#ypmxjoaaup .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#ypmxjoaaup .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#ypmxjoaaup .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#ypmxjoaaup .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#ypmxjoaaup .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#ypmxjoaaup .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#ypmxjoaaup .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#ypmxjoaaup .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#ypmxjoaaup .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#ypmxjoaaup .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ypmxjoaaup .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#ypmxjoaaup .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#ypmxjoaaup .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#ypmxjoaaup .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ypmxjoaaup .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#ypmxjoaaup .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#ypmxjoaaup .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ypmxjoaaup .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ypmxjoaaup .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#ypmxjoaaup .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ypmxjoaaup .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#ypmxjoaaup .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ypmxjoaaup .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ypmxjoaaup .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ypmxjoaaup .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ypmxjoaaup .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ypmxjoaaup .gt_left {
+  text-align: left;
+}
+
+#ypmxjoaaup .gt_center {
+  text-align: center;
+}
+
+#ypmxjoaaup .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#ypmxjoaaup .gt_font_normal {
+  font-weight: normal;
+}
+
+#ypmxjoaaup .gt_font_bold {
+  font-weight: bold;
+}
+
+#ypmxjoaaup .gt_font_italic {
+  font-style: italic;
+}
+
+#ypmxjoaaup .gt_super {
+  font-size: 65%;
+}
+
+#ypmxjoaaup .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#ypmxjoaaup .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#ypmxjoaaup .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#ypmxjoaaup .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#ypmxjoaaup .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#ypmxjoaaup .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#ypmxjoaaup .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#ypmxjoaaup .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#ypmxjoaaup div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top" data-quarto-postprocess="true" style="table-layout: fixed;; width: 0px" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_heading">
+<th colspan="7" class="gt_heading gt_title gt_font_normal gt_bottom_border"><p><strong>ICD编码章节</strong></p></th>
+</tr>
+<tr class="odd gt_col_headings">
+<th id="章" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">章</th>
+<th id="名称" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">名称</th>
+<th id="节" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">节</th>
+<th id="类" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">类</th>
+<th id="范围" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">范围</th>
+<th id="星" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">星</th>
+<th id="归类" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">归类</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_right" headers="章">1</td>
+<td class="gt_row gt_left" headers="名称">传染病寄生虫病</td>
+<td class="gt_row gt_right" headers="节">21</td>
+<td class="gt_row gt_right" headers="类">171</td>
+<td class="gt_row gt_left" headers="范围">A00-B99</td>
+<td class="gt_row gt_right" headers="星">0</td>
+<td class="gt_row gt_left" headers="归类">病因</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="章">2</td>
+<td class="gt_row gt_left" headers="名称">肿瘤</td>
+<td class="gt_row gt_right" headers="节">7</td>
+<td class="gt_row gt_right" headers="类">149</td>
+<td class="gt_row gt_left" headers="范围">C00-D48</td>
+<td class="gt_row gt_right" headers="星">0</td>
+<td class="gt_row gt_left" headers="归类">病种</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="章">3</td>
+<td class="gt_row gt_left" headers="名称">血液造血免疫</td>
+<td class="gt_row gt_right" headers="节">6</td>
+<td class="gt_row gt_right" headers="类">34</td>
+<td class="gt_row gt_left" headers="范围">D50-D89</td>
+<td class="gt_row gt_right" headers="星">2</td>
+<td class="gt_row gt_left" headers="归类">病因</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="章">4</td>
+<td class="gt_row gt_left" headers="名称">内分泌营养代谢</td>
+<td class="gt_row gt_right" headers="节">8</td>
+<td class="gt_row gt_right" headers="类">73</td>
+<td class="gt_row gt_left" headers="范围">E00-E90</td>
+<td class="gt_row gt_right" headers="星">2</td>
+<td class="gt_row gt_left" headers="归类">病因</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="章">5</td>
+<td class="gt_row gt_left" headers="名称">精神和行为障碍</td>
+<td class="gt_row gt_right" headers="节">11</td>
+<td class="gt_row gt_right" headers="类">78</td>
+<td class="gt_row gt_left" headers="范围">F00-F99</td>
+<td class="gt_row gt_right" headers="星">2</td>
+<td class="gt_row gt_left" headers="归类">病因</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="章">6</td>
+<td class="gt_row gt_left" headers="名称">神经系统</td>
+<td class="gt_row gt_right" headers="节">11</td>
+<td class="gt_row gt_right" headers="类">67</td>
+<td class="gt_row gt_left" headers="范围">G00-G99</td>
+<td class="gt_row gt_right" headers="星">16</td>
+<td class="gt_row gt_left" headers="归类">部位</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="章">7</td>
+<td class="gt_row gt_left" headers="名称">眼和附器</td>
+<td class="gt_row gt_right" headers="节">11</td>
+<td class="gt_row gt_right" headers="类">47</td>
+<td class="gt_row gt_left" headers="范围">H00-H59</td>
+<td class="gt_row gt_right" headers="星">12</td>
+<td class="gt_row gt_left" headers="归类">部位</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="章">8</td>
+<td class="gt_row gt_left" headers="名称">耳和乳突</td>
+<td class="gt_row gt_right" headers="节">4</td>
+<td class="gt_row gt_right" headers="类">24</td>
+<td class="gt_row gt_left" headers="范围">H60-H95</td>
+<td class="gt_row gt_right" headers="星">5</td>
+<td class="gt_row gt_left" headers="归类">部位</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="章">9</td>
+<td class="gt_row gt_left" headers="名称">循环系统</td>
+<td class="gt_row gt_right" headers="节">10</td>
+<td class="gt_row gt_right" headers="类">77</td>
+<td class="gt_row gt_left" headers="范围">I00-I99</td>
+<td class="gt_row gt_right" headers="星">8</td>
+<td class="gt_row gt_left" headers="归类">部位</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="章">10</td>
+<td class="gt_row gt_left" headers="名称">呼吸系统</td>
+<td class="gt_row gt_right" headers="节">10</td>
+<td class="gt_row gt_right" headers="类">63</td>
+<td class="gt_row gt_left" headers="范围">J00-J99</td>
+<td class="gt_row gt_right" headers="星">3</td>
+<td class="gt_row gt_left" headers="归类">部位</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="章">11</td>
+<td class="gt_row gt_left" headers="名称">消化系统</td>
+<td class="gt_row gt_right" headers="节">10</td>
+<td class="gt_row gt_right" headers="类">71</td>
+<td class="gt_row gt_left" headers="范围">K00-K93</td>
+<td class="gt_row gt_right" headers="星">5</td>
+<td class="gt_row gt_left" headers="归类">部位</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="icd10编码-1" class="slide level2">
+<h2>ICD10编码</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div id="glyjrgqatf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#glyjrgqatf table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#glyjrgqatf thead, #glyjrgqatf tbody, #glyjrgqatf tfoot, #glyjrgqatf tr, #glyjrgqatf td, #glyjrgqatf th {
+  border-style: none;
+}
+
+#glyjrgqatf p {
+  margin: 0;
+  padding: 0;
+}
+
+#glyjrgqatf .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#glyjrgqatf .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#glyjrgqatf .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#glyjrgqatf .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#glyjrgqatf .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#glyjrgqatf .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#glyjrgqatf .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#glyjrgqatf .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#glyjrgqatf .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#glyjrgqatf .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#glyjrgqatf .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#glyjrgqatf .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#glyjrgqatf .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#glyjrgqatf .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#glyjrgqatf .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#glyjrgqatf .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#glyjrgqatf .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#glyjrgqatf .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#glyjrgqatf .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#glyjrgqatf .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#glyjrgqatf .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#glyjrgqatf .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#glyjrgqatf .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#glyjrgqatf .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#glyjrgqatf .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#glyjrgqatf .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#glyjrgqatf .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#glyjrgqatf .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#glyjrgqatf .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#glyjrgqatf .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#glyjrgqatf .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#glyjrgqatf .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#glyjrgqatf .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#glyjrgqatf .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#glyjrgqatf .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#glyjrgqatf .gt_left {
+  text-align: left;
+}
+
+#glyjrgqatf .gt_center {
+  text-align: center;
+}
+
+#glyjrgqatf .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#glyjrgqatf .gt_font_normal {
+  font-weight: normal;
+}
+
+#glyjrgqatf .gt_font_bold {
+  font-weight: bold;
+}
+
+#glyjrgqatf .gt_font_italic {
+  font-style: italic;
+}
+
+#glyjrgqatf .gt_super {
+  font-size: 65%;
+}
+
+#glyjrgqatf .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#glyjrgqatf .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#glyjrgqatf .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#glyjrgqatf .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#glyjrgqatf .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#glyjrgqatf .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#glyjrgqatf .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#glyjrgqatf .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#glyjrgqatf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top" data-quarto-postprocess="true" style="table-layout: fixed;; width: 0px" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_heading">
+<th colspan="7" class="gt_heading gt_title gt_font_normal gt_bottom_border"><p><strong>ICD编码章节</strong></p></th>
+</tr>
+<tr class="odd gt_col_headings">
+<th id="章" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">章</th>
+<th id="名称" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">名称</th>
+<th id="节" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">节</th>
+<th id="类" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">类</th>
+<th id="范围" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">范围</th>
+<th id="星" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">星</th>
+<th id="归类" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">归类</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_right" headers="章">12</td>
+<td class="gt_row gt_left" headers="名称">皮肤和皮下组织</td>
+<td class="gt_row gt_right" headers="节">8</td>
+<td class="gt_row gt_right" headers="类">72</td>
+<td class="gt_row gt_left" headers="范围">L00-L99</td>
+<td class="gt_row gt_right" headers="星">6</td>
+<td class="gt_row gt_left" headers="归类">部位</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="章">13</td>
+<td class="gt_row gt_left" headers="名称">肌肉骨骼结缔</td>
+<td class="gt_row gt_right" headers="节">6</td>
+<td class="gt_row gt_right" headers="类">79</td>
+<td class="gt_row gt_left" headers="范围">M00-M99</td>
+<td class="gt_row gt_right" headers="星">12</td>
+<td class="gt_row gt_left" headers="归类">部位</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="章">14</td>
+<td class="gt_row gt_left" headers="名称">泌尿生殖系统</td>
+<td class="gt_row gt_right" headers="节">11</td>
+<td class="gt_row gt_right" headers="类">82</td>
+<td class="gt_row gt_left" headers="范围">N00-N99</td>
+<td class="gt_row gt_right" headers="星">9</td>
+<td class="gt_row gt_left" headers="归类">部位</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="章">15</td>
+<td class="gt_row gt_left" headers="名称">妊娠分娩产褥期</td>
+<td class="gt_row gt_right" headers="节">8</td>
+<td class="gt_row gt_right" headers="类">75</td>
+<td class="gt_row gt_left" headers="范围">O00-O99</td>
+<td class="gt_row gt_right" headers="星">0</td>
+<td class="gt_row gt_left" headers="归类">病种</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="章">16</td>
+<td class="gt_row gt_left" headers="名称">起源于围生期</td>
+<td class="gt_row gt_right" headers="节">10</td>
+<td class="gt_row gt_right" headers="类">59</td>
+<td class="gt_row gt_left" headers="范围">P00-P96</td>
+<td class="gt_row gt_right" headers="星">1</td>
+<td class="gt_row gt_left" headers="归类">病因</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="章">17</td>
+<td class="gt_row gt_left" headers="名称">畸形变形染色体</td>
+<td class="gt_row gt_right" headers="节">11</td>
+<td class="gt_row gt_right" headers="类">87</td>
+<td class="gt_row gt_left" headers="范围">Q00-Q99</td>
+<td class="gt_row gt_right" headers="星">0</td>
+<td class="gt_row gt_left" headers="归类">病种</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="章">18</td>
+<td class="gt_row gt_left" headers="名称">症状体征临床</td>
+<td class="gt_row gt_right" headers="节">13</td>
+<td class="gt_row gt_right" headers="类">90</td>
+<td class="gt_row gt_left" headers="范围">R00-R99</td>
+<td class="gt_row gt_right" headers="星">0</td>
+<td class="gt_row gt_left" headers="归类">症状</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="章">19</td>
+<td class="gt_row gt_left" headers="名称">损伤中毒性质</td>
+<td class="gt_row gt_right" headers="节">21</td>
+<td class="gt_row gt_right" headers="类">195</td>
+<td class="gt_row gt_left" headers="范围">S00-T98</td>
+<td class="gt_row gt_right" headers="星">0</td>
+<td class="gt_row gt_left" headers="归类">临床</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="章">20</td>
+<td class="gt_row gt_left" headers="名称">损伤中毒外因</td>
+<td class="gt_row gt_right" headers="节">8</td>
+<td class="gt_row gt_right" headers="类">372</td>
+<td class="gt_row gt_left" headers="范围">V01-Y98</td>
+<td class="gt_row gt_right" headers="星">0</td>
+<td class="gt_row gt_left" headers="归类">外因</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="章">21</td>
+<td class="gt_row gt_left" headers="名称">影响健康的因素</td>
+<td class="gt_row gt_right" headers="节">7</td>
+<td class="gt_row gt_right" headers="类">84</td>
+<td class="gt_row gt_left" headers="范围">Z00-Z99</td>
+<td class="gt_row gt_right" headers="星">0</td>
+<td class="gt_row gt_left" headers="归类">非病</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="章">22</td>
+<td class="gt_row gt_left" headers="名称">特殊目的编码</td>
+<td class="gt_row gt_right" headers="节">2</td>
+<td class="gt_row gt_right" headers="类">5</td>
+<td class="gt_row gt_left" headers="范围">U00-U99</td>
+<td class="gt_row gt_right" headers="星">0</td>
+<td class="gt_row gt_left" headers="归类">特殊</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="icd10肿瘤编码" class="slide level2">
+<h2>ICD10肿瘤编码</h2>
+<ul>
+<li>C00-C97 恶性肿瘤</li>
+<li>D00-D09 原位肿瘤</li>
+<li>D10-D36 良性肿瘤 (D32-D33中枢神经系统的良性肿瘤)</li>
+<li>D37-D48 动态未定肿瘤 （D42-D43中枢神经系统动态未定肿瘤）</li>
+</ul>
+<blockquote>
+<p>报卡范畴：全部恶性肿瘤加中枢神经系统的肿瘤 所有恶性肿瘤+D32-33和D35.2-4</p>
+</blockquote>
+</section>
+<section id="icd10编码的修订" class="slide level2">
+<h2>ICD10编码的修订</h2>
+<p><br></p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="khlqjmmgdq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#khlqjmmgdq table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#khlqjmmgdq thead, #khlqjmmgdq tbody, #khlqjmmgdq tfoot, #khlqjmmgdq tr, #khlqjmmgdq td, #khlqjmmgdq th {
+  border-style: none;
+}
+
+#khlqjmmgdq p {
+  margin: 0;
+  padding: 0;
+}
+
+#khlqjmmgdq .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#khlqjmmgdq .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#khlqjmmgdq .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#khlqjmmgdq .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#khlqjmmgdq .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#khlqjmmgdq .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#khlqjmmgdq .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#khlqjmmgdq .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#khlqjmmgdq .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#khlqjmmgdq .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#khlqjmmgdq .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#khlqjmmgdq .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#khlqjmmgdq .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#khlqjmmgdq .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#khlqjmmgdq .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#khlqjmmgdq .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#khlqjmmgdq .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#khlqjmmgdq .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#khlqjmmgdq .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#khlqjmmgdq .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#khlqjmmgdq .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#khlqjmmgdq .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#khlqjmmgdq .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#khlqjmmgdq .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#khlqjmmgdq .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#khlqjmmgdq .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#khlqjmmgdq .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#khlqjmmgdq .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#khlqjmmgdq .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#khlqjmmgdq .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#khlqjmmgdq .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#khlqjmmgdq .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#khlqjmmgdq .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#khlqjmmgdq .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#khlqjmmgdq .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#khlqjmmgdq .gt_left {
+  text-align: left;
+}
+
+#khlqjmmgdq .gt_center {
+  text-align: center;
+}
+
+#khlqjmmgdq .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#khlqjmmgdq .gt_font_normal {
+  font-weight: normal;
+}
+
+#khlqjmmgdq .gt_font_bold {
+  font-weight: bold;
+}
+
+#khlqjmmgdq .gt_font_italic {
+  font-style: italic;
+}
+
+#khlqjmmgdq .gt_super {
+  font-size: 65%;
+}
+
+#khlqjmmgdq .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#khlqjmmgdq .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#khlqjmmgdq .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#khlqjmmgdq .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#khlqjmmgdq .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#khlqjmmgdq .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#khlqjmmgdq .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#khlqjmmgdq .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#khlqjmmgdq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top" data-quarto-postprocess="true" style="table-layout: fixed;; width: 0px" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_heading">
+<th colspan="2" class="gt_heading gt_title gt_font_normal gt_bottom_border"><p><strong>2000年修订重新定义的恶性肿瘤</strong></p></th>
+</tr>
+<tr class="odd gt_col_headings">
+<th id="1992年编码" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">1992年编码</th>
+<th id="更新后编码" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">更新后编码</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="a">D45 真性红细胞增多症</td>
+<td class="gt_row gt_left" headers="b">C94.1</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="a">D46 骨髓增生异常综合征MDS/顽固性贫血</td>
+<td class="gt_row gt_left" headers="b">C92.7</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="a">D47.1 慢性骨髓增生性疾病</td>
+<td class="gt_row gt_left" headers="b">C96.7</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="a">D47.3 特发性（出血性）血小板增多症</td>
+<td class="gt_row gt_left" headers="b">C96.7</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="与肿瘤相关的编码" class="slide level2">
+<h2>与肿瘤相关的编码</h2>
+
+<img data-src="https://cdn.jsdelivr.net/gh/gigu003/db/images/Zcode.png" class="r-stretch"></section></section>
+<section>
+<section id="icdo3国际疾病分类肿瘤学专辑第三版" class="title-slide slide level1 agenda-slide center">
+<h1>ICDO3(国际疾病分类肿瘤学专辑第三版)</h1>
+<div class="agenda-heading">
+<p>目录</p>
+</div>
+<div class="agenda">
+<ol>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>分类与编码的意义</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>ICD10(国际疾病与相关健康问题统计分类第十版)</p>
+</div></li>
+<li><div class="agenda-active">
+<p>ICDO3(国际疾病分类肿瘤学专辑第三版)</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>ICDO3编码的基本规则</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>谢 谢 关 注 !</p>
+</div></li>
+</ol>
+</div>
+</section>
+<section id="定义-1" class="slide level2 smaller">
+<h2>定义</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<blockquote>
+<p>ICDO3是一个既有解剖学部位、又有形态学编码系统的双重分类体系，广泛应用于肿瘤随访登记的数据收集系统和医疗实践中。</p>
+</blockquote>
+<p><br></p>
+<ul>
+<li>解剖部位编码: 描述肿瘤发生的原发部位</li>
+<li>形态学编码: 描述肿瘤细胞的类型和它的生物学活性</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-right">
+<figure>
+<p><img data-src="https://cdn.jsdelivr.net/gh/gigu003/db/images/ICDO.png" class="quarto-figure quarto-figure-right"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="版本更新历史" class="slide level2">
+<h2>版本更新历史</h2>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{init: { 'logLevel': 'debug', 'theme': 'forest' } }%%
+timeline
+  title ICDO3版本更新
+      1976 : ICD-O1
+      1992 : ICD-O2
+      2000 : ICD-O3
+      2019 : ICD-O3.2
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="icdo3编码结构" class="slide level2">
+<h2>ICDO3编码结构</h2>
+
+<img data-src="https://pic3.zhimg.com/80/v2-563e0941f373f5cd3385ceefeddf4126_1440w.jpg" class="r-stretch"></section>
+<section id="解剖学部位编码结构" class="slide level2">
+<h2>解剖学部位编码结构</h2>
+<blockquote>
+<p><span style="font-size:2em;color: darkred;">C X X . X</span></p>
+</blockquote>
+<ul>
+<li>大写字母C + 2位数字 + 小数点 + 一位数字</li>
+<li>CXX表示肿瘤发生的主要部位</li>
+<li>.X表示具体的亚部位</li>
+</ul>
+<p>C50.2 表示乳房上内象限恶性肿瘤</p>
+</section>
+<section id="形态学编码结构" class="slide level2">
+<h2>形态学编码结构</h2>
+<blockquote>
+<p><span style="font-size:2em;color: darkred;">MXXXX/XX</span></p>
+</blockquote>
+<ul>
+<li>M+4位数字表示组织学类型</li>
+<li>第五位数字表示行为学</li>
+<li>第六位数字表示分化程度等级</li>
+</ul>
+<p>M8140/31表示高分化腺癌</p>
+</section>
+<section id="行为学编码" class="slide level2">
+<h2>行为学编码</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>编码</th>
+<th>意义</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>良性</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>良恶性未定/交界恶性/潜在低度恶性/潜在恶性未定</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>原位癌/上皮内/非浸润性/非侵袭性</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>恶性, 原发部位</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>恶性, 继发部位</td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td>恶性, 原发部位未知或转移部位不肯定</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="组织学等级和分化程度编码" class="slide level2 smaller">
+<h2>组织学等级和分化程度编码</h2>
+<p><br></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>编码</th>
+<th>意义</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>I级 / 高分化 / 已分化NOS</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>II级 / 中分化 / 已中等分化</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>III级 / 第分化</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>IV级 / 未分化</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>T-细胞</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>B-细胞 / 前B / B-前体细胞 仅用于淋巴瘤白血病</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>无标记淋巴细胞 / 非T-非B （M9590-9989）</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>NK细胞</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>等级或分化程度未定，细胞类型未确定</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="icd10与icdo3解剖学编码不一致" class="slide level2 smaller">
+<h2>ICD10与ICDO3解剖学编码不一致</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>ICD10</th>
+<th>ICDO3</th>
+<th>部位</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>C01</td>
+<td>C01.9</td>
+<td>舌根/舍底</td>
+</tr>
+<tr class="even">
+<td>C07</td>
+<td>C07.9</td>
+<td>腮腺NOS</td>
+</tr>
+<tr class="odd">
+<td>C12</td>
+<td>C12.9</td>
+<td>梨状窦/梨状窝</td>
+</tr>
+<tr class="even">
+<td>C19</td>
+<td>C19.9</td>
+<td>直肠乙状结肠连接处</td>
+</tr>
+<tr class="odd">
+<td>C20</td>
+<td>C20.9</td>
+<td>直肠壶腹/直肠NOS</td>
+</tr>
+<tr class="even">
+<td>C23</td>
+<td>C23.9</td>
+<td>胆囊</td>
+</tr>
+<tr class="odd">
+<td>C33</td>
+<td>C33.9</td>
+<td>气管</td>
+</tr>
+<tr class="even">
+<td>C37</td>
+<td>C37.9</td>
+<td>胸腺</td>
+</tr>
+<tr class="odd">
+<td>C52</td>
+<td>C52.9</td>
+<td>阴道</td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:50%;">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>ICD10</th>
+<th>ICDO3</th>
+<th>部位</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>C55</td>
+<td>C55.9</td>
+<td>子宫NOS</td>
+</tr>
+<tr class="even">
+<td>C56</td>
+<td>C56.9</td>
+<td>卵巢</td>
+</tr>
+<tr class="odd">
+<td>C58</td>
+<td>C58.9</td>
+<td>胎盘</td>
+</tr>
+<tr class="even">
+<td>C61</td>
+<td>C61.9</td>
+<td>前列腺NOS</td>
+</tr>
+<tr class="odd">
+<td>C64</td>
+<td>C64.9</td>
+<td>肾</td>
+</tr>
+<tr class="even">
+<td>C65</td>
+<td>C65.9</td>
+<td>肾盂/肾盏/</td>
+</tr>
+<tr class="odd">
+<td>C66</td>
+<td>C66.9</td>
+<td>输尿管</td>
+</tr>
+<tr class="even">
+<td>C73</td>
+<td>C73.9</td>
+<td>甲状腺</td>
+</tr>
+<tr class="odd">
+<td>C80</td>
+<td>C80.9</td>
+<td>NOS</td>
+</tr>
+</tbody>
+</table>
+</div></div>
+</section>
+<section id="icd10独有的编码" class="slide level2">
+<h2>ICD10独有的编码</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>ICD10</th>
+<th>ICDO3</th>
+<th>部位</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>C22.0</td>
+<td>C22.0</td>
+<td>肝细胞癌</td>
+</tr>
+<tr class="even">
+<td>C22.1</td>
+<td>C22.1</td>
+<td>肝内胆管癌</td>
+</tr>
+<tr class="odd">
+<td><span class="red">C22.2</span></td>
+<td>C22.0</td>
+<td>肝母细胞瘤</td>
+</tr>
+<tr class="even">
+<td><span class="red">C22.3</span></td>
+<td>C22.0</td>
+<td>肝血管肉瘤/肝巨噬细胞瘤</td>
+</tr>
+<tr class="odd">
+<td><span class="red">C22.4</span></td>
+<td>C22.0</td>
+<td>肝的其它肉瘤</td>
+</tr>
+<tr class="even">
+<td><span class="red">C22.7</span></td>
+<td>C22.0</td>
+<td>其它特指的肝癌</td>
+</tr>
+<tr class="odd">
+<td><span class="red">C22.9</span></td>
+<td>C22.0</td>
+<td>肝, NOS</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="icd10独有的编码-1" class="slide level2 smaller">
+<h2>ICD10独有的编码</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>ICD10</th>
+<th>ICDO3</th>
+<th>部位</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>C43</td>
+<td></td>
+<td>皮肤恶性黑色素瘤</td>
+</tr>
+<tr class="even">
+<td>C43.0</td>
+<td>C44.0</td>
+<td>唇</td>
+</tr>
+<tr class="odd">
+<td>C43.1</td>
+<td>C44.1</td>
+<td>眼睑</td>
+</tr>
+<tr class="even">
+<td>C43.2</td>
+<td>C44.2</td>
+<td>耳和外耳道</td>
+</tr>
+<tr class="odd">
+<td>C43.3</td>
+<td>C44.3</td>
+<td>面部其它, NOS</td>
+</tr>
+<tr class="even">
+<td>C43.4</td>
+<td>C44.4</td>
+<td>头皮和颈</td>
+</tr>
+<tr class="odd">
+<td>C43.5</td>
+<td>C44.5</td>
+<td>躯干</td>
+</tr>
+<tr class="even">
+<td>C43.6</td>
+<td>C44.6</td>
+<td>上肢</td>
+</tr>
+<tr class="odd">
+<td>C43.7</td>
+<td>C44.7</td>
+<td>下肢</td>
+</tr>
+<tr class="even">
+<td>C43.8</td>
+<td>C44.8</td>
+<td>皮肤较搭跨越</td>
+</tr>
+<tr class="odd">
+<td>C43.9</td>
+<td>C44.9</td>
+<td>皮肤, NOS</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="icdo3独有的编码" class="slide level2">
+<h2>ICDO3独有的编码</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>ICDO3</th>
+<th>部位</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>C42</td>
+<td>造血和网状内皮系统</td>
+</tr>
+<tr class="even">
+<td>C42.0</td>
+<td>血液</td>
+</tr>
+<tr class="odd">
+<td>C42.1</td>
+<td>骨髓</td>
+</tr>
+<tr class="even">
+<td>C42.2</td>
+<td>脾</td>
+</tr>
+<tr class="odd">
+<td>C42.3</td>
+<td>网状内皮系统NOS</td>
+</tr>
+<tr class="even">
+<td>C42.4</td>
+<td>造血系统</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>上述编码对应的ICD10编码范围: <span class="red">C81.0-C96.9</span></p>
+</blockquote>
+</section></section>
+<section>
+<section id="icdo3编码的基本规则" class="title-slide slide level1 agenda-slide center">
+<h1>ICDO3编码的基本规则</h1>
+<div class="agenda-heading">
+<p>目录</p>
+</div>
+<div class="agenda">
+<ol>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>分类与编码的意义</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>ICD10(国际疾病与相关健康问题统计分类第十版)</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>ICDO3(国际疾病分类肿瘤学专辑第三版)</p>
+</div></li>
+<li><div class="agenda-active">
+<p>ICDO3编码的基本规则</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>谢 谢 关 注 !</p>
+</div></li>
+</ol>
+</div>
+</section>
+<section id="规则a-解剖学区域或不明确部位" class="slide level2">
+<h2>规则A: 解剖学区域或不明确部位</h2>
+<blockquote>
+<p>如果诊断<span class="red">未特指起源的组织</span>, 则编码到按照字母索引对每个不明确部位建议首选的”NOS”类目所对应的适当组织.</p>
+</blockquote>
+<p>诊断: 提到<strong><em>身体的区域和不明确部位</em></strong>, 大多数不明确部位被列在ICDO3中的<span class="red">C76</span>下</p>
+<div class="columns">
+<div class="column bg-gray smaller80" style="width:50%;">
+<ul>
+<li>C76 其它和不明确部位</li>
+<li>C76.0 头、面和颈, NOS</li>
+<li>C76.1 胸, NOS</li>
+<li>C76.2 腹, NOS</li>
+<li>C76.3 骨盆, NOS</li>
+</ul>
+</div><div class="column bg-gray smaller80" style="width:50%;">
+<ul>
+<li>C76.4 上肢, NOS</li>
+<li>C76.5 下肢, NOS</li>
+<li>C76.7 其他不明确的部位</li>
+<li>C76.8 不明确部位交搭跨越的损害</li>
+<li></li>
+</ul>
+</div></div>
+</section>
+<section id="规则a-解剖学区域或不明确部位-1" class="slide level2">
+<h2>规则A: 解剖学区域或不明确部位</h2>
+<p>诊断: 未指出肿瘤起源的组织</p>
+<p>“臂” 可能是”臂的皮肤”、各种”臂的软组织”或甚至”臂骨”</p>
+<div class="bg-gray smaller80">
+<ul>
+<li><span class="red">C76.4</span> 臂, NOS</li>
+<li><span class="red">C44.6</span> NOS, (癌、黑色素瘤、痣)</li>
+<li><span class="red">C49.1</span> 脂肪组织</li>
+<li><span class="red">C47.1</span> 自主神经系统</li>
+<li><span class="red">C40.0</span> 骨</li>
+<li><span class="red">C49.1</span> 结缔组织、脂肪组织、纤维组织</li>
+<li><span class="red">C77.3</span> 淋巴结</li>
+</ul>
+</div>
+<p><span class="smaller">骨肉瘤和软骨肉瘤两者同通常发生的骨</span></p>
+</section>
+<section id="规则b-前缀" class="slide level2">
+<h2>规则B: 前缀</h2>
+<blockquote>
+<p>如果诊断中的<span class="red">解剖部位被前缀如”周围”、“旁”修改</span>的话, 则编码到C76适当的亚目。</p>
+</blockquote>
+<blockquote>
+<p>除非肿瘤的分型指出其<strong><em>起源于一个特定的组织</em></strong>。</p>
+</blockquote>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>举例</strong></p>
+</div>
+<div class="callout-content">
+<p>前缀词”周围”、“旁”、“前”、“上”、“下”等与<span class="red">解剖学部位</span>和<span class="red">身体器官</span>一起使用。</p>
+</div>
+</div>
+</div>
+</section>
+<section id="规则b-前缀-1" class="slide level2">
+<h2>规则B: 前缀</h2>
+<p>部分”带前缀的解剖学部位”已经在ICDO3中列出</p>
+<div class="columns">
+<div class="column bg-gray smaller80" style="width:50%;">
+<h3 id="c48.0">C48.0</h3>
+<ul>
+<li>肾上腺<span class="red">周围</span>组织</li>
+<li>肾<span class="red">周围</span>组织</li>
+<li>胰腺<span class="red">周围</span>组织</li>
+<li>盲肠<span class="red">后</span>组织</li>
+<li>腹膜<span class="red">后</span>组织</li>
+</ul>
+<h3 id="c57.3">C57.3</h3>
+<ul>
+<li>子宫旁组织</li>
+</ul>
+</div><div class="column bg-gray smaller80" style="width:50%;">
+<h3 id="c77.2">C77.2</h3>
+<ul>
+<li>主动脉<span class="red">旁</span>淋巴结</li>
+<li>胰腺<span class="red">周</span>淋巴结</li>
+<li>腹膜<span class="red">后</span>淋巴结</li>
+<li>肠系膜<span class="red">上</span>淋巴结</li>
+<li>肠系膜<span class="red">下</span>淋巴结</li>
+</ul>
+</div></div>
+</section>
+<section id="规则b-前缀-2" class="slide level2">
+<h2>规则B: 前缀</h2>
+<p>“带前缀的解剖学部位”<span class="red">没有在ICDO3中列出</span>, 编码到ICDO3中C76下的亚目中. <strong><em>参考规则A</em></strong></p>
+<div class="columns">
+<div class="column bg-gray smaller80" style="width:50%;">
+<ul>
+<li>C76 其它和不明确部位</li>
+<li>C76.0 头、面和颈, NOS</li>
+<li>C76.1 胸, NOS</li>
+<li>C76.2 腹, NOS</li>
+<li>C76.3 骨盆, NOS</li>
+</ul>
+</div><div class="column bg-gray smaller80" style="width:50%;">
+<ul>
+<li>C76.4 上肢, NOS</li>
+<li>C76.5 下肢, NOS</li>
+<li>C76.7 其他不明确的部位</li>
+<li>C76.8 不明确部位交搭跨越的损害</li>
+<li></li>
+</ul>
+</div></div>
+<ul>
+<li>甲状腺区域癌 编码到 C76.0</li>
+<li>纵隔旁癌 编码到 C76.1</li>
+</ul>
+</section>
+<section id="规则c-恶性肿瘤较搭跨越部位的边缘" class="slide level2">
+<h2>规则C: 恶性肿瘤较搭跨越部位的边缘</h2>
+<blockquote>
+<p>当一个肿瘤交搭跨越两个或更多的类目或亚目而且其起源处不能被确定时，则使用亚目”.8”。</p>
+</blockquote>
+</section>
+<section id="规则c-恶性肿瘤较搭跨越部位的边缘-1" class="slide level2">
+<h2>规则C: 恶性肿瘤较搭跨越部位的边缘</h2>
+<div class="columns">
+<div class="column bg-gray smaller60" style="width:60%;">
+<ul>
+<li>C02.8 舌交搭跨越的损害</li>
+<li>C08.8 大涎腺交搭跨越的损害</li>
+<li>C14.8 唇、口腔和咽交搭跨越的损害</li>
+<li>C21.8 直肠、肛门和肛管交搭跨越的损害</li>
+<li>C24.8 胆道交搭跨越的损害</li>
+<li>C26.8 消化系统交搭跨越的损害</li>
+<li>C39.8 呼吸系统和胸腔内器官交搭跨越的损害</li>
+<li>C41.8 骨关节和关节软骨交搭跨越的损害</li>
+<li>C49.8 结缔组织、皮下组织和其他软组织交搭跨越的损害</li>
+<li>C57.8 女性生殖器官交搭跨越的损害</li>
+<li>C63.8 男性生殖器官交搭跨越的损害</li>
+<li>C68.8 泌尿器官交搭跨越的损害</li>
+<li>C72.8 脑和中枢神经系统交搭跨越的损害</li>
+</ul>
+</div><div class="column smaller70" style="width:40%;">
+<blockquote>
+<p>一个肿瘤累及一个系统内分别属于两个或三个不同部位(不同的三位数类目)</p>
+</blockquote>
+<ul>
+<li>起源不能确定</li>
+<li>亚目数吗连续时,解剖学部位也常常相邻</li>
+<li>交搭跨越意味着部位邻近</li>
+<li>食管和胃的癌被明确编码到”C16.0”(贲门)</li>
+<li>胃和小肠的癌” 应编码到 C26.8</li>
+</ul>
+</div></div>
+</section>
+<section id="规则c-恶性肿瘤较搭跨越部位的边缘-2" class="slide level2">
+<h2>规则C: 恶性肿瘤较搭跨越部位的边缘</h2>
+<blockquote>
+<p>一个肿瘤累及到同一个器官内分别属于两个或多个亚部位，则第四位编码也应编码到.8</p>
+</blockquote>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>C00.8 唇交搭跨越的损害</li>
+<li>C05.8 硬腭与软腭交界处</li>
+<li>C10.8 口咽连接区</li>
+<li><span class="red">C15.8 食管中下段</span></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://cdn.jsdelivr.net/gh/gigu003/db/images/join.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="规则d-淋巴瘤的解剖学编码" class="slide level2">
+<h2>规则D 淋巴瘤的解剖学编码</h2>
+<blockquote>
+<p>如果一个淋巴瘤涉及多个淋巴结区域, 则编码到C77.8（多个部位的淋巴结）。把结外淋巴瘤编码到起源的部位，该部位可能不是活检的部位。</p>
+</blockquote>
+<div class="smaller80">
+<ul>
+<li>如果没有支出淋巴瘤的部位，则编码到C77.9（淋巴结，NOS）</li>
+<li>淋巴瘤发生在特指部位，如胃和肠的淋巴细胞（结外，淋巴外），则编码到C16或C17</li>
+<li>如果部位不清楚，编码到C77.9</li>
+</ul>
+</div>
+</section>
+<section id="规则d-淋巴瘤的解剖学编码-1" class="slide level2">
+<h2>规则D 淋巴瘤的解剖学编码</h2>
+<div class="smaller80 red bg-gray">
+<ul>
+<li>C77.0 头、面和颈部淋巴结</li>
+<li>C77.1 胸内淋巴结</li>
+<li>C77.2 腹内淋巴结</li>
+<li>C77.3 腋窝或手臂淋巴结</li>
+<li>C77.4 腹股沟区或腿淋巴结</li>
+<li>C77.5 骨盆淋巴结</li>
+<li>C77.8 多个部位的淋巴结</li>
+<li>C77.9 淋巴结，NOS</li>
+</ul>
+</div>
+</section>
+<section id="规则e-白血病的解剖学编码" class="slide level2">
+<h2>规则E: 白血病的解剖学编码</h2>
+<blockquote>
+<p>除了髓样肉瘤（M9930）以外，把所有的白血病编码到<span class="red">C42.1（骨髓）</span>。这类包括血液病，骨髓及造血系统的恶性肿瘤。</p>
+</blockquote>
+<ul>
+<li>对应ICD10编码：C81-C96</li>
+</ul>
+</section>
+<section id="规则f形态学编码的矩阵概念" class="slide level2 smaller">
+<h2>规则F：形态学编码的矩阵概念</h2>
+<blockquote>
+<p>即使确切的术语未列在ICDO3中，也要使用适当的<span class="red">第五位数动态编码</span>。</p>
+</blockquote>
+<div class="smaller80">
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 27%">
+<col style="width: 28%">
+<col style="width: 22%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>例A</th>
+<th>例B</th>
+<th>例C</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>基本细胞类型</td>
+<td>M8140</td>
+<td>M9000</td>
+<td>M9370</td>
+</tr>
+<tr class="even">
+<td>第五位数编码</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>/0良性</td>
+<td>8140/0 腺瘤,NOS</td>
+<td>布伦纳瘤,NOS(C56.9)</td>
+<td>#</td>
+</tr>
+<tr class="even">
+<td>/1 良恶性未定</td>
+<td>8140/1 支气管腺瘤(C34._)</td>
+<td>布伦纳瘤,交界恶性(C56.9)</td>
+<td>#</td>
+</tr>
+<tr class="odd">
+<td>/2 原位/非侵袭</td>
+<td>8140/2 原位腺癌</td>
+<td>#<sup>1</sup></td>
+<td>#</td>
+</tr>
+<tr class="even">
+<td>/3 恶性, 原发</td>
+<td>8140/3 腺癌, NOS</td>
+<td>恶性</td>
+<td>脊索瘤</td>
+</tr>
+<tr class="odd">
+<td>/9 恶性, 继发未定</td>
+<td>#</td>
+<td>#</td>
+<td>#</td>
+</tr>
+</tbody>
+</table>
+</div>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>形态编码表中未列出行为码，但如果在临床或病理报告中确实出现了这样的诊断，也可以使用。</p></li></ol></aside></section>
+<section id="规则g-对组织学等级和分化程度的编码第六位数" class="slide level2">
+<h2>规则G 对组织学等级和分化程度的编码(第六位数)</h2>
+<blockquote>
+<p>对诊断状态中描述的情况<span class="red">指定最高等级或分化程度</span>的编码。 如果一个诊断指出两个不同程度的等级或分化(如:“高和低分化”或“Ⅱ-Ⅲ级”)， 则编码到较高的等级。</p>
+</blockquote>
+</section>
+<section id="规则g-对组织学等级和分化程度的编码第六位数-1" class="slide level2 smaller">
+<h2>规则G 对组织学等级和分化程度的编码(第六位数)</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>编码</th>
+<th>意义</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>I级 / 高分化 / 已分化NOS</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>II级 / 中分化 / 已中等分化</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>III级 / 第分化</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>IV级 / 未分化</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>T-细胞</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>B-细胞 / 前B / B-前体细胞 仅用于淋巴瘤白血病</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>无标记淋巴细胞 / 非T-非B （M9590-9989）</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>NK细胞</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>等级或分化程度未定，细胞类型未确定</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="规则g-对组织学等级和分化程度的编码第六位数-2" class="slide level2">
+<h2>规则G 对组织学等级和分化程度的编码(第六位数)</h2>
+<blockquote>
+<p>当诊断指出两个不同的等级或分化程度，应使用较高的号码作为等级编码。</p>
+</blockquote>
+<p>例如，“中分化的(2)鳞状细胞癌伴有低分化区(3)”应给予等级编码“3”。</p>
+<p>完整的编码应为 M8070/33</p>
+</section>
+<section id="规则h-与部位相关的形态学术语" class="slide level2">
+<h2>规则H 与部位相关的形态学术语</h2>
+<blockquote>
+<p>如果诊断中未指出解剖学部位时,则<span class="red">使用推荐的解剖学编码</span>。如果已知肿瘤发生在另一个部位,则这个编码可以忽略。</p>
+</blockquote>
+<div class="bg-gray smaller80">
+<p>在ICDO3的形态学术语后面的括号里列出适应的（推荐的）解剖学部位编码，这些形态学的肿瘤通常发生在这个部位或组织。</p>
+<p>如： 视网膜母细胞瘤” M-9510/3 (C69.2)</p>
+<p>如果诊断中没有指出具体的部位时，则使用推荐的编码（C69.2）</p>
+</div>
+</section>
+<section id="规则j-复合形态学诊断" class="slide level2">
+<h2>规则J 复合形态学诊断</h2>
+<blockquote>
+<p>一个复合性形态学术语中，如果术语未在ICD-O-3中列出，则可以改变词根的次序。</p>
+</blockquote>
+<div class="columns">
+<div class="column smaller80" style="width:30%;">
+<h4 id="未列出">未列出</h4>
+<ul>
+<li>粘液纤维肉瘤</li>
+<li>脂肪纤维瘤</li>
+</ul>
+</div><div class="column smaller80" style="width:70%;">
+<h4 id="列出">列出</h4>
+<ul>
+<li>纤维粘液肉瘤（M-8811/3）</li>
+<li>纤维脂肪瘤 （M-8851/0）</li>
+<li>混合性腺癌和鳞状细胞癌(腺鳞癌)（M-8560/3）</li>
+<li>乳头状和滤泡性腺癌（M-8340/3）</li>
+<li>混合性基底鳞状细胞癌（M-8094/3 ）</li>
+</ul>
+</div></div>
+</section>
+<section id="规则k-对具有多个形态学术语的诊断进行编码" class="slide level2">
+<h2>规则K 对具有多个形态学术语的诊断进行编码</h2>
+<blockquote>
+<p>当没有单一的编码可以包括所有诊断术语时，如果单一肿瘤的诊断包括了具有不同编码号的两个修饰性形容词，则使用在数值上更高的编码号。</p>
+</blockquote>
+<ul>
+<li>移行细胞上皮样癌</li>
+<li>移行细胞癌， M8120/3</li>
+<li>上皮样癌， M8070/3</li>
+</ul>
+<p>没有单一编码包括所有诊断时，则使用数值上更高的编码。</p>
+</section>
+<section id="参考书目和网上资源" class="slide level2">
+<h2>参考书目和网上资源</h2>
+<ul>
+<li>《中国肿瘤登记工作指导手册》</li>
+<li>《肿瘤病理学》</li>
+<li>WHO Classification of Tumour (蓝皮书）</li>
+<li>http://www.iarc.fr/WHO-BlueBooks/</li>
+<li>http://seer.cancer.gov/</li>
+<li>http://www.iacr.com.fr/——Support to cancer registries</li>
+</ul>
+</section></section>
+<section id="谢-谢-关-注" class="title-slide slide level1 no-auto-agenda center" data-background-color="lightblue" style="text-align: center;color: white;">
+<h1>谢 谢 关 注 !</h1>
+<p>陈 琼 博士</p>
+<p>chenq08@126.com</p>
+<div class="footer">
+<p>个人网站：<a href="https://chenq.site">普癌新声https://www.chenq.site</a></p>
+</div>
+
+<div class="quarto-auto-generated-content">
+<div class="footer footer-default">
+<p>河南省肿瘤登记工作实践</p>
+</div>
+</div>
+<div class="reveal-header">
+<div class="header-logo">
+<img data-src="">
+</div>
+<div class="sc-title">
+<p> </p>
+</div>
+<div class="header-text">
+<p> </p>
+</div>
+<div class="sb-title">
+<p> </p>
+</div>
+</div>
+</section>
+
+
+    </div>
+  </div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-attribution/attribution.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealAttribution, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp("https:\/\/slides\.chenq\.site");
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>

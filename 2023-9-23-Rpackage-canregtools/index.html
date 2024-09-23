@@ -6,12 +6,12 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.161">
+<link href="../site_libs/quarto-html/quarto-html-68b329da9893e34099c7d8ad5cb9c940.min.css" rel="stylesheet" append-hash="true" data-mode="light">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-79bb3942e891885f9f7af119cd221462.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.9">
 
   <meta name="author" content="👨‍⚕️陈琼，博士，副主任医师">
-  <title>普癌新声 - R包: canregtools</title>
+  <title>普癌新声 – R包: canregtools</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -31,7 +31,7 @@
     }
     /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span { line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -42,7 +42,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -70,7 +70,7 @@
     code span.at { color: #657422; } /* Attribute */
     code span.bn { color: #ad0000; } /* BaseN */
     code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
     code span.ch { color: #20794d; } /* Char */
     code span.cn { color: #8f5902; } /* Constant */
     code span.co { color: #5e5e5e; } /* Comment */
@@ -84,7 +84,7 @@
     code span.fu { color: #4758ab; } /* Function */
     code span.im { color: #00769e; } /* Import */
     code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; } /* Keyword */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
     code span.op { color: #5e5e5e; } /* Operator */
     code span.ot { color: #003b4f; } /* Other */
     code span.pp { color: #ad0000; } /* Preprocessor */
@@ -95,7 +95,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-2e34f1876057a9fdd171e1a563180e8c.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -389,10 +389,10 @@
   <script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
   <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
   <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
-<meta property="og:title" content="普癌新声 - R包: canregtools">
+<meta property="og:title" content="R包: canregtools – 普癌新声">
 <meta property="og:description" content="肿瘤登记(逻辑核查、数据分析、数据可视化、肿瘤报告)">
 <meta property="og:site_name" content="普癌新声">
-<meta name="twitter:title" content="普癌新声 - R包: canregtools">
+<meta name="twitter:title" content="R包: canregtools – 普癌新声">
 <meta name="twitter:description" content="肿瘤登记(逻辑核查、数据分析、数据可视化、肿瘤报告)">
 <meta name="twitter:card" content="summary">
 </head>
@@ -453,8 +453,9 @@
 <p><br></p>
 <div class="cell" data-reveal="true" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-1" class="quarto-figure quarto-figure-center">
-<figure>
+<div id="fig-1" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
 <pre class="mermaid mermaid-js" data-label="fig-1">flowchart TD
   A[(工具)] --&gt; B(R语言)
@@ -464,7 +465,10 @@
   A --&gt; F(Python)
 </pre>
 </div>
-<figcaption>Figure&nbsp;1: 软件平台选择</figcaption>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: 软件平台选择
+</figcaption>
 </figure>
 </div>
 </div>
@@ -483,14 +487,14 @@
 </ul>
 </div><div class="column" style="width:50%;">
 <p><img data-src="images/r-packages.png"></p>
-</div>
-</div>
+</div></div>
 </section>
 <section id="功能设计" class="slide level2">
 <h2>功能设计</h2>
-<div class="cell" data-reveal="true">
+<div class="cell" data-reveal="true" data-layout-align="default">
 <div class="cell-output-display">
 <div>
+<p></p><figure class=""><p></p>
 <div>
 <pre class="mermaid mermaid-js">%%| fig-align: center
 flowchart TD
@@ -509,6 +513,7 @@ flowchart TD
   
 </pre>
 </div>
+<p></p></figure><p></p>
 </div>
 </div>
 </div>
@@ -517,6 +522,7 @@ flowchart TD
 <div class="cell" data-reveal="true" data-layout-align="center">
 <div class="cell-output-display">
 <div>
+<p></p><figure class=""><p></p>
 <div>
 <pre class="mermaid mermaid-js">flowchart TD
   A[(统计分析)] --&gt; B(统计计算)
@@ -527,6 +533,7 @@ flowchart TD
   B --&gt; b4(年龄别率)
 </pre>
 </div>
+<p></p></figure><p></p>
 </div>
 </div>
 </div>
@@ -534,6 +541,7 @@ flowchart TD
 <div class="cell" data-reveal="true" data-layout-align="center">
 <div class="cell-output-display">
 <div>
+<p></p><figure class=""><p></p>
 <div>
 <pre class="mermaid mermaid-js">flowchart TD
   A[(可视化)] --&gt; B(人口金字塔)
@@ -544,32 +552,32 @@ flowchart TD
   A --&gt; G(癌症地图)
 </pre>
 </div>
+<p></p></figure><p></p>
 </div>
 </div>
 </div>
-</div>
-</div>
+</div></div>
 </section>
 <section id="包的安装" class="slide level2">
 <h2>包的安装</h2>
 <p>可以通过devtools安装</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(devtools)</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">install_github</span>(<span class="st">"gigu003/canregtools"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(devtools)</span>
+<span id="cb1-2"><a></a><span class="fu">install_github</span>(<span class="st">"gigu003/canregtools"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 <img data-src="images/github.jpg" class="r-stretch"><p>也可以通过remotes包进行安装</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">install.packages</span>(<span class="st">"remotes"</span>)</span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="fu">library</span>(remotes)</span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="fu">install_github</span>(<span class="st">"gigu003/canregtoools"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">install.packages</span>(<span class="st">"remotes"</span>)</span>
+<span id="cb2-2"><a></a><span class="fu">library</span>(remotes)</span>
+<span id="cb2-3"><a></a><span class="fu">install_github</span>(<span class="st">"gigu003/canregtoools"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="读取数据" class="slide level2">
 <h2>读取数据</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1"></a><span class="in">```{r}</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="fu">library</span>(canregtools)</span>
-<span id="cb3-3"><a href="#cb3-3"></a>file <span class="ot">&lt;-</span> <span class="fu">system.file</span>(<span class="st">"extdata"</span>, <span class="st">"411721.xls"</span>, <span class="at">package =</span> <span class="st">"canregtools"</span>)</span>
-<span id="cb3-4"><a href="#cb3-4"></a>data <span class="ot">&lt;-</span> <span class="fu">read_canreg</span>(file)</span>
-<span id="cb3-5"><a href="#cb3-5"></a>data</span>
-<span id="cb3-6"><a href="#cb3-6"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a></a><span class="in">```{r}</span></span>
+<span id="cb3-2"><a></a><span class="in">library(canregtools)</span></span>
+<span id="cb3-3"><a></a><span class="in">file &lt;- system.file("extdata", "411721.xls", package = "canregtools")</span></span>
+<span id="cb3-4"><a></a><span class="in">data &lt;- read_canreg(file)</span></span>
+<span id="cb3-5"><a></a><span class="in">data</span></span>
+<span id="cb3-6"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>2200  cases were read from FB sheet.1470  cases were read from SW sheet.$areacode
 [1] "411721"
@@ -664,12 +672,12 @@ attr(,"class")
 <div class="tab-content">
 <div id="tabset-1-1">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1"></a><span class="in">```{r}</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">library</span>(canregtools)</span>
-<span id="cb5-3"><a href="#cb5-3"></a>age <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">101</span>, <span class="dv">200</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb5-4"><a href="#cb5-4"></a>agegrp <span class="ot">&lt;-</span> <span class="fu">cutage</span>(age, <span class="at">method =</span> <span class="st">"distance"</span>, <span class="at">length =</span> <span class="dv">5</span>, <span class="at">maxage =</span> <span class="dv">60</span>, <span class="at">sep_zero =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb5-5"><a href="#cb5-5"></a><span class="fu">as.data.frame</span>(<span class="fu">table</span>(agegrp))</span>
-<span id="cb5-6"><a href="#cb5-6"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a></a><span class="in">```{r}</span></span>
+<span id="cb5-2"><a></a><span class="in">library(canregtools)</span></span>
+<span id="cb5-3"><a></a><span class="in">age &lt;- sample(0:101, 200, replace = TRUE)</span></span>
+<span id="cb5-4"><a></a><span class="in">agegrp &lt;- cutage(age, method = "distance", length = 5, maxage = 60, sep_zero = TRUE)</span></span>
+<span id="cb5-5"><a></a><span class="in">as.data.frame(table(agegrp))</span></span>
+<span id="cb5-6"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     agegrp Freq
 1      0 岁    0
@@ -691,12 +699,12 @@ attr(,"class")
 </div>
 <div id="tabset-1-2">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1"></a><span class="in">```{r}</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">library</span>(canregtools)</span>
-<span id="cb7-3"><a href="#cb7-3"></a>age <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">101</span>, <span class="dv">200</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb7-4"><a href="#cb7-4"></a>agegrp <span class="ot">&lt;-</span> <span class="fu">cutage</span>(age, <span class="at">method =</span> <span class="st">"interval"</span>, <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">85</span>, <span class="dv">5</span>),<span class="at">lang =</span> <span class="st">"en"</span>)</span>
-<span id="cb7-5"><a href="#cb7-5"></a><span class="fu">as.data.frame</span>(<span class="fu">table</span>(agegrp))</span>
-<span id="cb7-6"><a href="#cb7-6"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a></a><span class="in">```{r}</span></span>
+<span id="cb7-2"><a></a><span class="in">library(canregtools)</span></span>
+<span id="cb7-3"><a></a><span class="in">age &lt;- sample(0:101, 200, replace = TRUE)</span></span>
+<span id="cb7-4"><a></a><span class="in">agegrp &lt;- cutage(age, method = "interval", breaks = seq(0, 85, 5),lang = "en")</span></span>
+<span id="cb7-5"><a></a><span class="in">as.data.frame(table(agegrp))</span></span>
+<span id="cb7-6"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      agegrp Freq
 1    0-4 yrs   12
@@ -736,39 +744,43 @@ attr(,"class")
 <h2>常用数据处理函数</h2>
 <h3 id="扩充人口数据-expand_age_pop-1">扩充人口数据– expand_age_pop()</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1"></a><span class="in">```{r}</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a><span class="co">#| output-location: slide</span></span>
-<span id="cb9-3"><a href="#cb9-3"></a>age <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="fu">seq</span>(<span class="dv">5</span>, <span class="dv">85</span>, <span class="dv">5</span>))</span>
-<span id="cb9-4"><a href="#cb9-4"></a>pops <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5053</span>, <span class="dv">17743</span>, <span class="dv">25541</span>, <span class="dv">32509</span>, <span class="dv">30530</span>, <span class="dv">34806</span>, <span class="dv">36846</span>, <span class="dv">38691</span>, <span class="dv">40056</span>,</span>
-<span id="cb9-5"><a href="#cb9-5"></a>   <span class="dv">39252</span>, <span class="dv">37349</span>, <span class="dv">30507</span>, <span class="dv">26363</span>, <span class="dv">21684</span>, <span class="dv">15362</span>, <span class="dv">11725</span>, <span class="dv">7461</span>, <span class="dv">3260</span>, <span class="dv">915</span>)</span>
-<span id="cb9-6"><a href="#cb9-6"></a></span>
-<span id="cb9-7"><a href="#cb9-7"></a>pop <span class="ot">&lt;-</span> pops</span>
-<span id="cb9-8"><a href="#cb9-8"></a>pop[<span class="dv">2</span>] <span class="ot">&lt;-</span> pop[<span class="dv">2</span>]<span class="sc">/</span><span class="dv">4</span></span>
-<span id="cb9-9"><a href="#cb9-9"></a>pop[<span class="dv">3</span><span class="sc">:</span><span class="dv">19</span>] <span class="ot">&lt;-</span> pop[<span class="dv">3</span><span class="sc">:</span><span class="dv">19</span>]<span class="sc">/</span><span class="dv">5</span></span>
-<span id="cb9-10"><a href="#cb9-10"></a><span class="co">#把人口数据从5岁组扩充至1岁组</span></span>
-<span id="cb9-11"><a href="#cb9-11"></a>age2 <span class="ot">&lt;-</span> <span class="fu">expand_age_pop</span>(pops)</span>
-<span id="cb9-12"><a href="#cb9-12"></a><span class="co">#绘制拟合曲线</span></span>
-<span id="cb9-13"><a href="#cb9-13"></a><span class="fu">par</span>(<span class="at">family=</span><span class="st">"STKaiti"</span>)</span>
-<span id="cb9-14"><a href="#cb9-14"></a><span class="fu">plot</span>(age2, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">xlab=</span> <span class="st">"年龄组"</span>, <span class="at">ylab =</span> <span class="st">"人口数"</span>, <span class="at">type =</span> <span class="st">"l"</span>)</span>
-<span id="cb9-15"><a href="#cb9-15"></a><span class="fu">lines</span>(age, pop, <span class="at">type =</span> <span class="st">"p"</span>, <span class="at">col=</span><span class="st">"red"</span>)</span>
-<span id="cb9-16"><a href="#cb9-16"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a></a><span class="in">```{r}</span></span>
+<span id="cb9-2"><a></a><span class="in">#| output-location: slide</span></span>
+<span id="cb9-3"><a></a><span class="in">age &lt;- c(0, 1, seq(5, 85, 5))</span></span>
+<span id="cb9-4"><a></a><span class="in">pops &lt;- c(5053, 17743, 25541, 32509, 30530, 34806, 36846, 38691, 40056,</span></span>
+<span id="cb9-5"><a></a><span class="in">   39252, 37349, 30507, 26363, 21684, 15362, 11725, 7461, 3260, 915)</span></span>
+<span id="cb9-6"><a></a></span>
+<span id="cb9-7"><a></a><span class="in">pop &lt;- pops</span></span>
+<span id="cb9-8"><a></a><span class="in">pop[2] &lt;- pop[2]/4</span></span>
+<span id="cb9-9"><a></a><span class="in">pop[3:19] &lt;- pop[3:19]/5</span></span>
+<span id="cb9-10"><a></a><span class="in">#把人口数据从5岁组扩充至1岁组</span></span>
+<span id="cb9-11"><a></a><span class="in">age2 &lt;- expand_age_pop(pops)</span></span>
+<span id="cb9-12"><a></a><span class="in">#绘制拟合曲线</span></span>
+<span id="cb9-13"><a></a><span class="in">par(family="STKaiti")</span></span>
+<span id="cb9-14"><a></a><span class="in">plot(age2, pch = 19, xlab= "年龄组", ylab = "人口数", type = "l")</span></span>
+<span id="cb9-15"><a></a><span class="in">lines(age, pop, type = "p", col="red")</span></span>
+<span id="cb9-16"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 </section>
 <section id="常用数据处理函数-3-output" class="slide level2 output-location-slide"><h2>常用数据处理函数</h2><div class="cell output-location-slide">
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="index_files/figure-revealjs/unnamed-chunk-8-1.png" width="960"></p>
+</figure>
+</div>
 </div>
 </div></section><section id="常用数据处理函数-4" class="slide level2">
 <h2>常用数据处理函数</h2>
 <h3 id="icdo3转换icd10编码">ICDO3转换ICD10编码</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1"></a><span class="in">```{r}</span></span>
-<span id="cb10-2"><a href="#cb10-2"></a>topo <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"C001"</span>, <span class="st">"C15.1"</span>, <span class="st">"C349"</span>)</span>
-<span id="cb10-3"><a href="#cb10-3"></a>morp <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"8140"</span>, <span class="st">"8000"</span>, <span class="st">"8070"</span>)</span>
-<span id="cb10-4"><a href="#cb10-4"></a>beha <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="st">"3"</span>, <span class="dv">3</span>)</span>
-<span id="cb10-5"><a href="#cb10-5"></a><span class="fu">icdo3to10</span>(topo, morp, beha)</span>
-<span id="cb10-6"><a href="#cb10-6"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a></a><span class="in">```{r}</span></span>
+<span id="cb10-2"><a></a><span class="in">topo &lt;- c("C001", "C15.1", "C349")</span></span>
+<span id="cb10-3"><a></a><span class="in">morp &lt;- c("8140", "8000", "8070")</span></span>
+<span id="cb10-4"><a></a><span class="in">beha &lt;- rep("3", 3)</span></span>
+<span id="cb10-5"><a></a><span class="in">icdo3to10(topo, morp, beha)</span></span>
+<span id="cb10-6"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "C00.1" "C15.1" "C34.9"</code></pre>
 </div>
@@ -778,12 +790,12 @@ attr(,"class")
 <h2>常用数据处理函数</h2>
 <h3 id="肿瘤的分类">肿瘤的分类</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1"></a><span class="in">```{r}</span></span>
-<span id="cb12-2"><a href="#cb12-2"></a>file <span class="ot">&lt;-</span> <span class="fu">system.file</span>(<span class="st">"extdata"</span>, <span class="st">"411721.xls"</span>, <span class="at">package =</span> <span class="st">"canregtools"</span>)</span>
-<span id="cb12-3"><a href="#cb12-3"></a>data <span class="ot">&lt;-</span> <span class="fu">read_canreg</span>(file)</span>
-<span id="cb12-4"><a href="#cb12-4"></a>icd10 <span class="ot">&lt;-</span> data<span class="sc">$</span>FBcases<span class="sc">$</span>icd10</span>
-<span id="cb12-5"><a href="#cb12-5"></a><span class="fu">head</span>(icd10)</span>
-<span id="cb12-6"><a href="#cb12-6"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a></a><span class="in">```{r}</span></span>
+<span id="cb12-2"><a></a><span class="in">file &lt;- system.file("extdata", "411721.xls", package = "canregtools")</span></span>
+<span id="cb12-3"><a></a><span class="in">data &lt;- read_canreg(file)</span></span>
+<span id="cb12-4"><a></a><span class="in">icd10 &lt;- data$FBcases$icd10</span></span>
+<span id="cb12-5"><a></a><span class="in">head(icd10)</span></span>
+<span id="cb12-6"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>2200  cases were read from FB sheet.1470  cases were read from SW sheet.[1] "C00.9" "C01"   "C01"   "C02.9" "C85.9" "C03.9"</code></pre>
 </div>
@@ -803,10 +815,10 @@ attr(,"class")
 <div class="tab-content">
 <div id="tabset-2-1">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1"></a><span class="in">```{r}</span></span>
-<span id="cb14-2"><a href="#cb14-2"></a>c1 <span class="ot">&lt;-</span> <span class="fu">classify_icd10</span>(icd10, <span class="at">type =</span> <span class="st">"big"</span>, <span class="at">lang =</span> <span class="st">"cn"</span>)</span>
-<span id="cb14-3"><a href="#cb14-3"></a><span class="fu">as.data.frame</span>(<span class="fu">table</span>(c1))</span>
-<span id="cb14-4"><a href="#cb14-4"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a></a><span class="in">```{r}</span></span>
+<span id="cb14-2"><a></a><span class="in">c1 &lt;- classify_icd10(icd10, type = "big", lang = "cn")</span></span>
+<span id="cb14-3"><a></a><span class="in">as.data.frame(table(c1))</span></span>
+<span id="cb14-4"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>             c1 Freq
 1          排除    0
@@ -841,10 +853,10 @@ attr(,"class")
 </div>
 <div id="tabset-2-2">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1"></a><span class="in">```{r}</span></span>
-<span id="cb16-2"><a href="#cb16-2"></a>c1 <span class="ot">&lt;-</span> <span class="fu">classify_icd10</span>(icd10, <span class="at">type =</span> <span class="st">"small"</span>, <span class="at">lang =</span> <span class="st">"en"</span>)</span>
-<span id="cb16-3"><a href="#cb16-3"></a><span class="fu">as.data.frame</span>(<span class="fu">table</span>(c1))</span>
-<span id="cb16-4"><a href="#cb16-4"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a></a><span class="in">```{r}</span></span>
+<span id="cb16-2"><a></a><span class="in">c1 &lt;- classify_icd10(icd10, type = "small", lang = "en")</span></span>
+<span id="cb16-3"><a></a><span class="in">as.data.frame(table(c1))</span></span>
+<span id="cb16-4"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                             c1 Freq
 1                      Excluded    0
@@ -912,10 +924,10 @@ attr(,"class")
 </div>
 <div id="tabset-2-3">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><a href="#cb18-1"></a><span class="in">```{r}</span></span>
-<span id="cb18-2"><a href="#cb18-2"></a>c1 <span class="ot">&lt;-</span> <span class="fu">classify_icd10</span>(icd10, <span class="at">type =</span> <span class="st">"system"</span>, <span class="at">lang =</span> <span class="st">"cn"</span>)</span>
-<span id="cb18-3"><a href="#cb18-3"></a><span class="fu">as.data.frame</span>(<span class="fu">table</span>(c1))</span>
-<span id="cb18-4"><a href="#cb18-4"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><a></a><span class="in">```{r}</span></span>
+<span id="cb18-2"><a></a><span class="in">c1 &lt;- classify_icd10(icd10, type = "system", lang = "cn")</span></span>
+<span id="cb18-3"><a></a><span class="in">as.data.frame(table(c1))</span></span>
+<span id="cb18-4"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>               c1 Freq
 1            排除    0
@@ -946,14 +958,14 @@ attr(,"class")
 <h2>常用数据处理函数</h2>
 <h3 id="儿童肿瘤的分类-classify_childhood-1">儿童肿瘤的分类– classify_childhood</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb20-1"><a href="#cb20-1"></a><span class="in">```{r}</span></span>
-<span id="cb20-2"><a href="#cb20-2"></a>fbcases <span class="ot">&lt;-</span> data<span class="sc">$</span>FBcases</span>
-<span id="cb20-3"><a href="#cb20-3"></a>fbcases <span class="ot">&lt;-</span> fbcases[fbcases<span class="sc">$</span>age <span class="sc">&lt;=</span> <span class="dv">14</span>,]</span>
-<span id="cb20-4"><a href="#cb20-4"></a></span>
-<span id="cb20-5"><a href="#cb20-5"></a><span class="fu">classify_childhood</span>(fbcases<span class="sc">$</span>topo, fbcases<span class="sc">$</span>morp, <span class="at">lang =</span> <span class="st">"cn"</span>)</span>
-<span id="cb20-6"><a href="#cb20-6"></a></span>
-<span id="cb20-7"><a href="#cb20-7"></a><span class="fu">classify_childhood</span>(fbcases<span class="sc">$</span>topo, fbcases<span class="sc">$</span>morp, <span class="at">type =</span> <span class="st">"sub"</span>, <span class="at">lang =</span> <span class="st">"en"</span>)</span>
-<span id="cb20-8"><a href="#cb20-8"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb20-1"><a></a><span class="in">```{r}</span></span>
+<span id="cb20-2"><a></a><span class="in">fbcases &lt;- data$FBcases</span></span>
+<span id="cb20-3"><a></a><span class="in">fbcases &lt;- fbcases[fbcases$age &lt;= 14,]</span></span>
+<span id="cb20-4"><a></a></span>
+<span id="cb20-5"><a></a><span class="in">classify_childhood(fbcases$topo, fbcases$morp, lang = "cn")</span></span>
+<span id="cb20-6"><a></a></span>
+<span id="cb20-7"><a></a><span class="in">classify_childhood(fbcases$topo, fbcases$morp, type = "sub", lang = "en")</span></span>
+<span id="cb20-8"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] XII. 其他和未特指          未分类或原位癌;           
 [3] V. 视网膜母细胞瘤          XI. 其他恶性上皮和黑色素瘤
@@ -972,13 +984,13 @@ attr(,"class")
 <section id="counts" class="slide level2">
 <h2>counts</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb22-1"><a href="#cb22-1"></a><span class="in">```{r}</span></span>
-<span id="cb22-2"><a href="#cb22-2"></a><span class="co">#| output-location: slide</span></span>
-<span id="cb22-3"><a href="#cb22-3"></a>file <span class="ot">&lt;-</span> <span class="fu">system.file</span>(<span class="st">"extdata"</span>, <span class="st">"411721.xls"</span>, <span class="at">package =</span> <span class="st">"canregtools"</span>)</span>
-<span id="cb22-4"><a href="#cb22-4"></a>data <span class="ot">&lt;-</span> <span class="fu">read_canreg</span>(file)</span>
-<span id="cb22-5"><a href="#cb22-5"></a>fbsw <span class="ot">&lt;-</span> <span class="fu">count_canreg</span>(data, <span class="at">cutage_method =</span> <span class="st">"interval"</span>)</span>
-<span id="cb22-6"><a href="#cb22-6"></a>fbsw</span>
-<span id="cb22-7"><a href="#cb22-7"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb22-1"><a></a><span class="in">```{r}</span></span>
+<span id="cb22-2"><a></a><span class="in">#| output-location: slide</span></span>
+<span id="cb22-3"><a></a><span class="in">file &lt;- system.file("extdata", "411721.xls", package = "canregtools")</span></span>
+<span id="cb22-4"><a></a><span class="in">data &lt;- read_canreg(file)</span></span>
+<span id="cb22-5"><a></a><span class="in">fbsw &lt;- count_canreg(data, cutage_method = "interval")</span></span>
+<span id="cb22-6"><a></a><span class="in">fbsw</span></span>
+<span id="cb22-7"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 </section>
@@ -1005,9 +1017,9 @@ attr(,"class")
 </div></section><section id="年龄别率" class="slide level2">
 <h2>年龄别率</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb24-1"><a href="#cb24-1"></a><span class="in">```{r}</span></span>
-<span id="cb24-2"><a href="#cb24-2"></a><span class="fu">create_age_rate</span>(fbsw, <span class="at">event =</span> sws, year, sex, icd_cat)</span>
-<span id="cb24-3"><a href="#cb24-3"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb24-1"><a></a><span class="in">```{r}</span></span>
+<span id="cb24-2"><a></a><span class="in">create_age_rate(fbsw, event = sws, year, sex, icd_cat)</span></span>
+<span id="cb24-3"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 208 × 6
     year sex   icd_cat agegrp   cases  rate
@@ -1029,9 +1041,9 @@ attr(,"class")
 <section id="质量控制报表" class="slide level2">
 <h2>质量控制报表</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb26-1"><a href="#cb26-1"></a><span class="in">```{r}</span></span>
-<span id="cb26-2"><a href="#cb26-2"></a><span class="fu">create_quality</span>(fbsw, year, sex)</span>
-<span id="cb26-3"><a href="#cb26-3"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb26-1"><a></a><span class="in">```{r}</span></span>
+<span id="cb26-2"><a></a><span class="in">create_quality(fbsw, year, sex)</span></span>
+<span id="cb26-3"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 7
    year sex      mi    mv    ub   sub   dco
@@ -1041,9 +1053,9 @@ attr(,"class")
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb28-1"><a href="#cb28-1"></a><span class="in">```{r}</span></span>
-<span id="cb28-2"><a href="#cb28-2"></a><span class="fu">create_quality</span>(fbsw, year, sex, icd_cat)</span>
-<span id="cb28-3"><a href="#cb28-3"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb28-1"><a></a><span class="in">```{r}</span></span>
+<span id="cb28-2"><a></a><span class="in">create_quality(fbsw, year, sex, icd_cat)</span></span>
+<span id="cb28-3"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 52 × 8
     year sex   icd_cat    mi    mv    ub    sub   dco
@@ -1065,9 +1077,9 @@ attr(,"class")
 <section id="标化率" class="slide level2">
 <h2>标化率</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb30-1"><a href="#cb30-1"></a><span class="in">```{r}</span></span>
-<span id="cb30-2"><a href="#cb30-2"></a><span class="fu">asr_rate</span>(data, year, sex, icd_cat, <span class="at">lang =</span> <span class="st">"en"</span> )</span>
-<span id="cb30-3"><a href="#cb30-3"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb30-1"><a></a><span class="in">```{r}</span></span>
+<span id="cb30-2"><a></a><span class="in">asr_rate(data, year, sex, icd_cat, lang = "en" )</span></span>
+<span id="cb30-3"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Processing data: 2200 FBcases."
 [1] "Processing data: 1470 SWcases."
@@ -1094,9 +1106,9 @@ attr(,"class")
 <section id="标化率-1" class="slide level2">
 <h2>标化率</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb32-1"><a href="#cb32-1"></a><span class="in">```{r}</span></span>
-<span id="cb32-2"><a href="#cb32-2"></a><span class="fu">asr_rate</span>(data, year, icd_cat, <span class="at">type =</span> <span class="st">"system"</span>, <span class="at">lang =</span> <span class="st">"en"</span> )</span>
-<span id="cb32-3"><a href="#cb32-3"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb32-1"><a></a><span class="in">```{r}</span></span>
+<span id="cb32-2"><a></a><span class="in">asr_rate(data, year, icd_cat, type = "system", lang = "en" )</span></span>
+<span id="cb32-3"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Processing data: 2200 FBcases."
 [1] "Processing data: 1470 SWcases."
@@ -1123,25 +1135,25 @@ attr(,"class")
 <section id="简略寿命表" class="slide level2">
 <h2>简略寿命表</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb34-1"><a href="#cb34-1"></a><span class="in">```{r}</span></span>
-<span id="cb34-2"><a href="#cb34-2"></a><span class="co">#| output-location: slide</span></span>
-<span id="cb34-3"><a href="#cb34-3"></a></span>
-<span id="cb34-4"><a href="#cb34-4"></a>px <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb34-5"><a href="#cb34-5"></a>  <span class="dv">20005</span>, <span class="dv">86920</span>, <span class="dv">102502</span>, <span class="dv">151494</span>, <span class="dv">182932</span>,</span>
-<span id="cb34-6"><a href="#cb34-6"></a>  <span class="dv">203107</span>, <span class="dv">240289</span>, <span class="dv">247076</span>, <span class="dv">199665</span>, <span class="dv">163820</span>,</span>
-<span id="cb34-7"><a href="#cb34-7"></a>  <span class="dv">145382</span>, <span class="dv">86789</span>, <span class="dv">69368</span>, <span class="dv">51207</span>, <span class="dv">39112</span>, <span class="dv">20509</span>,</span>
-<span id="cb34-8"><a href="#cb34-8"></a>  <span class="dv">12301</span>, <span class="dv">6586</span>, <span class="dv">1909</span></span>
-<span id="cb34-9"><a href="#cb34-9"></a>)</span>
-<span id="cb34-10"><a href="#cb34-10"></a>dx <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb34-11"><a href="#cb34-11"></a>  <span class="dv">156</span>, <span class="dv">58</span>, <span class="dv">47</span>, <span class="dv">49</span>, <span class="dv">48</span>, <span class="dv">68</span>, <span class="dv">120</span>, <span class="dv">162</span>, <span class="dv">160</span>, <span class="dv">294</span>,</span>
-<span id="cb34-12"><a href="#cb34-12"></a>  <span class="dv">417</span>, <span class="dv">522</span>, <span class="dv">546</span>, <span class="dv">628</span>, <span class="dv">891</span>, <span class="dv">831</span>, <span class="dv">926</span>, <span class="dv">731</span>, <span class="dv">269</span></span>
-<span id="cb34-13"><a href="#cb34-13"></a>)</span>
-<span id="cb34-14"><a href="#cb34-14"></a>mx <span class="ot">&lt;-</span> dx <span class="sc">/</span> px</span>
-<span id="cb34-15"><a href="#cb34-15"></a></span>
-<span id="cb34-16"><a href="#cb34-16"></a>lt <span class="ot">&lt;-</span> <span class="fu">lt</span>(mx, <span class="at">sage =</span> <span class="dv">0</span>, <span class="at">agegrp =</span> <span class="dv">5</span>, <span class="at">sex =</span> <span class="st">"total"</span>)</span>
-<span id="cb34-17"><a href="#cb34-17"></a>lt<span class="sc">$</span>ex <span class="ot">&lt;-</span> <span class="fu">round</span>(lt<span class="sc">$</span>ex, <span class="dv">2</span>)</span>
-<span id="cb34-18"><a href="#cb34-18"></a>lt</span>
-<span id="cb34-19"><a href="#cb34-19"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb34-1"><a></a><span class="in">```{r}</span></span>
+<span id="cb34-2"><a></a><span class="in">#| output-location: slide</span></span>
+<span id="cb34-3"><a></a></span>
+<span id="cb34-4"><a></a><span class="in">px &lt;- c(</span></span>
+<span id="cb34-5"><a></a><span class="in">  20005, 86920, 102502, 151494, 182932,</span></span>
+<span id="cb34-6"><a></a><span class="in">  203107, 240289, 247076, 199665, 163820,</span></span>
+<span id="cb34-7"><a></a><span class="in">  145382, 86789, 69368, 51207, 39112, 20509,</span></span>
+<span id="cb34-8"><a></a><span class="in">  12301, 6586, 1909</span></span>
+<span id="cb34-9"><a></a><span class="in">)</span></span>
+<span id="cb34-10"><a></a><span class="in">dx &lt;- c(</span></span>
+<span id="cb34-11"><a></a><span class="in">  156, 58, 47, 49, 48, 68, 120, 162, 160, 294,</span></span>
+<span id="cb34-12"><a></a><span class="in">  417, 522, 546, 628, 891, 831, 926, 731, 269</span></span>
+<span id="cb34-13"><a></a><span class="in">)</span></span>
+<span id="cb34-14"><a></a><span class="in">mx &lt;- dx / px</span></span>
+<span id="cb34-15"><a></a></span>
+<span id="cb34-16"><a></a><span class="in">lt &lt;- lt(mx, sage = 0, agegrp = 5, sex = "total")</span></span>
+<span id="cb34-17"><a></a><span class="in">lt$ex &lt;- round(lt$ex, 2)</span></span>
+<span id="cb34-18"><a></a><span class="in">lt</span></span>
+<span id="cb34-19"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 </section>
@@ -1171,16 +1183,16 @@ attr(,"class")
 </div></section><section id="简略寿命表完全寿命表" class="slide level2">
 <h2>简略寿命表–&gt;完全寿命表</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb36-1"><a href="#cb36-1"></a><span class="in">```{r}</span></span>
-<span id="cb36-2"><a href="#cb36-2"></a>lx <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb36-3"><a href="#cb36-3"></a>  <span class="dv">100000</span>, <span class="fl">99498.39</span>, <span class="fl">99294.62</span>, <span class="fl">99173.88</span>, <span class="fl">99047.59</span>, <span class="fl">98840.46</span>,</span>
-<span id="cb36-4"><a href="#cb36-4"></a>  <span class="fl">98521.16</span>, <span class="fl">98161.25</span>, <span class="fl">97636.99</span>, <span class="fl">96900.13</span>, <span class="fl">95718.96</span>, <span class="fl">93930.91</span>,</span>
-<span id="cb36-5"><a href="#cb36-5"></a>  <span class="fl">91463.21</span>, <span class="fl">87131.41</span>, <span class="fl">80525.02</span>, <span class="fl">70907.59</span>, <span class="fl">58090.75</span>, <span class="fl">41630.48</span>,</span>
-<span id="cb36-6"><a href="#cb36-6"></a>  <span class="fl">24019.33</span></span>
-<span id="cb36-7"><a href="#cb36-7"></a>)</span>
-<span id="cb36-8"><a href="#cb36-8"></a>lx <span class="ot">&lt;-</span> lx <span class="sc">/</span> <span class="dv">100000</span></span>
-<span id="cb36-9"><a href="#cb36-9"></a><span class="fu">expand_lifetable</span>(lx)</span>
-<span id="cb36-10"><a href="#cb36-10"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb36-1"><a></a><span class="in">```{r}</span></span>
+<span id="cb36-2"><a></a><span class="in">lx &lt;- c(</span></span>
+<span id="cb36-3"><a></a><span class="in">  100000, 99498.39, 99294.62, 99173.88, 99047.59, 98840.46,</span></span>
+<span id="cb36-4"><a></a><span class="in">  98521.16, 98161.25, 97636.99, 96900.13, 95718.96, 93930.91,</span></span>
+<span id="cb36-5"><a></a><span class="in">  91463.21, 87131.41, 80525.02, 70907.59, 58090.75, 41630.48,</span></span>
+<span id="cb36-6"><a></a><span class="in">  24019.33</span></span>
+<span id="cb36-7"><a></a><span class="in">)</span></span>
+<span id="cb36-8"><a></a><span class="in">lx &lt;- lx / 100000</span></span>
+<span id="cb36-9"><a></a><span class="in">expand_lifetable(lx)</span></span>
+<span id="cb36-10"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$fitlx
   [1] 1.000000e+00 9.949839e-06 9.943045e-06 9.937549e-06 9.933096e-06
@@ -1231,46 +1243,50 @@ $fitmx
 <section id="人口金字塔图" class="slide level2">
 <h2>人口金字塔图</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb38-1"><a href="#cb38-1"></a><span class="in">```{r}</span></span>
-<span id="cb38-2"><a href="#cb38-2"></a><span class="co">#| output-location: slide</span></span>
-<span id="cb38-3"><a href="#cb38-3"></a><span class="co">#| fig-height: 6</span></span>
-<span id="cb38-4"><a href="#cb38-4"></a>left <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb38-5"><a href="#cb38-5"></a>  <span class="dv">5053</span>, <span class="dv">17743</span>, <span class="dv">25541</span>, <span class="dv">32509</span>, <span class="dv">30530</span>, <span class="dv">34806</span>, <span class="dv">36846</span>, <span class="dv">38691</span>, <span class="dv">40056</span>,</span>
-<span id="cb38-6"><a href="#cb38-6"></a>  <span class="dv">39252</span>, <span class="dv">37349</span>, <span class="dv">30507</span>, <span class="dv">26363</span>, <span class="dv">21684</span>, <span class="dv">15362</span>, <span class="dv">11725</span>, <span class="dv">7461</span>, <span class="dv">3260</span>, <span class="dv">915</span></span>
-<span id="cb38-7"><a href="#cb38-7"></a>)</span>
-<span id="cb38-8"><a href="#cb38-8"></a>right <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb38-9"><a href="#cb38-9"></a>  <span class="dv">4728</span>, <span class="dv">15330</span>, <span class="dv">22633</span>, <span class="dv">27784</span>, <span class="dv">28082</span>, <span class="dv">32605</span>, <span class="dv">32964</span>, <span class="dv">35732</span>, <span class="dv">36234</span>,</span>
-<span id="cb38-10"><a href="#cb38-10"></a>  <span class="dv">37123</span>, <span class="dv">34242</span>, <span class="dv">29152</span>, <span class="dv">24667</span>, <span class="dv">18940</span>, <span class="dv">15406</span>, <span class="dv">12355</span>, <span class="dv">10206</span>, <span class="dv">5634</span>,</span>
-<span id="cb38-11"><a href="#cb38-11"></a>  <span class="dv">2547</span></span>
-<span id="cb38-12"><a href="#cb38-12"></a>)</span>
-<span id="cb38-13"><a href="#cb38-13"></a>agegrp <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb38-14"><a href="#cb38-14"></a>  <span class="st">"0"</span>, <span class="st">"1-4"</span>, <span class="st">"5-9"</span>, <span class="st">"10-14"</span>, <span class="st">"15-19"</span>, <span class="st">"20-24"</span>, <span class="st">"25-29"</span>, <span class="st">"30-34"</span>,</span>
-<span id="cb38-15"><a href="#cb38-15"></a>  <span class="st">"35-39"</span>, <span class="st">"40-44"</span>, <span class="st">"45-49"</span>, <span class="st">"50-54"</span>, <span class="st">"55-59"</span>, <span class="st">"60-64"</span>, <span class="st">"65-69"</span>,</span>
-<span id="cb38-16"><a href="#cb38-16"></a>  <span class="st">"70-74"</span>, <span class="st">"75-79"</span>, <span class="st">"80-84"</span>, <span class="st">"85+"</span></span>
-<span id="cb38-17"><a href="#cb38-17"></a>)</span>
-<span id="cb38-18"><a href="#cb38-18"></a>pop <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">left =</span> left, <span class="at">right =</span> right, <span class="at">row.names =</span> agegrp)</span>
-<span id="cb38-19"><a href="#cb38-19"></a><span class="fu">par</span>(<span class="at">family=</span><span class="st">"STKaiti"</span>, <span class="at">mar=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>))</span>
-<span id="cb38-20"><a href="#cb38-20"></a><span class="fu">pyramid</span>(pop, <span class="at">main =</span> <span class="st">"Population pyramid in China."</span>, <span class="at">csize =</span> <span class="fl">0.8</span>, <span class="at">cgap =</span> <span class="fl">0.3</span>)</span>
-<span id="cb38-21"><a href="#cb38-21"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb38-1"><a></a><span class="in">```{r}</span></span>
+<span id="cb38-2"><a></a><span class="in">#| output-location: slide</span></span>
+<span id="cb38-3"><a></a><span class="in">#| fig-height: 6</span></span>
+<span id="cb38-4"><a></a><span class="in">left &lt;- c(</span></span>
+<span id="cb38-5"><a></a><span class="in">  5053, 17743, 25541, 32509, 30530, 34806, 36846, 38691, 40056,</span></span>
+<span id="cb38-6"><a></a><span class="in">  39252, 37349, 30507, 26363, 21684, 15362, 11725, 7461, 3260, 915</span></span>
+<span id="cb38-7"><a></a><span class="in">)</span></span>
+<span id="cb38-8"><a></a><span class="in">right &lt;- c(</span></span>
+<span id="cb38-9"><a></a><span class="in">  4728, 15330, 22633, 27784, 28082, 32605, 32964, 35732, 36234,</span></span>
+<span id="cb38-10"><a></a><span class="in">  37123, 34242, 29152, 24667, 18940, 15406, 12355, 10206, 5634,</span></span>
+<span id="cb38-11"><a></a><span class="in">  2547</span></span>
+<span id="cb38-12"><a></a><span class="in">)</span></span>
+<span id="cb38-13"><a></a><span class="in">agegrp &lt;- c(</span></span>
+<span id="cb38-14"><a></a><span class="in">  "0", "1-4", "5-9", "10-14", "15-19", "20-24", "25-29", "30-34",</span></span>
+<span id="cb38-15"><a></a><span class="in">  "35-39", "40-44", "45-49", "50-54", "55-59", "60-64", "65-69",</span></span>
+<span id="cb38-16"><a></a><span class="in">  "70-74", "75-79", "80-84", "85+"</span></span>
+<span id="cb38-17"><a></a><span class="in">)</span></span>
+<span id="cb38-18"><a></a><span class="in">pop &lt;- data.frame(left = left, right = right, row.names = agegrp)</span></span>
+<span id="cb38-19"><a></a><span class="in">par(family="STKaiti", mar=c(0,0,0,0))</span></span>
+<span id="cb38-20"><a></a><span class="in">pyramid(pop, main = "Population pyramid in China.", csize = 0.8, cgap = 0.3)</span></span>
+<span id="cb38-21"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 </section>
 <section id="人口金字塔图-output" class="slide level2 output-location-slide"><h2>人口金字塔图</h2><div class="cell output-location-slide">
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="index_files/figure-revealjs/unnamed-chunk-23-1.png" width="960"></p>
+</figure>
+</div>
 </div>
 </div></section><section id="双向条形图" class="slide level2">
 <h2>双向条形图</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb39-1"><a href="#cb39-1"></a><span class="in">```{r}</span></span>
-<span id="cb39-2"><a href="#cb39-2"></a><span class="co">#| output-location: slide</span></span>
-<span id="cb39-3"><a href="#cb39-3"></a><span class="co">#| fig-height: 5</span></span>
-<span id="cb39-4"><a href="#cb39-4"></a>file <span class="ot">&lt;-</span> <span class="fu">system.file</span>(<span class="st">"extdata"</span>, <span class="st">"411721.xls"</span>, <span class="at">package =</span> <span class="st">"canregtools"</span>)</span>
-<span id="cb39-5"><a href="#cb39-5"></a>data <span class="ot">&lt;-</span> <span class="fu">read_canreg</span>(file)</span>
-<span id="cb39-6"><a href="#cb39-6"></a>rate <span class="ot">&lt;-</span> <span class="fu">asr_rate</span>(data, icd_cat, <span class="at">event =</span> sws)</span>
-<span id="cb39-7"><a href="#cb39-7"></a><span class="fu">par</span>(<span class="at">family=</span><span class="st">"STKaiti"</span>, <span class="at">mar=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>))</span>
-<span id="cb39-8"><a href="#cb39-8"></a><span class="fu">dulbar_chart</span>(rate[,<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">6</span>, <span class="dv">9</span>, <span class="dv">10</span>)])</span>
-<span id="cb39-9"><a href="#cb39-9"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb39-1"><a></a><span class="in">```{r}</span></span>
+<span id="cb39-2"><a></a><span class="in">#| output-location: slide</span></span>
+<span id="cb39-3"><a></a><span class="in">#| fig-height: 5</span></span>
+<span id="cb39-4"><a></a><span class="in">file &lt;- system.file("extdata", "411721.xls", package = "canregtools")</span></span>
+<span id="cb39-5"><a></a><span class="in">data &lt;- read_canreg(file)</span></span>
+<span id="cb39-6"><a></a><span class="in">rate &lt;- asr_rate(data, icd_cat, event = sws)</span></span>
+<span id="cb39-7"><a></a><span class="in">par(family="STKaiti", mar=c(0,0,0,0))</span></span>
+<span id="cb39-8"><a></a><span class="in">dulbar_chart(rate[,c(1, 3, 6, 9, 10)])</span></span>
+<span id="cb39-9"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 </section>
@@ -1281,21 +1297,25 @@ $fitmx
 [1] "Processing POP data of year: 2016"</code></pre>
 </div>
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="index_files/figure-revealjs/unnamed-chunk-24-1.png" width="960"></p>
+</figure>
+</div>
 </div>
 </div></section><section id="线图" class="slide level2">
 <h2>线图</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb41-1"><a href="#cb41-1"></a><span class="in">```{r}</span></span>
-<span id="cb41-2"><a href="#cb41-2"></a><span class="co">#| output-location: slide</span></span>
-<span id="cb41-3"><a href="#cb41-3"></a><span class="co">#| fig-height: 5</span></span>
-<span id="cb41-4"><a href="#cb41-4"></a>file <span class="ot">&lt;-</span> <span class="fu">system.file</span>(<span class="st">"extdata"</span>, <span class="st">"411721.xls"</span>, <span class="at">package =</span> <span class="st">"canregtools"</span>)</span>
-<span id="cb41-5"><a href="#cb41-5"></a>data <span class="ot">&lt;-</span> <span class="fu">read_canreg</span>(file)</span>
-<span id="cb41-6"><a href="#cb41-6"></a>fbsw <span class="ot">&lt;-</span> <span class="fu">count_canreg</span>(data)</span>
-<span id="cb41-7"><a href="#cb41-7"></a>age <span class="ot">&lt;-</span> <span class="fu">create_age_rate</span>(fbsw, sex, <span class="at">event =</span> sws)</span>
-<span id="cb41-8"><a href="#cb41-8"></a><span class="fu">par</span>(<span class="at">family=</span><span class="st">"STKaiti"</span>, <span class="at">mar=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>))</span>
-<span id="cb41-9"><a href="#cb41-9"></a><span class="fu">line_chart</span>(age, agegrp, rate, sex)</span>
-<span id="cb41-10"><a href="#cb41-10"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb41-1"><a></a><span class="in">```{r}</span></span>
+<span id="cb41-2"><a></a><span class="in">#| output-location: slide</span></span>
+<span id="cb41-3"><a></a><span class="in">#| fig-height: 5</span></span>
+<span id="cb41-4"><a></a><span class="in">file &lt;- system.file("extdata", "411721.xls", package = "canregtools")</span></span>
+<span id="cb41-5"><a></a><span class="in">data &lt;- read_canreg(file)</span></span>
+<span id="cb41-6"><a></a><span class="in">fbsw &lt;- count_canreg(data)</span></span>
+<span id="cb41-7"><a></a><span class="in">age &lt;- create_age_rate(fbsw, sex, event = sws)</span></span>
+<span id="cb41-8"><a></a><span class="in">par(family="STKaiti", mar=c(0,0,0,0))</span></span>
+<span id="cb41-9"><a></a><span class="in">line_chart(age, agegrp, rate, sex)</span></span>
+<span id="cb41-10"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 </section>
@@ -1306,20 +1326,24 @@ $fitmx
 [1] "Processing POP data of year: 2016"</code></pre>
 </div>
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="index_files/figure-revealjs/unnamed-chunk-25-1.png" width="960"></p>
+</figure>
+</div>
 </div>
 </div></section><section id="哑铃图" class="slide level2">
 <h2>哑铃图</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb43-1"><a href="#cb43-1"></a><span class="in">```{r}</span></span>
-<span id="cb43-2"><a href="#cb43-2"></a><span class="co">#| output-location: slide</span></span>
-<span id="cb43-3"><a href="#cb43-3"></a><span class="co">#| fig-height: 5</span></span>
-<span id="cb43-4"><a href="#cb43-4"></a>file <span class="ot">&lt;-</span> <span class="fu">system.file</span>(<span class="st">"extdata"</span>, <span class="st">"411721.xls"</span>, <span class="at">package =</span> <span class="st">"canregtools"</span>)</span>
-<span id="cb43-5"><a href="#cb43-5"></a>data <span class="ot">&lt;-</span> <span class="fu">read_canreg</span>(file)</span>
-<span id="cb43-6"><a href="#cb43-6"></a>rate <span class="ot">&lt;-</span> <span class="fu">asr_rate</span>(data,icd_cat)</span>
-<span id="cb43-7"><a href="#cb43-7"></a><span class="fu">par</span>(<span class="at">family=</span><span class="st">"STKaiti"</span>, <span class="at">mar=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>))</span>
-<span id="cb43-8"><a href="#cb43-8"></a><span class="fu">dumbbell_chart</span>(rate, icd_cat, cr_lower, cr_upper)</span>
-<span id="cb43-9"><a href="#cb43-9"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb43-1"><a></a><span class="in">```{r}</span></span>
+<span id="cb43-2"><a></a><span class="in">#| output-location: slide</span></span>
+<span id="cb43-3"><a></a><span class="in">#| fig-height: 5</span></span>
+<span id="cb43-4"><a></a><span class="in">file &lt;- system.file("extdata", "411721.xls", package = "canregtools")</span></span>
+<span id="cb43-5"><a></a><span class="in">data &lt;- read_canreg(file)</span></span>
+<span id="cb43-6"><a></a><span class="in">rate &lt;- asr_rate(data,icd_cat)</span></span>
+<span id="cb43-7"><a></a><span class="in">par(family="STKaiti", mar=c(0,0,0,0))</span></span>
+<span id="cb43-8"><a></a><span class="in">dumbbell_chart(rate, icd_cat, cr_lower, cr_upper)</span></span>
+<span id="cb43-9"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 </section>
@@ -1330,7 +1354,11 @@ $fitmx
 [1] "Processing POP data of year: 2016"</code></pre>
 </div>
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="index_files/figure-revealjs/unnamed-chunk-26-1.png" width="960"></p>
+</figure>
+</div>
 </div>
 </div></section><section id="下一步计划" class="slide level2">
 <h2>下一步计划</h2>
@@ -1356,8 +1384,10 @@ $fitmx
 <p>chenq08@126.com</p>
 <p>https:://www.chenq.site/qsight/</p>
 
+<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 <p>R package: canregtools</p>
+</div>
 </div>
 </section>
     </div>
@@ -1386,7 +1416,6 @@ $fitmx
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
-'smaller': true,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -1641,18 +1670,7 @@ $fitmx
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -1684,7 +1702,47 @@ $fitmx
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp("https:\/\/slides\.chenq\.site");
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
       function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
@@ -1721,7 +1779,11 @@ $fitmx
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {

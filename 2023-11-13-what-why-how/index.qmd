@@ -1,0 +1,59 @@
+---
+title: "如何做好肿瘤登记工作?"
+subtitle: "河南省肿瘤登记工作实践"
+author: "陈琼"
+date: 2023-11-13
+date-format: "dddd MMM D, YYYY"
+address: "南阳"
+categories:
+  - 肿瘤登记
+format:
+  revealjs:
+    theme: [custom1.scss]
+    slide-number: true
+    scrollable: false
+    sc-sb-title: h1
+    footer: "河南省肿瘤登记工作实践"
+revealjs-plugins:
+  - attribution
+filters:
+   - roughnotation
+   - reveal-header
+   - reveal-auto-agenda
+auto-agenda:
+  bullets: numbered
+  heading: 目录
+slide-level: 2
+title-slide-style: pandoc
+title-slide-attributes:
+  data-background-color: "lightblue"
+---
+
+# 肿瘤登记的背景
+
+## 人群肿瘤登记的目的
+
+<br>
+
+> 肿瘤登记是系统性、经常性收集有关肿瘤及肿瘤患者信息的统计制度。
+
+
+</br>
+
+- 了解癌症[流行情况]{.important}
+- 掌握癌症疾病负担[变化趋势]{.important}
+- 了解癌症[分布特征]{.important}
+
+## 人群肿瘤登记的意义
+
+<br>
+
+> 肿瘤登记是系统性、经常性收集有关肿瘤及肿瘤患者信息的统计制度。
+
+
+</br>
+
+- 确定癌症防控优化[干预方向]{.important}
+- 评价癌症[防控效果]{.important}
+- 助力癌症[临床研究]{.important}
+

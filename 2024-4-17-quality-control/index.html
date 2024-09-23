@@ -1,0 +1,2150 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-html-68b329da9893e34099c7d8ad5cb9c940.min.css" rel="stylesheet" append-hash="true" data-mode="light">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-79bb3942e891885f9f7af119cd221462.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/quarto-contrib/reveal-header-1.0.0/add_header.js" defer="true"></script>
+<link href="../site_libs/quarto-contrib/reveal-header-1.0.0/add_header.css" rel="stylesheet">
+<script src="../site_libs/quarto-contrib/sc-sb-title-1.0.0/sc_sb_title.js" defer="true"></script>
+<link href="../site_libs/quarto-contrib/grid-no-htext-1.0.0/grid_no_htext.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/reveal-auto-agenda-0.0.3/reveal-auto-agenda.css" rel="stylesheet">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.9">
+
+  <meta name="author" content="陈琼">
+  <meta name="dcterms.date" content="2024-04-17">
+  <title>普癌新声 – 肿瘤登记质控和自动化报告</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-a12d944e40189494c1bce3e6e8040f5e.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-attribution/attribution.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-titled.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-titled) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-titled .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-titled .callout-title  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-titled.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-titled.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-title {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-title {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-title {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-titled .callout-body > .callout-content > :last-child {
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  .callout.callout-titled .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-titled) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-title {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-title {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-title {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-title {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-title {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+  <script src="../site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<meta property="og:title" content="肿瘤登记质控和自动化报告 – 普癌新声">
+<meta property="og:description" content="如何快速发布质控报告和年度报告？">
+<meta property="og:site_name" content="普癌新声">
+<meta name="twitter:title" content="肿瘤登记质控和自动化报告 – 普癌新声">
+<meta name="twitter:description" content="如何快速发布质控报告和年度报告？">
+<meta name="twitter:card" content="summary">
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-image="https://cdn.jsdelivr.net/gh/gigu003/db/images/title-pic1.jpg" data-background-opacity="0.5" data-background-size="contain" class="center">
+  <h1 class="title">肿瘤登记质控和自动化报告</h1>
+  <p class="subtitle">如何快速发布质控报告和年度报告？</p>
+  <p class="author">陈琼</p>
+  <p class="date">April 17, 2024</p>
+</section>
+<section>
+<section id="质量控制应该怎么做" class="title-slide slide level1 agenda-slide center" data-background="lightblue">
+<h1>质量控制应该怎么做?</h1>
+<div class="agenda-heading">
+<p>主要内容</p>
+</div>
+<div class="agenda">
+<ol>
+<li><div class="agenda-active">
+<p>质量控制应该怎么做?</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>可视化批量化的质控报告?</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>自动化的肿瘤登记年报输出</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>谢谢关注！</p>
+</div></li>
+</ol>
+</div>
+</section>
+<section id="why" class="slide level2">
+<h2>Why ?</h2>
+<blockquote>
+<p>确保肿瘤登记准确、完整、可靠, 从而为癌症防控、科学研究、医疗质量评估等提供真实、完整、有效、具有科学价值的基础数据。</p>
+</blockquote>
+<ul>
+<li><p><span class="important">肿瘤登记的质量控制是获取高质量数据的核心</span></p></li>
+<li><p>使不同地区之间的数据具有可比性</p></li>
+<li><p>代表登记处所在地区的癌症人群</p></li>
+<li><p>使癌症数据真实有效</p></li>
+</ul>
+</section>
+<section id="个体水平的质控-内部一致性" class="slide level2 smaller">
+<h2>个体水平的质控-内部一致性</h2>
+<blockquote>
+<p>肿瘤登记收集的变量或者变量组合之间存在一定的逻辑关系，通过对单个变量或变量组合之间的逻辑关系进行审查，以提高肿瘤登记数据有效性。</p>
+</blockquote>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>单个项目</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>出生日期</li>
+<li>发病日期</li>
+<li>年龄、性别</li>
+<li>发病部位</li>
+<li>形态学</li>
+<li>行为和分级</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:40%;">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>项目组合</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>性别/部位</li>
+<li>部位/组织学</li>
+<li>年龄/部位/组织学</li>
+<li>行为/部位</li>
+<li>行为/组织学</li>
+<li>性别/组织学</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:20%;">
+<div class="callout callout-caution callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>校验结果</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>正确✅</li>
+<li>警告⚠️</li>
+<li>错误❌</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="逻辑核查-iarccrgtools" class="slide level2 smaller">
+<h2>逻辑核查-iarccrgtools</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>IARC/IACR CHECK Program–iarccrgtools<sup>1</sup></li>
+<li>R包: iarccrgtools <a href="https://github.com/FinnishCancerRegistry/iarccrgtools">FinnishCancerRegistry / iarccrgtools</a></li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(</span>
+<span id="cb1-2"><a></a>  <span class="st">"FinnishCancerRegistry/iarccrgtools"</span>,</span>
+<span id="cb1-3"><a></a>  <span class="at">ref =</span> <span class="fu">readline</span>(<span class="st">"enter latest tag on github: "</span>)</span>
+<span id="cb1-4"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:40%;">
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="1">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="https://cdn.jsdelivr.net/gh/gigu003/db/images/iarc-tools.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="iarccrgtools"><img data-src="https://cdn.jsdelivr.net/gh/gigu003/db/images/iarc-tools.jpg" style="width:80.0%" alt="iarccrgtools"></a></p>
+<figcaption>iarccrgtools</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="https://cdn.jsdelivr.net/gh/gigu003/db/images/iarc-r.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="R package"><img data-src="https://cdn.jsdelivr.net/gh/gigu003/db/images/iarc-r.jpg" style="width:80.0%" alt="R package"></a></p>
+<figcaption>R package</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>Check and conversion programs for cancer registries (IARC/IACR Tools for Cancer Registries) J.Ferlay, C. Burkhard, S.Whelon, D.M. Parkin IARC Technical Report No.&nbsp;42 Lyon, 2005</p></li></ol></aside></section>
+<section id="质量控制指标体系" class="slide level2 smaller">
+<h2>质量控制指标体系</h2>
+<blockquote>
+<p>可比性、有效性、时效性<sup>1</sup>和完整性是当前肿瘤登记质量控制的主要指标<sup>2</sup></p>
+</blockquote>
+<div class="columns">
+<div class="column" style="width:30%;">
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+  B(可比性) --&gt; b1(发病日期的定义)
+  B --&gt; b2(多原发判断)
+  B --&gt; b3(分类与编码)
+  B --&gt; b4(死亡证明)
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:30%;">
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+  D(有效性) --&gt; d1(组织学确诊比例)
+  D --&gt; d2(只有死亡医学证明书比例)
+  D --&gt; d3(部位不明比例)
+  D --&gt; d4(数据内部一致性)
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:40%;">
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+  C(完整性) --&gt; c1(死亡发病比)
+  C --&gt; c3(组织学确诊比例)
+  C --&gt; c4(不同时间发病率的稳定性)
+  C --&gt; c5(年龄别发病率曲线)
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</div></div>
+<aside><ol class="aside-footnotes"><li id="fn2"><p>Bray, F. and Parkin, D.M. (2009) ‘Evaluation of data quality in the cancer registry: Principles and methods. part I: Comparability, validity and timeliness’, European Journal of Cancer, 45(5), pp.&nbsp;747–755.</p></li><li id="fn3"><p>Parkin, D.M. and Bray, F. (2009) ‘Evaluation of data quality in the cancer registry: Principles and methods part II. completeness’, European Journal of Cancer, 45(5), pp.&nbsp;756–764.</p></li></ol></aside></section>
+<section id="可比性---发病时间的定义" class="slide level2 smaller">
+<h2>可比性 - 发病时间的定义</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<blockquote>
+<p>癌症的发生是一个可能需要数十年的过程，而发病日期的定义则相对武断,因此,遵循统一的标准特别重要.</p>
+</blockquote>
+<ul>
+<li>应选择七个列出的事件中按时间顺序首先发生的日期作为发病日期。</li>
+<li>如果优先级较高的事件在最初选择的日期之后三个月内发生，则应优先考虑优先级较高事件的日期。</li>
+</ul>
+</div><div class="column" style="width:60%;">
+<p><img data-src="https://cdn.jsdelivr.net/gh/gigu003/db/images/incidence-rule.jpg"></p>
+</div></div>
+
+<aside><div>
+<p>Source：ENCR Recommendation ▪ Coding Incidence Date ▪ 2022 <a href="https://encr.eu/sites/default/files/Recommendations/ENCR%20Recommendation%20DOI_Mar2022_0.pdf">https://encr.eu/sites/default/files/Recommendations/ENCR%20Recommendation%20DOI_Mar2022_0.pdf</a></p>
+</div></aside></section>
+<section id="可比性---分类与编码" class="slide level2">
+<h2>可比性 - 分类与编码</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<blockquote>
+<p>肿瘤登记采用<strong>双编码系统</strong></p>
+</blockquote>
+<h4 id="分类标准">分类标准</h4>
+<ul>
+<li>ICD-O-3 ：数据收集</li>
+<li>ICD10 ：统计分析</li>
+</ul>
+<blockquote>
+<p>《肿瘤登记年报》采用ICD10进行肿瘤分类（<a href="#/可比性---分类与编码" class="quarto-xref">Table&nbsp;1</a>）</p>
+</blockquote>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div id="tbl-category" class="cell quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-category-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: 常用癌症分类统计表（大类）
+</figcaption>
+<div aria-describedby="tbl-category-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="table do-not-create-environment cell caption-top" data-quarto-postprocess="true" style="font-size: 10px; margin-left: auto; margin-right: auto;">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">部位</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">ICD10</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">口腔和咽 (除外鼻咽癌和喉)</td>
+<td style="text-align: left;">C00-10,C12-14（除外C10.1）</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">鼻咽癌</td>
+<td style="text-align: left;">C11</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">食管</td>
+<td style="text-align: left;">C15</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">胃</td>
+<td style="text-align: left;">C16</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">结直肠肛门</td>
+<td style="text-align: left;">C18-21</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">肝脏</td>
+<td style="text-align: left;">C22</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">胆囊及其他</td>
+<td style="text-align: left;">C23-C24</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">胰腺</td>
+<td style="text-align: left;">C25</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">喉</td>
+<td style="text-align: left;">C32，C10.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">气管、支气管、肺</td>
+<td style="text-align: left;">C33-C34</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">骨</td>
+<td style="text-align: left;">C40-C41</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">乳房</td>
+<td style="text-align: left;">C50</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">子宫颈</td>
+<td style="text-align: left;">C53</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">子宫体及子宫部位不明</td>
+<td style="text-align: left;">C54-55</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">卵巢</td>
+<td style="text-align: left;">C56</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">前列腺</td>
+<td style="text-align: left;">C61</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">睾丸</td>
+<td style="text-align: left;">C62</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">肾及泌尿系统不明</td>
+<td style="text-align: left;">C64-66，68</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">膀胱</td>
+<td style="text-align: left;">C67</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">脑,神经系统</td>
+<td style="text-align: left;">C70-C72</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">甲状腺</td>
+<td style="text-align: left;">C73</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">淋巴瘤</td>
+<td style="text-align: left;">C81-85,88,90,96</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">白血病</td>
+<td style="text-align: left;">C91-C95</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">其它</td>
+<td style="text-align: left;">Other（除外以上）</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">所有部位合计</td>
+<td style="text-align: left;">ALL</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</figure>
+</div>
+</div>
+</div></div>
+</section>
+<section id="可比性-多原发肿瘤" class="slide level2 smaller">
+<h2>可比性-多原发肿瘤</h2>
+<blockquote>
+<p>个体有发生一个以上癌症的可能，多部位原发癌纪录为新发病病例，与登记地区医疗水平有关，也与登记质量有关，登记处应注意多部位原发肿瘤病例资料的收集</p>
+</blockquote>
+<p><br></p>
+<ul>
+<li>北美地区采取了与全球其他地区不同的多元发判断规则</li>
+<li>SEER: <a href="https://seer.cancer.gov/tools/mphrules/" class="uri">https://seer.cancer.gov/tools/mphrules/</a><sup>1</sup></li>
+<li>IARC/ENUR: <a href="https://www.encr.eu/sites/default/files/pdf/MPrules_july2004.pdf" class="uri">https://www.encr.eu/sites/default/files/pdf/MPrules_july2004.pdf</a><sup>2</sup></li>
+</ul>
+<aside><ol class="aside-footnotes"><li id="fn4"><p>A review of the definition for multiple primary cancers in the United States. http://prdupl02.ynet.co.il/ forumfiles_2/ 19207389.pdf.</p></li><li id="fn5"><p>Working Group R. International rules for multiple primary cancers (ICD-0 third edition) Eur J Cancer Prev. 2005;14(4):307–308.</p></li></ol></aside></section>
+<section id="可比性-iacr多原发癌规则" class="slide level2 smaller">
+<h2>可比性-IACR多原发癌规则</h2>
+<blockquote>
+<p>全球大部分地区采取了IARC的多原发癌判断规则</p>
+</blockquote>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><br></p>
+<ol type="1">
+<li>两个或以上多原发癌的判断<strong>不依赖时间</strong></li>
+<li>每个原发癌起源一个原发部位或组织(非扩散、复发或转移)</li>
+<li>肿瘤起源于在同一个或一对器官或组织时认为是一个肿瘤
+<ol type="1">
+<li>部分成组部位码认为是一个器官</li>
+<li>多灶肿瘤认为是一个肿瘤</li>
+</ol></li>
+</ol>
+</div><div class="column" style="width:40%;">
+<table class="caption-top">
+<caption>ICDO3部位码分组</caption>
+<thead>
+<tr class="header">
+<th>ICDO3-Topo</th>
+<th>Site</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>C01, C02</td>
+<td>C02.9</td>
+</tr>
+<tr class="even">
+<td>C00, C03, C04, C05, C06</td>
+<td>C06.9</td>
+</tr>
+<tr class="odd">
+<td>C09, C10, C12, C13, C14</td>
+<td>C14.0</td>
+</tr>
+<tr class="even">
+<td>C19, C20</td>
+<td>C20.9</td>
+</tr>
+<tr class="odd">
+<td>C23, C24</td>
+<td>C24.9</td>
+</tr>
+<tr class="even">
+<td>C33, C34</td>
+<td>C34.9</td>
+</tr>
+<tr class="odd">
+<td>C40, C41</td>
+<td>C41.9</td>
+</tr>
+<tr class="even">
+<td>C65, C66, C67, C68</td>
+<td>C68.9</td>
+</tr>
+</tbody>
+</table>
+</div></div>
+</section>
+<section id="可比性-iacr多原发癌规则-1" class="slide level2 smaller">
+<h2>可比性-IACR多原发癌规则</h2>
+<ul>
+<li>对于系统性肿瘤涉及到不同器官时,只记录一个(如Kaposi、血液造血系统肿瘤)</li>
+<li>不同的组织学应该被记录为两个或多个肿瘤<sup>1</sup></li>
+</ul>
+<p><img data-src="https://cdn.jsdelivr.net/gh/gigu003/db/images/morp-group.jpg" style="width:70.0%"></p>
+<aside><ol class="aside-footnotes"><li id="fn6"><p>Berg, J. W. (1982) Morphologic classification of human cancer. In: Schottenfeld, D. &amp; Fraumeni, J. F., Jr, eds, Cancer Epidemiology and Prevention, Philadelphia, Saunders, pp. 74-89</p></li></ol></aside></section>
+<section id="有效性-组织学确诊比例mv" class="slide level2 smaller">
+<h2>有效性-组织学确诊比例(MV%)</h2>
+<blockquote>
+<p>MV%的绝对值可能没有意义, 只有通过与“预期值”进行比较才能除非与合理的“预期”值进行比较才有意义。</p>
+</blockquote>
+<p><br></p>
+<ul>
+<li>不同性别、部位MV%情况</li>
+<li>与相邻区域(区域平均值)比较</li>
+<li>与国家平均值的比较</li>
+<li>组织学确诊比例的连续性情况</li>
+</ul>
+
+<aside><div>
+<p><strong><em>MV%预期值</em></strong>是根据登记处所在地区（医疗技术水平，当地临床实践）合理设定的。</p>
+</div></aside></section>
+<section id="有效性-组织学确诊比例mv-1" class="slide level2 smaller">
+<h2>有效性-组织学确诊比例(MV%)</h2>
+<blockquote>
+<p>如何判断登记处的MV%与区域内的均值是否存在差异?</p>
+</blockquote>
+<p>基于二项分布, 存在 <span class="math inline">\(E(y_i)=pd_i\)</span> 和 <span class="math inline">\(Var(y_i)=p(1p)d_i\)</span>, 参数可以做如下估计:</p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><span class="math inline">\(Z^2 = \frac{(y_j - \hat{p} d_j)^2}{\hat{\phi} \hat{p}(1- \hat{p}) d_j} \approx \chi_1^2\)</span></p>
+</div><div class="column" style="width:30%;">
+<p><span class="math inline">\(\hat{p}=\frac{\sum_{i=1}^n y_i}{\sum_{i=1}^n d_i}\)</span></p>
+</div><div class="column" style="width:30%;">
+<p><span class="math inline">\(\hat(\phi)=\frac{1}{n-1}\sum_{i=1}^n \frac{(y_i-pd_i)^2}{d_ip(1-p)}\)</span></p>
+</div></div>
+<ul>
+<li><span class="math inline">\(i\)</span> 同一个国家或地区的不同登记处分别用i=1,…,n表示</li>
+<li><span class="math inline">\(p\)</span> 病理学诊断比例(MV%)</li>
+<li><span class="math inline">\(y_i\)</span> 登记处i的病理学诊断病例数</li>
+<li><span class="math inline">\(d_i\)</span> 登记处i的总病例数</li>
+</ul>
+<blockquote>
+<p>如果<span class="math inline">\(Z^2 \geq 3.84\)</span> 则认为登记处MV%与区域均值存在有统计学意义的差异。</p>
+</blockquote>
+</section>
+<section id="有效性-只有死亡医学证明书比例dco" class="slide level2 smaller">
+<h2>有效性-只有死亡医学证明书比例(DCO%)</h2>
+<blockquote>
+<p>标记为DCO的记录指示该记录的数据质量较差，诸多信息存在缺失，比如诊断时间以死亡时间来代替，无法在生存分析时被利用。</p>
+</blockquote>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-dco" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-dco-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-dco">flowchart LR
+  a(死亡证明提及癌症) --&gt; b(与肿瘤登记数据库匹配)
+  b --&gt;c(未登记)
+  b --&gt;d(已登记)
+  c --&gt; e1(从其他来源获取信息)
+  c --&gt; e2(无其他来源)
+  e2 --&gt; f1(未追踪到:DCO)
+  e2 --&gt; f2(追踪到)
+  e2 --&gt; f3(追踪到,非癌)
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dco-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: 利用死亡证明发现肿瘤病例信息.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="完整性" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">完整性</h2>
+<blockquote>
+<p>肿瘤登记收集到的癌症病人数占一定区域内所有诊断癌症病人的比例</p>
+</blockquote>
+<div class="r-hstack">
+<div data-id="box1" data-auto-animate-delay="0" style="background: #2780e3; width: 200px; height: 150px; margin: 10px;">
+<p>癌症患者</p>
+</div>
+<div data-id="box2" data-auto-animate-delay="0.1" style="background: #3fb618; width: 200px; height: 150px; margin: 10px;">
+<p>诊断患者</p>
+</div>
+<div data-id="box3" data-auto-animate-delay="0.2" style="background: #e83e8c; width: 200px; height: 150px; margin: 10px;">
+<p>肿瘤登记</p>
+</div>
+</div>
+</section>
+<section id="完整性-1" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">完整性</h2>
+<blockquote>
+<p>肿瘤登记收集到的癌症病人数占一定区域内所有诊断癌症病人的比例</p>
+</blockquote>
+<div class="r-stack">
+<div data-id="box1" style="background: #2780e3; width: 350px; height: 350px; border-radius: 200px;">
+<p>癌症患者</p>
+</div>
+<div data-id="box2" style="background: #3fb618; width: 250px; height: 250px; border-radius: 200px;">
+<p>诊断患者</p>
+</div>
+<div data-id="box3" style="background: #e83e8c; width: 150px; height: 150px; border-radius: 200px;">
+<p>肿瘤登记</p>
+</div>
+</div>
+</section>
+<section id="完整性--历史数据方法" class="slide level2 smaller">
+<h2>完整性- 历史数据方法</h2>
+<blockquote>
+<p>通过对比历史数据发病率发现异常波动,从而体现可能登记处完整性的变化。</p>
+</blockquote>
+<blockquote>
+<p>假设: 来自同一地区特定癌症的发病率倾向于相似。</p>
+</blockquote>
+<ul>
+<li>发病率随时间变化的稳定性</li>
+<li>比较不同人群癌症发病率</li>
+<li>年龄别发病率曲线</li>
+<li>儿童肿瘤发病率</li>
+</ul>
+
+<aside><div>
+<p>通过与<strong>区域内标准值</strong>进行比较是CI5评估数据质量的常用做法.</p>
+</div></aside></section>
+<section id="完整性--死亡发病比mi" class="slide level2 smaller">
+<h2>完整性- 死亡发病比(M:I)</h2>
+<blockquote>
+<p>M:I是反映完整的重要指标，它反映癌症生存情况，与该地区的经济、医疗等发展水平有关，当它<strong><em>预期值</em></strong><sup>1</sup>存在差异时，往往提示完整性存在问题。</p>
+</blockquote>
+<p><span class="math display">\[M:I=\frac{Mortality}{Incidence} \approx1-5Survial\]</span></p>
+<ul>
+<li>M:I 大于<strong><em>预期值</em></strong>提示完整性不足</li>
+<li>M:I 小于<strong><em>预期值</em></strong>提示可能存在重卡</li>
+</ul>
+
+<aside><div>
+<p>注: 全死因数据的质量会影响M:I和完整性的关系.</p>
+</div><ol class="aside-footnotes"><li id="fn7"><p>预期值通常是区域内的均值</p></li></ol></aside></section>
+<section id="完整性-平均数据来源数" class="slide level2">
+<h2>完整性-平均数据来源数</h2>
+</section>
+<section id="完整性--组织学确诊比例mv" class="slide level2 smaller">
+<h2>完整性- 组织学确诊比例(MV%)</h2>
+<blockquote>
+<p>MV%是有效性评估的指标, 但是通过与预期值比较,也可以判断其完整性,过高的MV%提示数据过度依赖病理诊断，可能存在完整性不足。</p>
+</blockquote>
+<p><br></p>
+<ul>
+<li>同一登记处的MV%的历史变化情况</li>
+<li>MV%与预期值的比较</li>
+<li>不同癌种MV%与预期值的比较</li>
+</ul>
+
+<aside><div>
+<p>注：预期值可以是国家或省级的MV%均值，也可以是相似地区（城市或农村）的均值。</p>
+</div></aside></section>
+<section id="完整性--组织学确诊比例mv-1" class="slide level2 smaller">
+<h2>完整性- 组织学确诊比例(MV%)</h2>
+<blockquote>
+<p>如何判断MV%与预期值是否存在差异？</p>
+</blockquote>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><span class="math inline">\(Z^2 = \frac{(m_j - \hat{\theta} d_j)}{\hat{\phi}n_j\hat{\theta}} \approx \chi_1^2\)</span></p>
+</div><div class="column" style="width:30%;">
+<p><span class="math inline">\(\hat{\theta}=\frac{\sum_{i=1}^n m_i}{\sum_{i=1}^n d_i}\)</span></p>
+</div><div class="column" style="width:30%;">
+<p><span class="math inline">\(\hat(\phi)=\frac{1}{n-1}\sum_{i=1}^n \frac{(m_i-\hat{\theta}d_i)^2}{n_i\hat{\theta}}\)</span></p>
+</div></div>
+<p><br></p>
+<ul>
+<li>i指示不同登记处的编号, i=1,….,n</li>
+<li><span class="math inline">\(d_i\)</span>登记处i的发病记录数</li>
+<li><span class="math inline">\(m_i\)</span>登记处i的死亡记录数</li>
+</ul>
+
+<aside><div>
+<p>注：<span class="math inline">\(Z^2\geq3.84\)</span>提示差异存在统计学意义。</p>
+</div></aside></section></section>
+<section>
+<section id="可视化批量化的质控报告" class="title-slide slide level1 agenda-slide center" data-background="lightblue">
+<h1>可视化批量化的质控报告?</h1>
+<div class="agenda-heading">
+<p>主要内容</p>
+</div>
+<div class="agenda">
+<ol>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>质量控制应该怎么做?</p>
+</div></li>
+<li><div class="agenda-active">
+<p>可视化批量化的质控报告?</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>自动化的肿瘤登记年报输出</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>谢谢关注！</p>
+</div></li>
+</ol>
+</div>
+</section>
+<section id="主要内容" class="slide level2 smaller">
+<h2>主要内容</h2>
+<blockquote>
+<p>通过可视化的方法,尽量简单的肿瘤登记数据中存在的问题展示出来.</p>
+</blockquote>
+<ul>
+<li>人口数据</li>
+<li>总体发病数、死亡数</li>
+<li>总体发病率、死亡率</li>
+<li>不同部位癌症发病率、死亡率</li>
+<li>年龄别发病率、死亡率</li>
+<li>癌种数</li>
+<li>病理诊断比例的时间变化和区域比较</li>
+<li>死亡发病比的时间变化和区域比较</li>
+<li>只有死亡医学证明书比例的时间变化的区域比较</li>
+</ul>
+</section>
+<section id="人口总数" class="slide level2">
+<h2>人口总数</h2>
+
+<img data-src="https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/pop-total.jpg" class="r-stretch"></section>
+<section id="人口比例" class="slide level2">
+<h2>人口比例</h2>
+
+<img data-src="https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/pop-ratio.jpg" class="r-stretch"></section>
+<section id="人口结构" class="slide level2">
+<h2>人口结构</h2>
+
+<img data-src="https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/pyramid.jpg" class="r-stretch"></section>
+<section id="人口结构-1" class="slide level2">
+<h2>人口结构</h2>
+
+<img data-src="https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/pyramid.gif" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
+<section id="癌症发病和死亡总数" class="slide level2">
+<h2>癌症发病和死亡总数</h2>
+
+<img data-src="https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/total.jpg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="总体癌症发病率" class="slide level2">
+<h2>总体癌症发病率</h2>
+
+<img data-src="https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/incidence.jpg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="不同部位癌症发病率" class="slide level2">
+<h2>不同部位癌症发病率</h2>
+
+<img data-src="https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/incidence-sites.jpg" class="quarto-figure quarto-figure-center r-stretch" style="width:75.0%"></section>
+<section id="年龄别癌症发病率" class="slide level2">
+<h2>年龄别癌症发病率</h2>
+
+<img data-src="https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/incidence-age.jpg" class="quarto-figure quarto-figure-center r-stretch" style="width:75.0%"></section>
+<section id="总体癌症死亡率" class="slide level2">
+<h2>总体癌症死亡率</h2>
+
+<img data-src="https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/mortality.jpg" class="quarto-figure quarto-figure-center r-stretch" style="width:75.0%"></section>
+<section id="不同部位癌症死亡率" class="slide level2">
+<h2>不同部位癌症死亡率</h2>
+
+<img data-src="https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/mortality-sites.jpg" class="quarto-figure quarto-figure-center r-stretch" style="width:75.0%"></section>
+<section id="年龄别癌症死亡率" class="slide level2">
+<h2>年龄别癌症死亡率</h2>
+
+<img data-src="https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/mortality-age.jpg" class="quarto-figure quarto-figure-center r-stretch" style="width:75.0%"></section>
+<section id="儿童肿瘤发病率" class="slide level2">
+<h2>儿童肿瘤发病率</h2>
+
+<img data-src="https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/childhood-trend.jpg" class="quarto-figure quarto-figure-center r-stretch" style="width:75.0%"></section>
+<section id="儿童肿瘤发病率-1" class="slide level2">
+<h2>儿童肿瘤发病率</h2>
+
+<img data-src="https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/childhood-iarc.jpg" class="quarto-figure quarto-figure-center r-stretch" style="width:75.0%"></section>
+<section id="癌症种类数量" class="slide level2">
+<h2>癌症种类数量</h2>
+
+<img data-src="https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/cancers.jpg" class="quarto-figure quarto-figure-center r-stretch" style="width:75.0%"></section>
+<section id="病理诊断比例" class="slide level2">
+<h2>病理诊断比例</h2>
+
+<img data-src="https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/mv-trend.jpg" class="quarto-figure quarto-figure-center r-stretch" style="width:75.0%"></section>
+<section id="病理诊断比例-1" class="slide level2">
+<h2>病理诊断比例</h2>
+
+<img data-src="https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/mv-com.jpg" class="quarto-figure quarto-figure-center r-stretch" style="width:75.0%"></section>
+<section id="死亡发病比" class="slide level2">
+<h2>死亡发病比</h2>
+
+<img data-src="https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/mi-trend.jpg" class="quarto-figure quarto-figure-center r-stretch" style="width:75.0%"></section>
+<section id="死亡发病比-1" class="slide level2">
+<h2>死亡发病比</h2>
+
+<img data-src="https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/mi-com.jpg" class="quarto-figure quarto-figure-center r-stretch" style="width:75.0%"></section>
+<section id="只有死亡医学证明书比例" class="slide level2">
+<h2>只有死亡医学证明书比例</h2>
+
+<img data-src="https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/dco-trend.jpg" class="quarto-figure quarto-figure-center r-stretch" style="width:75.0%"></section>
+<section id="只有死亡医学证明书比例-1" class="slide level2">
+<h2>只有死亡医学证明书比例</h2>
+
+<img data-src="https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/dco-com.jpg" class="quarto-figure quarto-figure-center r-stretch" style="width:75.0%"></section>
+<section id="质量控制报告" class="slide level2 smaller">
+<h2>质量控制报告</h2>
+<blockquote>
+<p>我们定期(每季度)生成每个登记处的质量控制报告,并发布至网络直报信息系统。</p>
+</blockquote>
+<ul>
+<li>可以通过网页、手机查看</li>
+<li>报告可以基于县级生成</li>
+</ul>
+
+<img data-src="https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/report.jpg" class="quarto-figure quarto-figure-center r-stretch" style="width:75.0%"></section>
+<section id="质量控制列表" class="slide level2">
+<h2>质量控制列表</h2>
+
+<img data-src="https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/report-prov.jpg" class="quarto-figure quarto-figure-center r-stretch" style="width:75.0%"></section>
+<section id="怎么实现" class="slide level2 smaller">
+<h2>怎么实现</h2>
+<blockquote>
+<p>基于Rmarkdown的可重复性报告</p>
+</blockquote>
+<ul>
+<li>软件： R语言</li>
+<li>R包： Rmarkdown ggplot2 cowplot tidyverse</li>
+<li>思路： 统计分析相关指标，在Rmarkdown中把相关指标可视化并制作成报告模板，基于基本模板批量生成报告。</li>
+</ul>
+</section>
+<section id="未来方向" class="slide level2 smaller">
+<h2>未来方向</h2>
+<blockquote>
+<p>让肿瘤登记报告生成更简单, 越简单越好！！！</p>
+</blockquote>
+<p>缺点：</p>
+<ul>
+<li>程序移植性不强</li>
+<li>依赖程序包较多</li>
+</ul>
+<p>解决：</p>
+<ul>
+<li>工具化，比如R包</li>
+<li>市级报告模板</li>
+<li>基于单位的报告模板</li>
+</ul>
+</section>
+<section id="some-work-in-progress" class="slide level2 smaller">
+<h2>Some Work in progress !!!</h2>
+<blockquote>
+<p><a href="https://canregtools.chenq.site">canregtools 一个用于肿瘤登记数据分析、可视化和自动化报告的R包。</a></p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/gigu003/db/images/logo.png" alt="canregtools" style="position: absolute; top: 0; right: 0; width: 100px;"></p>
+<p>目前实现的函数：</p>
+<div class="columns">
+<div class="column" style="width:34%;">
+<ul>
+<li>read_canreg()</li>
+<li>read_map()</li>
+<li>clean_canreg()</li>
+<li>count_canreg()</li>
+<li>ageadjust()</li>
+<li>create_asr()</li>
+<li>create_age_rate()</li>
+<li>create_quality()</li>
+</ul>
+</div><div class="column" style="width:33%;">
+<ul>
+<li>cutage()</li>
+<li>expand_age_pop()</li>
+<li>expand_lifetable()</li>
+<li>calc_age()</li>
+<li>check_id()</li>
+<li>classify_icd10()</li>
+<li>classify_childhood()</li>
+<li>tidy_address()</li>
+<li>lt()</li>
+</ul>
+</div><div class="column" style="width:33%;">
+<ul>
+<li>pyramid()</li>
+<li>line_chart()</li>
+<li>create_map()</li>
+<li>dulbar_chart()</li>
+<li>dumbbell_chart()</li>
+<li>tidy_age()</li>
+<li>tidy_occu()</li>
+<li>tidy_sex()</li>
+</ul>
+</div></div>
+
+<aside><div>
+<p>网址: https://canregtools.chenq.site</p>
+</div></aside></section></section>
+<section>
+<section id="自动化的肿瘤登记年报输出" class="title-slide slide level1 agenda-slide center" data-background="lightblue">
+<h1>自动化的肿瘤登记年报输出</h1>
+<div class="agenda-heading">
+<p>主要内容</p>
+</div>
+<div class="agenda">
+<ol>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>质量控制应该怎么做?</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>可视化批量化的质控报告?</p>
+</div></li>
+<li><div class="agenda-active">
+<p>自动化的肿瘤登记年报输出</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>谢谢关注！</p>
+</div></li>
+</ol>
+</div>
+</section>
+<section id="为什么" class="slide level2 smaller">
+<h2>为什么?</h2>
+<blockquote>
+<p>肿瘤登记处的主要目标之一就是产生肿瘤发病、死亡、生存相关的统计指标, 并通过一定的渠道发布数据,促进数据的共享和利用（专业人员和大众）,从而促进癌症防控政策的产生。</p>
+</blockquote>
+<ul>
+<li>了解疾病负担</li>
+<li>支持病因学研究</li>
+<li>预后研究</li>
+<li>为癌症防控政策提供基础数据</li>
+</ul>
+</section>
+<section id="肿瘤登记报告流程" class="slide level2 smaller">
+<h2>肿瘤登记报告流程</h2>
+<div class="cell" data-reveal="true" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-report" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-report-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-report">flowchart TD
+  A(数据来源单位) --&gt; B(县区级登记处)
+  B --&gt; C(市级登记处)
+  C --&gt; D(省级质量控制)
+  D --&gt; B
+  B --&gt; A
+  D --&gt; C
+  D --&gt; F(综合评估)
+  F --&gt; G(年报撰写及发布)
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-report-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: 肿瘤登记报告流程
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="年报该如何撰写" class="slide level2">
+<h2>年报该如何撰写?</h2>
+<blockquote>
+<p>把统计分析数据转换为文字的过程。</p>
+</blockquote>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+  A(统计分析) --&gt; B(制作表格)
+  B --&gt; C(绘制统计图)
+  C --&gt; D(专家撰写)
+  D --&gt; E(初稿)
+    E --&gt; F(审核定版)
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>年报特点</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>客观描述</li>
+<li>要求文字描述风格的一致性</li>
+<li>有图有表</li>
+<li>无讨论，无观点</li>
+<li>需要专家码字</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:40%;">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>自动化？</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Scientific writing？</li>
+<li>可重复性报告</li>
+<li>Rmarkdown</li>
+<li>Quarto</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="可重复性报告技术" class="slide level2">
+<h2>可重复性报告技术</h2>
+<blockquote>
+<p>基于现有年报的特点,以及随着可重复性报告技术的成熟,可以实现自动化撰写的需求?</p>
+</blockquote>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>思路</strong></p>
+</div>
+<div class="callout-content">
+<p>利用Bookdown包把统计结果进行展现，包括文字描述和可视化展现(各种统计图表)</p>
+</div>
+</div>
+</div>
+</section>
+<section id="可重复性报告技术-1" class="slide level2">
+<h2>可重复性报告技术</h2>
+
+<img data-src="../2023-9-23-rural-canreg/images/report.jpg" class="r-stretch"></section>
+<section id="可重复性报告技术-2" class="slide level2 smaller">
+<h2>可重复性报告技术</h2>
+<blockquote>
+<p>Bookdown程序由按照章节区分的Rmd文件组成，每个Rmd文件可以输出相应章节的文字描述，从而形成最终的文本。</p>
+</blockquote>
+<div class="columns">
+<div class="column" style="width:30%;">
+<ol type="1">
+<li>index.Rmd</li>
+<li>01-summary.Rmd</li>
+<li>02-method.Rmd</li>
+<li>03-quality.Rmd</li>
+<li>04-total_cancer.Rmd</li>
+<li>05-eachsite.Rmd</li>
+</ol>
+</div><div class="column" style="width:20%;">
+<ul>
+<li>行内代码插入数据</li>
+<li>文字描述</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/codes.jpg" class="quarto-figure quarto-figure-center" style="width:75.0%"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="可重复性报告技术-3" class="slide level2 smaller">
+<h2>可重复性报告技术</h2>
+
+<img data-src="https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/letters.jpg" class="quarto-figure quarto-figure-center r-stretch" style="width:75.0%"></section>
+<section id="表格如何实现" class="slide level2">
+<h2>表格如何实现？</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>data<span class="ot">&lt;-</span>inciden</span>
+<span id="cb2-2"><a></a>header<span class="ot">&lt;-</span><span class="fu">data.frame</span>(</span>
+<span id="cb2-3"><a></a>    <span class="at">col_keys=</span><span class="fu">colnames</span>(data),</span>
+<span id="cb2-4"><a></a>    <span class="at">second=</span><span class="fu">c</span>(<span class="st">"地区"</span>,<span class="st">"性别"</span>,<span class="st">"发病数"</span>,<span class="st">"发病率"</span>,<span class="st">"中标率"</span>,<span class="st">"世标率"</span>,<span class="st">"累积率</span><span class="sc">\n</span><span class="st">0-74(%)"</span>))</span>
+<span id="cb2-5"><a></a>data<span class="sc">%&gt;%</span><span class="fu">flextable</span>()<span class="sc">%&gt;%</span></span>
+<span id="cb2-6"><a></a>  <span class="fu">set_header_df</span>( <span class="at">mapping =</span> header, <span class="at">key =</span> <span class="st">"col_keys"</span> )<span class="sc">%&gt;%</span></span>
+<span id="cb2-7"><a></a>  <span class="fu">compose</span>(<span class="at">j=</span><span class="dv">4</span>,<span class="at">value=</span><span class="fu">as_paragraph</span>(<span class="st">"发病率</span><span class="sc">\n</span><span class="st">(1/10"</span>,<span class="fu">as_sup</span>(<span class="st">"5"</span>),<span class="st">")"</span>),<span class="at">part=</span><span class="st">"header"</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb2-8"><a></a>  <span class="fu">compose</span>(<span class="at">j=</span><span class="dv">5</span>,<span class="at">value=</span><span class="fu">as_paragraph</span>(<span class="st">"中标率</span><span class="sc">\n</span><span class="st">(1/10"</span>,<span class="fu">as_sup</span>(<span class="st">"5"</span>),<span class="st">")"</span>),<span class="at">part=</span><span class="st">"header"</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb2-9"><a></a>  <span class="fu">compose</span>(<span class="at">j=</span><span class="dv">6</span>,<span class="at">value=</span><span class="fu">as_paragraph</span>(<span class="st">"世标率</span><span class="sc">\n</span><span class="st">(1/10"</span>,<span class="fu">as_sup</span>(<span class="st">"5"</span>),<span class="st">")"</span>),<span class="at">part=</span><span class="st">"header"</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb2-10"><a></a>  <span class="fu">colformat_num</span>(<span class="at">j=</span><span class="dv">4</span><span class="sc">:</span><span class="dv">7</span>,<span class="at">digits =</span> <span class="fl">5.2</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb2-11"><a></a>  <span class="fu">set_caption</span>(<span class="at">caption=</span> <span class="fu">paste</span>(year.data,<span class="st">"年河南省肿瘤登记地区恶性肿瘤（C00-C96）发病主要指标"</span>,<span class="st">""</span>))<span class="sc">%&gt;%</span> </span>
+<span id="cb2-12"><a></a>  <span class="fu">align</span>(<span class="at">align=</span><span class="st">"center"</span>,<span class="at">part=</span><span class="st">"all"</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb2-13"><a></a>  <span class="fu">bold</span>(<span class="at">bold=</span><span class="cn">TRUE</span>,<span class="at">part=</span><span class="st">"header"</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb2-14"><a></a>  <span class="fu">width</span>(<span class="at">j=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,<span class="at">width=</span><span class="fl">0.5</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb2-15"><a></a>  <span class="fu">width</span>(<span class="at">j=</span><span class="dv">3</span><span class="sc">:</span><span class="dv">7</span>,<span class="at">width=</span><span class="fl">1.0</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb2-16"><a></a>  <span class="fu">theme_booktabs</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="表格如何实现-1" class="slide level2">
+<h2>表格如何实现？</h2>
+
+<img data-src="https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/tables.jpg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="批量化生成各章节统计图" class="slide level2">
+<h2>批量化生成各章节统计图</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>yearpub<span class="ot">&lt;-</span><span class="dv">2023</span></span>
+<span id="cb3-2"><a></a>report<span class="ot">&lt;-</span>haven<span class="sc">::</span><span class="fu">read_sas</span>(<span class="st">"./report.sas7bdat"</span>)</span>
+<span id="cb3-3"><a></a>areacode1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"410902"</span>,<span class="st">"411202"</span>,<span class="st">"411303"</span>,<span class="st">"411502"</span>,<span class="st">"419001"</span>,<span class="st">"411002"</span>)</span>
+<span id="cb3-4"><a></a>areacode2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"410901"</span>,<span class="st">"411001"</span>,<span class="st">"411201"</span>,<span class="st">"411301"</span>,<span class="st">"411501"</span>)</span>
+<span id="cb3-5"><a></a>report <span class="ot">&lt;-</span>report<span class="sc">%&gt;%</span></span>
+<span id="cb3-6"><a></a>  <span class="fu">filter</span>(city <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"11"</span>,<span class="st">"2"</span>,<span class="st">"33"</span>)<span class="sc">|</span>areacode <span class="sc">%in%</span> areacode1,</span>
+<span id="cb3-7"><a></a>         <span class="sc">!</span>(areacode <span class="sc">%in%</span> areacode2))<span class="sc">%&gt;%</span></span>
+<span id="cb3-8"><a></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">as.numeric</span>(year),</span>
+<span id="cb3-9"><a></a>         <span class="at">city =</span> <span class="fu">as.numeric</span>(city))</span>
+<span id="cb3-10"><a></a><span class="fu">source</span>(<span class="st">"./rscripts/gen_annual_report_plot.R"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="批量化生成各章节统计图-1" class="slide level2 smaller">
+<h2>批量化生成各章节统计图</h2>
+
+<img data-src="../2023-9-23-rural-canreg/images/charts.jpg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="生成年报只需一次点击" class="slide level2 smaller">
+<h2>生成年报只需一次点击</h2>
+<blockquote>
+<p>大约需要一分钟的时间!!!</p>
+</blockquote>
+<div class="columns">
+<div class="column" style="width:30%;">
+<ul>
+<li>一次点击Build</li>
+<li>同时输出多种形式
+<ul>
+<li>Word</li>
+<li>PDF</li>
+<li>Epub</li>
+<li>网页</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:70%;">
+<p><img data-src="https://cdn.jsdelivr.net/gh/gigu003/db/images/quality/gen-bookk.gif"></p>
+</div></div>
+</section>
+<section id="线上发布" class="slide level2 smaller">
+<h2>线上发布</h2>
+<blockquote>
+<p>在线发布的年报更容易传播和共享</p>
+</blockquote>
+<div class="cell">
+<iframe src="https://chenq.site/report/2021/" width="960" height="400px" data-external="1">
+</iframe>
+</div>
+</section>
+<section id="现有方法" class="slide level2">
+<h2>现有方法</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>不足之处</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>可移植性不足</li>
+<li>需要了解一点编程知识</li>
+<li>整合性不足</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>待开发</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>R包</li>
+<li>输出Fact Sheet（按照癌种、人群）</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="现有肿瘤登记年报的特点" class="slide level2 smaller">
+<h2>现有肿瘤登记年报的特点</h2>
+<blockquote>
+<p>随着肿瘤登记处数量的增加以及数据质量的提升,国家及大部分省份开始发布国家级或省级的肿瘤登记年报。</p>
+</blockquote>
+<ul>
+<li>以传统书籍的形式出版</li>
+<li>以白皮书的形式发布报告</li>
+<li>把传统书籍搬到线上（线上年报）</li>
+<li>价格较高</li>
+<li>不利于数据共享和传播</li>
+</ul>
+<blockquote>
+<p>我们真的需要每年发布纸质年报吗？</p>
+</blockquote>
+</section></section>
+<section>
+<section id="谢谢关注" class="title-slide slide level1 no-auto-agenda center">
+<h1>谢谢关注！</h1>
+<div class="cell">
+<style type="text/css">
+figcaption {
+  margin: auto;
+  text-align: center;
+}
+</style>
+</div>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="3">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://cdn.jsdelivr.net/gh/gigu003/db/images/slides.png"></p>
+<figcaption>所有幻灯片</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://cdn.jsdelivr.net/gh/gigu003/db/images/wechat.jpg"></p>
+<figcaption>微信公众号</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://cdn.jsdelivr.net/gh/gigu003/db/images/website.png"></p>
+<figcaption>个人网站</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section" class="slide level2 smaller">
+<h2></h2>
+<div class="cell">
+<style type="text/css">
+figcaption {
+  margin: auto;
+  text-align: center;
+}
+
+.about-pic{
+  border-radius: 50%;
+  width: 300px; 
+  height: 400px; 
+  object-fit: cover;
+}
+
+a,p,ul,li {
+  font-size: 24px;
+  color: gray
+
+}
+</style>
+</div>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://cdn.jsdelivr.net/gh/gigu003/db/images/cq.png" class="about-pic"></p>
+<figcaption>陈琼博士</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:60%;">
+<blockquote>
+<p>陈琼，博士，副主任医师，硕士研究生导师</p>
+</blockquote>
+<ul>
+<li>河南省癌症中心、郑州大学附属肿瘤医院/河南省肿瘤医院</li>
+<li>美国耶鲁大学访问学者</li>
+<li>社会兼职情况
+<ul>
+<li>中国抗癌协会食管癌防筛专委会委员</li>
+<li>中国抗癌协会癌症筛查与早诊早治专委会青年委员</li>
+<li>北京慢性病防治与健康教育研究会癌症患者院后管理专业委员会第一届委员会常务委员</li>
+<li>河南省预防医学会肿瘤预防与控制专业委员会常务委员 -《河南省肿瘤登记年报》副主编，中华肿瘤防治杂志青年编委，社区医学杂志编委</li>
+</ul></li>
+<li>长期从事肿瘤流行病学、恶性肿瘤监测以及筛查效果评价相关工作，发表相关专业论文30余篇，SCI论文十余篇。</li>
+</ul>
+</div></div>
+
+<div class="quarto-auto-generated-content">
+<div class="footer footer-default">
+<p>https://slides.chenq.site</p>
+</div>
+</div>
+<div class="reveal-header">
+<div class="header-logo">
+<img data-src="">
+</div>
+<div class="sc-title">
+<p> </p>
+</div>
+<div class="header-text">
+<p> </p>
+</div>
+<div class="sb-title">
+<p> </p>
+</div>
+</div>
+</section></section>
+
+    </div>
+  </div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-attribution/attribution.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealAttribution, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp("https:\/\/slides\.chenq\.site");
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    <script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","openEffect":"zoom","loop":false,"closeEffect":"zoom"});
+    (function() {
+      let previousOnload = window.onload;
+      window.onload = () => {
+        if (previousOnload) {
+          previousOnload();
+        }
+        lightboxQuarto.on('slide_before_load', (data) => {
+          const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+          const href = trigger.getAttribute('href');
+          if (href !== null) {
+            const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+            if (imgEl !== null) {
+              const srcAttr = imgEl.getAttribute("src");
+              if (srcAttr && srcAttr.startsWith("data:")) {
+                slideConfig.href = srcAttr;
+              }
+            }
+          } 
+        });
+      
+        lightboxQuarto.on('slide_after_load', (data) => {
+          const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(slideNode);
+          }
+        });
+      
+      };
+      
+    })();
+              </script>
+    
+
+</body></html>

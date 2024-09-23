@@ -32,7 +32,7 @@ crossref:
   fig-prefix: 图
 title-slide-attributes:
   data-background-color: "lightblue"
-categories: ["技术与方法", "综合应用"]
+categories: ["技术与方法", "肿瘤登记"]
 description: 这个幻灯介绍了肿瘤登记的历史、登记处的建立与发展、肿瘤登记的质量控制、肿瘤登记报告的撰写与发布等。
 ---
 
