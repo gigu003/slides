@@ -6,7 +6,7 @@ website:
   description: "一个公共卫生医师的个人网站"
   twitter-card: true
   open-graph: true
-  site-url: https://slides.chenq.site
+  site-url: http://chenq.site:999
   
 
   navbar:
