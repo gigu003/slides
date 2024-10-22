@@ -1,6 +1,6 @@
 ---
 title: "肿瘤登记数据的统计分析和自动化报告"
-subtitle: "Report cancer registration data using R package canregtools"
+subtitle: "Report cancer registration data using a developed R package canregtools"
 author: "陈琼"
 date: 2024-10-28
 date-modified: last-modified
@@ -8,11 +8,12 @@ date-format: "dddd MMM D, YYYY"
 institute: "河南省癌症中心/河南省肿瘤医院"
 address: "济南"
 format:
-  revealjs:
+  canhosp-revealjs:
     slide-number: true
     scrollable: true
     smaller: true
     sc-sb-title: h1
+    highlight-style: dracula
     footer: "R包: canregtools"
 revealjs-plugins:
   - attribution
@@ -22,11 +23,10 @@ filters:
 auto-agenda:
   bullets: numbered
   heading: 内容
-title-slide-attributes:
-  data-background-color: "lightblue"
+
 categories: ["肿瘤登记", "R语言"]
 ---
-# Why canregtools ?
+# canregtools 初衷
 ## 人群肿瘤登记数据分析
 > 肿瘤登记是对肿瘤流行情况、趋势变化和影响因素进行长期、连续、动态的系统性监测，是制定癌症防治策略、开展综合研究、评价防控效果的重要基础性工作。
 
@@ -44,9 +44,13 @@ categories: ["肿瘤登记", "R语言"]
 - SEER*Stat
 - 其他软件或语言： R, SAS, STATA, Python
 
+
+
 # Canregtools 功能概述
 
 ## Canregtools能做什么 ?
+<img src="images/logo_canregtools.png" align="right" height="120" />
+ 
 > Canregtools 是一个旨在使肿瘤登记数据的分析、可视化和报告更加顺畅和高效的 R 语言包。它通过一系列R函数实现数据读取、数据处理、统计计算、可视化和报告等功能，全面支持 R 环境中的工作流程。
 
 :::: {.columns}
@@ -239,7 +243,7 @@ install_local("canregtools_0.2.7.tar.gz", type = "source")
 ::::
 
 
-## 读取原始数据为 'canreg' 类数据
+## 读取原始数据为 canreg 类数据
 ```{r}
 #| echo: TRUE
 library(canregtools)
@@ -252,7 +256,7 @@ names(data)
 ```
 
 
-## 'canreg'类数据对象 
+## canreg类数据对象 
 
 > "canreg" 是一个包含四个元素的列表，这些元素被命名为 'areacode'、'FBcases'、'SWcases' 和 'POP'，它们是从原始数据的 "FB"、"SW" 和 "POP" 工作表中读取的。
 
@@ -263,7 +267,7 @@ data$areacode
 head(data$FBcases)
 ```
 
-## 'canreg'类数据对象 
+## canreg类数据对象 
 
 > "canreg" 是一个包含四个元素的列表，这些元素被命名为 'areacode'、'FBcases'、'SWcases' 和 'POP'，它们是从原始数据的 "FB"、"SW" 和 "POP" 工作表中读取的。
 
@@ -274,7 +278,7 @@ head(data$SWcases)
 ```
 
 
-## 'canreg'类数据对象 
+## canreg类数据对象 
 
 > "canreg" 是一个包含四个元素的列表，这些元素被命名为 'areacode'、'FBcases'、'SWcases' 和 'POP'，它们是从原始数据的 "FB"、"SW" 和 "POP" 工作表中读取的。
 
@@ -285,7 +289,7 @@ head(data$POP)
 ```
 
 
-## 转换'canreg'类数据为'fbswicd' 类
+## 转换canreg类数据为fbswicd类
 
 > count_canreg()函数可以把'canreg'类数据转换为'fbswicd'类数据，'fbswicd'类数据是一个按照指定分类方法和格式转换的汇总数据，当原始数据量很大时，可以节省存储空间和运行效率。
 
@@ -300,7 +304,7 @@ head(fbsw$pop, 2)
 ```
 
 
-## 提取'canreg'类数据摘要信息
+## 提取canreg类数据摘要信息
 > summary 函数可以快速提取'canreg'类数据摘要，比如发病率、死亡率、死亡发病比、数据格式检查情况、人口数据检查情况、基本变量符合情况等，从而为多登记处的筛选提供数据。
 
 ```{r}
@@ -392,7 +396,8 @@ class(data)
 names(data)
 ```
 
-## 提取'canregs'类数据摘要信息 {.smaller}
+## 提取canregs类数据摘要信息
+
 > summary 函数可以快速地计算'canregs'类数据的摘要信息，并通过cr_select函数对指定的条件进行筛选。
 
 ```{r}
@@ -407,7 +412,7 @@ summ3 <- cr_select(summ, index = c("410102", "410303"))
 names(summ3)
 ```
 
-## 筛选'canregs'类数据
+## 筛选canregs类数据
 > cr_select 函数可以通过指定一个或多个条件对'carengs', 'fbswicds', 'asrs', and, 'summaries'类数据进行筛选和过滤，从而满足通过一定条件对登记处数据筛选的功能。
 
 ```{r}
@@ -417,7 +422,7 @@ names(data2)
 names(summ2)
 ```
 
-## 转换'canregs'类数据为'fbswicds'类数据
+## 转换canregs类数据为fbswicds类数据
 > count_canreg 函数可以转换 'canregs' 类数据为'fbswicds'类数据, 'fbswicds'类数据是一个列表，列表的每个元素是一个'fbswicd'类数据，其可以作为create_asr, create_quality, create_sheet, 等函数的输入数据。
 
 ```{r}
@@ -488,7 +493,7 @@ fbsw <- reframe_fbswicd(fbsws, area_type)
 class(fbsw)
 ```
 
-## 基于转换后的‘fbswicd’计算标化率
+## 基于转换后的fbswicd计算标化率
 ```{r}
 #| echo: TRUE
 asr <- create_asr(fbsw, area_type, sex)

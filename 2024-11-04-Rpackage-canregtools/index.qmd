@@ -24,7 +24,7 @@ auto-agenda:
 title-slide-attributes:
   data-background-color: "lightblue"
 categories: ["肿瘤登记", "R语言"]
-address: "呼和浩特"
+address: "Beijing"
 ---
 
 ## What we actually do in PBCR {.smaller}
