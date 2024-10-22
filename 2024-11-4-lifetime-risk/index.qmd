@@ -1,0 +1,27 @@
+---
+title: "Data preparation and lifetime risk estimation using R"
+subtitle: "Report cancer registration data using a developed R package canregtools"
+author: "Qiong Chen Ph.D"
+date: 2024-11-04
+date-modified: last-modified
+date-format: "dddd MMM D, YYYY"
+institute: "Henan Cancer Center/Henan Cancer Hospital"
+address: "Beijing"
+format:
+  canhosp-revealjs:
+    slide-number: true
+    scrollable: true
+    smaller: true
+    sc-sb-title: h1
+    highlight-style: dracula
+    footer: "Estimation of lifetime risk using R"
+revealjs-plugins:
+  - attribution
+filters:
+   - reveal-header
+   - reveal-auto-agenda
+auto-agenda:
+  bullets: numbered
+  heading: Contents
+---
+
