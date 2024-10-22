@@ -10,7 +10,27 @@
 <atom:link href="http://chenq.site:999/index.xml" rel="self" type="application/rss+xml"/>
 <description>一个公共卫生医师的个人网站</description>
 <generator>quarto-1.6.9</generator>
-<lastBuildDate>Wed, 10 Jul 2024 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Mon, 04 Nov 2024 00:00:00 GMT</lastBuildDate>
+<item>
+  <title></title>
+  <dc:creator>️Qiong Chen👨‍⚕️ Phd.</dc:creator>
+  <link>http://chenq.site:999/2024-11-04-Rpackage-canregtools/</link>
+  <description><![CDATA[ undefined ]]></description>
+  <category>肿瘤登记</category>
+  <category>R语言</category>
+  <guid>http://chenq.site:999/2024-11-04-Rpackage-canregtools/</guid>
+  <pubDate>Mon, 04 Nov 2024 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title></title>
+  <dc:creator>陈琼 </dc:creator>
+  <link>http://chenq.site:999/2024-10-28-data-analysis-canregtools/</link>
+  <description><![CDATA[ undefined ]]></description>
+  <category>肿瘤登记</category>
+  <category>R语言</category>
+  <guid>http://chenq.site:999/2024-10-28-data-analysis-canregtools/</guid>
+  <pubDate>Mon, 28 Oct 2024 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title></title>
   <dc:creator>陈琼 </dc:creator>
@@ -57,16 +77,6 @@
 <item>
   <title></title>
   <dc:creator>👨‍⚕️陈琼，博士，副主任医师 </dc:creator>
-  <link>http://chenq.site:999/2023-9-23-Rpackage-canregtools/</link>
-  <description><![CDATA[ undefined ]]></description>
-  <category>肿瘤登记</category>
-  <category>R语言</category>
-  <guid>http://chenq.site:999/2023-9-23-Rpackage-canregtools/</guid>
-  <pubDate>Sat, 23 Sep 2023 00:00:00 GMT</pubDate>
-</item>
-<item>
-  <title></title>
-  <dc:creator>👨‍⚕️陈琼，博士，副主任医师 </dc:creator>
   <link>http://chenq.site:999/2023-9-23-rural-canreg/</link>
   <description><![CDATA[ undefined ]]></description>
   <category>技术与方法</category>
@@ -85,17 +95,17 @@
 <item>
   <title></title>
   <dc:creator>👨‍⚕️陈琼，博士，副主任医师 </dc:creator>
-  <link>http://chenq.site:999/2023-5-11-system/</link>
+  <link>http://chenq.site:999/2023-5-11-area-canreg/</link>
   <description><![CDATA[ undefined ]]></description>
-  <guid>http://chenq.site:999/2023-5-11-system/</guid>
+  <guid>http://chenq.site:999/2023-5-11-area-canreg/</guid>
   <pubDate>Thu, 11 May 2023 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title></title>
   <dc:creator>👨‍⚕️陈琼，博士，副主任医师 </dc:creator>
-  <link>http://chenq.site:999/2023-5-11-area-canreg/</link>
+  <link>http://chenq.site:999/2023-5-11-system/</link>
   <description><![CDATA[ undefined ]]></description>
-  <guid>http://chenq.site:999/2023-5-11-area-canreg/</guid>
+  <guid>http://chenq.site:999/2023-5-11-system/</guid>
   <pubDate>Thu, 11 May 2023 00:00:00 GMT</pubDate>
 </item>
 <item>

@@ -1,0 +1,535 @@
+---
+title: "Canregtools"
+subtitle: "An R package used in PBCRs"
+author: "️Qiong Chen👨‍⚕️ Phd."
+date: 2024-11-4
+date-modified: last-modified
+date-format: "dddd MMM D, YYYY"
+institute: "🏥Henan Cancer Center"
+format:
+  revealjs:
+    slide-number: true
+    scrollable: false
+    smaller: true
+    sc-sb-title: h1
+    footer: "https://slides.chenq.site"
+revealjs-plugins:
+  - attribution
+filters:
+   - reveal-header
+   - reveal-auto-agenda
+auto-agenda:
+  bullets: numbered
+  heading: Contents
+title-slide-attributes:
+  data-background-color: "lightblue"
+categories: ["肿瘤登记", "R语言"]
+address: "呼和浩特"
+---
+
+## What we actually do in PBCR {.smaller}
+> A system designed to collect, store, and manage cancer cases within a population, which is crucial for monitoring cancer incidence, mortality, survival, and prevalence.
+
+- Data internal consistency check
+- Quality check (CI5, annual check of quality control for registry)
+- Calculation of statistical indicator
+- Data visualization
+- Reports
+
+## Which tools are available ?
+
+- IARCcrgTools
+- JRC tools
+- Canreg5
+- SEER*Stat
+
+Other software or language including R, SAS, STATA, Python
+
+## What can canregtools do ?
+> Canregtools is an R package developed to streamline data analysis, visualization, and reporting in cancer registration. It includes five sets of R functions that cover data reading, processing, statistical calculations, visualization, and reporting.
+
+:::: {.columns}
+
+::: {.column width="33%"}
+#### Data processing
+- cutage()
+- expand_age_pop()
+- classify_icd10()
+- classify-childhood()
+- tidy_*()
+- write_*()
+:::
+
+::: {.column width="33%"}
+#### Statistics calculation
+- ageadjust()
+- truncrate()
+- cumrate()
+- cumrisk()
+- lt()
+- expand_lifetable()
+:::
+
+::: {.column width="33%"}
+#### Statistics sheet
+- summary()
+- create_asr()
+- create_quality()
+- create_age_rate()
+- create_sheet()
+:::
+
+::::
+
+## What can canregtools do ?
+> Canregtools is a tool designed for high-level cancer registries. It helps process data from multiple registries in batch mode, allowing users to filter data based on custom conditions and reformat or merge cancer registration data according to registry attributes.
+
+:::: {.columns}
+
+::: {.column width="33%"}
+#### Registry attributes
+- write_registry()
+- write_areacode()
+- write_area_type()
+- tidy_areacode()
+:::
+
+::: {.column width="33%"}
+#### Filter/merge object
+- cr_select()
+- cr_merge()
+- reframe_fbswicd()
+:::
+
+::: {.column width="33%"}
+#### Statistics sheet
+- summary()
+- create_asr()
+- create_quality()
+- create_age_rate()
+- create_sheet()
+:::
+
+::::
+
+
+## Define S3 class for generic functions
+
+> We define a set of class for different methods to carry out different functions.
+
+:::: {.columns}
+
+::: {.column width="50%"}
+#### S3 class for single registry
+- canreg
+- fbswicd
+- asr
+- quality
+:::
+
+::: {.column width="50%"}
+#### S3 class for multiple registries
+- canregs
+- fbswicds
+- asrs
+- qualities
+:::
+
+::::
+
+#### S3 method
+create_asr, create_quality, create_age_rate, create_sheet, cr_select, cr_merge, reframe_fbswicd
+
+## Internal consistency check
+
+> Internal consistency checks are a crucial step before conducting data analysis. We need to identify and address any impossible or unlikely combinations of variables to insure the data validity.
+
+
+:::: {.columns}
+
+::: {.column width="33%"}
+#### Variable
+- check_topo()
+- check_morp()
+- check_icd10()
+- check_areacode()
+- check_sex()
+- check_id()
+:::
+
+::: {.column width="33%"}
+#### Variables combination
+- check_sex_morp()
+- check_sex_topo()
+- check_topo_morp()
+- check_morp_beha()
+- check_morp_grad()
+- check_age_topo_morp()
+:::
+
+::: {.column width="33%"}
+#### Format
+- check_header()
+- check_followup()
+- ICDO3toICD10()
+:::
+
+::::
+
+
+
+## How to install
+- [Downlaod R (Rhttps://cloud.r-project.org)](https://cloud.r-project.org)
+- [Download Rstudio(https://posit.co/download/rstudio-desktop/)](https://posit.co/download/rstudio-desktop/)
+
+:::: {.columns}
+
+::: {.column width="50%"}
+![](images/R.jpg)
+:::
+
+::: {.column width="50%"}
+![](images/RStudio.jpg)
+:::
+
+::::
+
+## How to install
+Install it from github repository
+```r
+# install the remotes package if doesn't installed
+install.packages("remotes) 
+library(remotes)
+install_github("gigu003/canregtools")
+```
+
+Install it from compiled local source package file
+```r
+# install the remotes package if doesn't installed
+install.packages("remotes) 
+library(remotes)
+install_local("canregtools_0.2.7.tar.gz", type = "source")
+```
+
+
+
+
+# Single cancer registry
+## Raw data(call for data from NCC)
+> The raw data is an Excel file with three sheets named **FB**, **SW**, and **POP**, which store incidence data, mortality data, and population data, respectively.
+
+:::: {.columns}
+
+::: {.column width="60%"}
+![](images/call_for_data.jpg)
+:::
+
+::: {.column width="30%"}
+![](images/popu.jpg)
+:::
+
+::::
+
+
+## Reading raw data to 'canreg' data
+```{r}
+#| echo: TRUE
+library(canregtools)
+library(dplyr)
+files <- list.files("~/website/slides/outputs", full.names = TRUE)
+file <- files[1]
+data <- read_canreg(file)
+class(data)
+names(data)
+```
+
+
+## canreg object with class of 'canreg' {.smaller}
+
+> 'canreg' is a list contains four elements named 'areacode', 'FBcases', 'SWcases', and 'POP', which were read from "FB", "SW" and "POP" sheets of raw data.
+
+```{r}
+#| echo: true
+names(data)
+data$areacode
+head(data$FBcases)
+```
+
+## canreg object with class of 'canreg' {.smaller}
+
+> 'canreg' is a list contains four elements including 'areacode', 'FBcases', 'SWcases', and 'POP'
+
+```{r}
+#| echo: true
+names(data)
+head(data$SWcases)
+```
+
+
+## canreg object with class of 'canreg' {.smaller}
+
+> 'canreg' is a list contains four elements including 'areacode', 'FBcases', 'SWcases', and 'POP'
+
+```{r}
+#| echo: true
+names(data)
+head(data$POP)
+```
+
+
+## Counting 'canreg' data to 'fbswicd' data {.smaller}
+
+```{r}
+#| echo: TRUE
+fbsw <- count_canreg(data, cancer_type = "big")
+class(fbsw)
+names(fbsw)
+head(fbsw$fbswicd, 2)
+head(fbsw$sitemorp,2)
+head(fbsw$pop,2)
+```
+
+
+## Summary the canreg data {.smaller}
+> summary function could quickly calculate summary data of 'canreg' object.
+
+```{r}
+#| echo: TRUE
+summ <- summary(data)
+class(summ)
+names(summ)
+purrr::pluck(summ, "mi")
+purrr::pluck(summ, "inci")
+purrr::pluck(summ, "mort")
+```
+
+## Calculating age standardized rate {.smaller}
+> create_asr function could calculate age standardized rate, truncated rate, and cumulated rate based on provided standard population, it could also estimate the variance and 95% confidence interval of the rate.
+
+```{r}
+#| echo: TRUE
+# list all available standard population
+ls_std_vars()
+# calculate asr using the create_asr() function
+create_asr(fbsw, event = fbs, year, sex, cancer, std = c("cn2000", "wld85"))
+```
+
+## Calculating age standardized rate  {.smaller}
+> The drop_total, drop_others, and add_labels functions can perform further processing on the ASR data, such as removing other cancers, removing total cancer, and adding labels.
+
+```{r}
+#| echo: TRUE
+create_asr(fbsw, event = fbs, year, sex, cancer) |> 
+  drop_total() |> drop_others() |> 
+  add_labels(lang = "en", label_type = "abbr")
+```
+
+
+## Calculating quality indicators {.smaller}
+> create_quality function can calculate quality indicators including number of cancer cases, crude incidence, mortality, mortality:incidence ratio, proportion of morphology diagnosed cases, dco, UB%, etc based on 'canreg' or 'fbswicd' data.
+
+```{r}
+#| echo: TRUE
+# calculate quality indicators based on 'canreg' data
+create_quality(data, year, sex, cancer) |> filter(!cancer == 0) |> 
+  add_labels(lang = "en")
+```
+
+
+## Calculating quality indicators {.smaller}
+```{r}
+#| echo: TRUE
+# calculate quality indicators based on 'fbswicd' data
+create_quality(fbsw, year, sex) |>
+  add_labels(lang = "en")
+create_quality(fbsw, cancer) |>
+  filter(!cancer == 0) |> 
+  add_labels(lang = "en")
+```
+
+
+## Calculating age specific rate  {.smaller}
+> create_age_rate function could calculate age specific rate based on 'canreg' or 'fbswicd' data.
+
+```{r}
+#| echo: TRUE
+# calculate age specific rate from 'canreg' data.
+create_age_rate(data, year, sex, cancer, format = "long") |> 
+  filter(!cancer == 0) |> 
+  arrange(year, sex, cancer, agegrp)
+```
+
+## Calculating age specific rate {.smaller}
+```{r}
+#| echo: TRUE
+# calculate age specific rate from 'fbswicd' data.
+create_age_rate(fbsw, year, sex, cancer, format = "wide") |>
+  filter(!cancer == 0) |> 
+  add_labels(lang = "en")
+```
+
+
+# Batch mode (deal with data from multiple cancer registries)
+## Reading data from multiple raw data files
+> Object with class of 'canregs' is a list with elements of object with class of 'canreg', it could be read using the 'read_canreg' function. 
+
+```{r}
+#| echo: TRUE
+files <- list.files("~/website/slides/outputs", full.names = TRUE)
+# read the first 10 raw files in outputs folder into 'canregs'
+data <- read_canreg(files[1:10])
+class(data)
+names(data)
+```
+
+## Summary the canregs data {.smaller}
+> summary function could quickly calculate summary data of 'canreg' or 'canregs' object.
+
+```{r}
+#| echo: TRUE
+summ <- summary(data)
+names(summ)
+summ1 <- cr_select(summ, inci > 300, mi > 0.4)
+names(summ1)
+summ2 <- cr_select(summ, inci > 290 | mort > 150)
+names(summ2)
+summ3 <- cr_select(summ, index = c("410102", "410303"))
+names(summ3)
+```
+
+## Filter the canregs data
+> cr_select function can filter 'carengs', 'fbswicds', 'asrs', and, 'summaries' based on input conditions.
+
+```{r}
+#| echo: TRUE
+data2 <- data |> cr_select(index = names(summ2))
+names(data2)
+names(summ2)
+```
+
+## Counting 'canregs' data {.smaller}
+> count_canreg function can count 'canregs' data into 'fbswicds' data, which is a list of elements of 'fbswicd' data that could used as input data for create_asr, create_quality, create_sheet, etc.
+
+```{r}
+#| echo: TRUE
+fbsw <- count_canreg(data2)
+class(fbsw)
+names(fbsw)
+```
+
+
+## Calculate age standardized rate
+> create_asr function can also calculate age standard rate based on 'fbswicds' data. 
+
+```{r}
+#| echo: TRUE
+asrs <- create_asr(fbsw, event = fbs, year, sex)
+class(asrs)
+head(asrs)
+```
+
+## Merge age standardized rate(asrs)
+> cr_merge function cancer merge 'carengs', 'fbswicds', 'asrs', 'qualities' into 'canreg', 'fbswicd', 'asr', and 'quality' data.
+
+```{r}
+#| echo: TRUE
+asrs2 <- asrs |> cr_merge()
+head(asrs2, c(6,8))
+names(asrs2)
+```
+
+## Creating quality indicators
+```{r}
+#| echo: TRUE
+qualities <- create_quality(fbsw, year, sex, collapse=F)
+qualities
+```
+
+## Merge quality indicators
+```{r}
+#| echo: TRUE
+qualities2 <- qualities |> cr_merge()
+head(qualities2,c(6,12))
+names(qualities2)
+```
+
+# Reframe fbsws
+## show attributes of cancer registry affiliated with areacode
+> tidy_areacode function show attributes of cancer registry affiliated with areacode.
+
+```{r}
+#| echo: true
+attributes <- tidy_areacode("410302")
+names(attributes)
+```
+
+> You cancer use **write_registry**, or **write_area_type** function to modify the attributes of the registry.
+
+## Reframe 'fbswicds' to 'fbswicd'
+> You can reframe the 'fbswicds' according to the attribute name of registry like 'area_type', 'registry', 'province', etc.
+
+```{r}
+#| echo: TRUE
+data <- read_canreg(files[1:10])
+fbsws <- count_canreg(data)
+class(fbsws)
+names(fbsws)
+fbsw <- reframe_fbswicd(fbsws, area_type)
+class(fbsw)
+```
+
+## Ceating asr based on reframed fbsws
+```{r}
+#| echo: TRUE
+asr <- create_asr(fbsw, area_type, sex)
+head(asr, c(6, 8))
+names(asr)
+```
+
+# Visualization
+## Draw pyramid plot
+```{r}
+#| echo: TRUE
+#| output: page
+library(showtext)
+showtext_auto()
+data <- read_canreg(files[10])
+fbsw <- count_canreg(data)
+draw_pyramid(fbsw, show_value = F)
+```
+
+## Draw bar chart {.smaller}
+
+```{r}
+#| echo: TRUE
+asr <- create_asr(fbsw,year,sex,cancer) |> drop_total() |>
+  drop_others() |> add_labels(label_type = "abbr", lang = "en")
+draw_barchart(asr, plot_var =cr, cate_var = site,
+              side_label = c("Male","Female"))
+```
+
+
+## Draw bar chart {.smaller}
+
+```{r}
+#| echo: TRUE
+#| fig-column: page-right
+library(dplyr)
+asr1 <- create_asr(fbsw,year,sex,cancer,event = fbs) |> mutate(type="incidence")
+asr2 <- create_asr(fbsw,year,sex,cancer,event = sws) |> mutate(type="mortality")
+asr <- bind_rows(asr1, asr2) |> drop_others() |> drop_total() |> 
+  add_labels(label_type = "abbr",lang = "en")
+draw_barchart(asr, plot_var =cr, cate_var = site,group_var = type,
+              side_label = c("Male","Female"))
+```
+
+
+## Draw line chart {.smaller}
+
+```{r}
+#| echo: TRUE
+#| fig-column: page-right
+agerate <- create_age_rate(fbsw,sex) |> add_labels(lang="en")
+names(agerate)
+draw_line(agerate, agegrp, rate, sex)
+```

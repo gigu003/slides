@@ -1,0 +1,551 @@
+---
+title: "肿瘤登记数据的统计分析和自动化报告"
+subtitle: "Report cancer registration data using R package canregtools"
+author: "陈琼"
+date: 2024-10-28
+date-modified: last-modified
+date-format: "dddd MMM D, YYYY"
+institute: "河南省癌症中心/河南省肿瘤医院"
+address: "济南"
+format:
+  revealjs:
+    slide-number: true
+    scrollable: true
+    smaller: true
+    sc-sb-title: h1
+    footer: "R包: canregtools"
+revealjs-plugins:
+  - attribution
+filters:
+   - reveal-header
+   - reveal-auto-agenda
+auto-agenda:
+  bullets: numbered
+  heading: 内容
+title-slide-attributes:
+  data-background-color: "lightblue"
+categories: ["肿瘤登记", "R语言"]
+---
+# Why canregtools ?
+## 人群肿瘤登记数据分析
+> 肿瘤登记是对肿瘤流行情况、趋势变化和影响因素进行长期、连续、动态的系统性监测，是制定癌症防治策略、开展综合研究、评价防控效果的重要基础性工作。
+
+- 个案数据内部一致性审核
+- 总体数据质量控制（CI5，年度审核）
+- 统计指标计算
+- 数据可视化
+- 报告
+
+## 现有工具有哪些？
+
+- IARCcrgTools
+- JRC tools
+- Canreg5
+- SEER*Stat
+- 其他软件或语言： R, SAS, STATA, Python
+
+# Canregtools 功能概述
+
+## Canregtools能做什么 ?
+> Canregtools 是一个旨在使肿瘤登记数据的分析、可视化和报告更加顺畅和高效的 R 语言包。它通过一系列R函数实现数据读取、数据处理、统计计算、可视化和报告等功能，全面支持 R 环境中的工作流程。
+
+:::: {.columns}
+
+::: {.column width="33%"}
+#### 数据处理
+- cutage()
+- expand_age_pop()
+- classify_icd10()
+- classify-childhood()
+- tidy_*()
+- write_*()
+:::
+
+::: {.column width="33%"}
+#### 统计计算
+- ageadjust()
+- truncrate()
+- cumrate()
+- cumrisk()
+- lt()
+- expand_lifetable()
+:::
+
+::: {.column width="33%"}
+#### 统计表单
+- summary()
+- create_asr()
+- create_quality()
+- create_age_rate()
+- create_sheet()
+:::
+
+::::
+
+## Canregtools能做什么 ?
+> Canregtools 是一个为不同级别肿瘤登记处设计的工具。它支持批量处理来自多个登记处的数据，允许用户根据自定义条件筛选数据，并根据登记处属性重新格式化或合并肿瘤登记数据。
+
+:::: {.columns}
+
+::: {.column width="33%"}
+#### 编辑肿瘤登记处属性
+- write_registry()
+- write_areacode()
+- write_area_type()
+- tidy_areacode()
+:::
+
+::: {.column width="33%"}
+#### 筛选与合并
+- cr_select()
+- cr_merge()
+- reframe_fbswicd()
+:::
+
+::: {.column width="33%"}
+#### 统计表单
+- summary()
+- create_asr()
+- create_quality()
+- create_age_rate()
+- create_sheet()
+:::
+
+::::
+
+
+## 定义S3类、泛函数
+
+> 我们定义了一组不同的类，通过泛函数对于不同的类执行不同的函数功能。
+
+:::: {.columns}
+
+::: {.column width="50%"}
+#### 单登记处S3类
+- canreg
+- fbswicd
+- asr
+- quality
+- ...
+
+:::
+
+::: {.column width="50%"}
+#### 多登记处S3类
+- canregs
+- fbswicds
+- asrs
+- qualities
+- ...
+:::
+
+::::
+
+#### S3 泛函数
+create_asr, create_quality, create_age_rate, create_sheet, cr_select, cr_merge, reframe_fbswicd
+
+## 内部一致性审核
+
+> 内部一致性检查是进行数据分析之前的关键步骤。我们需要识别并处理任何不可能或不太可能的变量组合，以确保数据的有效性。
+
+
+:::: {.columns}
+
+::: {.column width="33%"}
+#### 检查单个变量
+- check_topo()
+- check_morp()
+- check_icd10()
+- check_areacode()
+- check_sex()
+- check_id()
+:::
+
+::: {.column width="33%"}
+#### 检查变量组合
+- check_sex_morp()
+- check_sex_topo()
+- check_topo_morp()
+- check_morp_beha()
+- check_morp_grad()
+- check_age_topo_morp()
+:::
+
+::: {.column width="33%"}
+#### 格式检查和转换
+- check_header()
+- check_followup()
+- ICDO3toICD10()
+:::
+
+::::
+
+
+
+## 安装前准备
+- [下载 R (Rhttps://cloud.r-project.org)](https://cloud.r-project.org)
+- [下载 Rstudio(https://posit.co/download/rstudio-desktop/)](https://posit.co/download/rstudio-desktop/)
+
+:::: {.columns}
+
+::: {.column width="50%"}
+![](images/R.jpg)
+:::
+
+::: {.column width="50%"}
+![](images/RStudio.jpg)
+:::
+
+::::
+
+## 如何安装 canregtools 包？
+> 目前canregtools包还处在功能不断完善阶段，还没有往CRAN正式提交，目前可以通过github安装或者本地文件安装。
+
+从github安装
+
+```r
+# install the remotes package if doesn't installed
+install.packages("remotes) 
+library(remotes)
+install_github("gigu003/canregtools")
+```
+
+从本地编译文件安装
+
+```r
+# install the remotes package if doesn't installed
+install.packages("remotes) 
+library(remotes)
+install_local("canregtools_0.2.7.tar.gz", type = "source")
+```
+
+
+
+
+# 单个肿瘤登记处
+## 数据读取(call for data，NCC)
+> Canregtools可以读取NCC call for data 格式原始数据，一个包含三个名为**FB**、**SW**和**POP**工作表的Excel文件，分别存储发病数据、死亡数据和人口数据。
+
+:::: {.columns}
+
+::: {.column width="60%"}
+![](images/call_for_data.jpg)
+:::
+
+::: {.column width="30%"}
+![](images/popu.jpg)
+:::
+
+::::
+
+
+## 读取原始数据为 'canreg' 类数据
+```{r}
+#| echo: TRUE
+library(canregtools)
+library(dplyr)
+files <- list.files("~/website/slides/outputs", full.names = TRUE)
+file <- files[1]
+data <- read_canreg(file)
+class(data)
+names(data)
+```
+
+
+## 'canreg'类数据对象 
+
+> "canreg" 是一个包含四个元素的列表，这些元素被命名为 'areacode'、'FBcases'、'SWcases' 和 'POP'，它们是从原始数据的 "FB"、"SW" 和 "POP" 工作表中读取的。
+
+```{r}
+#| echo: true
+names(data)
+data$areacode
+head(data$FBcases)
+```
+
+## 'canreg'类数据对象 
+
+> "canreg" 是一个包含四个元素的列表，这些元素被命名为 'areacode'、'FBcases'、'SWcases' 和 'POP'，它们是从原始数据的 "FB"、"SW" 和 "POP" 工作表中读取的。
+
+```{r}
+#| echo: true
+names(data)
+head(data$SWcases)
+```
+
+
+## 'canreg'类数据对象 
+
+> "canreg" 是一个包含四个元素的列表，这些元素被命名为 'areacode'、'FBcases'、'SWcases' 和 'POP'，它们是从原始数据的 "FB"、"SW" 和 "POP" 工作表中读取的。
+
+```{r}
+#| echo: true
+names(data)
+head(data$POP)
+```
+
+
+## 转换'canreg'类数据为'fbswicd' 类
+
+> count_canreg()函数可以把'canreg'类数据转换为'fbswicd'类数据，'fbswicd'类数据是一个按照指定分类方法和格式转换的汇总数据，当原始数据量很大时，可以节省存储空间和运行效率。
+
+```{r}
+#| echo: TRUE
+fbsw <- count_canreg(data, cancer_type = "big")
+class(fbsw)
+names(fbsw)
+head(fbsw$fbswicd, 2)
+head(fbsw$sitemorp, 2)
+head(fbsw$pop, 2)
+```
+
+
+## 提取'canreg'类数据摘要信息
+> summary 函数可以快速提取'canreg'类数据摘要，比如发病率、死亡率、死亡发病比、数据格式检查情况、人口数据检查情况、基本变量符合情况等，从而为多登记处的筛选提供数据。
+
+```{r}
+#| echo: TRUE
+summ <- summary(data)
+class(summ)
+names(summ)
+purrr::pluck(summ, "mi")
+purrr::pluck(summ, "inci")
+purrr::pluck(summ, "mort")
+```
+
+## 标化率的计算
+> create_asr 函数能够根据提供的标准人口计算年龄标准化率、截缩率和累积率，它还可以估计标化率的方差和95%置信区间。
+
+```{r}
+#| echo: TRUE
+# list all available standard population
+ls_std_vars()
+# calculate asr using the create_asr() function
+create_asr(fbsw, event = fbs, year, sex, cancer, std = c("cn2000", "wld85"))
+```
+
+## 标化率的计算
+> 一些后处理函数如drop_total, drop_others, and add_labels 可以对生成的数据进行癌种筛选、添加标签等操作。
+
+```{r}
+#| echo: TRUE
+create_asr(fbsw, event = fbs, year, sex, cancer) |> 
+  drop_total() |> drop_others() |> 
+  add_labels(lang = "en", label_type = "abbr")
+```
+
+
+## 质量控制指标计算
+> create_quality函数可以基于“canreg”类数据或“fbswicd”类数据计算质量指标，包括癌症病例数、粗发病率、死亡率、死亡发病比、形态学诊断的病例比例、DCO（死亡证明诊断病例比例）、UB%等。
+
+```{r}
+#| echo: TRUE
+# calculate quality indicators based on 'canreg' data
+create_quality(data, year, sex, cancer) |> filter(!cancer == 0) |> 
+  add_labels(lang = "en")
+```
+
+
+## 质量控制指标计算
+```{r}
+#| echo: TRUE
+# calculate quality indicators based on 'fbswicd' data
+create_quality(fbsw, year, sex) |>
+  add_labels(lang = "en")
+create_quality(fbsw, cancer) |>
+  filter(!cancer == 0) |> 
+  add_labels(lang = "en")
+```
+
+
+## 年龄别率计算
+> create_age_rate 函数可以基于“canreg”类数据或“fbswicd”类数据计算年龄别率，并输出为不同的格式（长数据或宽数据）。
+
+```{r}
+#| echo: TRUE
+# calculate age specific rate from 'canreg' data.
+create_age_rate(data, year, sex, cancer, format = "long") |> 
+  filter(!cancer == 0) |> 
+  arrange(year, sex, cancer, agegrp)
+```
+
+## 年龄别率计算
+```{r}
+#| echo: TRUE
+# calculate age specific rate from 'fbswicd' data.
+create_age_rate(fbsw, year, sex, cancer, format = "wide") |>
+  filter(!cancer == 0) |> 
+  add_labels(lang = "en")
+```
+
+
+# 批量处理多登记处数据
+## 批量读取多个原始数据
+> read_canreg 函数可以读取多个原始数据并将其转换为'canregs'类数据，其实'canregs' 类数据是一个包含多个元素的列表，每个元素是一个'canreg'类数据。
+
+```{r}
+#| echo: TRUE
+files <- list.files("~/website/slides/outputs", full.names = TRUE)
+# read the first 10 raw files in outputs folder into 'canregs'
+data <- read_canreg(files[1:10])
+class(data)
+names(data)
+```
+
+## 提取'canregs'类数据摘要信息 {.smaller}
+> summary 函数可以快速地计算'canregs'类数据的摘要信息，并通过cr_select函数对指定的条件进行筛选。
+
+```{r}
+#| echo: TRUE
+summ <- summary(data)
+names(summ)
+summ1 <- cr_select(summ, inci > 300, mi > 0.4)
+names(summ1)
+summ2 <- cr_select(summ, inci > 290 | mort > 150)
+names(summ2)
+summ3 <- cr_select(summ, index = c("410102", "410303"))
+names(summ3)
+```
+
+## 筛选'canregs'类数据
+> cr_select 函数可以通过指定一个或多个条件对'carengs', 'fbswicds', 'asrs', and, 'summaries'类数据进行筛选和过滤，从而满足通过一定条件对登记处数据筛选的功能。
+
+```{r}
+#| echo: TRUE
+data2 <- data |> cr_select(index = names(summ2))
+names(data2)
+names(summ2)
+```
+
+## 转换'canregs'类数据为'fbswicds'类数据
+> count_canreg 函数可以转换 'canregs' 类数据为'fbswicds'类数据, 'fbswicds'类数据是一个列表，列表的每个元素是一个'fbswicd'类数据，其可以作为create_asr, create_quality, create_sheet, 等函数的输入数据。
+
+```{r}
+#| echo: TRUE
+fbsw <- count_canreg(data2)
+class(fbsw)
+names(fbsw)
+```
+
+
+## 标化率计算
+> create_asr 函数可以基于'canregs'或着'fbswicds'类数据计算年龄标化率. 
+
+```{r}
+#| echo: TRUE
+asrs <- create_asr(fbsw, event = fbs, year, sex)
+class(asrs)
+head(asrs)
+```
+
+## 合并年龄标化率(asrs)
+> cr_merge 函数可以合并 'carengs', 'fbswicds', 'asrs', 和 'qualities'类数据为 'canreg', 'fbswicd', 'asr', 和 'quality' 类数据.
+
+```{r}
+#| echo: TRUE
+asrs2 <- asrs |> cr_merge()
+head(asrs2, c(6,8))
+names(asrs2)
+```
+
+## 质量控制指标计算
+```{r}
+#| echo: TRUE
+qualities <- create_quality(fbsw, year, sex, collapse=F)
+qualities
+```
+
+## 合并质量控制指标
+```{r}
+#| echo: TRUE
+qualities2 <- qualities |> cr_merge()
+head(qualities2,c(6,12))
+names(qualities2)
+```
+
+# 数据合并和转换
+## 显示肿瘤登记处属性
+> tidy_areacode 函数可以显示肿瘤登记处属性，并根据属性值进行分组。
+
+```{r}
+#| echo: true
+attributes <- tidy_areacode("410302")
+names(attributes)
+```
+
+> 可以使用**write_registry**, or **write_area_type**函数修改登记处属性。
+
+## 转换'fbswicds'为'fbswicd'
+> reframe_fbswicd函数可以根据登记处属性如'area_type', 'registry', 'province'把'fbswicds'转换为'fbswicd'。
+
+```{r}
+#| echo: TRUE
+data <- read_canreg(files[1:10])
+fbsws <- count_canreg(data)
+class(fbsws)
+names(fbsws)
+fbsw <- reframe_fbswicd(fbsws, area_type)
+class(fbsw)
+```
+
+## 基于转换后的‘fbswicd’计算标化率
+```{r}
+#| echo: TRUE
+asr <- create_asr(fbsw, area_type, sex)
+head(asr, c(6, 8))
+names(asr)
+```
+
+# 肿瘤登记数据的可视化
+## 绘制金字塔图
+```{r}
+#| echo: TRUE
+#| output: page
+library(showtext)
+showtext_auto()
+data <- read_canreg(files[10])
+fbsw <- count_canreg(data)
+draw_pyramid(fbsw, show_value = F)
+```
+
+## 绘制条形图
+
+```{r}
+#| echo: TRUE
+asr <- create_asr(fbsw,year,sex,cancer) |> drop_total() |>
+  drop_others() |> add_labels(label_type = "abbr", lang = "en")
+draw_barchart(asr, plot_var =cr, cate_var = site,
+              side_label = c("Male","Female"))
+```
+
+
+## 绘制分组条形图
+
+```{r}
+#| echo: TRUE
+#| fig-column: page-right
+library(dplyr)
+asr1 <- create_asr(fbsw,year,sex,cancer,event = fbs) |> mutate(type="incidence")
+asr2 <- create_asr(fbsw,year,sex,cancer,event = sws) |> mutate(type="mortality")
+asr <- bind_rows(asr1, asr2) |> drop_others() |> drop_total() |> 
+  add_labels(label_type = "abbr",lang = "en")
+draw_barchart(asr, plot_var =cr, cate_var = site,group_var = type,
+              side_label = c("Male","Female"))
+```
+
+
+## 绘制线图
+
+```{r}
+#| echo: TRUE
+#| fig-column: page-right
+agerate <- create_age_rate(fbsw,sex) |> add_labels(lang="en")
+names(agerate)
+draw_line(agerate, agegrp, rate, sex)
+```
+
+
+# 自动化报告 {background="lightblue"}
+
+{{< include /segments/_auto_report.qmd >}}
+{{< include /segments/_tuiguang.qmd >}}
