@@ -57,3 +57,4 @@ rsconnect/
 /.quarto/
 
 /.luarc.json
+/outputs/

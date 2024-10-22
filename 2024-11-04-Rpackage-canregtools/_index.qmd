@@ -1,18 +1,26 @@
 ---
-title: "R包: canregtools"
-subtitle: "肿瘤登记(逻辑核查、数据分析、数据可视化、肿瘤报告)"
-author: "👨‍⚕️陈琼，博士，副主任医师"
-date: 2023-9-23
+title: "canregtools"
+subtitle: "An R package used in PBCRs"
+author: "👨‍⚕️Qiong Chen Phd."
+date: 2024-4-11
 date-modified: last-modified
 date-format: "dddd MMM D, YYYY"
 institute: "🏥河南省癌症中心\n河南省肿瘤医院"
-format: 
+format:
+  pptx: default
   revealjs:
     slide-number: true
-    smaller: true
-    scrollable: true
-    footer: "R package: canregtools"
-    subtitle-as-header: true
+    scrollable: false
+    sc-sb-title: h1
+    footer: "https://slides.chenq.site"
+revealjs-plugins:
+  - attribution
+filters:
+   - reveal-header
+   - reveal-auto-agenda
+auto-agenda:
+  bullets: numbered
+  heading: 主要内容
 title-slide-attributes:
   data-background-color: "lightblue"
 categories: ["肿瘤登记", "R语言"]
@@ -259,7 +267,7 @@ lines(age, pop, type = "p", col="red")
 topo <- c("C001", "C15.1", "C349")
 morp <- c("8140", "8000", "8070")
 beha <- rep("3", 3)
-icdo3to10(topo, morp, beha)
+#icdo3to10(topo, morp, beha)
 ```
 
 ## 常用数据处理函数
@@ -279,7 +287,7 @@ head(icd10)
 
 <br>
 
-classify_icd10(icd10, type = "big", lang = "cn")
+classify_icd10(icd10, cancer_type = "big", lang = "cn")
 
 ## 常用数据处理函数
 ### 肿瘤的分类-- classify_icd10
@@ -288,21 +296,21 @@ classify_icd10(icd10, type = "big", lang = "cn")
 ## 26类(中文)
 ```{r}
 #| echo: fenced
-c1 <- classify_icd10(icd10, type = "big", lang = "cn")
+c1 <- classify_icd10(icd10, cancer_type = "big", lang = "cn")
 as.data.frame(table(c1))
 ```
 
 ## 59类(英文)
 ```{r}
 #| echo: fenced
-c1 <- classify_icd10(icd10, type = "small", lang = "en")
+c1 <- classify_icd10(icd10, cancer_type = "small", lang = "en")
 as.data.frame(table(c1))
 ```
 
 ## 按系统分类(中文)
 ```{r}
 #| echo: fenced
-c1 <- classify_icd10(icd10, type = "system", lang = "cn")
+c1 <- classify_icd10(icd10, cancer_type = "system", lang = "cn")
 as.data.frame(table(c1))
 ```
 
@@ -325,9 +333,9 @@ classify_childhood(topo, morp, type = "main", lang = "cn")
 fbcases <- data$FBcases
 fbcases <- fbcases[fbcases$age <= 14,]
 
-classify_childhood(fbcases$topo, fbcases$morp, lang = "cn")
+classify_childhood(fbcases$topo, fbcases$morp)
 
-classify_childhood(fbcases$topo, fbcases$morp, type = "sub", lang = "en")
+classify_childhood(fbcases$topo, fbcases$morp, type = "sub")
 ```
 
 
