@@ -1792,6 +1792,258 @@
     "text": "陈琼，博士，副主任医师\n硕士研究生导师\n🏥河南省癌症中心、郑州大学附属肿瘤医院/河南省肿瘤医院\n👨‍⚕️2012年为美国耶鲁大学访问学者\n␘中国抗癌协会癌症筛查与早诊早治专委会青年委员\n📕《河南省肿瘤登记年报》副主编\n📙中华肿瘤防治杂志青年编委\n📚长期从事肿瘤流行病学、恶性肿瘤监测以及筛查效果评价相关工作，发表相关专业论文30余篇，SCI论文十余篇。\n\n\n个人网站：普癌新声https://www.chenq.site"
   },
   {
+    "objectID": "2024-11-04-Rpackage-canregtools/index.html#what-we-actually-do-in-pbcr",
+    "href": "2024-11-04-Rpackage-canregtools/index.html#what-we-actually-do-in-pbcr",
+    "title": "Canregtools",
+    "section": "What we actually do in PBCR",
+    "text": "What we actually do in PBCR\n\nA system designed to collect, store, and manage cancer cases within a population, which is crucial for monitoring cancer incidence, mortality, survival, and prevalence.\n\n\nData internal consistency check\nQuality check (CI5, annual check of quality control for registry)\nCalculation of statistical indicator\nData visualization\nReports"
+  },
+  {
+    "objectID": "2024-11-04-Rpackage-canregtools/index.html#which-tools-are-available",
+    "href": "2024-11-04-Rpackage-canregtools/index.html#which-tools-are-available",
+    "title": "Canregtools",
+    "section": "Which tools are available ?",
+    "text": "Which tools are available ?\n\nIARCcrgTools\nJRC tools\nCanreg5\nSEER*Stat\n\nOther software or language including R, SAS, STATA, Python"
+  },
+  {
+    "objectID": "2024-11-04-Rpackage-canregtools/index.html#what-can-canregtools-do",
+    "href": "2024-11-04-Rpackage-canregtools/index.html#what-can-canregtools-do",
+    "title": "Canregtools",
+    "section": "What can canregtools do ?",
+    "text": "What can canregtools do ?\n\nCanregtools is an R package developed to streamline data analysis, visualization, and reporting in cancer registration. It includes five sets of R functions that cover data reading, processing, statistical calculations, visualization, and reporting.\n\n\n\nData processing\n\ncutage()\nexpand_age_pop()\nclassify_icd10()\nclassify-childhood()\ntidy_*()\nwrite_*()\n\n\nStatistics calculation\n\nageadjust()\ntruncrate()\ncumrate()\ncumrisk()\nlt()\nexpand_lifetable()\n\n\nStatistics sheet\n\nsummary()\ncreate_asr()\ncreate_quality()\ncreate_age_rate()\ncreate_sheet()"
+  },
+  {
+    "objectID": "2024-11-04-Rpackage-canregtools/index.html#what-can-canregtools-do-1",
+    "href": "2024-11-04-Rpackage-canregtools/index.html#what-can-canregtools-do-1",
+    "title": "Canregtools",
+    "section": "What can canregtools do ?",
+    "text": "What can canregtools do ?\n\nCanregtools is a tool designed for high-level cancer registries. It helps process data from multiple registries in batch mode, allowing users to filter data based on custom conditions and reformat or merge cancer registration data according to registry attributes.\n\n\n\nRegistry attributes\n\nwrite_registry()\nwrite_areacode()\nwrite_area_type()\ntidy_areacode()\n\n\nFilter/merge object\n\ncr_select()\ncr_merge()\nreframe_fbswicd()\n\n\nStatistics sheet\n\nsummary()\ncreate_asr()\ncreate_quality()\ncreate_age_rate()\ncreate_sheet()"
+  },
+  {
+    "objectID": "2024-11-04-Rpackage-canregtools/index.html#define-s3-class-for-generic-functions",
+    "href": "2024-11-04-Rpackage-canregtools/index.html#define-s3-class-for-generic-functions",
+    "title": "Canregtools",
+    "section": "Define S3 class for generic functions",
+    "text": "Define S3 class for generic functions\n\nWe define a set of class for different methods to carry out different functions.\n\n\n\nS3 class for single registry\n\ncanreg\nfbswicd\nasr\nquality\n\n\nS3 class for multiple registries\n\ncanregs\nfbswicds\nasrs\nqualities\n\n\nS3 method\ncreate_asr, create_quality, create_age_rate, create_sheet, cr_select, cr_merge, reframe_fbswicd"
+  },
+  {
+    "objectID": "2024-11-04-Rpackage-canregtools/index.html#internal-consistency-check",
+    "href": "2024-11-04-Rpackage-canregtools/index.html#internal-consistency-check",
+    "title": "Canregtools",
+    "section": "Internal consistency check",
+    "text": "Internal consistency check\n\nInternal consistency checks are a crucial step before conducting data analysis. We need to identify and address any impossible or unlikely combinations of variables to insure the data validity.\n\n\n\nVariable\n\ncheck_topo()\ncheck_morp()\ncheck_icd10()\ncheck_areacode()\ncheck_sex()\ncheck_id()\n\n\nVariables combination\n\ncheck_sex_morp()\ncheck_sex_topo()\ncheck_topo_morp()\ncheck_morp_beha()\ncheck_morp_grad()\ncheck_age_topo_morp()\n\n\nFormat\n\ncheck_header()\ncheck_followup()\nICDO3toICD10()"
+  },
+  {
+    "objectID": "2024-11-04-Rpackage-canregtools/index.html#how-to-install",
+    "href": "2024-11-04-Rpackage-canregtools/index.html#how-to-install",
+    "title": "Canregtools",
+    "section": "How to install",
+    "text": "How to install\n\nDownlaod R (Rhttps://cloud.r-project.org)\nDownload Rstudio(https://posit.co/download/rstudio-desktop/)"
+  },
+  {
+    "objectID": "2024-11-04-Rpackage-canregtools/index.html#how-to-install-1",
+    "href": "2024-11-04-Rpackage-canregtools/index.html#how-to-install-1",
+    "title": "Canregtools",
+    "section": "How to install",
+    "text": "How to install\nInstall it from github repository\n# install the remotes package if doesn't installed\ninstall.packages(\"remotes) \nlibrary(remotes)\ninstall_github(\"gigu003/canregtools\")\nInstall it from compiled local source package file\n# install the remotes package if doesn't installed\ninstall.packages(\"remotes) \nlibrary(remotes)\ninstall_local(\"canregtools_0.2.7.tar.gz\", type = \"source\")"
+  },
+  {
+    "objectID": "2024-11-04-Rpackage-canregtools/index.html#raw-datacall-for-data-from-ncc",
+    "href": "2024-11-04-Rpackage-canregtools/index.html#raw-datacall-for-data-from-ncc",
+    "title": "Canregtools",
+    "section": "Raw data(call for data from NCC)",
+    "text": "Raw data(call for data from NCC)\n\nThe raw data is an Excel file with three sheets named FB, SW, and POP, which store incidence data, mortality data, and population data, respectively."
+  },
+  {
+    "objectID": "2024-11-04-Rpackage-canregtools/index.html#reading-raw-data-to-canreg-data",
+    "href": "2024-11-04-Rpackage-canregtools/index.html#reading-raw-data-to-canreg-data",
+    "title": "Canregtools",
+    "section": "Reading raw data to ‘canreg’ data",
+    "text": "Reading raw data to ‘canreg’ data\n\nlibrary(canregtools)\nlibrary(dplyr)\nfiles &lt;- list.files(\"~/website/slides/outputs\", full.names = TRUE)\nfile &lt;- files[1]\ndata &lt;- read_canreg(file)\nclass(data)\n\n[1] \"canreg\" \"list\"  \n\nnames(data)\n\n[1] \"areacode\" \"FBcases\"  \"SWcases\"  \"POP\""
+  },
+  {
+    "objectID": "2024-11-04-Rpackage-canregtools/index.html#canreg-object-with-class-of-canreg",
+    "href": "2024-11-04-Rpackage-canregtools/index.html#canreg-object-with-class-of-canreg",
+    "title": "Canregtools",
+    "section": "canreg object with class of ‘canreg’",
+    "text": "canreg object with class of ‘canreg’\n\n‘canreg’ is a list contains four elements named ‘areacode’, ‘FBcases’, ‘SWcases’, and ‘POP’, which were read from “FB”, “SW” and “POP” sheets of raw data.\n\n\nnames(data)\n\n[1] \"areacode\" \"FBcases\"  \"SWcases\"  \"POP\"     \n\ndata$areacode\n\n[1] \"410102\"\n\nhead(data$FBcases)\n\n# A tibble: 6 × 23\n  registr         name  id    sex   birthda    address addcode trib  occu  marri\n  &lt;chr&gt;           &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;date&gt;     &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;\n1 214105001664899 赵浩… 4105… 1     1975-04-17 河南省… 410102… 01    31    2    \n2 214108021590500 范晓… 3708… 2     1991-01-16 河南省… 410102… 01    14    2    \n3 214101021723818 赵莉  4127… 2     1962-10-15 河南省… 410102… 01    00    2    \n4 214112021234655 李秀… 4112… 2     1951-03-09 丽城小… 410102… 01    49    2    \n5 214116241372902 刘贵… 4101… 1     1955-07-15 河南省… 410102… 01    61    2    \n6 234110021050453 毛根… 4110… 1     1939-12-15 河南省… 410102… 01    28    5    \n# ℹ 13 more variables: inciden &lt;date&gt;, topo &lt;chr&gt;, morp &lt;chr&gt;, beha &lt;chr&gt;,\n#   grad &lt;chr&gt;, basi &lt;chr&gt;, icd10 &lt;chr&gt;, autoicd10 &lt;chr&gt;, lastcontact &lt;dttm&gt;,\n#   status &lt;chr&gt;, caus &lt;chr&gt;, deathda &lt;date&gt;, deadplace &lt;chr&gt;"
+  },
+  {
+    "objectID": "2024-11-04-Rpackage-canregtools/index.html#canreg-object-with-class-of-canreg-1",
+    "href": "2024-11-04-Rpackage-canregtools/index.html#canreg-object-with-class-of-canreg-1",
+    "title": "Canregtools",
+    "section": "canreg object with class of ‘canreg’",
+    "text": "canreg object with class of ‘canreg’\n\n‘canreg’ is a list contains four elements including ‘areacode’, ‘FBcases’, ‘SWcases’, and ‘POP’\n\n\nnames(data)\n\n[1] \"areacode\" \"FBcases\"  \"SWcases\"  \"POP\"     \n\nhead(data$SWcases)\n\n# A tibble: 6 × 23\n  registr         name  id    sex   birthda    address addcode trib  occu  marri\n  &lt;chr&gt;           &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;date&gt;     &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;\n1 174101001241467 翟玉… 4101… 2     1921-02-18 河南省… 410102… 01    39    2    \n2 184101001562256 王再… 5106… 1     1935-05-15 河南省… 410102… 01    80    2    \n3 184101001120018 张秀… 4101… 2     1941-02-16 郑州市… 410102… 01    29    2    \n4 184101001561642 李长… 4101… 1     1952-07-06 河南省… 410102… 01    90    2    \n5 184101021600573 董建… 4101… 1     1947-08-21 河南省… 410102… 01    85    2    \n6 184101001119830 孙富… 4101… 1     1941-08-16 河南省… 410102… 01    29    2    \n# ℹ 13 more variables: inciden &lt;date&gt;, topo &lt;chr&gt;, morp &lt;chr&gt;, beha &lt;chr&gt;,\n#   grad &lt;chr&gt;, basi &lt;chr&gt;, icd10 &lt;chr&gt;, autoicd10 &lt;chr&gt;, lastcontact &lt;dttm&gt;,\n#   status &lt;chr&gt;, caus &lt;chr&gt;, deathda &lt;date&gt;, deadplace &lt;chr&gt;"
+  },
+  {
+    "objectID": "2024-11-04-Rpackage-canregtools/index.html#canreg-object-with-class-of-canreg-2",
+    "href": "2024-11-04-Rpackage-canregtools/index.html#canreg-object-with-class-of-canreg-2",
+    "title": "Canregtools",
+    "section": "canreg object with class of ‘canreg’",
+    "text": "canreg object with class of ‘canreg’\n\n‘canreg’ is a list contains four elements including ‘areacode’, ‘FBcases’, ‘SWcases’, and ‘POP’\n\n\nnames(data)\n\n[1] \"areacode\" \"FBcases\"  \"SWcases\"  \"POP\"     \n\nhead(data$POP)\n\n# A tibble: 6 × 4\n   year   sex agegrp   rks\n  &lt;int&gt; &lt;int&gt; &lt;fct&gt;  &lt;int&gt;\n1  2021     1 0~      3850\n2  2021     1 1~     14405\n3  2021     1 5~     15176\n4  2021     1 10~    16227\n5  2021     1 15~    18685\n6  2021     1 20~    27799"
+  },
+  {
+    "objectID": "2024-11-04-Rpackage-canregtools/index.html#counting-canreg-data-to-fbswicd-data",
+    "href": "2024-11-04-Rpackage-canregtools/index.html#counting-canreg-data-to-fbswicd-data",
+    "title": "Canregtools",
+    "section": "Counting ‘canreg’ data to ‘fbswicd’ data",
+    "text": "Counting ‘canreg’ data to ‘fbswicd’ data\n\nfbsw &lt;- count_canreg(data, cancer_type = \"big\")\nclass(fbsw)\n\n[1] \"fbswicd\" \"list\"   \n\nnames(fbsw)\n\n[1] \"areacode\" \"fbswicd\"  \"sitemorp\" \"pop\"     \n\nhead(fbsw$fbswicd, 2)\n\n    year   sex agegrp cancer   fbs   sws    mv    ub   sub m8000   dco\n   &lt;int&gt; &lt;int&gt; &lt;fctr&gt;  &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;\n1:  2021     1   0 岁      0     0     0     0     0     0     0     0\n2:  2021     1   0 岁     60     3     0     2     1     1     1     0\n\nhead(fbsw$sitemorp,2)\n\n    year   sex cancer               site              morp\n   &lt;int&gt; &lt;int&gt;  &lt;int&gt;             &lt;list&gt;            &lt;list&gt;\n1:  2021     1     NA &lt;data.frame[15x2]&gt; &lt;data.frame[8x2]&gt;\n2:  2021     2    115  &lt;data.frame[3x2]&gt; &lt;data.frame[9x2]&gt;\n\nhead(fbsw$pop,2)\n\n    year   sex agegrp   rks\n   &lt;int&gt; &lt;int&gt; &lt;fctr&gt; &lt;int&gt;\n1:  2021     1   0 岁  3850\n2:  2021     1 1-4 岁 14405"
+  },
+  {
+    "objectID": "2024-11-04-Rpackage-canregtools/index.html#summary-the-canreg-data",
+    "href": "2024-11-04-Rpackage-canregtools/index.html#summary-the-canreg-data",
+    "title": "Canregtools",
+    "section": "Summary the canreg data",
+    "text": "Summary the canreg data\n\nsummary function could quickly calculate summary data of ‘canreg’ object.\n\n\nsumm &lt;- summary(data)\nclass(summ)\n\n[1] \"summary\" \"list\"   \n\nnames(summ)\n\n [1] \"areacode\"         \"fbs\"              \"inci\"             \"sws\"             \n [5] \"mort\"             \"mi\"               \"rks\"              \"rks_year\"        \n [9] \"inci_vars\"        \"miss_r_vars_inci\" \"mort_vars\"        \"miss_r_vars_mort\"\n\npurrr::pluck(summ, \"mi\")\n\n[1] 0.3805414\n\npurrr::pluck(summ, \"inci\")\n\n[1] 373.15\n\npurrr::pluck(summ, \"mort\")\n\n[1] 142"
+  },
+  {
+    "objectID": "2024-11-04-Rpackage-canregtools/index.html#calculating-age-standardized-rate",
+    "href": "2024-11-04-Rpackage-canregtools/index.html#calculating-age-standardized-rate",
+    "title": "Canregtools",
+    "section": "Calculating age standardized rate",
+    "text": "Calculating age standardized rate\n\ncreate_asr function could calculate age standardized rate, truncated rate, and cumulated rate based on provided standard population, it could also estimate the variance and 95% confidence interval of the rate.\n\n\n# list all available standard population\nls_std_vars()\n\n[1] \"cn64\"    \"cn82\"    \"cn2000\"  \"wld85\"   \"wld2000\"\n\n# calculate asr using the create_asr() function\ncreate_asr(fbsw, event = fbs, year, sex, cancer, std = c(\"cn2000\", \"wld85\"))\n\n# A tibble: 58 × 11\n    year   sex cancer no_cases     cr asr_cn2000 asr_wld85 truncr_cn2000\n   &lt;int&gt; &lt;int&gt;  &lt;int&gt;    &lt;int&gt;  &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;         &lt;dbl&gt;\n 1  2021     1      0       18   5.50       4.56      4.06          6.91\n 2  2021     1     60     1087 332.       275.      273.          430.  \n 3  2021     1     61     1068 326.       270.      269.          424.  \n 4  2021     1    101       18   5.50       4.65      4.91         10.4 \n 5  2021     1    102        5   1.53       1.23      1.45          2.63\n 6  2021     1    103       47  14.4       10.8      10.3          11.2 \n 7  2021     1    104       65  19.9       15.6      16.1          21.9 \n 8  2021     1    105       87  26.6       21.2      21.7          33.8 \n 9  2021     1    106       84  25.7       20.9      21.7          38.0 \n10  2021     1    107       21   6.41       5.19      5.57          9.84\n# ℹ 48 more rows\n# ℹ 3 more variables: truncr_wld85 &lt;dbl&gt;, cumur &lt;dbl&gt;, prop &lt;dbl&gt;"
+  },
+  {
+    "objectID": "2024-11-04-Rpackage-canregtools/index.html#calculating-age-standardized-rate-1",
+    "href": "2024-11-04-Rpackage-canregtools/index.html#calculating-age-standardized-rate-1",
+    "title": "Canregtools",
+    "section": "Calculating age standardized rate",
+    "text": "Calculating age standardized rate\n\nThe drop_total, drop_others, and add_labels functions can perform further processing on the ASR data, such as removing other cancers, removing total cancer, and adding labels.\n\n\ncreate_asr(fbsw, event = fbs, year, sex, cancer) |&gt; \n  drop_total() |&gt; drop_others() |&gt; \n  add_labels(lang = \"en\", label_type = \"abbr\")\n\n# A tibble: 48 × 13\n    year sex   cancer site             icd10 no_cases    cr asr_cn2000 asr_wld85\n   &lt;int&gt; &lt;fct&gt;  &lt;int&gt; &lt;fct&gt;            &lt;fct&gt;    &lt;int&gt; &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;\n 1  2021 Male     101 Oral Cavity & P… C00-…       18  5.50       4.65      4.91\n 2  2021 Male     102 Nasopharynx      C11          5  1.53       1.23      1.45\n 3  2021 Male     103 Esophagus        C15         47 14.4       10.8      10.3 \n 4  2021 Male     104 Stomach          C16         65 19.9       15.6      16.1 \n 5  2021 Male     105 Colorectum       C18-…       87 26.6       21.2      21.7 \n 6  2021 Male     106 Liver            C22         84 25.7       20.9      21.7 \n 7  2021 Male     107 Gallbladder      C23-…       21  6.41       5.19      5.57\n 8  2021 Male     108 Pancreas         C25         28  8.55       6.81      7.14\n 9  2021 Male     109 Larynx           C32         15  4.58       3.70      3.97\n10  2021 Male     110 Lung             C33-…      230 70.2       57.6      59.3 \n# ℹ 38 more rows\n# ℹ 4 more variables: truncr_cn2000 &lt;dbl&gt;, truncr_wld85 &lt;dbl&gt;, cumur &lt;dbl&gt;,\n#   prop &lt;dbl&gt;"
+  },
+  {
+    "objectID": "2024-11-04-Rpackage-canregtools/index.html#calculating-quality-indicators",
+    "href": "2024-11-04-Rpackage-canregtools/index.html#calculating-quality-indicators",
+    "title": "Canregtools",
+    "section": "Calculating quality indicators",
+    "text": "Calculating quality indicators\n\ncreate_quality function can calculate quality indicators including number of cancer cases, crude incidence, mortality, mortality:incidence ratio, proportion of morphology diagnosed cases, dco, UB%, etc based on ‘canreg’ or ‘fbswicd’ data.\n\n\n# calculate quality indicators based on 'canreg' data\ncreate_quality(data, year, sex, cancer) |&gt; filter(!cancer == 0) |&gt; \n  add_labels(lang = \"en\")\n\n# A tibble: 56 × 16\n    year sex   cancer site    icd10    rks   fbs    fbl   sws    swl    mi    mv\n   &lt;int&gt; &lt;fct&gt;  &lt;int&gt; &lt;fct&gt;   &lt;fct&gt;  &lt;int&gt; &lt;int&gt;  &lt;dbl&gt; &lt;int&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n 1  2021 Male      60 All Ca… ALL   327403  1087 332.     560 171.    0.52  76.5\n 2  2021 Male      61 All Ca… ALLb… 327403  1068 326.     554 169.    0.52  76.3\n 3  2021 Male     101 Oral C… C00-… 327403    18   5.5     10   3.05  0.56  55.6\n 4  2021 Male     102 Nasoph… C11   327403     5   1.53     4   1.22  0.8   40  \n 5  2021 Male     103 Esopha… C15   327403    47  14.4     35  10.7   0.74  87.2\n 6  2021 Male     104 Stomach C16   327403    65  19.8     55  16.8   0.85  73.8\n 7  2021 Male     105 Conlon… C18-… 327403    87  26.6     55  16.8   0.63  77.0\n 8  2021 Male     106 Liver   C22   327403    84  25.7     77  23.5   0.92  66.7\n 9  2021 Male     107 Gallbl… C23-… 327403    21   6.41    16   4.89  0.76  85.7\n10  2021 Male     108 Pancre… C25   327403    28   8.55    28   8.55  1     50  \n# ℹ 46 more rows\n# ℹ 4 more variables: dco &lt;dbl&gt;, ub &lt;dbl&gt;, sub &lt;dbl&gt;, m8000 &lt;dbl&gt;"
+  },
+  {
+    "objectID": "2024-11-04-Rpackage-canregtools/index.html#calculating-quality-indicators-1",
+    "href": "2024-11-04-Rpackage-canregtools/index.html#calculating-quality-indicators-1",
+    "title": "Canregtools",
+    "section": "Calculating quality indicators",
+    "text": "Calculating quality indicators\n\n# calculate quality indicators based on 'fbswicd' data\ncreate_quality(fbsw, year, sex) |&gt;\n  add_labels(lang = \"en\")\n\n# A tibble: 2 × 16\n   year sex    cancer site      icd10    rks   fbs   fbl   sws   swl    mi    mv\n  &lt;int&gt; &lt;fct&gt;   &lt;dbl&gt; &lt;fct&gt;     &lt;fct&gt;  &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1  2021 Male       60 All Canc… ALL   327403  1087  332.   560  171.  0.52  76.5\n2  2021 Female     60 All Canc… ALL   355707  1462  411.   410  115.  0.28  84.1\n# ℹ 4 more variables: dco &lt;dbl&gt;, ub &lt;dbl&gt;, sub &lt;dbl&gt;, m8000 &lt;dbl&gt;\n\ncreate_quality(fbsw, cancer) |&gt;\n  filter(!cancer == 0) |&gt; \n  add_labels(lang = \"en\")\n\n# A tibble: 28 × 16\n    year sex   cancer site    icd10    rks   fbs    fbl   sws    swl    mi    mv\n   &lt;dbl&gt; &lt;fct&gt;  &lt;int&gt; &lt;fct&gt;   &lt;fct&gt;  &lt;int&gt; &lt;int&gt;  &lt;dbl&gt; &lt;int&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n 1  9000 Total     60 All Ca… ALL   683110  2549 373.     970 142     0.38  80.9\n 2  9000 Total     61 All Ca… ALLb… 683110  2516 368.     956 140.    0.38  80.8\n 3  9000 Total    101 Oral C… C00-… 683110    26   3.81    13   1.9   0.5   57.7\n 4  9000 Total    102 Nasoph… C11   683110     7   1.02     5   0.73  0.71  57.1\n 5  9000 Total    103 Esopha… C15   683110    66   9.66    46   6.73  0.7   86.4\n 6  9000 Total    104 Stomach C16   683110   101  14.8     79  11.6   0.78  71.3\n 7  9000 Total    105 Conlon… C18-… 683110   181  26.5    103  15.1   0.57  81.2\n 8  9000 Total    106 Liver   C22   683110   125  18.3    100  14.6   0.8   68  \n 9  9000 Total    107 Gallbl… C23-… 683110    44   6.44    31   4.54  0.7   86.4\n10  9000 Total    108 Pancre… C25   683110    46   6.73    57   8.34  1.24  43.5\n# ℹ 18 more rows\n# ℹ 4 more variables: dco &lt;dbl&gt;, ub &lt;dbl&gt;, sub &lt;dbl&gt;, m8000 &lt;dbl&gt;"
+  },
+  {
+    "objectID": "2024-11-04-Rpackage-canregtools/index.html#calculating-age-specific-rate",
+    "href": "2024-11-04-Rpackage-canregtools/index.html#calculating-age-specific-rate",
+    "title": "Canregtools",
+    "section": "Calculating age specific rate",
+    "text": "Calculating age specific rate\n\ncreate_age_rate function could calculate age specific rate based on ‘canreg’ or ‘fbswicd’ data.\n\n\n# calculate age specific rate from 'canreg' data.\ncreate_age_rate(data, year, sex, cancer, format = \"long\") |&gt; \n  filter(!cancer == 0) |&gt; \n  arrange(year, sex, cancer, agegrp)\n\n# A tibble: 1,064 × 6\n    year   sex cancer agegrp   cases  rate\n   &lt;int&gt; &lt;int&gt;  &lt;int&gt; &lt;fct&gt;    &lt;int&gt; &lt;dbl&gt;\n 1  2021     1     60 0 岁         3  77.9\n 2  2021     1     60 1-4 岁       3  20.8\n 3  2021     1     60 10-14 岁     0   0  \n 4  2021     1     60 15-19 岁     2  10.7\n 5  2021     1     60 20-24 岁     5  18.0\n 6  2021     1     60 25-29 岁    14  38.7\n 7  2021     1     60 30-34 岁    39 133. \n 8  2021     1     60 35-39 岁    38 127. \n 9  2021     1     60 40-44 岁    60 196. \n10  2021     1     60 45-49 岁    64 240. \n# ℹ 1,054 more rows"
+  },
+  {
+    "objectID": "2024-11-04-Rpackage-canregtools/index.html#calculating-age-specific-rate-1",
+    "href": "2024-11-04-Rpackage-canregtools/index.html#calculating-age-specific-rate-1",
+    "title": "Canregtools",
+    "section": "Calculating age specific rate",
+    "text": "Calculating age specific rate\n\n# calculate age specific rate from 'fbswicd' data.\ncreate_age_rate(fbsw, year, sex, cancer, format = \"wide\") |&gt;\n  filter(!cancer == 0) |&gt; \n  add_labels(lang = \"en\")\n\n# A tibble: 56 × 45\n    year sex   cancer site       icd10    f0    f1    f2    f3    f4    f5    f6\n   &lt;int&gt; &lt;fct&gt;  &lt;int&gt; &lt;fct&gt;      &lt;fct&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;\n 1  2021 Male      60 All Cance… ALL    1087     3     3     0     2     5    14\n 2  2021 Male      61 All Cance… ALLb…  1068     3     3     0     2     5    14\n 3  2021 Male     101 Oral Cavi… C00-…    18     0     0     0     0     0     0\n 4  2021 Male     102 Nasophary… C11       5     0     0     0     0     0     0\n 5  2021 Male     103 Esophagus  C15      47     0     0     0     0     0     0\n 6  2021 Male     104 Stomach    C16      65     0     0     0     0     0     0\n 7  2021 Male     105 Conlon, R… C18-…    87     0     0     0     0     0     1\n 8  2021 Male     106 Liver      C22      84     0     1     0     0     0     0\n 9  2021 Male     107 Gallbladd… C23-…    21     0     0     0     0     0     0\n10  2021 Male     108 Pancreas   C25      28     0     0     0     0     0     0\n# ℹ 46 more rows\n# ℹ 33 more variables: f7 &lt;int&gt;, f8 &lt;int&gt;, f9 &lt;int&gt;, f10 &lt;int&gt;, f11 &lt;int&gt;,\n#   f12 &lt;int&gt;, f13 &lt;int&gt;, f14 &lt;int&gt;, f15 &lt;int&gt;, f16 &lt;int&gt;, f17 &lt;int&gt;,\n#   f18 &lt;int&gt;, f19 &lt;int&gt;, r0 &lt;dbl&gt;, r1 &lt;dbl&gt;, r2 &lt;dbl&gt;, r3 &lt;dbl&gt;, r4 &lt;dbl&gt;,\n#   r5 &lt;dbl&gt;, r6 &lt;dbl&gt;, r7 &lt;dbl&gt;, r8 &lt;dbl&gt;, r9 &lt;dbl&gt;, r10 &lt;dbl&gt;, r11 &lt;dbl&gt;,\n#   r12 &lt;dbl&gt;, r13 &lt;dbl&gt;, r14 &lt;dbl&gt;, r15 &lt;dbl&gt;, r16 &lt;dbl&gt;, r17 &lt;dbl&gt;,\n#   r18 &lt;dbl&gt;, r19 &lt;dbl&gt;"
+  },
+  {
+    "objectID": "2024-11-04-Rpackage-canregtools/index.html#reading-data-from-multiple-raw-data-files",
+    "href": "2024-11-04-Rpackage-canregtools/index.html#reading-data-from-multiple-raw-data-files",
+    "title": "Canregtools",
+    "section": "Reading data from multiple raw data files",
+    "text": "Reading data from multiple raw data files\n\nObject with class of ‘canregs’ is a list with elements of object with class of ‘canreg’, it could be read using the ‘read_canreg’ function.\n\n\nfiles &lt;- list.files(\"~/website/slides/outputs\", full.names = TRUE)\n# read the first 10 raw files in outputs folder into 'canregs'\ndata &lt;- read_canreg(files[1:10])\nclass(data)\n\n[1] \"canregs\" \"list\"   \n\nnames(data)\n\n [1] \"410102\" \"410103\" \"410104\" \"410105\" \"410123\" \"410185\" \"410224\" \"410302\"\n [9] \"410303\" \"410304\""
+  },
+  {
+    "objectID": "2024-11-04-Rpackage-canregtools/index.html#summary-the-canregs-data",
+    "href": "2024-11-04-Rpackage-canregtools/index.html#summary-the-canregs-data",
+    "title": "Canregtools",
+    "section": "Summary the canregs data",
+    "text": "Summary the canregs data\n\nsummary function could quickly calculate summary data of ‘canreg’ or ‘canregs’ object.\n\n\nsumm &lt;- summary(data)\nnames(summ)\n\n [1] \"410102\" \"410103\" \"410104\" \"410105\" \"410123\" \"410185\" \"410224\" \"410302\"\n [9] \"410303\" \"410304\"\n\nsumm1 &lt;- cr_select(summ, inci &gt; 300, mi &gt; 0.4)\nnames(summ1)\n\n[1] \"410302\" \"410303\" \"410304\"\n\nsumm2 &lt;- cr_select(summ, inci &gt; 290 | mort &gt; 150)\nnames(summ2)\n\n[1] \"410102\" \"410103\" \"410104\" \"410105\" \"410302\" \"410303\" \"410304\"\n\nsumm3 &lt;- cr_select(summ, index = c(\"410102\", \"410303\"))\nnames(summ3)\n\n[1] \"410102\" \"410303\""
+  },
+  {
+    "objectID": "2024-11-04-Rpackage-canregtools/index.html#filter-the-canregs-data",
+    "href": "2024-11-04-Rpackage-canregtools/index.html#filter-the-canregs-data",
+    "title": "Canregtools",
+    "section": "Filter the canregs data",
+    "text": "Filter the canregs data\n\ncr_select function can filter ‘carengs’, ‘fbswicds’, ‘asrs’, and, ‘summaries’ based on input conditions.\n\n\ndata2 &lt;- data |&gt; cr_select(index = names(summ2))\nnames(data2)\n\n[1] \"410102\" \"410103\" \"410104\" \"410105\" \"410302\" \"410303\" \"410304\"\n\nnames(summ2)\n\n[1] \"410102\" \"410103\" \"410104\" \"410105\" \"410302\" \"410303\" \"410304\""
+  },
+  {
+    "objectID": "2024-11-04-Rpackage-canregtools/index.html#counting-canregs-data",
+    "href": "2024-11-04-Rpackage-canregtools/index.html#counting-canregs-data",
+    "title": "Canregtools",
+    "section": "Counting ‘canregs’ data",
+    "text": "Counting ‘canregs’ data\n\ncount_canreg function can count ‘canregs’ data into ‘fbswicds’ data, which is a list of elements of ‘fbswicd’ data that could used as input data for create_asr, create_quality, create_sheet, etc.\n\n\nfbsw &lt;- count_canreg(data2)\nclass(fbsw)\n\n[1] \"fbswicds\" \"list\"    \n\nnames(fbsw)\n\n[1] \"410102\" \"410103\" \"410104\" \"410105\" \"410302\" \"410303\" \"410304\""
+  },
+  {
+    "objectID": "2024-11-04-Rpackage-canregtools/index.html#calculate-age-standardized-rate",
+    "href": "2024-11-04-Rpackage-canregtools/index.html#calculate-age-standardized-rate",
+    "title": "Canregtools",
+    "section": "Calculate age standardized rate",
+    "text": "Calculate age standardized rate\n\ncreate_asr function can also calculate age standard rate based on ‘fbswicds’ data.\n\n\nasrs &lt;- create_asr(fbsw, event = fbs, year, sex)\nclass(asrs)\n\n[1] \"asrs\" \"list\"\n\nhead(asrs)\n\n$`410102`\n# A tibble: 2 × 11\n   year   sex cancer no_cases    cr asr_cn2000 asr_wld85 truncr_cn2000\n  &lt;int&gt; &lt;int&gt;  &lt;dbl&gt;    &lt;int&gt; &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;         &lt;dbl&gt;\n1  2021     1     60     1087  332.       275.      273.          430.\n2  2021     2     60     1462  411.       335.      315.          546.\n# ℹ 3 more variables: truncr_wld85 &lt;dbl&gt;, cumur &lt;dbl&gt;, prop &lt;dbl&gt;\n\n$`410103`\n# A tibble: 2 × 11\n   year   sex cancer no_cases    cr asr_cn2000 asr_wld85 truncr_cn2000\n  &lt;int&gt; &lt;int&gt;  &lt;dbl&gt;    &lt;int&gt; &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;         &lt;dbl&gt;\n1  2021     1     60     1236  376.       256.      248.          380.\n2  2021     2     60     1564  436.       319.      297.          526.\n# ℹ 3 more variables: truncr_wld85 &lt;dbl&gt;, cumur &lt;dbl&gt;, prop &lt;dbl&gt;\n\n$`410104`\n# A tibble: 2 × 11\n   year   sex cancer no_cases    cr asr_cn2000 asr_wld85 truncr_cn2000\n  &lt;int&gt; &lt;int&gt;  &lt;dbl&gt;    &lt;int&gt; &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;         &lt;dbl&gt;\n1  2021     1     60      743  327.       254.      249.          385.\n2  2021     2     60      912  360.       299.      280.          490.\n# ℹ 3 more variables: truncr_wld85 &lt;dbl&gt;, cumur &lt;dbl&gt;, prop &lt;dbl&gt;\n\n$`410105`\n# A tibble: 2 × 11\n   year   sex cancer no_cases    cr asr_cn2000 asr_wld85 truncr_cn2000\n  &lt;int&gt; &lt;int&gt;  &lt;dbl&gt;    &lt;int&gt; &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;         &lt;dbl&gt;\n1  2021     1     60     1877  406.       300.      286.          415.\n2  2021     2     60     2506  495.       380.      350.          604.\n# ℹ 3 more variables: truncr_wld85 &lt;dbl&gt;, cumur &lt;dbl&gt;, prop &lt;dbl&gt;\n\n$`410302`\n# A tibble: 2 × 11\n   year   sex cancer no_cases    cr asr_cn2000 asr_wld85 truncr_cn2000\n  &lt;int&gt; &lt;int&gt;  &lt;dbl&gt;    &lt;int&gt; &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;         &lt;dbl&gt;\n1  2021     1     60      298  359.       235.      231.          342.\n2  2021     2     60      278  322.       199.      190.          331.\n# ℹ 3 more variables: truncr_wld85 &lt;dbl&gt;, cumur &lt;dbl&gt;, prop &lt;dbl&gt;\n\n$`410303`\n# A tibble: 2 × 11\n   year   sex cancer no_cases    cr asr_cn2000 asr_wld85 truncr_cn2000\n  &lt;int&gt; &lt;int&gt;  &lt;dbl&gt;    &lt;int&gt; &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;         &lt;dbl&gt;\n1  2021     1     60      625  383.       280.      311.          275.\n2  2021     2     60      599  370.       235.      226.          335.\n# ℹ 3 more variables: truncr_wld85 &lt;dbl&gt;, cumur &lt;dbl&gt;, prop &lt;dbl&gt;"
+  },
+  {
+    "objectID": "2024-11-04-Rpackage-canregtools/index.html#merge-age-standardized-rateasrs",
+    "href": "2024-11-04-Rpackage-canregtools/index.html#merge-age-standardized-rateasrs",
+    "title": "Canregtools",
+    "section": "Merge age standardized rate(asrs)",
+    "text": "Merge age standardized rate(asrs)\n\ncr_merge function cancer merge ‘carengs’, ‘fbswicds’, ‘asrs’, ‘qualities’ into ‘canreg’, ‘fbswicd’, ‘asr’, and ‘quality’ data.\n\n\nasrs2 &lt;- asrs |&gt; cr_merge()\nhead(asrs2, c(6,8))\n\n# A tibble: 6 × 8\n  areacode  year   sex cancer no_cases    cr asr_cn2000 asr_wld85\n     &lt;int&gt; &lt;int&gt; &lt;int&gt;  &lt;dbl&gt;    &lt;int&gt; &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;\n1   410102  2021     1     60     1087  332.       275.      273.\n2   410102  2021     2     60     1462  411.       335.      315.\n3   410103  2021     1     60     1236  376.       256.      248.\n4   410103  2021     2     60     1564  436.       319.      297.\n5   410104  2021     1     60      743  327.       254.      249.\n6   410104  2021     2     60      912  360.       299.      280.\n\nnames(asrs2)\n\n [1] \"areacode\"      \"year\"          \"sex\"           \"cancer\"       \n [5] \"no_cases\"      \"cr\"            \"asr_cn2000\"    \"asr_wld85\"    \n [9] \"truncr_cn2000\" \"truncr_wld85\"  \"cumur\"         \"prop\""
+  },
+  {
+    "objectID": "2024-11-04-Rpackage-canregtools/index.html#creating-quality-indicators",
+    "href": "2024-11-04-Rpackage-canregtools/index.html#creating-quality-indicators",
+    "title": "Canregtools",
+    "section": "Creating quality indicators",
+    "text": "Creating quality indicators\n\nqualities &lt;- create_quality(fbsw, year, sex, collapse=F)\nqualities\n\n$`410102`\n# A tibble: 2 × 14\n   year   sex cancer    rks   fbs   fbl   sws   swl    mi    mv   dco    ub\n  &lt;int&gt; &lt;int&gt;  &lt;dbl&gt;  &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1  2021     1     60 327403  1087  332.   560  171.  0.52  76.5  1.47  1.75\n2  2021     2     60 355707  1462  411.   410  115.  0.28  84.1  0.82  1.92\n# ℹ 2 more variables: sub &lt;dbl&gt;, m8000 &lt;dbl&gt;\n\n$`410103`\n# A tibble: 2 × 14\n   year   sex cancer    rks   fbs   fbl   sws   swl    mi    mv   dco    ub\n  &lt;int&gt; &lt;int&gt;  &lt;dbl&gt;  &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1  2021     1     60 328415  1236  376.   676  206.  0.55  73.1  0.65  2.1 \n2  2021     2     60 358941  1564  436.   410  114.  0.26  76.6  1.02  1.98\n# ℹ 2 more variables: sub &lt;dbl&gt;, m8000 &lt;dbl&gt;\n\n$`410104`\n# A tibble: 2 × 14\n   year   sex cancer    rks   fbs   fbl   sws   swl    mi    mv   dco    ub\n  &lt;int&gt; &lt;int&gt;  &lt;dbl&gt;  &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1  2021     1     60 227511   743  327.   371 163.   0.5   81.4  0.54  1.75\n2  2021     2     60 253077   912  360.   252  99.6  0.28  81.5  0.33  1.21\n# ℹ 2 more variables: sub &lt;dbl&gt;, m8000 &lt;dbl&gt;\n\n$`410105`\n# A tibble: 2 × 14\n   year   sex cancer    rks   fbs   fbl   sws   swl    mi    mv   dco    ub\n  &lt;int&gt; &lt;int&gt;  &lt;dbl&gt;  &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1  2021     1     60 462738  1877  406.   793  171.  0.42  76.9  0.69  1.55\n2  2021     2     60 506456  2506  495.   555  110.  0.22  79.6  0.2   1.52\n# ℹ 2 more variables: sub &lt;dbl&gt;, m8000 &lt;dbl&gt;\n\n$`410302`\n# A tibble: 2 × 14\n   year   sex cancer   rks   fbs   fbl   sws   swl    mi    mv   dco    ub   sub\n  &lt;int&gt; &lt;int&gt;  &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1  2021     1     60 83010   298  359.   157  189.  0.53  69.8  0     1.01  63.8\n2  2021     2     60 86359   278  322.   105  122.  0.38  74.1  0.72  0.72  70.5\n# ℹ 1 more variable: m8000 &lt;dbl&gt;\n\n$`410303`\n# A tibble: 2 × 14\n   year   sex cancer    rks   fbs   fbl   sws   swl    mi    mv   dco    ub\n  &lt;int&gt; &lt;int&gt;  &lt;dbl&gt;  &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1  2021     1     60 163005   625  383.   412  253.  0.66  76.8  1.12  0.96\n2  2021     2     60 161724   599  370.   252  156.  0.42  84.5  1.5   2.5 \n# ℹ 2 more variables: sub &lt;dbl&gt;, m8000 &lt;dbl&gt;\n\n$`410304`\n# A tibble: 2 × 14\n   year   sex cancer    rks   fbs   fbl   sws   swl    mi    mv   dco    ub\n  &lt;int&gt; &lt;int&gt;  &lt;dbl&gt;  &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1  2021     1     60  99735   441  442.   242  243.  0.55  72.3  2.72  2.72\n2  2021     2     60 100963   359  356.   152  151.  0.42  79.4  2.51  1.11\n# ℹ 2 more variables: sub &lt;dbl&gt;, m8000 &lt;dbl&gt;\n\nattr(,\"class\")\n[1] \"qualities\" \"list\""
+  },
+  {
+    "objectID": "2024-11-04-Rpackage-canregtools/index.html#merge-quality-indicators",
+    "href": "2024-11-04-Rpackage-canregtools/index.html#merge-quality-indicators",
+    "title": "Canregtools",
+    "section": "Merge quality indicators",
+    "text": "Merge quality indicators\n\nqualities2 &lt;- qualities |&gt; cr_merge()\nhead(qualities2,c(6,12))\n\n# A tibble: 6 × 12\n  areacode  year   sex cancer    rks   fbs   fbl   sws   swl    mi    mv   dco\n     &lt;int&gt; &lt;int&gt; &lt;int&gt;  &lt;dbl&gt;  &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1   410102  2021     1     60 327403  1087  332.   560 171.   0.52  76.5  1.47\n2   410102  2021     2     60 355707  1462  411.   410 115.   0.28  84.1  0.82\n3   410103  2021     1     60 328415  1236  376.   676 206.   0.55  73.1  0.65\n4   410103  2021     2     60 358941  1564  436.   410 114.   0.26  76.6  1.02\n5   410104  2021     1     60 227511   743  327.   371 163.   0.5   81.4  0.54\n6   410104  2021     2     60 253077   912  360.   252  99.6  0.28  81.5  0.33\n\nnames(qualities2)\n\n [1] \"areacode\" \"year\"     \"sex\"      \"cancer\"   \"rks\"      \"fbs\"     \n [7] \"fbl\"      \"sws\"      \"swl\"      \"mi\"       \"mv\"       \"dco\"     \n[13] \"ub\"       \"sub\"      \"m8000\""
+  },
+  {
+    "objectID": "2024-11-04-Rpackage-canregtools/index.html#show-attributes-of-cancer-registry-affiliated-with-areacode",
+    "href": "2024-11-04-Rpackage-canregtools/index.html#show-attributes-of-cancer-registry-affiliated-with-areacode",
+    "title": "Canregtools",
+    "section": "show attributes of cancer registry affiliated with areacode",
+    "text": "show attributes of cancer registry affiliated with areacode\n\ntidy_areacode function show attributes of cancer registry affiliated with areacode.\n\n\nattributes &lt;- tidy_areacode(\"410302\")\nnames(attributes)\n\n[1] \"areacode\"  \"registry\"  \"province\"  \"city\"      \"area_type\" \"region\"   \n\n\n\nYou cancer use write_registry, or write_area_type function to modify the attributes of the registry."
+  },
+  {
+    "objectID": "2024-11-04-Rpackage-canregtools/index.html#reframe-fbswicds-to-fbswicd",
+    "href": "2024-11-04-Rpackage-canregtools/index.html#reframe-fbswicds-to-fbswicd",
+    "title": "Canregtools",
+    "section": "Reframe ‘fbswicds’ to ‘fbswicd’",
+    "text": "Reframe ‘fbswicds’ to ‘fbswicd’\n\nYou can reframe the ‘fbswicds’ according to the attribute name of registry like ‘area_type’, ‘registry’, ‘province’, etc.\n\n\ndata &lt;- read_canreg(files[1:10])\nfbsws &lt;- count_canreg(data)\nclass(fbsws)\n\n[1] \"fbswicds\" \"list\"    \n\nnames(fbsws)\n\n [1] \"410102\" \"410103\" \"410104\" \"410105\" \"410123\" \"410185\" \"410224\" \"410302\"\n [9] \"410303\" \"410304\"\n\nfbsw &lt;- reframe_fbswicd(fbsws, area_type)\nclass(fbsw)\n\n[1] \"fbswicd\" \"list\""
+  },
+  {
+    "objectID": "2024-11-04-Rpackage-canregtools/index.html#ceating-asr-based-on-reframed-fbsws",
+    "href": "2024-11-04-Rpackage-canregtools/index.html#ceating-asr-based-on-reframed-fbsws",
+    "title": "Canregtools",
+    "section": "Ceating asr based on reframed fbsws",
+    "text": "Ceating asr based on reframed fbsws\n\nasr &lt;- create_asr(fbsw, area_type, sex)\nhead(asr, c(6, 8))\n\n# A tibble: 4 × 8\n   year   sex cancer area_type no_cases    cr asr_cn2000 asr_wld85\n  &lt;dbl&gt; &lt;int&gt;  &lt;dbl&gt; &lt;fct&gt;        &lt;int&gt; &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;\n1  9000     1     60 城市          6307  373.       264.      257.\n2  9000     2     60 城市          7680  421.       312.      290.\n3  9000     1     60 农村          2704  235.       176.      171.\n4  9000     2     60 农村          2936  265.       200.      187.\n\nnames(asr)\n\n [1] \"year\"          \"sex\"           \"cancer\"        \"area_type\"    \n [5] \"no_cases\"      \"cr\"            \"asr_cn2000\"    \"asr_wld85\"    \n [9] \"truncr_cn2000\" \"truncr_wld85\"  \"cumur\"         \"prop\""
+  },
+  {
+    "objectID": "2024-11-04-Rpackage-canregtools/index.html#draw-pyramid-plot",
+    "href": "2024-11-04-Rpackage-canregtools/index.html#draw-pyramid-plot",
+    "title": "Canregtools",
+    "section": "Draw pyramid plot",
+    "text": "Draw pyramid plot\n\nlibrary(showtext)\nshowtext_auto()\ndata &lt;- read_canreg(files[10])\nfbsw &lt;- count_canreg(data)\ndraw_pyramid(fbsw, show_value = F)"
+  },
+  {
+    "objectID": "2024-11-04-Rpackage-canregtools/index.html#draw-bar-chart",
+    "href": "2024-11-04-Rpackage-canregtools/index.html#draw-bar-chart",
+    "title": "Canregtools",
+    "section": "Draw bar chart",
+    "text": "Draw bar chart\n\nasr &lt;- create_asr(fbsw,year,sex,cancer) |&gt; drop_total() |&gt;\n  drop_others() |&gt; add_labels(label_type = \"abbr\", lang = \"en\")\ndraw_barchart(asr, plot_var =cr, cate_var = site,\n              side_label = c(\"Male\",\"Female\"))"
+  },
+  {
+    "objectID": "2024-11-04-Rpackage-canregtools/index.html#draw-bar-chart-1",
+    "href": "2024-11-04-Rpackage-canregtools/index.html#draw-bar-chart-1",
+    "title": "Canregtools",
+    "section": "Draw bar chart",
+    "text": "Draw bar chart\n\nlibrary(dplyr)\nasr1 &lt;- create_asr(fbsw,year,sex,cancer,event = fbs) |&gt; mutate(type=\"incidence\")\nasr2 &lt;- create_asr(fbsw,year,sex,cancer,event = sws) |&gt; mutate(type=\"mortality\")\nasr &lt;- bind_rows(asr1, asr2) |&gt; drop_others() |&gt; drop_total() |&gt; \n  add_labels(label_type = \"abbr\",lang = \"en\")\ndraw_barchart(asr, plot_var =cr, cate_var = site,group_var = type,\n              side_label = c(\"Male\",\"Female\"))"
+  },
+  {
+    "objectID": "2024-11-04-Rpackage-canregtools/index.html#draw-line-chart",
+    "href": "2024-11-04-Rpackage-canregtools/index.html#draw-line-chart",
+    "title": "Canregtools",
+    "section": "Draw line chart",
+    "text": "Draw line chart\n\nagerate &lt;- create_age_rate(fbsw,sex) |&gt; add_labels(lang=\"en\")\nnames(agerate)\n\n[1] \"year\"   \"sex\"    \"cancer\" \"site\"   \"icd10\"  \"agegrp\" \"cases\"  \"rate\"  \n\ndraw_line(agerate, agegrp, rate, sex)\n\n\n\n\n\n\n\n\n\n\n\nhttps://slides.chenq.site"
+  },
+  {
     "objectID": "2024-10-28-data-analysis-canregtools/index.html#人群肿瘤登记数据分析",
     "href": "2024-10-28-data-analysis-canregtools/index.html#人群肿瘤登记数据分析",
     "title": "肿瘤登记数据的统计分析和自动化报告",
@@ -2147,258 +2399,6 @@
     "title": "肿瘤登记数据的统计分析和自动化报告",
     "section": "现有肿瘤登记年报的特点",
     "text": "现有肿瘤登记年报的特点\n\n随着肿瘤登记处数量的增加以及数据质量的提升,国家及大部分省份开始发布国家级或省级的肿瘤登记年报。\n\n\n以传统书籍的形式出版\n以白皮书的形式发布报告\n把传统书籍搬到线上（线上年报）\n价格较高\n不利于数据共享和传播\n\n\n我们真的需要每年发布纸质年报吗？"
-  },
-  {
-    "objectID": "2024-11-04-Rpackage-canregtools/index.html#what-we-actually-do-in-pbcr",
-    "href": "2024-11-04-Rpackage-canregtools/index.html#what-we-actually-do-in-pbcr",
-    "title": "Canregtools",
-    "section": "What we actually do in PBCR",
-    "text": "What we actually do in PBCR\n\nA system designed to collect, store, and manage cancer cases within a population, which is crucial for monitoring cancer incidence, mortality, survival, and prevalence.\n\n\nData internal consistency check\nQuality check (CI5, annual check of quality control for registry)\nCalculation of statistical indicator\nData visualization\nReports"
-  },
-  {
-    "objectID": "2024-11-04-Rpackage-canregtools/index.html#which-tools-are-available",
-    "href": "2024-11-04-Rpackage-canregtools/index.html#which-tools-are-available",
-    "title": "Canregtools",
-    "section": "Which tools are available ?",
-    "text": "Which tools are available ?\n\nIARCcrgTools\nJRC tools\nCanreg5\nSEER*Stat\n\nOther software or language including R, SAS, STATA, Python"
-  },
-  {
-    "objectID": "2024-11-04-Rpackage-canregtools/index.html#what-can-canregtools-do",
-    "href": "2024-11-04-Rpackage-canregtools/index.html#what-can-canregtools-do",
-    "title": "Canregtools",
-    "section": "What can canregtools do ?",
-    "text": "What can canregtools do ?\n\nCanregtools is an R package developed to streamline data analysis, visualization, and reporting in cancer registration. It includes five sets of R functions that cover data reading, processing, statistical calculations, visualization, and reporting.\n\n\n\nData processing\n\ncutage()\nexpand_age_pop()\nclassify_icd10()\nclassify-childhood()\ntidy_*()\nwrite_*()\n\n\nStatistics calculation\n\nageadjust()\ntruncrate()\ncumrate()\ncumrisk()\nlt()\nexpand_lifetable()\n\n\nStatistics sheet\n\nsummary()\ncreate_asr()\ncreate_quality()\ncreate_age_rate()\ncreate_sheet()"
-  },
-  {
-    "objectID": "2024-11-04-Rpackage-canregtools/index.html#what-can-canregtools-do-1",
-    "href": "2024-11-04-Rpackage-canregtools/index.html#what-can-canregtools-do-1",
-    "title": "Canregtools",
-    "section": "What can canregtools do ?",
-    "text": "What can canregtools do ?\n\nCanregtools is a tool designed for high-level cancer registries. It helps process data from multiple registries in batch mode, allowing users to filter data based on custom conditions and reformat or merge cancer registration data according to registry attributes.\n\n\n\nRegistry attributes\n\nwrite_registry()\nwrite_areacode()\nwrite_area_type()\ntidy_areacode()\n\n\nFilter/merge object\n\ncr_select()\ncr_merge()\nreframe_fbswicd()\n\n\nStatistics sheet\n\nsummary()\ncreate_asr()\ncreate_quality()\ncreate_age_rate()\ncreate_sheet()"
-  },
-  {
-    "objectID": "2024-11-04-Rpackage-canregtools/index.html#define-s3-class-for-generic-functions",
-    "href": "2024-11-04-Rpackage-canregtools/index.html#define-s3-class-for-generic-functions",
-    "title": "Canregtools",
-    "section": "Define S3 class for generic functions",
-    "text": "Define S3 class for generic functions\n\nWe define a set of class for different methods to carry out different functions.\n\n\n\nS3 class for single registry\n\ncanreg\nfbswicd\nasr\nquality\n\n\nS3 class for multiple registries\n\ncanregs\nfbswicds\nasrs\nqualities\n\n\nS3 method\ncreate_asr, create_quality, create_age_rate, create_sheet, cr_select, cr_merge, reframe_fbswicd"
-  },
-  {
-    "objectID": "2024-11-04-Rpackage-canregtools/index.html#internal-consistency-check",
-    "href": "2024-11-04-Rpackage-canregtools/index.html#internal-consistency-check",
-    "title": "Canregtools",
-    "section": "Internal consistency check",
-    "text": "Internal consistency check\n\nInternal consistency checks are a crucial step before conducting data analysis. We need to identify and address any impossible or unlikely combinations of variables to insure the data validity.\n\n\n\nVariable\n\ncheck_topo()\ncheck_morp()\ncheck_icd10()\ncheck_areacode()\ncheck_sex()\ncheck_id()\n\n\nVariables combination\n\ncheck_sex_morp()\ncheck_sex_topo()\ncheck_topo_morp()\ncheck_morp_beha()\ncheck_morp_grad()\ncheck_age_topo_morp()\n\n\nFormat\n\ncheck_header()\ncheck_followup()\nICDO3toICD10()"
-  },
-  {
-    "objectID": "2024-11-04-Rpackage-canregtools/index.html#how-to-install",
-    "href": "2024-11-04-Rpackage-canregtools/index.html#how-to-install",
-    "title": "Canregtools",
-    "section": "How to install",
-    "text": "How to install\n\nDownlaod R (Rhttps://cloud.r-project.org)\nDownload Rstudio(https://posit.co/download/rstudio-desktop/)"
-  },
-  {
-    "objectID": "2024-11-04-Rpackage-canregtools/index.html#how-to-install-1",
-    "href": "2024-11-04-Rpackage-canregtools/index.html#how-to-install-1",
-    "title": "Canregtools",
-    "section": "How to install",
-    "text": "How to install\nInstall it from github repository\n# install the remotes package if doesn't installed\ninstall.packages(\"remotes) \nlibrary(remotes)\ninstall_github(\"gigu003/canregtools\")\nInstall it from compiled local source package file\n# install the remotes package if doesn't installed\ninstall.packages(\"remotes) \nlibrary(remotes)\ninstall_local(\"canregtools_0.2.7.tar.gz\", type = \"source\")"
-  },
-  {
-    "objectID": "2024-11-04-Rpackage-canregtools/index.html#raw-datacall-for-data-from-ncc",
-    "href": "2024-11-04-Rpackage-canregtools/index.html#raw-datacall-for-data-from-ncc",
-    "title": "Canregtools",
-    "section": "Raw data(call for data from NCC)",
-    "text": "Raw data(call for data from NCC)\n\nThe raw data is an Excel file with three sheets named FB, SW, and POP, which store incidence data, mortality data, and population data, respectively."
-  },
-  {
-    "objectID": "2024-11-04-Rpackage-canregtools/index.html#reading-raw-data-to-canreg-data",
-    "href": "2024-11-04-Rpackage-canregtools/index.html#reading-raw-data-to-canreg-data",
-    "title": "Canregtools",
-    "section": "Reading raw data to ‘canreg’ data",
-    "text": "Reading raw data to ‘canreg’ data\n\nlibrary(canregtools)\nlibrary(dplyr)\nfiles &lt;- list.files(\"~/website/slides/outputs\", full.names = TRUE)\nfile &lt;- files[1]\ndata &lt;- read_canreg(file)\nclass(data)\n\n[1] \"canreg\" \"list\"  \n\nnames(data)\n\n[1] \"areacode\" \"FBcases\"  \"SWcases\"  \"POP\""
-  },
-  {
-    "objectID": "2024-11-04-Rpackage-canregtools/index.html#canreg-object-with-class-of-canreg",
-    "href": "2024-11-04-Rpackage-canregtools/index.html#canreg-object-with-class-of-canreg",
-    "title": "Canregtools",
-    "section": "canreg object with class of ‘canreg’",
-    "text": "canreg object with class of ‘canreg’\n\n‘canreg’ is a list contains four elements named ‘areacode’, ‘FBcases’, ‘SWcases’, and ‘POP’, which were read from “FB”, “SW” and “POP” sheets of raw data.\n\n\nnames(data)\n\n[1] \"areacode\" \"FBcases\"  \"SWcases\"  \"POP\"     \n\ndata$areacode\n\n[1] \"410102\"\n\nhead(data$FBcases)\n\n# A tibble: 6 × 23\n  registr         name  id    sex   birthda    address addcode trib  occu  marri\n  &lt;chr&gt;           &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;date&gt;     &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;\n1 214105001664899 赵浩… 4105… 1     1975-04-17 河南省… 410102… 01    31    2    \n2 214108021590500 范晓… 3708… 2     1991-01-16 河南省… 410102… 01    14    2    \n3 214101021723818 赵莉  4127… 2     1962-10-15 河南省… 410102… 01    00    2    \n4 214112021234655 李秀… 4112… 2     1951-03-09 丽城小… 410102… 01    49    2    \n5 214116241372902 刘贵… 4101… 1     1955-07-15 河南省… 410102… 01    61    2    \n6 234110021050453 毛根… 4110… 1     1939-12-15 河南省… 410102… 01    28    5    \n# ℹ 13 more variables: inciden &lt;date&gt;, topo &lt;chr&gt;, morp &lt;chr&gt;, beha &lt;chr&gt;,\n#   grad &lt;chr&gt;, basi &lt;chr&gt;, icd10 &lt;chr&gt;, autoicd10 &lt;chr&gt;, lastcontact &lt;dttm&gt;,\n#   status &lt;chr&gt;, caus &lt;chr&gt;, deathda &lt;date&gt;, deadplace &lt;chr&gt;"
-  },
-  {
-    "objectID": "2024-11-04-Rpackage-canregtools/index.html#canreg-object-with-class-of-canreg-1",
-    "href": "2024-11-04-Rpackage-canregtools/index.html#canreg-object-with-class-of-canreg-1",
-    "title": "Canregtools",
-    "section": "canreg object with class of ‘canreg’",
-    "text": "canreg object with class of ‘canreg’\n\n‘canreg’ is a list contains four elements including ‘areacode’, ‘FBcases’, ‘SWcases’, and ‘POP’\n\n\nnames(data)\n\n[1] \"areacode\" \"FBcases\"  \"SWcases\"  \"POP\"     \n\nhead(data$SWcases)\n\n# A tibble: 6 × 23\n  registr         name  id    sex   birthda    address addcode trib  occu  marri\n  &lt;chr&gt;           &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;date&gt;     &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;\n1 174101001241467 翟玉… 4101… 2     1921-02-18 河南省… 410102… 01    39    2    \n2 184101001562256 王再… 5106… 1     1935-05-15 河南省… 410102… 01    80    2    \n3 184101001120018 张秀… 4101… 2     1941-02-16 郑州市… 410102… 01    29    2    \n4 184101001561642 李长… 4101… 1     1952-07-06 河南省… 410102… 01    90    2    \n5 184101021600573 董建… 4101… 1     1947-08-21 河南省… 410102… 01    85    2    \n6 184101001119830 孙富… 4101… 1     1941-08-16 河南省… 410102… 01    29    2    \n# ℹ 13 more variables: inciden &lt;date&gt;, topo &lt;chr&gt;, morp &lt;chr&gt;, beha &lt;chr&gt;,\n#   grad &lt;chr&gt;, basi &lt;chr&gt;, icd10 &lt;chr&gt;, autoicd10 &lt;chr&gt;, lastcontact &lt;dttm&gt;,\n#   status &lt;chr&gt;, caus &lt;chr&gt;, deathda &lt;date&gt;, deadplace &lt;chr&gt;"
-  },
-  {
-    "objectID": "2024-11-04-Rpackage-canregtools/index.html#canreg-object-with-class-of-canreg-2",
-    "href": "2024-11-04-Rpackage-canregtools/index.html#canreg-object-with-class-of-canreg-2",
-    "title": "Canregtools",
-    "section": "canreg object with class of ‘canreg’",
-    "text": "canreg object with class of ‘canreg’\n\n‘canreg’ is a list contains four elements including ‘areacode’, ‘FBcases’, ‘SWcases’, and ‘POP’\n\n\nnames(data)\n\n[1] \"areacode\" \"FBcases\"  \"SWcases\"  \"POP\"     \n\nhead(data$POP)\n\n# A tibble: 6 × 4\n   year   sex agegrp   rks\n  &lt;int&gt; &lt;int&gt; &lt;fct&gt;  &lt;int&gt;\n1  2021     1 0~      3850\n2  2021     1 1~     14405\n3  2021     1 5~     15176\n4  2021     1 10~    16227\n5  2021     1 15~    18685\n6  2021     1 20~    27799"
-  },
-  {
-    "objectID": "2024-11-04-Rpackage-canregtools/index.html#counting-canreg-data-to-fbswicd-data",
-    "href": "2024-11-04-Rpackage-canregtools/index.html#counting-canreg-data-to-fbswicd-data",
-    "title": "Canregtools",
-    "section": "Counting ‘canreg’ data to ‘fbswicd’ data",
-    "text": "Counting ‘canreg’ data to ‘fbswicd’ data\n\nfbsw &lt;- count_canreg(data, cancer_type = \"big\")\nclass(fbsw)\n\n[1] \"fbswicd\" \"list\"   \n\nnames(fbsw)\n\n[1] \"areacode\" \"fbswicd\"  \"sitemorp\" \"pop\"     \n\nhead(fbsw$fbswicd, 2)\n\n    year   sex agegrp cancer   fbs   sws    mv    ub   sub m8000   dco\n   &lt;int&gt; &lt;int&gt; &lt;fctr&gt;  &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;\n1:  2021     1   0 岁      0     0     0     0     0     0     0     0\n2:  2021     1   0 岁     60     3     0     2     1     1     1     0\n\nhead(fbsw$sitemorp,2)\n\n    year   sex cancer               site              morp\n   &lt;int&gt; &lt;int&gt;  &lt;int&gt;             &lt;list&gt;            &lt;list&gt;\n1:  2021     1     NA &lt;data.frame[15x2]&gt; &lt;data.frame[8x2]&gt;\n2:  2021     2    115  &lt;data.frame[3x2]&gt; &lt;data.frame[9x2]&gt;\n\nhead(fbsw$pop,2)\n\n    year   sex agegrp   rks\n   &lt;int&gt; &lt;int&gt; &lt;fctr&gt; &lt;int&gt;\n1:  2021     1   0 岁  3850\n2:  2021     1 1-4 岁 14405"
-  },
-  {
-    "objectID": "2024-11-04-Rpackage-canregtools/index.html#summary-the-canreg-data",
-    "href": "2024-11-04-Rpackage-canregtools/index.html#summary-the-canreg-data",
-    "title": "Canregtools",
-    "section": "Summary the canreg data",
-    "text": "Summary the canreg data\n\nsummary function could quickly calculate summary data of ‘canreg’ object.\n\n\nsumm &lt;- summary(data)\nclass(summ)\n\n[1] \"summary\" \"list\"   \n\nnames(summ)\n\n [1] \"areacode\"         \"fbs\"              \"inci\"             \"sws\"             \n [5] \"mort\"             \"mi\"               \"rks\"              \"rks_year\"        \n [9] \"inci_vars\"        \"miss_r_vars_inci\" \"mort_vars\"        \"miss_r_vars_mort\"\n\npurrr::pluck(summ, \"mi\")\n\n[1] 0.3805414\n\npurrr::pluck(summ, \"inci\")\n\n[1] 373.15\n\npurrr::pluck(summ, \"mort\")\n\n[1] 142"
-  },
-  {
-    "objectID": "2024-11-04-Rpackage-canregtools/index.html#calculating-age-standardized-rate",
-    "href": "2024-11-04-Rpackage-canregtools/index.html#calculating-age-standardized-rate",
-    "title": "Canregtools",
-    "section": "Calculating age standardized rate",
-    "text": "Calculating age standardized rate\n\ncreate_asr function could calculate age standardized rate, truncated rate, and cumulated rate based on provided standard population, it could also estimate the variance and 95% confidence interval of the rate.\n\n\n# list all available standard population\nls_std_vars()\n\n[1] \"cn64\"    \"cn82\"    \"cn2000\"  \"wld85\"   \"wld2000\"\n\n# calculate asr using the create_asr() function\ncreate_asr(fbsw, event = fbs, year, sex, cancer, std = c(\"cn2000\", \"wld85\"))\n\n# A tibble: 58 × 11\n    year   sex cancer no_cases     cr asr_cn2000 asr_wld85 truncr_cn2000\n   &lt;int&gt; &lt;int&gt;  &lt;int&gt;    &lt;int&gt;  &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;         &lt;dbl&gt;\n 1  2021     1      0       18   5.50       4.56      4.06          6.91\n 2  2021     1     60     1087 332.       275.      273.          430.  \n 3  2021     1     61     1068 326.       270.      269.          424.  \n 4  2021     1    101       18   5.50       4.65      4.91         10.4 \n 5  2021     1    102        5   1.53       1.23      1.45          2.63\n 6  2021     1    103       47  14.4       10.8      10.3          11.2 \n 7  2021     1    104       65  19.9       15.6      16.1          21.9 \n 8  2021     1    105       87  26.6       21.2      21.7          33.8 \n 9  2021     1    106       84  25.7       20.9      21.7          38.0 \n10  2021     1    107       21   6.41       5.19      5.57          9.84\n# ℹ 48 more rows\n# ℹ 3 more variables: truncr_wld85 &lt;dbl&gt;, cumur &lt;dbl&gt;, prop &lt;dbl&gt;"
-  },
-  {
-    "objectID": "2024-11-04-Rpackage-canregtools/index.html#calculating-age-standardized-rate-1",
-    "href": "2024-11-04-Rpackage-canregtools/index.html#calculating-age-standardized-rate-1",
-    "title": "Canregtools",
-    "section": "Calculating age standardized rate",
-    "text": "Calculating age standardized rate\n\nThe drop_total, drop_others, and add_labels functions can perform further processing on the ASR data, such as removing other cancers, removing total cancer, and adding labels.\n\n\ncreate_asr(fbsw, event = fbs, year, sex, cancer) |&gt; \n  drop_total() |&gt; drop_others() |&gt; \n  add_labels(lang = \"en\", label_type = \"abbr\")\n\n# A tibble: 48 × 13\n    year sex   cancer site             icd10 no_cases    cr asr_cn2000 asr_wld85\n   &lt;int&gt; &lt;fct&gt;  &lt;int&gt; &lt;fct&gt;            &lt;fct&gt;    &lt;int&gt; &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;\n 1  2021 Male     101 Oral Cavity & P… C00-…       18  5.50       4.65      4.91\n 2  2021 Male     102 Nasopharynx      C11          5  1.53       1.23      1.45\n 3  2021 Male     103 Esophagus        C15         47 14.4       10.8      10.3 \n 4  2021 Male     104 Stomach          C16         65 19.9       15.6      16.1 \n 5  2021 Male     105 Colorectum       C18-…       87 26.6       21.2      21.7 \n 6  2021 Male     106 Liver            C22         84 25.7       20.9      21.7 \n 7  2021 Male     107 Gallbladder      C23-…       21  6.41       5.19      5.57\n 8  2021 Male     108 Pancreas         C25         28  8.55       6.81      7.14\n 9  2021 Male     109 Larynx           C32         15  4.58       3.70      3.97\n10  2021 Male     110 Lung             C33-…      230 70.2       57.6      59.3 \n# ℹ 38 more rows\n# ℹ 4 more variables: truncr_cn2000 &lt;dbl&gt;, truncr_wld85 &lt;dbl&gt;, cumur &lt;dbl&gt;,\n#   prop &lt;dbl&gt;"
-  },
-  {
-    "objectID": "2024-11-04-Rpackage-canregtools/index.html#calculating-quality-indicators",
-    "href": "2024-11-04-Rpackage-canregtools/index.html#calculating-quality-indicators",
-    "title": "Canregtools",
-    "section": "Calculating quality indicators",
-    "text": "Calculating quality indicators\n\ncreate_quality function can calculate quality indicators including number of cancer cases, crude incidence, mortality, mortality:incidence ratio, proportion of morphology diagnosed cases, dco, UB%, etc based on ‘canreg’ or ‘fbswicd’ data.\n\n\n# calculate quality indicators based on 'canreg' data\ncreate_quality(data, year, sex, cancer) |&gt; filter(!cancer == 0) |&gt; \n  add_labels(lang = \"en\")\n\n# A tibble: 56 × 16\n    year sex   cancer site    icd10    rks   fbs    fbl   sws    swl    mi    mv\n   &lt;int&gt; &lt;fct&gt;  &lt;int&gt; &lt;fct&gt;   &lt;fct&gt;  &lt;int&gt; &lt;int&gt;  &lt;dbl&gt; &lt;int&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n 1  2021 Male      60 All Ca… ALL   327403  1087 332.     560 171.    0.52  76.5\n 2  2021 Male      61 All Ca… ALLb… 327403  1068 326.     554 169.    0.52  76.3\n 3  2021 Male     101 Oral C… C00-… 327403    18   5.5     10   3.05  0.56  55.6\n 4  2021 Male     102 Nasoph… C11   327403     5   1.53     4   1.22  0.8   40  \n 5  2021 Male     103 Esopha… C15   327403    47  14.4     35  10.7   0.74  87.2\n 6  2021 Male     104 Stomach C16   327403    65  19.8     55  16.8   0.85  73.8\n 7  2021 Male     105 Conlon… C18-… 327403    87  26.6     55  16.8   0.63  77.0\n 8  2021 Male     106 Liver   C22   327403    84  25.7     77  23.5   0.92  66.7\n 9  2021 Male     107 Gallbl… C23-… 327403    21   6.41    16   4.89  0.76  85.7\n10  2021 Male     108 Pancre… C25   327403    28   8.55    28   8.55  1     50  \n# ℹ 46 more rows\n# ℹ 4 more variables: dco &lt;dbl&gt;, ub &lt;dbl&gt;, sub &lt;dbl&gt;, m8000 &lt;dbl&gt;"
-  },
-  {
-    "objectID": "2024-11-04-Rpackage-canregtools/index.html#calculating-quality-indicators-1",
-    "href": "2024-11-04-Rpackage-canregtools/index.html#calculating-quality-indicators-1",
-    "title": "Canregtools",
-    "section": "Calculating quality indicators",
-    "text": "Calculating quality indicators\n\n# calculate quality indicators based on 'fbswicd' data\ncreate_quality(fbsw, year, sex) |&gt;\n  add_labels(lang = \"en\")\n\n# A tibble: 2 × 16\n   year sex    cancer site      icd10    rks   fbs   fbl   sws   swl    mi    mv\n  &lt;int&gt; &lt;fct&gt;   &lt;dbl&gt; &lt;fct&gt;     &lt;fct&gt;  &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1  2021 Male       60 All Canc… ALL   327403  1087  332.   560  171.  0.52  76.5\n2  2021 Female     60 All Canc… ALL   355707  1462  411.   410  115.  0.28  84.1\n# ℹ 4 more variables: dco &lt;dbl&gt;, ub &lt;dbl&gt;, sub &lt;dbl&gt;, m8000 &lt;dbl&gt;\n\ncreate_quality(fbsw, cancer) |&gt;\n  filter(!cancer == 0) |&gt; \n  add_labels(lang = \"en\")\n\n# A tibble: 28 × 16\n    year sex   cancer site    icd10    rks   fbs    fbl   sws    swl    mi    mv\n   &lt;dbl&gt; &lt;fct&gt;  &lt;int&gt; &lt;fct&gt;   &lt;fct&gt;  &lt;int&gt; &lt;int&gt;  &lt;dbl&gt; &lt;int&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n 1  9000 Total     60 All Ca… ALL   683110  2549 373.     970 142     0.38  80.9\n 2  9000 Total     61 All Ca… ALLb… 683110  2516 368.     956 140.    0.38  80.8\n 3  9000 Total    101 Oral C… C00-… 683110    26   3.81    13   1.9   0.5   57.7\n 4  9000 Total    102 Nasoph… C11   683110     7   1.02     5   0.73  0.71  57.1\n 5  9000 Total    103 Esopha… C15   683110    66   9.66    46   6.73  0.7   86.4\n 6  9000 Total    104 Stomach C16   683110   101  14.8     79  11.6   0.78  71.3\n 7  9000 Total    105 Conlon… C18-… 683110   181  26.5    103  15.1   0.57  81.2\n 8  9000 Total    106 Liver   C22   683110   125  18.3    100  14.6   0.8   68  \n 9  9000 Total    107 Gallbl… C23-… 683110    44   6.44    31   4.54  0.7   86.4\n10  9000 Total    108 Pancre… C25   683110    46   6.73    57   8.34  1.24  43.5\n# ℹ 18 more rows\n# ℹ 4 more variables: dco &lt;dbl&gt;, ub &lt;dbl&gt;, sub &lt;dbl&gt;, m8000 &lt;dbl&gt;"
-  },
-  {
-    "objectID": "2024-11-04-Rpackage-canregtools/index.html#calculating-age-specific-rate",
-    "href": "2024-11-04-Rpackage-canregtools/index.html#calculating-age-specific-rate",
-    "title": "Canregtools",
-    "section": "Calculating age specific rate",
-    "text": "Calculating age specific rate\n\ncreate_age_rate function could calculate age specific rate based on ‘canreg’ or ‘fbswicd’ data.\n\n\n# calculate age specific rate from 'canreg' data.\ncreate_age_rate(data, year, sex, cancer, format = \"long\") |&gt; \n  filter(!cancer == 0) |&gt; \n  arrange(year, sex, cancer, agegrp)\n\n# A tibble: 1,064 × 6\n    year   sex cancer agegrp   cases  rate\n   &lt;int&gt; &lt;int&gt;  &lt;int&gt; &lt;fct&gt;    &lt;int&gt; &lt;dbl&gt;\n 1  2021     1     60 0 岁         3  77.9\n 2  2021     1     60 1-4 岁       3  20.8\n 3  2021     1     60 10-14 岁     0   0  \n 4  2021     1     60 15-19 岁     2  10.7\n 5  2021     1     60 20-24 岁     5  18.0\n 6  2021     1     60 25-29 岁    14  38.7\n 7  2021     1     60 30-34 岁    39 133. \n 8  2021     1     60 35-39 岁    38 127. \n 9  2021     1     60 40-44 岁    60 196. \n10  2021     1     60 45-49 岁    64 240. \n# ℹ 1,054 more rows"
-  },
-  {
-    "objectID": "2024-11-04-Rpackage-canregtools/index.html#calculating-age-specific-rate-1",
-    "href": "2024-11-04-Rpackage-canregtools/index.html#calculating-age-specific-rate-1",
-    "title": "Canregtools",
-    "section": "Calculating age specific rate",
-    "text": "Calculating age specific rate\n\n# calculate age specific rate from 'fbswicd' data.\ncreate_age_rate(fbsw, year, sex, cancer, format = \"wide\") |&gt;\n  filter(!cancer == 0) |&gt; \n  add_labels(lang = \"en\")\n\n# A tibble: 56 × 45\n    year sex   cancer site       icd10    f0    f1    f2    f3    f4    f5    f6\n   &lt;int&gt; &lt;fct&gt;  &lt;int&gt; &lt;fct&gt;      &lt;fct&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;\n 1  2021 Male      60 All Cance… ALL    1087     3     3     0     2     5    14\n 2  2021 Male      61 All Cance… ALLb…  1068     3     3     0     2     5    14\n 3  2021 Male     101 Oral Cavi… C00-…    18     0     0     0     0     0     0\n 4  2021 Male     102 Nasophary… C11       5     0     0     0     0     0     0\n 5  2021 Male     103 Esophagus  C15      47     0     0     0     0     0     0\n 6  2021 Male     104 Stomach    C16      65     0     0     0     0     0     0\n 7  2021 Male     105 Conlon, R… C18-…    87     0     0     0     0     0     1\n 8  2021 Male     106 Liver      C22      84     0     1     0     0     0     0\n 9  2021 Male     107 Gallbladd… C23-…    21     0     0     0     0     0     0\n10  2021 Male     108 Pancreas   C25      28     0     0     0     0     0     0\n# ℹ 46 more rows\n# ℹ 33 more variables: f7 &lt;int&gt;, f8 &lt;int&gt;, f9 &lt;int&gt;, f10 &lt;int&gt;, f11 &lt;int&gt;,\n#   f12 &lt;int&gt;, f13 &lt;int&gt;, f14 &lt;int&gt;, f15 &lt;int&gt;, f16 &lt;int&gt;, f17 &lt;int&gt;,\n#   f18 &lt;int&gt;, f19 &lt;int&gt;, r0 &lt;dbl&gt;, r1 &lt;dbl&gt;, r2 &lt;dbl&gt;, r3 &lt;dbl&gt;, r4 &lt;dbl&gt;,\n#   r5 &lt;dbl&gt;, r6 &lt;dbl&gt;, r7 &lt;dbl&gt;, r8 &lt;dbl&gt;, r9 &lt;dbl&gt;, r10 &lt;dbl&gt;, r11 &lt;dbl&gt;,\n#   r12 &lt;dbl&gt;, r13 &lt;dbl&gt;, r14 &lt;dbl&gt;, r15 &lt;dbl&gt;, r16 &lt;dbl&gt;, r17 &lt;dbl&gt;,\n#   r18 &lt;dbl&gt;, r19 &lt;dbl&gt;"
-  },
-  {
-    "objectID": "2024-11-04-Rpackage-canregtools/index.html#reading-data-from-multiple-raw-data-files",
-    "href": "2024-11-04-Rpackage-canregtools/index.html#reading-data-from-multiple-raw-data-files",
-    "title": "Canregtools",
-    "section": "Reading data from multiple raw data files",
-    "text": "Reading data from multiple raw data files\n\nObject with class of ‘canregs’ is a list with elements of object with class of ‘canreg’, it could be read using the ‘read_canreg’ function.\n\n\nfiles &lt;- list.files(\"~/website/slides/outputs\", full.names = TRUE)\n# read the first 10 raw files in outputs folder into 'canregs'\ndata &lt;- read_canreg(files[1:10])\nclass(data)\n\n[1] \"canregs\" \"list\"   \n\nnames(data)\n\n [1] \"410102\" \"410103\" \"410104\" \"410105\" \"410123\" \"410185\" \"410224\" \"410302\"\n [9] \"410303\" \"410304\""
-  },
-  {
-    "objectID": "2024-11-04-Rpackage-canregtools/index.html#summary-the-canregs-data",
-    "href": "2024-11-04-Rpackage-canregtools/index.html#summary-the-canregs-data",
-    "title": "Canregtools",
-    "section": "Summary the canregs data",
-    "text": "Summary the canregs data\n\nsummary function could quickly calculate summary data of ‘canreg’ or ‘canregs’ object.\n\n\nsumm &lt;- summary(data)\nnames(summ)\n\n [1] \"410102\" \"410103\" \"410104\" \"410105\" \"410123\" \"410185\" \"410224\" \"410302\"\n [9] \"410303\" \"410304\"\n\nsumm1 &lt;- cr_select(summ, inci &gt; 300, mi &gt; 0.4)\nnames(summ1)\n\n[1] \"410302\" \"410303\" \"410304\"\n\nsumm2 &lt;- cr_select(summ, inci &gt; 290 | mort &gt; 150)\nnames(summ2)\n\n[1] \"410102\" \"410103\" \"410104\" \"410105\" \"410302\" \"410303\" \"410304\"\n\nsumm3 &lt;- cr_select(summ, index = c(\"410102\", \"410303\"))\nnames(summ3)\n\n[1] \"410102\" \"410303\""
-  },
-  {
-    "objectID": "2024-11-04-Rpackage-canregtools/index.html#filter-the-canregs-data",
-    "href": "2024-11-04-Rpackage-canregtools/index.html#filter-the-canregs-data",
-    "title": "Canregtools",
-    "section": "Filter the canregs data",
-    "text": "Filter the canregs data\n\ncr_select function can filter ‘carengs’, ‘fbswicds’, ‘asrs’, and, ‘summaries’ based on input conditions.\n\n\ndata2 &lt;- data |&gt; cr_select(index = names(summ2))\nnames(data2)\n\n[1] \"410102\" \"410103\" \"410104\" \"410105\" \"410302\" \"410303\" \"410304\"\n\nnames(summ2)\n\n[1] \"410102\" \"410103\" \"410104\" \"410105\" \"410302\" \"410303\" \"410304\""
-  },
-  {
-    "objectID": "2024-11-04-Rpackage-canregtools/index.html#counting-canregs-data",
-    "href": "2024-11-04-Rpackage-canregtools/index.html#counting-canregs-data",
-    "title": "Canregtools",
-    "section": "Counting ‘canregs’ data",
-    "text": "Counting ‘canregs’ data\n\ncount_canreg function can count ‘canregs’ data into ‘fbswicds’ data, which is a list of elements of ‘fbswicd’ data that could used as input data for create_asr, create_quality, create_sheet, etc.\n\n\nfbsw &lt;- count_canreg(data2)\nclass(fbsw)\n\n[1] \"fbswicds\" \"list\"    \n\nnames(fbsw)\n\n[1] \"410102\" \"410103\" \"410104\" \"410105\" \"410302\" \"410303\" \"410304\""
-  },
-  {
-    "objectID": "2024-11-04-Rpackage-canregtools/index.html#calculate-age-standardized-rate",
-    "href": "2024-11-04-Rpackage-canregtools/index.html#calculate-age-standardized-rate",
-    "title": "Canregtools",
-    "section": "Calculate age standardized rate",
-    "text": "Calculate age standardized rate\n\ncreate_asr function can also calculate age standard rate based on ‘fbswicds’ data.\n\n\nasrs &lt;- create_asr(fbsw, event = fbs, year, sex)\nclass(asrs)\n\n[1] \"asrs\" \"list\"\n\nhead(asrs)\n\n$`410102`\n# A tibble: 2 × 11\n   year   sex cancer no_cases    cr asr_cn2000 asr_wld85 truncr_cn2000\n  &lt;int&gt; &lt;int&gt;  &lt;dbl&gt;    &lt;int&gt; &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;         &lt;dbl&gt;\n1  2021     1     60     1087  332.       275.      273.          430.\n2  2021     2     60     1462  411.       335.      315.          546.\n# ℹ 3 more variables: truncr_wld85 &lt;dbl&gt;, cumur &lt;dbl&gt;, prop &lt;dbl&gt;\n\n$`410103`\n# A tibble: 2 × 11\n   year   sex cancer no_cases    cr asr_cn2000 asr_wld85 truncr_cn2000\n  &lt;int&gt; &lt;int&gt;  &lt;dbl&gt;    &lt;int&gt; &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;         &lt;dbl&gt;\n1  2021     1     60     1236  376.       256.      248.          380.\n2  2021     2     60     1564  436.       319.      297.          526.\n# ℹ 3 more variables: truncr_wld85 &lt;dbl&gt;, cumur &lt;dbl&gt;, prop &lt;dbl&gt;\n\n$`410104`\n# A tibble: 2 × 11\n   year   sex cancer no_cases    cr asr_cn2000 asr_wld85 truncr_cn2000\n  &lt;int&gt; &lt;int&gt;  &lt;dbl&gt;    &lt;int&gt; &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;         &lt;dbl&gt;\n1  2021     1     60      743  327.       254.      249.          385.\n2  2021     2     60      912  360.       299.      280.          490.\n# ℹ 3 more variables: truncr_wld85 &lt;dbl&gt;, cumur &lt;dbl&gt;, prop &lt;dbl&gt;\n\n$`410105`\n# A tibble: 2 × 11\n   year   sex cancer no_cases    cr asr_cn2000 asr_wld85 truncr_cn2000\n  &lt;int&gt; &lt;int&gt;  &lt;dbl&gt;    &lt;int&gt; &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;         &lt;dbl&gt;\n1  2021     1     60     1877  406.       300.      286.          415.\n2  2021     2     60     2506  495.       380.      350.          604.\n# ℹ 3 more variables: truncr_wld85 &lt;dbl&gt;, cumur &lt;dbl&gt;, prop &lt;dbl&gt;\n\n$`410302`\n# A tibble: 2 × 11\n   year   sex cancer no_cases    cr asr_cn2000 asr_wld85 truncr_cn2000\n  &lt;int&gt; &lt;int&gt;  &lt;dbl&gt;    &lt;int&gt; &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;         &lt;dbl&gt;\n1  2021     1     60      298  359.       235.      231.          342.\n2  2021     2     60      278  322.       199.      190.          331.\n# ℹ 3 more variables: truncr_wld85 &lt;dbl&gt;, cumur &lt;dbl&gt;, prop &lt;dbl&gt;\n\n$`410303`\n# A tibble: 2 × 11\n   year   sex cancer no_cases    cr asr_cn2000 asr_wld85 truncr_cn2000\n  &lt;int&gt; &lt;int&gt;  &lt;dbl&gt;    &lt;int&gt; &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;         &lt;dbl&gt;\n1  2021     1     60      625  383.       280.      311.          275.\n2  2021     2     60      599  370.       235.      226.          335.\n# ℹ 3 more variables: truncr_wld85 &lt;dbl&gt;, cumur &lt;dbl&gt;, prop &lt;dbl&gt;"
-  },
-  {
-    "objectID": "2024-11-04-Rpackage-canregtools/index.html#merge-age-standardized-rateasrs",
-    "href": "2024-11-04-Rpackage-canregtools/index.html#merge-age-standardized-rateasrs",
-    "title": "Canregtools",
-    "section": "Merge age standardized rate(asrs)",
-    "text": "Merge age standardized rate(asrs)\n\ncr_merge function cancer merge ‘carengs’, ‘fbswicds’, ‘asrs’, ‘qualities’ into ‘canreg’, ‘fbswicd’, ‘asr’, and ‘quality’ data.\n\n\nasrs2 &lt;- asrs |&gt; cr_merge()\nhead(asrs2, c(6,8))\n\n# A tibble: 6 × 8\n  areacode  year   sex cancer no_cases    cr asr_cn2000 asr_wld85\n     &lt;int&gt; &lt;int&gt; &lt;int&gt;  &lt;dbl&gt;    &lt;int&gt; &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;\n1   410102  2021     1     60     1087  332.       275.      273.\n2   410102  2021     2     60     1462  411.       335.      315.\n3   410103  2021     1     60     1236  376.       256.      248.\n4   410103  2021     2     60     1564  436.       319.      297.\n5   410104  2021     1     60      743  327.       254.      249.\n6   410104  2021     2     60      912  360.       299.      280.\n\nnames(asrs2)\n\n [1] \"areacode\"      \"year\"          \"sex\"           \"cancer\"       \n [5] \"no_cases\"      \"cr\"            \"asr_cn2000\"    \"asr_wld85\"    \n [9] \"truncr_cn2000\" \"truncr_wld85\"  \"cumur\"         \"prop\""
-  },
-  {
-    "objectID": "2024-11-04-Rpackage-canregtools/index.html#creating-quality-indicators",
-    "href": "2024-11-04-Rpackage-canregtools/index.html#creating-quality-indicators",
-    "title": "Canregtools",
-    "section": "Creating quality indicators",
-    "text": "Creating quality indicators\n\nqualities &lt;- create_quality(fbsw, year, sex, collapse=F)\nqualities\n\n$`410102`\n# A tibble: 2 × 14\n   year   sex cancer    rks   fbs   fbl   sws   swl    mi    mv   dco    ub\n  &lt;int&gt; &lt;int&gt;  &lt;dbl&gt;  &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1  2021     1     60 327403  1087  332.   560  171.  0.52  76.5  1.47  1.75\n2  2021     2     60 355707  1462  411.   410  115.  0.28  84.1  0.82  1.92\n# ℹ 2 more variables: sub &lt;dbl&gt;, m8000 &lt;dbl&gt;\n\n$`410103`\n# A tibble: 2 × 14\n   year   sex cancer    rks   fbs   fbl   sws   swl    mi    mv   dco    ub\n  &lt;int&gt; &lt;int&gt;  &lt;dbl&gt;  &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1  2021     1     60 328415  1236  376.   676  206.  0.55  73.1  0.65  2.1 \n2  2021     2     60 358941  1564  436.   410  114.  0.26  76.6  1.02  1.98\n# ℹ 2 more variables: sub &lt;dbl&gt;, m8000 &lt;dbl&gt;\n\n$`410104`\n# A tibble: 2 × 14\n   year   sex cancer    rks   fbs   fbl   sws   swl    mi    mv   dco    ub\n  &lt;int&gt; &lt;int&gt;  &lt;dbl&gt;  &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1  2021     1     60 227511   743  327.   371 163.   0.5   81.4  0.54  1.75\n2  2021     2     60 253077   912  360.   252  99.6  0.28  81.5  0.33  1.21\n# ℹ 2 more variables: sub &lt;dbl&gt;, m8000 &lt;dbl&gt;\n\n$`410105`\n# A tibble: 2 × 14\n   year   sex cancer    rks   fbs   fbl   sws   swl    mi    mv   dco    ub\n  &lt;int&gt; &lt;int&gt;  &lt;dbl&gt;  &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1  2021     1     60 462738  1877  406.   793  171.  0.42  76.9  0.69  1.55\n2  2021     2     60 506456  2506  495.   555  110.  0.22  79.6  0.2   1.52\n# ℹ 2 more variables: sub &lt;dbl&gt;, m8000 &lt;dbl&gt;\n\n$`410302`\n# A tibble: 2 × 14\n   year   sex cancer   rks   fbs   fbl   sws   swl    mi    mv   dco    ub   sub\n  &lt;int&gt; &lt;int&gt;  &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1  2021     1     60 83010   298  359.   157  189.  0.53  69.8  0     1.01  63.8\n2  2021     2     60 86359   278  322.   105  122.  0.38  74.1  0.72  0.72  70.5\n# ℹ 1 more variable: m8000 &lt;dbl&gt;\n\n$`410303`\n# A tibble: 2 × 14\n   year   sex cancer    rks   fbs   fbl   sws   swl    mi    mv   dco    ub\n  &lt;int&gt; &lt;int&gt;  &lt;dbl&gt;  &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1  2021     1     60 163005   625  383.   412  253.  0.66  76.8  1.12  0.96\n2  2021     2     60 161724   599  370.   252  156.  0.42  84.5  1.5   2.5 \n# ℹ 2 more variables: sub &lt;dbl&gt;, m8000 &lt;dbl&gt;\n\n$`410304`\n# A tibble: 2 × 14\n   year   sex cancer    rks   fbs   fbl   sws   swl    mi    mv   dco    ub\n  &lt;int&gt; &lt;int&gt;  &lt;dbl&gt;  &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1  2021     1     60  99735   441  442.   242  243.  0.55  72.3  2.72  2.72\n2  2021     2     60 100963   359  356.   152  151.  0.42  79.4  2.51  1.11\n# ℹ 2 more variables: sub &lt;dbl&gt;, m8000 &lt;dbl&gt;\n\nattr(,\"class\")\n[1] \"qualities\" \"list\""
-  },
-  {
-    "objectID": "2024-11-04-Rpackage-canregtools/index.html#merge-quality-indicators",
-    "href": "2024-11-04-Rpackage-canregtools/index.html#merge-quality-indicators",
-    "title": "Canregtools",
-    "section": "Merge quality indicators",
-    "text": "Merge quality indicators\n\nqualities2 &lt;- qualities |&gt; cr_merge()\nhead(qualities2,c(6,12))\n\n# A tibble: 6 × 12\n  areacode  year   sex cancer    rks   fbs   fbl   sws   swl    mi    mv   dco\n     &lt;int&gt; &lt;int&gt; &lt;int&gt;  &lt;dbl&gt;  &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1   410102  2021     1     60 327403  1087  332.   560 171.   0.52  76.5  1.47\n2   410102  2021     2     60 355707  1462  411.   410 115.   0.28  84.1  0.82\n3   410103  2021     1     60 328415  1236  376.   676 206.   0.55  73.1  0.65\n4   410103  2021     2     60 358941  1564  436.   410 114.   0.26  76.6  1.02\n5   410104  2021     1     60 227511   743  327.   371 163.   0.5   81.4  0.54\n6   410104  2021     2     60 253077   912  360.   252  99.6  0.28  81.5  0.33\n\nnames(qualities2)\n\n [1] \"areacode\" \"year\"     \"sex\"      \"cancer\"   \"rks\"      \"fbs\"     \n [7] \"fbl\"      \"sws\"      \"swl\"      \"mi\"       \"mv\"       \"dco\"     \n[13] \"ub\"       \"sub\"      \"m8000\""
-  },
-  {
-    "objectID": "2024-11-04-Rpackage-canregtools/index.html#show-attributes-of-cancer-registry-affiliated-with-areacode",
-    "href": "2024-11-04-Rpackage-canregtools/index.html#show-attributes-of-cancer-registry-affiliated-with-areacode",
-    "title": "Canregtools",
-    "section": "show attributes of cancer registry affiliated with areacode",
-    "text": "show attributes of cancer registry affiliated with areacode\n\ntidy_areacode function show attributes of cancer registry affiliated with areacode.\n\n\nattributes &lt;- tidy_areacode(\"410302\")\nnames(attributes)\n\n[1] \"areacode\"  \"registry\"  \"province\"  \"city\"      \"area_type\" \"region\"   \n\n\n\nYou cancer use write_registry, or write_area_type function to modify the attributes of the registry."
-  },
-  {
-    "objectID": "2024-11-04-Rpackage-canregtools/index.html#reframe-fbswicds-to-fbswicd",
-    "href": "2024-11-04-Rpackage-canregtools/index.html#reframe-fbswicds-to-fbswicd",
-    "title": "Canregtools",
-    "section": "Reframe ‘fbswicds’ to ‘fbswicd’",
-    "text": "Reframe ‘fbswicds’ to ‘fbswicd’\n\nYou can reframe the ‘fbswicds’ according to the attribute name of registry like ‘area_type’, ‘registry’, ‘province’, etc.\n\n\ndata &lt;- read_canreg(files[1:10])\nfbsws &lt;- count_canreg(data)\nclass(fbsws)\n\n[1] \"fbswicds\" \"list\"    \n\nnames(fbsws)\n\n [1] \"410102\" \"410103\" \"410104\" \"410105\" \"410123\" \"410185\" \"410224\" \"410302\"\n [9] \"410303\" \"410304\"\n\nfbsw &lt;- reframe_fbswicd(fbsws, area_type)\nclass(fbsw)\n\n[1] \"fbswicd\" \"list\""
-  },
-  {
-    "objectID": "2024-11-04-Rpackage-canregtools/index.html#ceating-asr-based-on-reframed-fbsws",
-    "href": "2024-11-04-Rpackage-canregtools/index.html#ceating-asr-based-on-reframed-fbsws",
-    "title": "Canregtools",
-    "section": "Ceating asr based on reframed fbsws",
-    "text": "Ceating asr based on reframed fbsws\n\nasr &lt;- create_asr(fbsw, area_type, sex)\nhead(asr, c(6, 8))\n\n# A tibble: 4 × 8\n   year   sex cancer area_type no_cases    cr asr_cn2000 asr_wld85\n  &lt;dbl&gt; &lt;int&gt;  &lt;dbl&gt; &lt;fct&gt;        &lt;int&gt; &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;\n1  9000     1     60 城市          6307  373.       264.      257.\n2  9000     2     60 城市          7680  421.       312.      290.\n3  9000     1     60 农村          2704  235.       176.      171.\n4  9000     2     60 农村          2936  265.       200.      187.\n\nnames(asr)\n\n [1] \"year\"          \"sex\"           \"cancer\"        \"area_type\"    \n [5] \"no_cases\"      \"cr\"            \"asr_cn2000\"    \"asr_wld85\"    \n [9] \"truncr_cn2000\" \"truncr_wld85\"  \"cumur\"         \"prop\""
-  },
-  {
-    "objectID": "2024-11-04-Rpackage-canregtools/index.html#draw-pyramid-plot",
-    "href": "2024-11-04-Rpackage-canregtools/index.html#draw-pyramid-plot",
-    "title": "Canregtools",
-    "section": "Draw pyramid plot",
-    "text": "Draw pyramid plot\n\nlibrary(showtext)\nshowtext_auto()\ndata &lt;- read_canreg(files[10])\nfbsw &lt;- count_canreg(data)\ndraw_pyramid(fbsw, show_value = F)"
-  },
-  {
-    "objectID": "2024-11-04-Rpackage-canregtools/index.html#draw-bar-chart",
-    "href": "2024-11-04-Rpackage-canregtools/index.html#draw-bar-chart",
-    "title": "Canregtools",
-    "section": "Draw bar chart",
-    "text": "Draw bar chart\n\nasr &lt;- create_asr(fbsw,year,sex,cancer) |&gt; drop_total() |&gt;\n  drop_others() |&gt; add_labels(label_type = \"abbr\", lang = \"en\")\ndraw_barchart(asr, plot_var =cr, cate_var = site,\n              side_label = c(\"Male\",\"Female\"))"
-  },
-  {
-    "objectID": "2024-11-04-Rpackage-canregtools/index.html#draw-bar-chart-1",
-    "href": "2024-11-04-Rpackage-canregtools/index.html#draw-bar-chart-1",
-    "title": "Canregtools",
-    "section": "Draw bar chart",
-    "text": "Draw bar chart\n\nlibrary(dplyr)\nasr1 &lt;- create_asr(fbsw,year,sex,cancer,event = fbs) |&gt; mutate(type=\"incidence\")\nasr2 &lt;- create_asr(fbsw,year,sex,cancer,event = sws) |&gt; mutate(type=\"mortality\")\nasr &lt;- bind_rows(asr1, asr2) |&gt; drop_others() |&gt; drop_total() |&gt; \n  add_labels(label_type = \"abbr\",lang = \"en\")\ndraw_barchart(asr, plot_var =cr, cate_var = site,group_var = type,\n              side_label = c(\"Male\",\"Female\"))"
-  },
-  {
-    "objectID": "2024-11-04-Rpackage-canregtools/index.html#draw-line-chart",
-    "href": "2024-11-04-Rpackage-canregtools/index.html#draw-line-chart",
-    "title": "Canregtools",
-    "section": "Draw line chart",
-    "text": "Draw line chart\n\nagerate &lt;- create_age_rate(fbsw,sex) |&gt; add_labels(lang=\"en\")\nnames(agerate)\n\n[1] \"year\"   \"sex\"    \"cancer\" \"site\"   \"icd10\"  \"agegrp\" \"cases\"  \"rate\"  \n\ndraw_line(agerate, agegrp, rate, sex)\n\n\n\n\n\n\n\n\n\n\n\nhttps://slides.chenq.site"
   },
   {
     "objectID": "2023-11-13-what-why-how/index.html#人群肿瘤登记的目的",
@@ -2979,14 +2979,14 @@
     "href": "index.html",
     "title": "普癌新声",
     "section": "",
-    "text": "这里分享和肿瘤登记与统计分析相关的讲座幻灯，希望我的分享对你有所帮助……\n\n\n  \n  \n    \n    \n  \n  \n    2024-11-04\n    \n      Canregtools ,\n    \n    \n    \n      (An R package used in PBCRs) , \n    \n    \n    \n    \n    Beijing \n  \n  \n\n  \n  \n  \n    2024-10-28\n    \n      肿瘤登记数据的统计分析和自动化报告 ,\n    \n    \n    \n      (Report cancer registration data using a developed R package canregtools) , \n    \n    \n    \n    \n    济南 \n  \n  \n\n  \n  \n  \n    2024-07-10\n    \n      年中工作总结 ,\n    \n    \n    \n      (Mid-Year Work Summary) , \n    \n    \n    \n    \n     \n  \n  \n\n  \n  \n  \n    2024-04-17\n    \n      肿瘤登记质控和自动化报告 ,\n    \n    \n    \n      (如何快速发布质控报告和年度报告？) , \n    \n    \n    \n    \n    安徽泾县 \n  \n  \n\n  \n  \n  \n    2024-02-07\n    \n      工作总结 ,\n    \n    \n    \n      (Summary 2023 | Plan 2024) , \n    \n    \n    \n    \n     \n  \n  \n    \n  \n\n  \n  \n    \n    \n  \n  \n    2023-11-13\n    \n      如何做好肿瘤登记工作? ,\n    \n    \n    \n      (河南省肿瘤登记工作实践) , \n    \n    \n    \n    \n    南阳 \n  \n  \n\n  \n  \n  \n    2023-10-13\n    \n      肿瘤分类与编码 ,\n    \n    \n    \n      (ICD10/ICDO3编码在肿瘤登记中的应用) , \n    \n    \n    \n    \n    郑州 \n  \n  \n\n  \n  \n  \n    2023-09-23\n    \n      农村地区肿瘤登记技术与方法 ,\n    \n    \n    \n      (河南省肿瘤登记工作实践) , \n    \n    \n    \n    \n    呼和浩特 \n  \n  \n\n  \n  \n  \n    2023-05-16\n    \n      R语言促进高效率肿瘤登记报告 ,\n    \n    \n    \n      (基于R Markdown / Quarto的可重复性报告撰写) , \n    \n    \n    \n    \n    郑州 \n  \n  \n\n  \n  \n  \n    2023-05-11\n    \n      河南省2020年度肿瘤登记数据质控情况 ,\n    \n    \n    \n      (发现问题、核实更新、提高质量) , \n    \n    \n    \n    \n    郑州 \n  \n  \n\n  \n  \n  \n    2023-05-11\n    \n      河南肿瘤随访登记平台 ,\n    \n    \n    \n      (设计思路、系统框架、推荐操作流程) , \n    \n    \n    \n    \n    郑州 \n  \n  \n\n  \n  \n  \n    2023-04-20\n    \n      人群肿瘤随访登记 ,\n    \n    \n    \n      (肿瘤登记内容、方法、流程和数据上报) , \n    \n    \n    \n    \n    郑州 \n  \n  \n    \n  \n\n\n无匹配项\n\n\n\n注：以上幻灯中部分幻灯在多个场合分享，但仅在这里显示一次……"
+    "text": "这里分享和肿瘤登记与统计分析相关的讲座幻灯，希望我的分享对你有所帮助……\n\n\n  \n  \n    \n    \n  \n  \n    2024-11-04\n    \n      Canregtools ,\n    \n    \n    \n      (An R package used in PBCRs) , \n    \n    \n    \n    \n    Beijing \n  \n  \n\n  \n  \n  \n    2024-11-04\n    \n      Data preparation and lifetime risk estimation using R ,\n    \n    \n    \n      (Report cancer registration data using a developed R package canregtools) , \n    \n    \n    \n    \n    Beijing \n  \n  \n\n  \n  \n  \n    2024-10-28\n    \n      肿瘤登记数据的统计分析和自动化报告 ,\n    \n    \n    \n      (Report cancer registration data using a developed R package canregtools) , \n    \n    \n    \n    \n    济南 \n  \n  \n\n  \n  \n  \n    2024-07-10\n    \n      年中工作总结 ,\n    \n    \n    \n      (Mid-Year Work Summary) , \n    \n    \n    \n    \n     \n  \n  \n\n  \n  \n  \n    2024-04-17\n    \n      肿瘤登记质控和自动化报告 ,\n    \n    \n    \n      (如何快速发布质控报告和年度报告？) , \n    \n    \n    \n    \n    安徽泾县 \n  \n  \n\n  \n  \n  \n    2024-02-07\n    \n      工作总结 ,\n    \n    \n    \n      (Summary 2023 | Plan 2024) , \n    \n    \n    \n    \n     \n  \n  \n    \n  \n\n  \n  \n    \n    \n  \n  \n    2023-11-13\n    \n      如何做好肿瘤登记工作? ,\n    \n    \n    \n      (河南省肿瘤登记工作实践) , \n    \n    \n    \n    \n    南阳 \n  \n  \n\n  \n  \n  \n    2023-10-13\n    \n      肿瘤分类与编码 ,\n    \n    \n    \n      (ICD10/ICDO3编码在肿瘤登记中的应用) , \n    \n    \n    \n    \n    郑州 \n  \n  \n\n  \n  \n  \n    2023-09-23\n    \n      农村地区肿瘤登记技术与方法 ,\n    \n    \n    \n      (河南省肿瘤登记工作实践) , \n    \n    \n    \n    \n    呼和浩特 \n  \n  \n\n  \n  \n  \n    2023-05-16\n    \n      R语言促进高效率肿瘤登记报告 ,\n    \n    \n    \n      (基于R Markdown / Quarto的可重复性报告撰写) , \n    \n    \n    \n    \n    郑州 \n  \n  \n\n  \n  \n  \n    2023-05-11\n    \n      河南省2020年度肿瘤登记数据质控情况 ,\n    \n    \n    \n      (发现问题、核实更新、提高质量) , \n    \n    \n    \n    \n    郑州 \n  \n  \n\n  \n  \n  \n    2023-05-11\n    \n      河南肿瘤随访登记平台 ,\n    \n    \n    \n      (设计思路、系统框架、推荐操作流程) , \n    \n    \n    \n    \n    郑州 \n  \n  \n\n  \n  \n  \n    2023-04-20\n    \n      人群肿瘤随访登记 ,\n    \n    \n    \n      (肿瘤登记内容、方法、流程和数据上报) , \n    \n    \n    \n    \n    郑州 \n  \n  \n    \n  \n\n\n无匹配项\n\n\n\n注：以上幻灯中部分幻灯在多个场合分享，但仅在这里显示一次……"
   },
   {
     "objectID": "index.html#讲座幻灯",
     "href": "index.html#讲座幻灯",
     "title": "普癌新声",
     "section": "",
-    "text": "这里分享和肿瘤登记与统计分析相关的讲座幻灯，希望我的分享对你有所帮助……\n\n\n  \n  \n    \n    \n  \n  \n    2024-11-04\n    \n      Canregtools ,\n    \n    \n    \n      (An R package used in PBCRs) , \n    \n    \n    \n    \n    Beijing \n  \n  \n\n  \n  \n  \n    2024-10-28\n    \n      肿瘤登记数据的统计分析和自动化报告 ,\n    \n    \n    \n      (Report cancer registration data using a developed R package canregtools) , \n    \n    \n    \n    \n    济南 \n  \n  \n\n  \n  \n  \n    2024-07-10\n    \n      年中工作总结 ,\n    \n    \n    \n      (Mid-Year Work Summary) , \n    \n    \n    \n    \n     \n  \n  \n\n  \n  \n  \n    2024-04-17\n    \n      肿瘤登记质控和自动化报告 ,\n    \n    \n    \n      (如何快速发布质控报告和年度报告？) , \n    \n    \n    \n    \n    安徽泾县 \n  \n  \n\n  \n  \n  \n    2024-02-07\n    \n      工作总结 ,\n    \n    \n    \n      (Summary 2023 | Plan 2024) , \n    \n    \n    \n    \n     \n  \n  \n    \n  \n\n  \n  \n    \n    \n  \n  \n    2023-11-13\n    \n      如何做好肿瘤登记工作? ,\n    \n    \n    \n      (河南省肿瘤登记工作实践) , \n    \n    \n    \n    \n    南阳 \n  \n  \n\n  \n  \n  \n    2023-10-13\n    \n      肿瘤分类与编码 ,\n    \n    \n    \n      (ICD10/ICDO3编码在肿瘤登记中的应用) , \n    \n    \n    \n    \n    郑州 \n  \n  \n\n  \n  \n  \n    2023-09-23\n    \n      农村地区肿瘤登记技术与方法 ,\n    \n    \n    \n      (河南省肿瘤登记工作实践) , \n    \n    \n    \n    \n    呼和浩特 \n  \n  \n\n  \n  \n  \n    2023-05-16\n    \n      R语言促进高效率肿瘤登记报告 ,\n    \n    \n    \n      (基于R Markdown / Quarto的可重复性报告撰写) , \n    \n    \n    \n    \n    郑州 \n  \n  \n\n  \n  \n  \n    2023-05-11\n    \n      河南省2020年度肿瘤登记数据质控情况 ,\n    \n    \n    \n      (发现问题、核实更新、提高质量) , \n    \n    \n    \n    \n    郑州 \n  \n  \n\n  \n  \n  \n    2023-05-11\n    \n      河南肿瘤随访登记平台 ,\n    \n    \n    \n      (设计思路、系统框架、推荐操作流程) , \n    \n    \n    \n    \n    郑州 \n  \n  \n\n  \n  \n  \n    2023-04-20\n    \n      人群肿瘤随访登记 ,\n    \n    \n    \n      (肿瘤登记内容、方法、流程和数据上报) , \n    \n    \n    \n    \n    郑州 \n  \n  \n    \n  \n\n\n无匹配项\n\n\n\n注：以上幻灯中部分幻灯在多个场合分享，但仅在这里显示一次……"
+    "text": "这里分享和肿瘤登记与统计分析相关的讲座幻灯，希望我的分享对你有所帮助……\n\n\n  \n  \n    \n    \n  \n  \n    2024-11-04\n    \n      Canregtools ,\n    \n    \n    \n      (An R package used in PBCRs) , \n    \n    \n    \n    \n    Beijing \n  \n  \n\n  \n  \n  \n    2024-11-04\n    \n      Data preparation and lifetime risk estimation using R ,\n    \n    \n    \n      (Report cancer registration data using a developed R package canregtools) , \n    \n    \n    \n    \n    Beijing \n  \n  \n\n  \n  \n  \n    2024-10-28\n    \n      肿瘤登记数据的统计分析和自动化报告 ,\n    \n    \n    \n      (Report cancer registration data using a developed R package canregtools) , \n    \n    \n    \n    \n    济南 \n  \n  \n\n  \n  \n  \n    2024-07-10\n    \n      年中工作总结 ,\n    \n    \n    \n      (Mid-Year Work Summary) , \n    \n    \n    \n    \n     \n  \n  \n\n  \n  \n  \n    2024-04-17\n    \n      肿瘤登记质控和自动化报告 ,\n    \n    \n    \n      (如何快速发布质控报告和年度报告？) , \n    \n    \n    \n    \n    安徽泾县 \n  \n  \n\n  \n  \n  \n    2024-02-07\n    \n      工作总结 ,\n    \n    \n    \n      (Summary 2023 | Plan 2024) , \n    \n    \n    \n    \n     \n  \n  \n    \n  \n\n  \n  \n    \n    \n  \n  \n    2023-11-13\n    \n      如何做好肿瘤登记工作? ,\n    \n    \n    \n      (河南省肿瘤登记工作实践) , \n    \n    \n    \n    \n    南阳 \n  \n  \n\n  \n  \n  \n    2023-10-13\n    \n      肿瘤分类与编码 ,\n    \n    \n    \n      (ICD10/ICDO3编码在肿瘤登记中的应用) , \n    \n    \n    \n    \n    郑州 \n  \n  \n\n  \n  \n  \n    2023-09-23\n    \n      农村地区肿瘤登记技术与方法 ,\n    \n    \n    \n      (河南省肿瘤登记工作实践) , \n    \n    \n    \n    \n    呼和浩特 \n  \n  \n\n  \n  \n  \n    2023-05-16\n    \n      R语言促进高效率肿瘤登记报告 ,\n    \n    \n    \n      (基于R Markdown / Quarto的可重复性报告撰写) , \n    \n    \n    \n    \n    郑州 \n  \n  \n\n  \n  \n  \n    2023-05-11\n    \n      河南省2020年度肿瘤登记数据质控情况 ,\n    \n    \n    \n      (发现问题、核实更新、提高质量) , \n    \n    \n    \n    \n    郑州 \n  \n  \n\n  \n  \n  \n    2023-05-11\n    \n      河南肿瘤随访登记平台 ,\n    \n    \n    \n      (设计思路、系统框架、推荐操作流程) , \n    \n    \n    \n    \n    郑州 \n  \n  \n\n  \n  \n  \n    2023-04-20\n    \n      人群肿瘤随访登记 ,\n    \n    \n    \n      (肿瘤登记内容、方法、流程和数据上报) , \n    \n    \n    \n    \n    郑州 \n  \n  \n    \n  \n\n\n无匹配项\n\n\n\n注：以上幻灯中部分幻灯在多个场合分享，但仅在这里显示一次……"
   },
   {
     "objectID": "2023-5-11-system/index.html#数据收集系统的发展",
