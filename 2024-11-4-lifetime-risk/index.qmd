@@ -24,4 +24,239 @@ auto-agenda:
   bullets: numbered
   heading: Contents
 ---
+# Concept of risk
+## What is cancer risk  ?
+
+>
+
+## Lifetime risk
+> A measure of the risk that a certain event will happen during a person’s lifetime. In cancer research, it is usually given as the likelihood that a person who is free of a certain type of cancer will develop or die from that type of cancer during his or her lifetime.
+
+Estimates of lifetime risk usually expressed as a percentage or as odds
+
+- Percentage, eg.the risk that a man will develop cancer of the pancreas during his lifetime is 1.7%.
+- Odds, 1 out of every 58 (100/1.7) men will develop pancreatic cancer during his lifetime.
+
+## Lifetime cancer risk
+> The lifetime risk of developing or dying from cancer refers to the chance a person has, over the course of their lifetime (from birth to death), of being diagnosed with or dying from cancer (@tbl-risk1).
+
+```{r}
+#| tbl-cap: "Lifetime risk of developing from certain cancers for men and women in the United States"
+#| label: tbl-risk1
+library(flextable)
+data <- tibble::tribble(
+                        ~sites,  ~m1,  ~m2,  ~f1,  ~f2,
+                  "Any cancer", 41.6,   2L, 39.6,   3L,
+                    "Prostate", 12.9,   8L,   NA,   NA,
+           "Lung and bronchus",  6.3,  16L,  5.9,  17L,
+            "Colon and rectum",  4.3,  23L,  3.9,  25L,
+  "Bladder (includes in situ)",  3.6,  28L,  1.1,  89L,
+       "Melanoma of the skin*",  3.6,  28L,  2.5,  41L,
+                      "Breast",  0.1, 726L,   13,   8L,
+        "Non-Hodgkin lymphoma",  2.4,  42L,  1.9,  52L,
+     "Kidney and renal pelvis",  2.3,  43L,  1.4,  73L,
+                    "Leukemia",  1.9,  53L,  1.3,  75L,
+                    "Pancreas",  1.7,  58L,  1.7,  60L,
+         "Liver and bile duct",  1.5,  65L,  0.7, 143L
+  )
+header <- data.frame(
+  col_keys = colnames(data),
+  first =  c("", "Male", "Male", "Female", "Female"),
+  second = c("Cancer Sites", "%", "1 in", "%", "1 in"))
+tt <- data |> flextable() |>
+  set_header_df(mapping = header, key = "col_keys" ) |> 
+  merge_h(part = "header") |> 
+  merge_v(part = "header") |> 
+  theme_zebra()
+tt <- set_table_properties(tt, width = 0.8, layout = "autofit")
+tt
+```
+
+## Measures estimate lifetime cancer risk
+
+- Cumulative rate
+- Cumulative risk
+- Current Probability
+- Devcan
+- AMP method
+
+## Cumulative rate
+
+$$
+\text{Cumrate} = \sum_{i=1}^{A} w_i p_i
+$$
+
+- A is upper age-band limit for summation.
+- $w_i$ is the width of the ith age band in years.
+- $p_i$ is the age-specific annual incidence rate in the ith age-band.
+
+## Cumulative risk
+> The cumulative rate can be converted into true cumulative risk using the following formula:
+
+$$
+\text{Cumrisk} = 1 - e^{\text{-cumrate}}
+$$
+
+## Current probability
+
+## Devcan method
+
+## The AMP method
+> AMP (Adjusted for Multiple Primaries) method can address the issue of multiple primary tumors in the same perions for registries can't precisely identify them or for the situtation that individual data was not available.
+
+:::: {.columns}
+
+::: {.column width="40%"}
+```{r}
+#| label: fig-amp
+#| fig-cap: Estimates of risk of developing cancer excluding NMSC using different method
+#| fig-align: "left"
+#| fig-height: 6
+knitr::include_graphics("images/amp.jpg")
+```
+:::
+
+::: {.column width="60%"}
+- Multiple primaries cancer can't precisely identified
+- Individual cancer cases not available
+- Smaller than estimate value using 'current probability'
+:::
+
+::::
+
+
+
+## The AMP method
+
+$$
+S =
+\sum_{i=1}^{f} \frac{R_i}{R_i + M_i - D_i} \hat{S}^*_0(a_i)
+\times \left\{ 1 - \exp \left( \frac{-w_i}{N_i} (R_i + M_i - D_i) \right) \right\}
+$$
+
+- S denotes the probability of being diagnosed with cancer;
+- M_i denote the annual number of deaths (all-cause mortality); 
+- D_i denote the annual number of cancer deaths (cancer mortality); 
+- R_i denote the annual number of (registered) cancer cases; 
+- N_i denote the size of the mid-year population;
+- w_i denote the width of age band i.
+- $\hat{S}^*_0(a_i)$ denotes the probability of being alive and cancer free at age ai;
+
+
+## The AMP method
+> Estimation of $\hat{S}^*_0(a_i)$
+
+$$
+\hat{S}^*_0(a_i) = \exp \left[ -\sum_{j=1}^{i-1} \frac{R_j + (M_j - D_j)}{N_j} \right]
+$$
+
+
+# Practice of estimation of lifetime risk using R package ltRISK
+
+## Software requirements
+
+- [Downlaod and install latest R (Rhttps://cloud.r-project.org)](https://cloud.r-project.org)
+- [Download and install latest Rstudio(https://posit.co/download/rstudio-desktop/)](https://posit.co/download/rstudio-desktop/)
+
+:::: {.columns}
+
+::: {.column width="50%"}
+![](images/R.jpg)
+:::
+
+::: {.column width="50%"}
+![](images/RStudio.jpg)
+:::
+
+::::
+
+## How to install ltRISK <img src="images/logo_risk.png" align="right" height="120" />
+
+> We include the method AMP in R package ltRISK
+
+We can install it from github repository
+```{r}
+#| echo: true
+#| eval: false
+install.packages("remotes")
+remotes::install_github("gigu003/ltRISK")
+```
+
+or install it from local source file ltRISK_0.1.0.tar.gz
+```{r}
+#| echo: true
+#| eval: false
+install.packages("remotes")
+remotes::install_local("ltRISK_0.1.0.tar.gz")
+```
+
+## Example data from GCO
+
+## Calculate the cumulate rate and cumulate risk
+
+```{r}
+#| echo: true
+library(ltRISK)
+pop <- c(20005, 86920, 102502, 151494, 182932, 203107, 240289, 247076, 199665,
+        163820, 145382, 86789, 69368, 51207, 39112, 20509, 12301, 6586, 1909)
+inci <- c(156, 58, 47, 49, 48, 68, 120, 162, 160, 294, 417, 522, 546, 628,
+         891, 831, 926, 731, 269)
+mx <- inci / pop
+r1 <- cumrate(mx, eage = 70)
+r1
+r2 <- cumrate(mx, eage = 65)
+r2
+cumrisk(r1, mp = 100, decimal = 2)
+cumrisk(r2, mp = 100, decimal = 2)
+```
+
+
+## Estimate the lifetime risk using AMP method
+>
+
+```{r}
+#| echo: true
+library(ltRISK)
+ni <- c(
+   73872987, 82029530, 72267070, 78303514, 99425613, 119915673, 98068725,
+   96644427, 121225951, 121250720, 96012917, 79863455, 75972753, 52929797,
+   37551107, 29047207, 19584254, 13854299)
+mi <- c(
+   60594, 17718, 18883, 28127, 37493, 75223, 83574, 100655, 211467, 278913,
+   419663, 445223, 770865, 929008, 1058922, 1346942, 1576852, 2305312)
+di <- c(
+   3511, 2801, 2553, 3183, 4960, 9456, 13509, 23935, 62386, 111640, 147866,
+   203955, 301892, 304985, 302785, 323804, 275557, 197614)
+ri <- c(
+   9303, 6887, 6248, 8509, 16961, 39439, 56670, 86535, 189251, 289320, 344395,
+   411232, 552071, 491213, 433786, 395544, 292672, 173503)
+```
+
+## Estimate lifetime risk using AMP method
+
+> The **ltr** function can estimate lifetime risk using the AMP method and return an object strore the result which is a list of 4 elements including age groups, age conditional propability, and variance in each agegroup.
+
+```{r}
+#| echo: true
+ll <- ltr(mi, di, ri, ni)
+class(ll)
+names(ll)
+```
+
+## Get the estimates and 95% CI
+> The **estimate** function can get the estimate value of lifetime risk and its 95%CI from specified agegroup. When a
+
+```{r}
+#| echo: true
+s <- estimate(ll)
+post_ci(s)
+s1 <- estimate(ll, sage = 40)
+post_ci(s1)
+s2 <- estimate(ll, sage = 50)
+post_ci(s2)
+s3 <- estimate(ll, sage = 60)
+post_ci(s3)
+s4 <- estimate(ll, sage = 70)
+post_ci(s4)
+```
 
