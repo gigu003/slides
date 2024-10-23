@@ -2401,6 +2401,132 @@
     "text": "现有肿瘤登记年报的特点\n\n随着肿瘤登记处数量的增加以及数据质量的提升,国家及大部分省份开始发布国家级或省级的肿瘤登记年报。\n\n\n以传统书籍的形式出版\n以白皮书的形式发布报告\n把传统书籍搬到线上（线上年报）\n价格较高\n不利于数据共享和传播\n\n\n我们真的需要每年发布纸质年报吗？"
   },
   {
+    "objectID": "2024-11-4-lifetime-risk/index.html#what-is-cancer-risk",
+    "href": "2024-11-4-lifetime-risk/index.html#what-is-cancer-risk",
+    "title": "Data preparation and lifetime risk estimation using R",
+    "section": "What is cancer risk ?",
+    "text": "What is cancer risk ?"
+  },
+  {
+    "objectID": "2024-11-4-lifetime-risk/index.html#lifetime-risk",
+    "href": "2024-11-4-lifetime-risk/index.html#lifetime-risk",
+    "title": "Data preparation and lifetime risk estimation using R",
+    "section": "Lifetime risk",
+    "text": "Lifetime risk\n\nA measure of the risk that a certain event will happen during a person’s lifetime. In cancer research, it is usually given as the likelihood that a person who is free of a certain type of cancer will develop or die from that type of cancer during his or her lifetime.\n\nEstimates of lifetime risk usually expressed as a percentage or as odds\n\nPercentage, eg.the risk that a man will develop cancer of the pancreas during his lifetime is 1.7%.\nOdds, 1 out of every 58 (100/1.7) men will develop pancreatic cancer during his lifetime."
+  },
+  {
+    "objectID": "2024-11-4-lifetime-risk/index.html#lifetime-cancer-risk",
+    "href": "2024-11-4-lifetime-risk/index.html#lifetime-cancer-risk",
+    "title": "Data preparation and lifetime risk estimation using R",
+    "section": "Lifetime cancer risk",
+    "text": "Lifetime cancer risk\n\nThe lifetime risk of developing or dying from cancer refers to the chance a person has, over the course of their lifetime (from birth to death), of being diagnosed with or dying from cancer (Table 1).\n\n\n\n\n\nTable 1: Lifetime risk of developing from certain cancers for men and women in the United States\n\n\n\nMaleFemaleCancer Sites%1 in%1 inAny cancer41.6239.63Prostate12.98Lung and bronchus6.3165.917Colon and rectum4.3233.925Bladder (includes in situ)3.6281.189Melanoma of the skin*3.6282.541Breast0.172613.08Non-Hodgkin lymphoma2.4421.952Kidney and renal pelvis2.3431.473Leukemia1.9531.375Pancreas1.7581.760Liver and bile duct1.5650.7143"
+  },
+  {
+    "objectID": "2024-11-4-lifetime-risk/index.html#measures-estimate-lifetime-cancer-risk",
+    "href": "2024-11-4-lifetime-risk/index.html#measures-estimate-lifetime-cancer-risk",
+    "title": "Data preparation and lifetime risk estimation using R",
+    "section": "Measures estimate lifetime cancer risk",
+    "text": "Measures estimate lifetime cancer risk\n\nCumulative rate\nCumulative risk\nCurrent Probability\nDevcan\nAMP method"
+  },
+  {
+    "objectID": "2024-11-4-lifetime-risk/index.html#cumulative-rate",
+    "href": "2024-11-4-lifetime-risk/index.html#cumulative-rate",
+    "title": "Data preparation and lifetime risk estimation using R",
+    "section": "Cumulative rate",
+    "text": "Cumulative rate\n\\[\n\\text{Cumrate} = \\sum_{i=1}^{A} w_i p_i\n\\]\n\nA is upper age-band limit for summation.\n\\(w_i\\) is the width of the ith age band in years.\n\\(p_i\\) is the age-specific annual incidence rate in the ith age-band."
+  },
+  {
+    "objectID": "2024-11-4-lifetime-risk/index.html#cumulative-risk",
+    "href": "2024-11-4-lifetime-risk/index.html#cumulative-risk",
+    "title": "Data preparation and lifetime risk estimation using R",
+    "section": "Cumulative risk",
+    "text": "Cumulative risk\n\nThe cumulative rate can be converted into true cumulative risk using the following formula:\n\n\\[\n\\text{Cumrisk} = 1 - e^{\\text{-cumrate}}\n\\]"
+  },
+  {
+    "objectID": "2024-11-4-lifetime-risk/index.html#current-probability",
+    "href": "2024-11-4-lifetime-risk/index.html#current-probability",
+    "title": "Data preparation and lifetime risk estimation using R",
+    "section": "Current probability",
+    "text": "Current probability"
+  },
+  {
+    "objectID": "2024-11-4-lifetime-risk/index.html#devcan-method",
+    "href": "2024-11-4-lifetime-risk/index.html#devcan-method",
+    "title": "Data preparation and lifetime risk estimation using R",
+    "section": "Devcan method",
+    "text": "Devcan method"
+  },
+  {
+    "objectID": "2024-11-4-lifetime-risk/index.html#the-amp-method",
+    "href": "2024-11-4-lifetime-risk/index.html#the-amp-method",
+    "title": "Data preparation and lifetime risk estimation using R",
+    "section": "The AMP method",
+    "text": "The AMP method\n\nAMP (Adjusted for Multiple Primaries) method can address the issue of multiple primary tumors in the same perions for registries can’t precisely identify them or for the situtation that individual data was not available.\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Estimates of risk of developing cancer excluding NMSC using different method\n\n\n\n\n\n\n\nMultiple primaries cancer can’t precisely identified\nIndividual cancer cases not available\nSmaller than estimate value using ‘current probability’"
+  },
+  {
+    "objectID": "2024-11-4-lifetime-risk/index.html#the-amp-method-1",
+    "href": "2024-11-4-lifetime-risk/index.html#the-amp-method-1",
+    "title": "Data preparation and lifetime risk estimation using R",
+    "section": "The AMP method",
+    "text": "The AMP method\n\\[\nS =\n\\sum_{i=1}^{f} \\frac{R_i}{R_i + M_i - D_i} \\hat{S}^*_0(a_i)\n\\times \\left\\{ 1 - \\exp \\left( \\frac{-w_i}{N_i} (R_i + M_i - D_i) \\right) \\right\\}\n\\]\n\nS denotes the probability of being diagnosed with cancer;\nM_i denote the annual number of deaths (all-cause mortality);\nD_i denote the annual number of cancer deaths (cancer mortality);\nR_i denote the annual number of (registered) cancer cases;\nN_i denote the size of the mid-year population;\nw_i denote the width of age band i.\n\\(\\hat{S}^*_0(a_i)\\) denotes the probability of being alive and cancer free at age ai;"
+  },
+  {
+    "objectID": "2024-11-4-lifetime-risk/index.html#the-amp-method-2",
+    "href": "2024-11-4-lifetime-risk/index.html#the-amp-method-2",
+    "title": "Data preparation and lifetime risk estimation using R",
+    "section": "The AMP method",
+    "text": "The AMP method\n\nEstimation of \\(\\hat{S}^*_0(a_i)\\)\n\n\\[\n\\hat{S}^*_0(a_i) = \\exp \\left[ -\\sum_{j=1}^{i-1} \\frac{R_j + (M_j - D_j)}{N_j} \\right]\n\\]"
+  },
+  {
+    "objectID": "2024-11-4-lifetime-risk/index.html#software-requirements",
+    "href": "2024-11-4-lifetime-risk/index.html#software-requirements",
+    "title": "Data preparation and lifetime risk estimation using R",
+    "section": "Software requirements",
+    "text": "Software requirements\n\nDownlaod and install latest R (Rhttps://cloud.r-project.org)\nDownload and install latest Rstudio(https://posit.co/download/rstudio-desktop/)"
+  },
+  {
+    "objectID": "2024-11-4-lifetime-risk/index.html#how-to-install-ltrisk",
+    "href": "2024-11-4-lifetime-risk/index.html#how-to-install-ltrisk",
+    "title": "Data preparation and lifetime risk estimation using R",
+    "section": "How to install ltRISK ",
+    "text": "How to install ltRISK \n\nWe include the method AMP in R package ltRISK\n\nWe can install it from github repository\n\ninstall.packages(\"remotes\")\nremotes::install_github(\"gigu003/ltRISK\")\n\nor install it from local source file ltRISK_0.1.0.tar.gz\n\ninstall.packages(\"remotes\")\nremotes::install_local(\"ltRISK_0.1.0.tar.gz\")"
+  },
+  {
+    "objectID": "2024-11-4-lifetime-risk/index.html#example-data-from-gco",
+    "href": "2024-11-4-lifetime-risk/index.html#example-data-from-gco",
+    "title": "Data preparation and lifetime risk estimation using R",
+    "section": "Example data from GCO",
+    "text": "Example data from GCO"
+  },
+  {
+    "objectID": "2024-11-4-lifetime-risk/index.html#calculate-the-cumulate-rate-and-cumulate-risk",
+    "href": "2024-11-4-lifetime-risk/index.html#calculate-the-cumulate-rate-and-cumulate-risk",
+    "title": "Data preparation and lifetime risk estimation using R",
+    "section": "Calculate the cumulate rate and cumulate risk",
+    "text": "Calculate the cumulate rate and cumulate risk\n\nlibrary(ltRISK)\npop &lt;- c(20005, 86920, 102502, 151494, 182932, 203107, 240289, 247076, 199665,\n        163820, 145382, 86789, 69368, 51207, 39112, 20509, 12301, 6586, 1909)\ninci &lt;- c(156, 58, 47, 49, 48, 68, 120, 162, 160, 294, 417, 522, 546, 628,\n         891, 831, 926, 731, 269)\nmx &lt;- inci / pop\nr1 &lt;- cumrate(mx, eage = 70)\nr1\n\nCumulative Rate(1/1) \n             0.49771 \n\nr2 &lt;- cumrate(mx, eage = 65)\nr2\n\nCumulative Rate(1/1) \n             0.29511 \n\ncumrisk(r1, mp = 100, decimal = 2)\n\nCumulative Risk (1/100) \n                  39.21 \n\ncumrisk(r2, mp = 100, decimal = 2)\n\nCumulative Risk (1/100) \n                  25.56"
+  },
+  {
+    "objectID": "2024-11-4-lifetime-risk/index.html#estimate-the-lifetime-risk-using-amp-method",
+    "href": "2024-11-4-lifetime-risk/index.html#estimate-the-lifetime-risk-using-amp-method",
+    "title": "Data preparation and lifetime risk estimation using R",
+    "section": "Estimate the lifetime risk using AMP method",
+    "text": "Estimate the lifetime risk using AMP method\n\n\n\n\nlibrary(ltRISK)\nni &lt;- c(\n   73872987, 82029530, 72267070, 78303514, 99425613, 119915673, 98068725,\n   96644427, 121225951, 121250720, 96012917, 79863455, 75972753, 52929797,\n   37551107, 29047207, 19584254, 13854299)\nmi &lt;- c(\n   60594, 17718, 18883, 28127, 37493, 75223, 83574, 100655, 211467, 278913,\n   419663, 445223, 770865, 929008, 1058922, 1346942, 1576852, 2305312)\ndi &lt;- c(\n   3511, 2801, 2553, 3183, 4960, 9456, 13509, 23935, 62386, 111640, 147866,\n   203955, 301892, 304985, 302785, 323804, 275557, 197614)\nri &lt;- c(\n   9303, 6887, 6248, 8509, 16961, 39439, 56670, 86535, 189251, 289320, 344395,\n   411232, 552071, 491213, 433786, 395544, 292672, 173503)"
+  },
+  {
+    "objectID": "2024-11-4-lifetime-risk/index.html#estimate-lifetime-risk-using-amp-method",
+    "href": "2024-11-4-lifetime-risk/index.html#estimate-lifetime-risk-using-amp-method",
+    "title": "Data preparation and lifetime risk estimation using R",
+    "section": "Estimate lifetime risk using AMP method",
+    "text": "Estimate lifetime risk using AMP method\n\nThe ltr function can estimate lifetime risk using the AMP method and return an object strore the result which is a list of 4 elements including age groups, age conditional propability, and variance in each agegroup.\n\n\nll &lt;- ltr(mi, di, ri, ni)\nclass(ll)\n\n[1] \"ltr\"\n\nnames(ll)\n\n[1] \"age\"  \"si\"   \"vari\""
+  },
+  {
+    "objectID": "2024-11-4-lifetime-risk/index.html#get-the-estimates-and-95-ci",
+    "href": "2024-11-4-lifetime-risk/index.html#get-the-estimates-and-95-ci",
+    "title": "Data preparation and lifetime risk estimation using R",
+    "section": "Get the estimates and 95% CI",
+    "text": "Get the estimates and 95% CI\n\nThe estimate function can get the estimate value of lifetime risk and its 95%CI from specified agegroup. When a\n\n\ns &lt;- estimate(ll)\npost_ci(s)\n\n[1] \"26.85(26.70-27.00)\"\n\ns1 &lt;- estimate(ll, sage = 40)\npost_ci(s1)\n\n[1] \"25.68(25.61-25.75)\"\n\ns2 &lt;- estimate(ll, sage = 50)\npost_ci(s2)\n\n[1] \"23.80(23.74-23.86)\"\n\ns3 &lt;- estimate(ll, sage = 60)\npost_ci(s3)\n\n[1] \"19.85(19.81-19.90)\"\n\ns4 &lt;- estimate(ll, sage = 70)\npost_ci(s4)\n\n[1] \"13.20(13.17-13.23)\"\n\n\n\n\n\n\nEstimation of lifetime risk using R"
+  },
+  {
     "objectID": "2023-11-13-what-why-how/index.html#人群肿瘤登记的目的",
     "href": "2023-11-13-what-why-how/index.html#人群肿瘤登记的目的",
     "title": "如何做好肿瘤登记工作?",
