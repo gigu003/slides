@@ -87,7 +87,7 @@ title-slide-attributes:
 
 ```{r}
 #| label: map
-#| fig-cap: 河南省肿瘤登记地区覆盖情况
+#| cap: 河南省肿瘤登记地区覆盖情况
 #| fig-align: center
 #| fig-width: 10
 knitr::include_graphics("../2023-4-20-cancer-registration/images/map.png")
@@ -787,7 +787,7 @@ knitr::include_graphics("https://quarto.org/docs/get-started/hello/images/rstudi
 ## 为什么要使用 Quarto / R Markdown ?
 
 ```{mermaid}
-%%| label: fig-1
+%%| label: fig-2
 %%| fig-cap: 报告撰写流程
 %%| fig-align: center
 flowchart LR

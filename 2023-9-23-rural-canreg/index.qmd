@@ -1247,12 +1247,12 @@ flowchart LR
 
 <br>
 
->  **人口信息的查重**特别重要，在肿瘤病例的查重之前，需要先做人口信息查重（@fig-system-flow）
+>  **人口信息的查重**特别重要，在肿瘤病例的查重之前，需要先做人口信息查重（@fig-system-flow1）
 
 <br>
 
 ```{mermaid}
-%%| label: fig-system-flow
+%%| label: fig-system-flow1
 %%| fig-cap: 新系统数据操作流程（建议）
 %%| fig-align: center
 flowchart LR
