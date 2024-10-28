@@ -13,7 +13,7 @@ format:
     scrollable: true
     smaller: true
     sc-sb-title: h1
-    highlight-style: dracula
+    highlight-style: kate
     footer: "R包: canregtools"
 revealjs-plugins:
   - attribution
@@ -23,7 +23,6 @@ filters:
 auto-agenda:
   bullets: numbered
   heading: 内容
-
 categories: ["肿瘤登记", "R语言"]
 ---
 # canregtools 初衷
