@@ -1,6 +1,6 @@
 ---
 title: "Data preparation and lifetime risk estimation using R"
-subtitle: "Report cancer registration data using a developed R package canregtools"
+subtitle: "Estimate lifetime risk using R package ltRISK"
 author: "Qiong Chen Ph.D"
 date: 2024-11-04
 date-modified: last-modified
@@ -14,7 +14,7 @@ format:
     smaller: true
     sc-sb-title: h1
     highlight-style: dracula
-    footer: "Estimation of lifetime risk using R"
+    footer: "Estimation of lifetime risk using R package ltRISK"
 revealjs-plugins:
   - attribution
 filters:
@@ -26,8 +26,11 @@ auto-agenda:
 ---
 # Concept of risk
 ## What is cancer risk  ?
+> Cancer risk refers to the probability that an individual will develop cancer over a specific period, such as within a lifetime or a shorter time frame. It’s a measure influenced by a mix of genetic, environmental, and lifestyle factors, which can either increase or decrease a person’s likelihood of developing cancer.
 
->
+- **Relative Cancer Risk**: This compares the risk of cancer between different groups of people. For instance, people who smoke have a significantly higher relative risk of lung cancer compared to nonsmokers.
+
+- **Absolute Cancer Risk**: This gives a specific number or probability of getting cancer over a particular period. For example, an absolute risk might indicate that 1 in 100 people will develop a certain cancer type within the next ten years.
 
 ## Lifetime risk
 > A measure of the risk that a certain event will happen during a person’s lifetime. In cancer research, it is usually given as the likelihood that a person who is free of a certain type of cancer will develop or die from that type of cancer during his or her lifetime.
@@ -73,6 +76,7 @@ tt
 ```
 
 ## Measures estimate lifetime cancer risk
+> For cancer e
 
 - Cumulative rate
 - Cumulative risk
@@ -151,7 +155,7 @@ $$
 $$
 
 
-# Practice of estimation of lifetime risk using R package ltRISK
+# Introduction of R package ltRISK 
 
 ## Software requirements
 
@@ -190,8 +194,6 @@ install.packages("remotes")
 remotes::install_local("ltRISK_0.1.0.tar.gz")
 ```
 
-## Example data from GCO
-
 ## Calculate the cumulate rate and cumulate risk
 
 ```{r}
@@ -211,7 +213,7 @@ cumrisk(r2, mp = 100, decimal = 2)
 ```
 
 
-## Estimate the lifetime risk using AMP method
+## Estimate lifetime risk using AMP method
 >
 
 ```{r}
@@ -243,7 +245,7 @@ class(ll)
 names(ll)
 ```
 
-## Get the estimates and 95% CI
+## Point Estimate and Confidence Interval
 > The **estimate** function can get the estimate value of lifetime risk and its 95%CI from specified agegroup. When a
 
 ```{r}
@@ -260,3 +262,210 @@ s4 <- estimate(ll, sage = 70)
 post_ci(s4)
 ```
 
+# Practice of lifetime risk estimation using GCO data
+## Introduction of example data from GCO
+> We prepare an example dataset including the number of cancer cases, deaths, number of all-cause deaths, and size of mid-year population in 2022, which are from Global Cancer Observatory Today, and the World Population Prospects 2022.
+
+```{r}
+#| echo: true
+data(GCO_Today)
+names(GCO_Today)
+head(GCO_Today)
+# Use ?GCO_Today to see the detailed description of GCO_Today dataset.
+?GCO_Today
+```
+
+## Introduction of example data from GCO
+> GCO_Today is a data frame with 40,824 rows and 8 variables, the description of variables was listed in @tbl-gco.
+
+```{r}
+#| echo: false
+#| label: tbl-gco
+#| tbl-cap: Introduction of variables from the GCO_Today example dataset 
+library(flextable)
+data <-data.frame(
+  stringsAsFactors = FALSE,
+              name = c("region","cancers","sex",
+                       "age","inci","mort","death","pop"),
+              type = c("Character","Integer",
+                       "Integer","Integer","Integer","Integer","Integer","Integer"),
+       description = c("The regions are classified into 20 geographic areas as defined by the United Nations Population Division.",
+                       "Cancers include the code of cancer sites which is the same as cancer dictionary in the GLOBOCAN database.",
+                       "Sex code, 1 for male, 2 for female, 3 for total.",
+                       "The ages are grouped into 5-year intervals, where 0, 1, 2, 3, …, 17 represent the 0-4, 5-9, 10-14, 15-19, …, and 85+ age groups, respectively.",
+                       "Number of (registered) cancer cases.",
+                       "Number of cancer deaths (cancer mortality).","Number of deaths (all-cause mortality).",
+                       "The size of the mid-year population.")
+)
+
+header <- data.frame(
+  col_keys = colnames(data),
+  first =  c("Variable name", "Type", "Description"))
+tt <- data |> flextable() |>
+  set_header_df(mapping = header, key = "col_keys" ) |> 
+  width(j=1,width = 1.2) |> 
+  width(j=2,width = 1) |> 
+  width(j=3,width = 8) |> 
+  theme_zebra(odd_body = "lightblue",odd_header = "gray90")
+tt
+```
+
+Suggested citation from Global Cancer Observatory, Cancer Today [^1]
+
+[^1]: Ferlay J, Ervik M, Lam F, Laversanne M, Colombet M, Mery L, Piñeros M, Znaor A, Soerjomataram I, Bray F (2024). Global Cancer Observatory: Cancer Today (version 1.1). Lyon, France: International Agency for Research on Cancer. Available from: https://gco.iarc.who.int/today, accessed [DD Month YYYY].
+
+## Estimate age conditional probability
+```{r}
+#| echo: true
+library(ltRISK)
+library(dplyr)
+data(GCO_Today)
+data <- GCO_Today |> 
+  filter(region == "World", cancers == 39) |>
+  mutate(sex = factor(sex, levels= c(1, 2, 3), labels = c("Male", "Female", "Total"))) |> 
+  group_by(sex)
+model <- data |> 
+  reframe(model_develop = list(ltr(death, mort, inci, pop, type = "developing")),
+          model_dying = list(ltr(death, mort, inci, pop, type = "dying")))
+model$model_develop[[1]]
+```
+
+## Estimate lifetime risk overall
+
+> The overall lifetime cancer risk refers to the risk of developing cancer for an individual throughout their entire life time, from birth to death.
+
+```{r}
+#| echo: true
+res <- model |>   
+  mutate(lr_developing = post_ci(estimate(model_develop)),
+         lr_dying = post_ci(estimate(model_dying)))
+res
+```
+## Estimate lifetime risk from age x to death
+> When a starting age is specified, it is assumed that the individuals are cancer-free and alive at that age, so the lifetime cancer risk is the risk from that age until death.
+
+```{r}
+#| echo: true
+#| source-line-numbers: "1,4"
+#| class-output: "highlight numberLines"
+#| output-line-numbers: "2"
+res <- model |>   
+  mutate(lr_deve_40 = post_ci(estimate(model_develop, sage = 40)),
+         lr_deve_50 = post_ci(estimate(model_develop, sage = 50)),
+         lr_deve_60 = post_ci(estimate(model_develop, sage = 60)),
+         lr_deve_70 = post_ci(estimate(model_develop, sage = 70)),
+         lr_deve_80 = post_ci(estimate(model_develop, sage = 80))
+         ) |> 
+  select(-model_develop, -model_dying)
+res
+```
+
+# Results of Global and regional lifetime risk
+
+## Lifetime risk of developing cancer 
+
+> code
+
+```{r}
+#| echo: true
+data(GCO_Today)
+data <- GCO_Today |> 
+  filter(cancers == 39) |>
+  mutate(sex = factor(sex, levels= c(1, 2, 3), labels = c("Male", "Female", "Total"))) |> 
+  group_by(region, sex)
+model <- data |> 
+  reframe(model_develop = list(ltr(death, mort, inci, pop, type = "developing")),
+          model_dying = list(ltr(death, mort, inci, pop, type = "dying")))
+res1 <- model |>  
+  mutate(ltr1 = post_ci(estimate(model_develop)),
+         ltr2 = post_ci(estimate(model_develop, sage = 40)),
+         ltr3 = post_ci(estimate(model_develop, sage = 50)),
+         ltr4 = post_ci(estimate(model_develop, sage = 60)),
+         ltr5 = post_ci(estimate(model_develop, sage = 70)),
+         ltr6 = post_ci(estimate(model_develop, sage = 80))) |> 
+  select(-model_develop, -model_dying)
+```
+
+## Lifetime risk of developing cancer worldwide
+> @tbl-lr1 showed the lifetime risk of estimated initiated from different age stratified by sex.
+
+```{r}
+#| label: tbl-lr1
+#| tbl-cap: Lifetime risk of developing cancer Worldwide
+res1 |> 
+  filter(region == "World") |> 
+  select(-region) |> 
+  flextable() |> 
+  set_header_labels(values = c("Sex", "Birth-death", "40-death",
+                               "50-death", "60-death", "70-death",
+                               "80-death")) |>
+  width(j = 2:7, width = 1.5) |> 
+  theme_apa()
+```
+
+## Lifetime risk of developing cancer
+> @tbl-lr2 showed the lifetime risk of estimated initiated from different age stratified by region.
+
+```{r}
+#| label: tbl-lr2
+#| tbl-cap: Lifetime risk of developing cancer Worldwide
+res1 |> 
+  filter(!region == "World", sex == "Total") |> 
+  select(-sex) |> 
+  flextable() |> 
+  set_header_labels(values = c("Sex", "Birth-death", "40-death",
+                               "50-death", "60-death", "70-death",
+                               "80-death")) |>
+  width(j = 2:7, width = 1.5)
+```
+
+## Lifetime risk of dying from cancer 
+
+> code
+
+```{r}
+#| echo: true
+res2 <- model |>  
+  mutate(ltr1 = post_ci(estimate(model_dying)),
+         ltr2 = post_ci(estimate(model_dying, sage = 40)),
+         ltr3 = post_ci(estimate(model_dying, sage = 50)),
+         ltr4 = post_ci(estimate(model_dying, sage = 60)),
+         ltr5 = post_ci(estimate(model_dying, sage = 70)),
+         ltr6 = post_ci(estimate(model_dying, sage = 80))) |> 
+  select(-model_develop, -model_dying)
+```
+
+## Lifetime risk of dying from cancer worldwide
+> @tbl-lr3 showed the lifetime risk of estimated initiated from different age stratified by sex.
+
+```{r}
+#| label: tbl-lr3
+#| tbl-cap: Lifetime risk of dying from cancer Worldwide
+res2 |> 
+  filter(region == "World") |> 
+  select(-region) |> 
+  flextable() |> 
+  set_header_labels(values = c("Sex", "Birth-death", "40-death",
+                               "50-death", "60-death", "70-death",
+                               "80-death")) |>
+  width(j = 2:7, width = 1.5) |> 
+  theme_apa()
+```
+
+## Lifetime risk of dying from cancer
+> @tbl-lr4 showed the lifetime risk of estimated initiated from different age stratified by region.
+
+```{r}
+#| label: tbl-lr4
+#| tbl-cap: Lifetime risk of dying from cancer stratified by region
+res2 |> 
+  filter(!region == "World", sex == "Total") |> 
+  select(-sex) |> 
+  flextable() |> 
+  set_header_labels(values = c("Sex", "Birth-death", "40-death",
+                               "50-death", "60-death", "70-death",
+                               "80-death")) |>
+  width(j = 2:7, width = 1.5)
+```
+
+#
