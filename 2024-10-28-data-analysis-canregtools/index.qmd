@@ -6,14 +6,14 @@ date: 2024-10-28
 date-modified: last-modified
 date-format: "dddd MMM D, YYYY"
 institute: "河南省癌症中心/河南省肿瘤医院"
-address: "济南"
+address: "南京"
 format:
   canhosp-revealjs:
     slide-number: true
     scrollable: true
     smaller: true
     sc-sb-title: h1
-    highlight-style: kate
+    highlight-style: dracula
     footer: "R包: canregtools"
 revealjs-plugins:
   - attribution
