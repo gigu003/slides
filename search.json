@@ -18,7 +18,7 @@
     "href": "2023-5-16-canreg-report/index.html#河南省肿瘤登记工作进展",
     "title": "R语言促进高效率肿瘤登记报告",
     "section": "河南省肿瘤登记工作进展",
-    "text": "河南省肿瘤登记工作进展\n\n\n\n\n肿瘤登记工作覆盖130个县区\n达到数据利用标准的登记处达到42个，覆盖全省32%的人口\n连续10年出版《河南省肿瘤登记年报》\n\n\n\n\n\n\n\n河南省肿瘤登记地区覆盖情况"
+    "text": "河南省肿瘤登记工作进展\n\n\n\n\n肿瘤登记工作覆盖130个县区\n达到数据利用标准的登记处达到42个，覆盖全省32%的人口\n连续10年出版《河南省肿瘤登记年报》"
   },
   {
     "objectID": "2023-5-16-canreg-report/index.html#组织架构",
@@ -46,7 +46,7 @@
     "href": "2023-5-16-canreg-report/index.html#数据来源",
     "title": "R语言促进高效率肿瘤登记报告",
     "section": "数据来源",
-    "text": "数据来源\n\n肿瘤登记强调多源上报、数据来源于医院、医保系统、县-乡-村医师网、全死因数据等。（图 5 ）\n\n\n\n\n\n\n\nflowchart TD\n  A[(肿瘤登记数据库)] --&gt; B(医院)\n  A --&gt; B\n  A --&gt; C(县-乡-村三级医师网络)\n  A --&gt; D(医疗保险)\n  A --&gt; E(死因监测)\n  A --&gt; F(殡葬系统)\n  A --&gt; G(公安系统)\n  B --&gt; b1(住院患者数据)\n  B --&gt; b2(门诊患者数据)\n  B --&gt; b3(病案部门)\n  B --&gt; b4(病理诊断部门)\n  D --&gt; d1(新农合)\n  D --&gt; d2(城镇医保)\n  D --&gt; d3(职工医保)\n\n\n\n\n图 2: 肿瘤登记数据来源渠道"
+    "text": "数据来源\n\n肿瘤登记强调多源上报、数据来源于医院、医保系统、县-乡-村医师网、全死因数据等。（图 2 ）\n\n\n\n\n\n\n\nflowchart TD\n  A[(肿瘤登记数据库)] --&gt; B(医院)\n  A --&gt; B\n  A --&gt; C(县-乡-村三级医师网络)\n  A --&gt; D(医疗保险)\n  A --&gt; E(死因监测)\n  A --&gt; F(殡葬系统)\n  A --&gt; G(公安系统)\n  B --&gt; b1(住院患者数据)\n  B --&gt; b2(门诊患者数据)\n  B --&gt; b3(病案部门)\n  B --&gt; b4(病理诊断部门)\n  D --&gt; d1(新农合)\n  D --&gt; d2(城镇医保)\n  D --&gt; d3(职工医保)\n\n\n\n\n图 2: 肿瘤登记数据来源渠道"
   },
   {
     "objectID": "2023-5-16-canreg-report/index.html#肿瘤分类与编码",
@@ -942,7 +942,7 @@
     "href": "2023-9-23-rural-canreg/index.html#五大洲癌症发病率质量控制报告",
     "title": "农村地区肿瘤登记技术与方法",
     "section": "五大洲癌症发病率质量控制报告",
-    "text": "五大洲癌症发病率质量控制报告\n程序：\n--- \ntitle: \"河南省《五大洲发病率第12卷》数据上报审核程序\"\nsubtitle: \"登记处：\"\nauthor: \n- \"2013-2017年\"\n- \"Qiong Chen @ Henan Cancer Center/Henan Cancer Hospital\"\ndate: \"2023-10-23\"\noutput:\n  prettydoc::html_pretty:\n    theme: cayman\n    number_section: TRUE\n    highlight: github\nvignette: &gt;\n  %\\VignetteIndexEntry{Vignette Title}\n  %\\VignetteEncoding{UTF-8}\n  %\\VignetteEngine{knitr::rmarkdown}\neditor_options: \n  chunk_output_type: console\n---\n&lt;img src=\"./logo-hospital.png\" style=\"position:absolute;top:0px;right:0px;width:250px;padding-right:50px;padding-top:10px;transform: translateY(-60px); filter:drop-shadow(rgb(255, 255, 255) 0 60px)\" /&gt;"
+    "text": "五大洲癌症发病率质量控制报告\n程序：\n--- \ntitle: \"河南省《五大洲发病率第12卷》数据上报审核程序\"\nsubtitle: \"登记处：\"\nauthor: \n- \"2013-2017年\"\n- \"Qiong Chen @ Henan Cancer Center/Henan Cancer Hospital\"\ndate: \"2024-10-28\"\noutput:\n  prettydoc::html_pretty:\n    theme: cayman\n    number_section: TRUE\n    highlight: github\nvignette: &gt;\n  %\\VignetteIndexEntry{Vignette Title}\n  %\\VignetteEncoding{UTF-8}\n  %\\VignetteEngine{knitr::rmarkdown}\neditor_options: \n  chunk_output_type: console\n---\n&lt;img src=\"./logo-hospital.png\" style=\"position:absolute;top:0px;right:0px;width:250px;padding-right:50px;padding-top:10px;transform: translateY(-60px); filter:drop-shadow(rgb(255, 255, 255) 0 60px)\" /&gt;"
   },
   {
     "objectID": "2023-9-23-rural-canreg/index.html#五大洲癌症发病率质量控制报告-1",
@@ -2401,18 +2401,11 @@
     "text": "现有肿瘤登记年报的特点\n\n随着肿瘤登记处数量的增加以及数据质量的提升,国家及大部分省份开始发布国家级或省级的肿瘤登记年报。\n\n\n以传统书籍的形式出版\n以白皮书的形式发布报告\n把传统书籍搬到线上（线上年报）\n价格较高\n不利于数据共享和传播\n\n\n我们真的需要每年发布纸质年报吗？"
   },
   {
-    "objectID": "2024-11-4-lifetime-risk/index.html#what-is-cancer-risk",
-    "href": "2024-11-4-lifetime-risk/index.html#what-is-cancer-risk",
-    "title": "Data preparation and lifetime risk estimation using R",
-    "section": "What is cancer risk ?",
-    "text": "What is cancer risk ?\n\nCancer risk refers to the probability that an individual will develop cancer over a specific period, such as within a lifetime or a shorter time frame. It’s a measure influenced by a mix of genetic, environmental, and lifestyle factors, which can either increase or decrease a person’s likelihood of developing cancer.\n\n\nRelative Cancer Risk: This compares the risk of cancer between different groups of people. For instance, people who smoke have a significantly higher relative risk of lung cancer compared to nonsmokers.\nAbsolute Cancer Risk: This gives a specific number or probability of getting cancer over a particular period. For example, an absolute risk might indicate that 1 in 100 people will develop a certain cancer type within the next ten years."
-  },
-  {
     "objectID": "2024-11-4-lifetime-risk/index.html#lifetime-risk",
     "href": "2024-11-4-lifetime-risk/index.html#lifetime-risk",
     "title": "Data preparation and lifetime risk estimation using R",
     "section": "Lifetime risk",
-    "text": "Lifetime risk\n\nA measure of the risk that a certain event will happen during a person’s lifetime. In cancer research, it is usually given as the likelihood that a person who is free of a certain type of cancer will develop or die from that type of cancer during his or her lifetime.\n\nEstimates of lifetime risk usually expressed as a percentage or as odds\n\nPercentage, eg.the risk that a man will develop cancer of the pancreas during his lifetime is 1.7%.\nOdds, 1 out of every 58 (100/1.7) men will develop pancreatic cancer during his lifetime."
+    "text": "Lifetime risk\n\nA measure of the risk that a certain event will happen during a person’s lifetime. In cancer research, it is usually given as the likelihood that a person who is free of a certain type of cancer will develop or die from that type of cancer during his or her lifetime. 1\n\nEstimates of lifetime risk usually expressed as a percentage or as odds\n\nPercentage, eg.the risk that a man will develop cancer of the pancreas during his lifetime is 1.7%.\nOdds, 1 out of every 58 (100/1.7) men will develop pancreatic cancer during his lifetime.\n\nsource:https://www.cancer.gov/publications/dictionaries/cancer-terms/def/lifetime-risk."
   },
   {
     "objectID": "2024-11-4-lifetime-risk/index.html#lifetime-cancer-risk",
@@ -2426,35 +2419,42 @@
     "href": "2024-11-4-lifetime-risk/index.html#measures-estimate-lifetime-cancer-risk",
     "title": "Data preparation and lifetime risk estimation using R",
     "section": "Measures estimate lifetime cancer risk",
-    "text": "Measures estimate lifetime cancer risk\n\nFor cancer e\n\n\nCumulative rate\nCumulative risk\nCurrent Probability\nDevcan\nAMP method"
+    "text": "Measures estimate lifetime cancer risk\n\nCumulative rate (an approximation of the risk of developing a disease before age b (or between two ages a and b) in the absence of mortality)\nCumulative risk\nCurrent Probability (IARC scientific publication)\nDevcan (SEER)\nAMP method"
   },
   {
     "objectID": "2024-11-4-lifetime-risk/index.html#cumulative-rate",
     "href": "2024-11-4-lifetime-risk/index.html#cumulative-rate",
     "title": "Data preparation and lifetime risk estimation using R",
     "section": "Cumulative rate",
-    "text": "Cumulative rate\n\\[\n\\text{Cumrate} = \\sum_{i=1}^{A} w_i p_i\n\\]\n\nA is upper age-band limit for summation.\n\\(w_i\\) is the width of the ith age band in years.\n\\(p_i\\) is the age-specific annual incidence rate in the ith age-band."
+    "text": "Cumulative rate\n\\[\n\\text{Cumrate} = \\sum_{i=1}^{A} w_i p_i\n\\]\n\nA is upper age-band limit for summation.\n\\(w_i\\) is the width of the \\(i\\)th age band in years.\n\\(p_i\\) is the age-specific annual incidence rate in the ith age-band.\n\n\nfirst as a form of directly standardised incidence rate, comparisons between populations are immediately possible;\nsecond it can be interpreted intuitively as an approximation to the cumulative risk an individual has of developing cancer up to a defined age, provided there are no other competing risks."
   },
   {
     "objectID": "2024-11-4-lifetime-risk/index.html#cumulative-risk",
     "href": "2024-11-4-lifetime-risk/index.html#cumulative-risk",
     "title": "Data preparation and lifetime risk estimation using R",
     "section": "Cumulative risk",
-    "text": "Cumulative risk\n\nThe cumulative rate can be converted into true cumulative risk using the following formula:\n\n\\[\n\\text{Cumrisk} = 1 - e^{\\text{-cumrate}}\n\\]"
+    "text": "Cumulative risk\n\nThe cumulative rate can be converted into true cumulative risk using the following formula:\n\n\\[\n\\text{Cumrisk} = 1 - e^{\\text{-cumrate}}\n\\]\n\nAlthough the cumulative risk does not give an estimate of the risk of developing cancer over a lifetime, it has been used as an approximation of this when the truncated upper age band is chosen as an age close to the average life expectancy of the population."
   },
   {
     "objectID": "2024-11-4-lifetime-risk/index.html#current-probability",
     "href": "2024-11-4-lifetime-risk/index.html#current-probability",
     "title": "Data preparation and lifetime risk estimation using R",
     "section": "Current probability",
-    "text": "Current probability"
+    "text": "Current probability\n\nA realistic estimate of the lifetime risk of getting cancer can be obtained by estimating the number of cancers that would arise during the lifetime of a hypothetical birth cohort. This approach was termed ‘current probability’ by Esteve et al (1994).\n\n\\[\np = \\frac{1}{\\ell_0} \\sum_{x=1}^{g} L_x t_x\n\\]\n\n\\(p\\) is the probability of developing a given cancer\n\\(t_x\\) is the incidence rate in the age group x\n\\(L_x\\) is the number of years lived by the survivors of age x during the age interval starting at x if they are subject only to the force of mortality of the general population.\n\\(\\ell_0\\) is the size of this population at the beginning of the first age interval under consideration"
+  },
+  {
+    "objectID": "2024-11-4-lifetime-risk/index.html#current-probability-1",
+    "href": "2024-11-4-lifetime-risk/index.html#current-probability-1",
+    "title": "Data preparation and lifetime risk estimation using R",
+    "section": "Current probability",
+    "text": "Current probability\n\nTwo assumptions are made when using routine incidence data\n\n\nthe incidence rates are based on a denominator of individuals who have never had cancer before\nthe other is that the numerator only counts first cancers"
   },
   {
     "objectID": "2024-11-4-lifetime-risk/index.html#devcan-method",
     "href": "2024-11-4-lifetime-risk/index.html#devcan-method",
     "title": "Data preparation and lifetime risk estimation using R",
-    "section": "Devcan method",
-    "text": "Devcan method"
+    "section": "DevCan method",
+    "text": "DevCan method\n\nThe SEER analytical program adjusting the denominator in the current probability method\n\n\nSoftwar could be download at https://surveillance.cancer.gov/devcan/download\nUses a method that differs from the current probability method only in the way it deals with data in 5-year age bands\nDevCan assumes that data with only the first primary tumour per individual are available."
   },
   {
     "objectID": "2024-11-4-lifetime-risk/index.html#the-amp-method",
@@ -2475,7 +2475,7 @@
     "href": "2024-11-4-lifetime-risk/index.html#the-amp-method-2",
     "title": "Data preparation and lifetime risk estimation using R",
     "section": "The AMP method",
-    "text": "The AMP method\n\nEstimation of \\(\\hat{S}^*_0(a_i)\\)\n\n\\[\n\\hat{S}^*_0(a_i) = \\exp \\left[ -\\sum_{j=1}^{i-1} \\frac{R_j + (M_j - D_j)}{N_j} \\right]\n\\]"
+    "text": "The AMP method\n\nAssumptions for AMP method\n\n\nThe non-cancer mortality rates are the same in individuals without cancer as they are in the general population\nthe risk of (a new) cancer is the same in individuals who have never previously had cancer as they are in the general population\none cannot die of cancer if one has never had cancer;\npeople with cancer have the same risk of developing cancer again as those who have never had cancer before;\nthe probability of dying from other causes (not cancer) is the same between cancer patients and those who have never had cancer."
   },
   {
     "objectID": "2024-11-4-lifetime-risk/index.html#software-requirements",
@@ -2503,21 +2503,35 @@
     "href": "2024-11-4-lifetime-risk/index.html#estimate-lifetime-risk-using-amp-method",
     "title": "Data preparation and lifetime risk estimation using R",
     "section": "Estimate lifetime risk using AMP method",
-    "text": "Estimate lifetime risk using AMP method\n\n\n\n\nlibrary(ltRISK)\nni &lt;- c(\n   73872987, 82029530, 72267070, 78303514, 99425613, 119915673, 98068725,\n   96644427, 121225951, 121250720, 96012917, 79863455, 75972753, 52929797,\n   37551107, 29047207, 19584254, 13854299)\nmi &lt;- c(\n   60594, 17718, 18883, 28127, 37493, 75223, 83574, 100655, 211467, 278913,\n   419663, 445223, 770865, 929008, 1058922, 1346942, 1576852, 2305312)\ndi &lt;- c(\n   3511, 2801, 2553, 3183, 4960, 9456, 13509, 23935, 62386, 111640, 147866,\n   203955, 301892, 304985, 302785, 323804, 275557, 197614)\nri &lt;- c(\n   9303, 6887, 6248, 8509, 16961, 39439, 56670, 86535, 189251, 289320, 344395,\n   411232, 552071, 491213, 433786, 395544, 292672, 173503)"
+    "text": "Estimate lifetime risk using AMP method\n\nAggregated data in 5-year age groups was required, number of cancer cases, cancer deaths, all cause mortality, and population.\n\n\nlibrary(ltRISK)\nni &lt;- c(\n   73872987, 82029530, 72267070, 78303514, 99425613, 119915673, 98068725,\n   96644427, 121225951, 121250720, 96012917, 79863455, 75972753, 52929797,\n   37551107, 29047207, 19584254, 13854299)\nmi &lt;- c(\n   60594, 17718, 18883, 28127, 37493, 75223, 83574, 100655, 211467, 278913,\n   419663, 445223, 770865, 929008, 1058922, 1346942, 1576852, 2305312)\ndi &lt;- c(\n   3511, 2801, 2553, 3183, 4960, 9456, 13509, 23935, 62386, 111640, 147866,\n   203955, 301892, 304985, 302785, 323804, 275557, 197614)\nri &lt;- c(\n   9303, 6887, 6248, 8509, 16961, 39439, 56670, 86535, 189251, 289320, 344395,\n   411232, 552071, 491213, 433786, 395544, 292672, 173503)"
   },
   {
     "objectID": "2024-11-4-lifetime-risk/index.html#estimate-lifetime-risk-using-amp-method-1",
     "href": "2024-11-4-lifetime-risk/index.html#estimate-lifetime-risk-using-amp-method-1",
     "title": "Data preparation and lifetime risk estimation using R",
     "section": "Estimate lifetime risk using AMP method",
-    "text": "Estimate lifetime risk using AMP method\n\nThe ltr function can estimate lifetime risk using the AMP method and return an object strore the result which is a list of 4 elements including age groups, age conditional propability, and variance in each agegroup.\n\n\nll &lt;- ltr(mi, di, ri, ni)\nclass(ll)\n\n[1] \"ltr\"\n\nnames(ll)\n\n[1] \"age\"  \"si\"   \"vari\""
+    "text": "Estimate lifetime risk using AMP method\n\nThe ltr function can estimate lifetime risk using the AMP method and return an object strore the result which is a list of 3 elements including age groups, age conditional propability, and variance in each agegroup.\n\n# mi    The annual number of all-cause mortality deaths in each age group.\n# di    The annual number of cancer-related deaths in each age group.\n# ri    The annual number of diagnosed cancer cases in each age group.\n# ni    The number of population in each age group.\n# age_width The age width of each age group.\n# type  Characters \"developing\" or \"dying\" indicate estimate the probability of developing cancer or dying from it.\nltr(mi, di, ri, ni, age_width = 5, type = \"developing\")\n\nll &lt;- ltr(mi, di, ri, ni)\nclass(ll)\n\n[1] \"ltr\"\n\nnames(ll)\n\n[1] \"age\"  \"si\"   \"vari\""
   },
   {
     "objectID": "2024-11-4-lifetime-risk/index.html#point-estimate-and-confidence-interval",
     "href": "2024-11-4-lifetime-risk/index.html#point-estimate-and-confidence-interval",
     "title": "Data preparation and lifetime risk estimation using R",
     "section": "Point Estimate and Confidence Interval",
-    "text": "Point Estimate and Confidence Interval\n\nThe estimate function can get the estimate value of lifetime risk and its 95%CI from specified agegroup. When a\n\n\ns &lt;- estimate(ll)\npost_ci(s)\n\n[1] \"26.85(26.70-27.00)\"\n\ns1 &lt;- estimate(ll, sage = 40)\npost_ci(s1)\n\n[1] \"25.68(25.61-25.75)\"\n\ns2 &lt;- estimate(ll, sage = 50)\npost_ci(s2)\n\n[1] \"23.80(23.74-23.86)\"\n\ns3 &lt;- estimate(ll, sage = 60)\npost_ci(s3)\n\n[1] \"19.85(19.81-19.90)\"\n\ns4 &lt;- estimate(ll, sage = 70)\npost_ci(s4)\n\n[1] \"13.20(13.17-13.23)\""
+    "text": "Point Estimate and Confidence Interval\n\nThe estimate function can get the estimate value of lifetime risk and its 95%CI. When a starting age is specified, it is assumed that the individuals are cancer-free and alive at that age, so the lifetime cancer risk is the risk from that age until death.\n\n\nx Object of class ‘ltr’ generated by ltr function, or list of ’ltr’s.\nsage Initial age of lifetime risk.\nmp Multiplier, this parameter scales the estimated result.\ndecimal Number of decimals of the result\n\nestimate(x, sage = 0, mp = 100, decimal = 2)"
+  },
+  {
+    "objectID": "2024-11-4-lifetime-risk/index.html#point-estimate-and-confidence-interval-1",
+    "href": "2024-11-4-lifetime-risk/index.html#point-estimate-and-confidence-interval-1",
+    "title": "Data preparation and lifetime risk estimation using R",
+    "section": "Point Estimate and Confidence Interval",
+    "text": "Point Estimate and Confidence Interval\n\nYou can aslo use post_ci function to wrap the lifetime risk and 95% CI.\n\n\ns &lt;- estimate(ll)\npost_ci(s)\n\n[1] \"26.85(26.70-27.00)\"\n\ns1 &lt;- estimate(ll, sage = 40)\npost_ci(s1)\n\n[1] \"25.68(25.61-25.75)\"\n\ns2 &lt;- estimate(ll, sage = 50)\npost_ci(s2)\n\n[1] \"23.80(23.74-23.86)\"\n\ns3 &lt;- estimate(ll, sage = 60)\npost_ci(s3)\n\n[1] \"19.85(19.81-19.90)\"\n\ns4 &lt;- estimate(ll, sage = 70)\npost_ci(s4)\n\n[1] \"13.20(13.17-13.23)\""
+  },
+  {
+    "objectID": "2024-11-4-lifetime-risk/index.html#test-difference-between-groups",
+    "href": "2024-11-4-lifetime-risk/index.html#test-difference-between-groups",
+    "title": "Data preparation and lifetime risk estimation using R",
+    "section": "Test difference between groups",
+    "text": "Test difference between groups\n\nYou can use ztest function to test the difference between two groups."
   },
   {
     "objectID": "2024-11-4-lifetime-risk/index.html#introduction-of-example-data-from-gco",
@@ -2594,7 +2608,7 @@
     "href": "2024-11-4-lifetime-risk/index.html#lifetime-risk-of-dying-from-cancer-1",
     "title": "Data preparation and lifetime risk estimation using R",
     "section": "Lifetime risk of dying from cancer",
-    "text": "Lifetime risk of dying from cancer\n\nTable 6 showed the lifetime risk of estimated initiated from different age stratified by region.\n\n\n\n\n\nTable 6: Lifetime risk of dying from cancer stratified by region\n\n\n\nSexBirth-death40-death50-death60-death70-death80-deathAustralia/New Zealand25.89(25.43-26.34)25.68(25.24-26.11)25.27(24.86-25.69)23.92(23.56-24.28)20.61(20.35-20.87)14.10(13.95-14.24)Caribbean17.94(17.76-18.12)17.54(17.37-17.71)16.94(16.78-17.10)15.38(15.24-15.52)12.26(12.15-12.38) 7.38( 7.30- 7.46)Central America10.73(10.64-10.82)10.33(10.26-10.39) 9.86( 9.79- 9.92) 8.77( 8.71- 8.83) 6.63( 6.58- 6.68) 3.50( 3.47- 3.53)Eastern Africa 8.55( 8.49- 8.62) 7.94( 7.89- 7.98) 7.16( 7.12- 7.20) 5.64( 5.61- 5.68) 3.36( 3.33- 3.38) 1.15( 1.14- 1.17)Eastern Asia21.27(21.22-21.33)21.00(20.95-21.04)20.44(20.40-20.48)18.81(18.77-18.84)14.98(14.96-15.01) 8.66( 8.64- 8.67)Eastern Europe14.69(14.62-14.75)14.37(14.32-14.41)13.64(13.59-13.68)11.41(11.38-11.45) 7.16( 7.14- 7.19) 2.62( 2.61- 2.63)Melanesia12.13(11.79-12.46)11.68(11.36-12.00)10.84(10.54-11.15) 9.00( 8.72- 9.27) 5.82( 5.59- 6.04) 2.22( 2.08- 2.36)Micronesia/Polynesia21.77(18.85-24.68)21.68(18.77-24.59)21.03(18.29-23.77)18.67(16.43-20.91)13.97(12.43-15.52) 7.54( 6.65- 8.42)Middle Africa 6.46( 6.39- 6.53) 6.01( 5.95- 6.06) 5.37( 5.33- 5.42) 4.24( 4.20- 4.29) 2.48( 2.44- 2.51) 0.78( 0.76- 0.80)Northern Africa12.45(12.35-12.55)12.04(11.96-12.12)11.32(11.25-11.39) 9.63( 9.57- 9.68) 6.76( 6.71- 6.81) 3.20( 3.17- 3.24)Northern America18.95(18.88-19.02)18.71(18.65-18.77)18.30(18.24-18.35)16.90(16.85-16.96)13.82(13.78-13.86) 8.87( 8.84- 8.89)Northern Europe25.93(25.71-26.16)25.73(25.53-25.93)25.30(25.11-25.49)23.86(23.70-24.03)20.04(19.92-20.16)12.53(12.47-12.59)South America15.47(15.39-15.54)15.07(15.02-15.12)14.50(14.45-14.55)13.02(12.97-13.06)10.03(10.00-10.07) 5.63( 5.60- 5.65)South Central Asia 7.23( 7.19- 7.28) 6.88( 6.87- 6.90) 6.24( 6.23- 6.26) 4.81( 4.80- 4.82) 2.80( 2.79- 2.80) 1.01( 1.00- 1.01)South-Eastern Asia11.97(11.90-12.05)11.54(11.50-11.58)10.75(10.72-10.78) 8.95( 8.92- 8.98) 6.01( 5.99- 6.03) 2.66( 2.65- 2.68)Southern Africa 9.38( 9.30- 9.46) 8.89( 8.81- 8.96) 8.00( 7.94- 8.07) 6.55( 6.49- 6.61) 3.94( 3.90- 3.99) 1.61( 1.58- 1.63)Southern Europe24.78(24.56-25.00)24.57(24.38-24.75)24.05(23.88-24.21)22.30(22.17-22.43)18.29(18.20-18.38)11.16(11.12-11.20)Western Africa 5.88( 5.83- 5.92) 5.49( 5.46- 5.52) 4.93( 4.90- 4.96) 3.84( 3.81- 3.86) 2.20( 2.17- 2.22) 0.60( 0.58- 0.61)Western Asia16.52(16.41-16.63)16.15(16.05-16.24)15.62(15.53-15.71)14.03(13.95-14.11)10.34(10.28-10.40) 5.34( 5.30- 5.38)Western Europe25.06(24.88-25.24)24.85(24.69-25.00)24.34(24.20-24.48)22.53(22.41-22.64)18.46(18.37-18.54)11.26(11.23-11.30)"
+    "text": "Lifetime risk of dying from cancer\n\nTable 6 showed the lifetime risk of estimated initiated from different age stratified by region.\n\n\n\n\n\nTable 6: Lifetime risk of dying from cancer stratified by region\n\n\n\nSexBirth-death40-death50-death60-death70-death80-deathAustralia/New Zealand25.89(25.43-26.34)25.68(25.24-26.11)25.27(24.86-25.69)23.92(23.56-24.28)20.61(20.35-20.87)14.10(13.95-14.24)Caribbean17.94(17.76-18.12)17.54(17.37-17.71)16.94(16.78-17.10)15.38(15.24-15.52)12.26(12.15-12.38) 7.38( 7.30- 7.46)Central America10.73(10.64-10.82)10.33(10.26-10.39) 9.86( 9.79- 9.92) 8.77( 8.71- 8.83) 6.63( 6.58- 6.68) 3.50( 3.47- 3.53)Eastern Africa 8.55( 8.49- 8.62) 7.94( 7.89- 7.98) 7.16( 7.12- 7.20) 5.64( 5.61- 5.68) 3.36( 3.33- 3.38) 1.15( 1.14- 1.17)Eastern Asia21.27(21.22-21.33)21.00(20.95-21.04)20.44(20.40-20.48)18.81(18.77-18.84)14.98(14.96-15.01) 8.66( 8.64- 8.67)Eastern Europe14.69(14.62-14.75)14.37(14.32-14.41)13.64(13.59-13.68)11.41(11.38-11.45) 7.16( 7.14- 7.19) 2.62( 2.61- 2.63)Melanesia12.13(11.79-12.46)11.68(11.36-12.00)10.84(10.54-11.15) 9.00( 8.72- 9.27) 5.82( 5.59- 6.04) 2.22( 2.08- 2.36)Micronesia/Polynesia21.77(18.85-24.68)21.68(18.77-24.59)21.03(18.29-23.77)18.67(16.43-20.91)13.97(12.43-15.52) 7.54( 6.65- 8.42)Middle Africa 6.46( 6.39- 6.53) 6.01( 5.95- 6.06) 5.37( 5.33- 5.42) 4.24( 4.20- 4.29) 2.48( 2.44- 2.51) 0.78( 0.76- 0.80)Northern Africa12.45(12.35-12.55)12.04(11.96-12.12)11.32(11.25-11.39) 9.63( 9.57- 9.68) 6.76( 6.71- 6.81) 3.20( 3.17- 3.24)Northern America18.95(18.88-19.02)18.71(18.65-18.77)18.30(18.24-18.35)16.90(16.85-16.96)13.82(13.78-13.86) 8.87( 8.84- 8.89)Northern Europe25.93(25.71-26.16)25.73(25.53-25.93)25.30(25.11-25.49)23.86(23.70-24.03)20.04(19.92-20.16)12.53(12.47-12.59)South America15.47(15.39-15.54)15.07(15.02-15.12)14.50(14.45-14.55)13.02(12.97-13.06)10.03(10.00-10.07) 5.63( 5.60- 5.65)South Central Asia 7.23( 7.19- 7.28) 6.88( 6.87- 6.90) 6.24( 6.23- 6.26) 4.81( 4.80- 4.82) 2.80( 2.79- 2.80) 1.01( 1.00- 1.01)South-Eastern Asia11.97(11.90-12.05)11.54(11.50-11.58)10.75(10.72-10.78) 8.95( 8.92- 8.98) 6.01( 5.99- 6.03) 2.66( 2.65- 2.68)Southern Africa 9.38( 9.30- 9.46) 8.89( 8.81- 8.96) 8.00( 7.94- 8.07) 6.55( 6.49- 6.61) 3.94( 3.90- 3.99) 1.61( 1.58- 1.63)Southern Europe24.78(24.56-25.00)24.57(24.38-24.75)24.05(23.88-24.21)22.30(22.17-22.43)18.29(18.20-18.38)11.16(11.12-11.20)Western Africa 5.88( 5.83- 5.92) 5.49( 5.46- 5.52) 4.93( 4.90- 4.96) 3.84( 3.81- 3.86) 2.20( 2.17- 2.22) 0.60( 0.58- 0.61)Western Asia16.52(16.41-16.63)16.15(16.05-16.24)15.62(15.53-15.71)14.03(13.95-14.11)10.34(10.28-10.40) 5.34( 5.30- 5.38)Western Europe25.06(24.88-25.24)24.85(24.69-25.00)24.34(24.20-24.48)22.53(22.41-22.64)18.46(18.37-18.54)11.26(11.23-11.30)\n\n\n\n\n\n\n\n\n\nEstimation of lifetime risk using R package ltRISK"
   },
   {
     "objectID": "2023-11-13-what-why-how/index.html#人群肿瘤登记的目的",
@@ -3175,14 +3189,14 @@
     "href": "index.html",
     "title": "普癌新声",
     "section": "",
-    "text": "这里分享和肿瘤登记与统计分析相关的讲座幻灯，希望我的分享对你有所帮助……\n\n\n  \n  \n    \n    \n  \n  \n    2024-11-04\n    \n      Canregtools ,\n    \n    \n    \n      (An R package used in PBCRs) , \n    \n    \n    \n    \n    Beijing \n  \n  \n\n  \n  \n  \n    2024-11-04\n    \n      Data preparation and lifetime risk estimation using R ,\n    \n    \n    \n      (Estimate lifetime risk using R package ltRISK) , \n    \n    \n    \n    \n    Beijing \n  \n  \n\n  \n  \n  \n    2024-10-28\n    \n      肿瘤登记数据的统计分析和自动化报告 ,\n    \n    \n    \n      (Report cancer registration data using a developed R package canregtools) , \n    \n    \n    \n    \n    济南 \n  \n  \n\n  \n  \n  \n    2024-07-10\n    \n      年中工作总结 ,\n    \n    \n    \n      (Mid-Year Work Summary) , \n    \n    \n    \n    \n     \n  \n  \n\n  \n  \n  \n    2024-04-17\n    \n      肿瘤登记质控和自动化报告 ,\n    \n    \n    \n      (如何快速发布质控报告和年度报告？) , \n    \n    \n    \n    \n    安徽泾县 \n  \n  \n\n  \n  \n  \n    2024-02-07\n    \n      工作总结 ,\n    \n    \n    \n      (Summary 2023 | Plan 2024) , \n    \n    \n    \n    \n     \n  \n  \n    \n  \n\n  \n  \n    \n    \n  \n  \n    2023-11-13\n    \n      如何做好肿瘤登记工作? ,\n    \n    \n    \n      (河南省肿瘤登记工作实践) , \n    \n    \n    \n    \n    南阳 \n  \n  \n\n  \n  \n  \n    2023-10-13\n    \n      肿瘤分类与编码 ,\n    \n    \n    \n      (ICD10/ICDO3编码在肿瘤登记中的应用) , \n    \n    \n    \n    \n    郑州 \n  \n  \n\n  \n  \n  \n    2023-09-23\n    \n      农村地区肿瘤登记技术与方法 ,\n    \n    \n    \n      (河南省肿瘤登记工作实践) , \n    \n    \n    \n    \n    呼和浩特 \n  \n  \n\n  \n  \n  \n    2023-05-16\n    \n      R语言促进高效率肿瘤登记报告 ,\n    \n    \n    \n      (基于R Markdown / Quarto的可重复性报告撰写) , \n    \n    \n    \n    \n    郑州 \n  \n  \n\n  \n  \n  \n    2023-05-11\n    \n      河南省2020年度肿瘤登记数据质控情况 ,\n    \n    \n    \n      (发现问题、核实更新、提高质量) , \n    \n    \n    \n    \n    郑州 \n  \n  \n\n  \n  \n  \n    2023-05-11\n    \n      河南肿瘤随访登记平台 ,\n    \n    \n    \n      (设计思路、系统框架、推荐操作流程) , \n    \n    \n    \n    \n    郑州 \n  \n  \n\n  \n  \n  \n    2023-04-20\n    \n      人群肿瘤随访登记 ,\n    \n    \n    \n      (肿瘤登记内容、方法、流程和数据上报) , \n    \n    \n    \n    \n    郑州 \n  \n  \n    \n  \n\n\n无匹配项\n\n\n\n注：以上幻灯中部分幻灯在多个场合分享，但仅在这里显示一次……"
+    "text": "这里分享和肿瘤登记与统计分析相关的讲座幻灯，希望我的分享对你有所帮助……\n\n\n  \n  \n    \n    \n  \n  \n    2024-11-04\n    \n      Canregtools ,\n    \n    \n    \n      (An R package used in PBCRs) , \n    \n    \n    \n    \n    Beijing \n  \n  \n\n  \n  \n  \n    2024-11-04\n    \n      Data preparation and lifetime risk estimation using R ,\n    \n    \n    \n      (Estimate lifetime risk using R package ltRISK) , \n    \n    \n    \n    \n    Beijing \n  \n  \n\n  \n  \n  \n    2024-10-28\n    \n      肿瘤登记数据的统计分析和自动化报告 ,\n    \n    \n    \n      (Report cancer registration data using a developed R package canregtools) , \n    \n    \n    \n    \n    南京 \n  \n  \n\n  \n  \n  \n    2024-07-10\n    \n      年中工作总结 ,\n    \n    \n    \n      (Mid-Year Work Summary) , \n    \n    \n    \n    \n     \n  \n  \n\n  \n  \n  \n    2024-04-17\n    \n      肿瘤登记质控和自动化报告 ,\n    \n    \n    \n      (如何快速发布质控报告和年度报告？) , \n    \n    \n    \n    \n    安徽泾县 \n  \n  \n\n  \n  \n  \n    2024-02-07\n    \n      工作总结 ,\n    \n    \n    \n      (Summary 2023 | Plan 2024) , \n    \n    \n    \n    \n     \n  \n  \n    \n  \n\n  \n  \n    \n    \n  \n  \n    2023-11-13\n    \n      如何做好肿瘤登记工作? ,\n    \n    \n    \n      (河南省肿瘤登记工作实践) , \n    \n    \n    \n    \n    南阳 \n  \n  \n\n  \n  \n  \n    2023-10-13\n    \n      肿瘤分类与编码 ,\n    \n    \n    \n      (ICD10/ICDO3编码在肿瘤登记中的应用) , \n    \n    \n    \n    \n    郑州 \n  \n  \n\n  \n  \n  \n    2023-09-23\n    \n      农村地区肿瘤登记技术与方法 ,\n    \n    \n    \n      (河南省肿瘤登记工作实践) , \n    \n    \n    \n    \n    呼和浩特 \n  \n  \n\n  \n  \n  \n    2023-05-16\n    \n      R语言促进高效率肿瘤登记报告 ,\n    \n    \n    \n      (基于R Markdown / Quarto的可重复性报告撰写) , \n    \n    \n    \n    \n    郑州 \n  \n  \n\n  \n  \n  \n    2023-05-11\n    \n      河南省2020年度肿瘤登记数据质控情况 ,\n    \n    \n    \n      (发现问题、核实更新、提高质量) , \n    \n    \n    \n    \n    郑州 \n  \n  \n\n  \n  \n  \n    2023-05-11\n    \n      河南肿瘤随访登记平台 ,\n    \n    \n    \n      (设计思路、系统框架、推荐操作流程) , \n    \n    \n    \n    \n    郑州 \n  \n  \n\n  \n  \n  \n    2023-04-20\n    \n      人群肿瘤随访登记 ,\n    \n    \n    \n      (肿瘤登记内容、方法、流程和数据上报) , \n    \n    \n    \n    \n    郑州 \n  \n  \n    \n  \n\n\n无匹配项\n\n\n\n注：以上幻灯中部分幻灯在多个场合分享，但仅在这里显示一次……"
   },
   {
     "objectID": "index.html#讲座幻灯",
     "href": "index.html#讲座幻灯",
     "title": "普癌新声",
     "section": "",
-    "text": "这里分享和肿瘤登记与统计分析相关的讲座幻灯，希望我的分享对你有所帮助……\n\n\n  \n  \n    \n    \n  \n  \n    2024-11-04\n    \n      Canregtools ,\n    \n    \n    \n      (An R package used in PBCRs) , \n    \n    \n    \n    \n    Beijing \n  \n  \n\n  \n  \n  \n    2024-11-04\n    \n      Data preparation and lifetime risk estimation using R ,\n    \n    \n    \n      (Estimate lifetime risk using R package ltRISK) , \n    \n    \n    \n    \n    Beijing \n  \n  \n\n  \n  \n  \n    2024-10-28\n    \n      肿瘤登记数据的统计分析和自动化报告 ,\n    \n    \n    \n      (Report cancer registration data using a developed R package canregtools) , \n    \n    \n    \n    \n    济南 \n  \n  \n\n  \n  \n  \n    2024-07-10\n    \n      年中工作总结 ,\n    \n    \n    \n      (Mid-Year Work Summary) , \n    \n    \n    \n    \n     \n  \n  \n\n  \n  \n  \n    2024-04-17\n    \n      肿瘤登记质控和自动化报告 ,\n    \n    \n    \n      (如何快速发布质控报告和年度报告？) , \n    \n    \n    \n    \n    安徽泾县 \n  \n  \n\n  \n  \n  \n    2024-02-07\n    \n      工作总结 ,\n    \n    \n    \n      (Summary 2023 | Plan 2024) , \n    \n    \n    \n    \n     \n  \n  \n    \n  \n\n  \n  \n    \n    \n  \n  \n    2023-11-13\n    \n      如何做好肿瘤登记工作? ,\n    \n    \n    \n      (河南省肿瘤登记工作实践) , \n    \n    \n    \n    \n    南阳 \n  \n  \n\n  \n  \n  \n    2023-10-13\n    \n      肿瘤分类与编码 ,\n    \n    \n    \n      (ICD10/ICDO3编码在肿瘤登记中的应用) , \n    \n    \n    \n    \n    郑州 \n  \n  \n\n  \n  \n  \n    2023-09-23\n    \n      农村地区肿瘤登记技术与方法 ,\n    \n    \n    \n      (河南省肿瘤登记工作实践) , \n    \n    \n    \n    \n    呼和浩特 \n  \n  \n\n  \n  \n  \n    2023-05-16\n    \n      R语言促进高效率肿瘤登记报告 ,\n    \n    \n    \n      (基于R Markdown / Quarto的可重复性报告撰写) , \n    \n    \n    \n    \n    郑州 \n  \n  \n\n  \n  \n  \n    2023-05-11\n    \n      河南省2020年度肿瘤登记数据质控情况 ,\n    \n    \n    \n      (发现问题、核实更新、提高质量) , \n    \n    \n    \n    \n    郑州 \n  \n  \n\n  \n  \n  \n    2023-05-11\n    \n      河南肿瘤随访登记平台 ,\n    \n    \n    \n      (设计思路、系统框架、推荐操作流程) , \n    \n    \n    \n    \n    郑州 \n  \n  \n\n  \n  \n  \n    2023-04-20\n    \n      人群肿瘤随访登记 ,\n    \n    \n    \n      (肿瘤登记内容、方法、流程和数据上报) , \n    \n    \n    \n    \n    郑州 \n  \n  \n    \n  \n\n\n无匹配项\n\n\n\n注：以上幻灯中部分幻灯在多个场合分享，但仅在这里显示一次……"
+    "text": "这里分享和肿瘤登记与统计分析相关的讲座幻灯，希望我的分享对你有所帮助……\n\n\n  \n  \n    \n    \n  \n  \n    2024-11-04\n    \n      Canregtools ,\n    \n    \n    \n      (An R package used in PBCRs) , \n    \n    \n    \n    \n    Beijing \n  \n  \n\n  \n  \n  \n    2024-11-04\n    \n      Data preparation and lifetime risk estimation using R ,\n    \n    \n    \n      (Estimate lifetime risk using R package ltRISK) , \n    \n    \n    \n    \n    Beijing \n  \n  \n\n  \n  \n  \n    2024-10-28\n    \n      肿瘤登记数据的统计分析和自动化报告 ,\n    \n    \n    \n      (Report cancer registration data using a developed R package canregtools) , \n    \n    \n    \n    \n    南京 \n  \n  \n\n  \n  \n  \n    2024-07-10\n    \n      年中工作总结 ,\n    \n    \n    \n      (Mid-Year Work Summary) , \n    \n    \n    \n    \n     \n  \n  \n\n  \n  \n  \n    2024-04-17\n    \n      肿瘤登记质控和自动化报告 ,\n    \n    \n    \n      (如何快速发布质控报告和年度报告？) , \n    \n    \n    \n    \n    安徽泾县 \n  \n  \n\n  \n  \n  \n    2024-02-07\n    \n      工作总结 ,\n    \n    \n    \n      (Summary 2023 | Plan 2024) , \n    \n    \n    \n    \n     \n  \n  \n    \n  \n\n  \n  \n    \n    \n  \n  \n    2023-11-13\n    \n      如何做好肿瘤登记工作? ,\n    \n    \n    \n      (河南省肿瘤登记工作实践) , \n    \n    \n    \n    \n    南阳 \n  \n  \n\n  \n  \n  \n    2023-10-13\n    \n      肿瘤分类与编码 ,\n    \n    \n    \n      (ICD10/ICDO3编码在肿瘤登记中的应用) , \n    \n    \n    \n    \n    郑州 \n  \n  \n\n  \n  \n  \n    2023-09-23\n    \n      农村地区肿瘤登记技术与方法 ,\n    \n    \n    \n      (河南省肿瘤登记工作实践) , \n    \n    \n    \n    \n    呼和浩特 \n  \n  \n\n  \n  \n  \n    2023-05-16\n    \n      R语言促进高效率肿瘤登记报告 ,\n    \n    \n    \n      (基于R Markdown / Quarto的可重复性报告撰写) , \n    \n    \n    \n    \n    郑州 \n  \n  \n\n  \n  \n  \n    2023-05-11\n    \n      河南省2020年度肿瘤登记数据质控情况 ,\n    \n    \n    \n      (发现问题、核实更新、提高质量) , \n    \n    \n    \n    \n    郑州 \n  \n  \n\n  \n  \n  \n    2023-05-11\n    \n      河南肿瘤随访登记平台 ,\n    \n    \n    \n      (设计思路、系统框架、推荐操作流程) , \n    \n    \n    \n    \n    郑州 \n  \n  \n\n  \n  \n  \n    2023-04-20\n    \n      人群肿瘤随访登记 ,\n    \n    \n    \n      (肿瘤登记内容、方法、流程和数据上报) , \n    \n    \n    \n    \n    郑州 \n  \n  \n    \n  \n\n\n无匹配项\n\n\n\n注：以上幻灯中部分幻灯在多个场合分享，但仅在这里显示一次……"
   },
   {
     "objectID": "2023-5-11-system/index.html#数据收集系统的发展",

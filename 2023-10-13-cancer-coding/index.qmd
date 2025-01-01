@@ -11,6 +11,7 @@ format:
   revealjs:
     theme: [custom1.scss]
     slide-number: true
+    smaller: true
     scrollable: false
     sc-sb-title: h1
     footer: "河南省肿瘤登记工作实践"
