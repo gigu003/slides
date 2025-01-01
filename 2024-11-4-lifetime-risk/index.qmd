@@ -24,21 +24,17 @@ auto-agenda:
   bullets: numbered
   heading: Contents
 ---
-# Concept of risk
-## What is cancer risk  ?
-> Cancer risk refers to the probability that an individual will develop cancer over a specific period, such as within a lifetime or a shorter time frame. It’s a measure influenced by a mix of genetic, environmental, and lifestyle factors, which can either increase or decrease a person’s likelihood of developing cancer.
-
-- **Relative Cancer Risk**: This compares the risk of cancer between different groups of people. For instance, people who smoke have a significantly higher relative risk of lung cancer compared to nonsmokers.
-
-- **Absolute Cancer Risk**: This gives a specific number or probability of getting cancer over a particular period. For example, an absolute risk might indicate that 1 in 100 people will develop a certain cancer type within the next ten years.
+# Introduction of lifetime risk
 
 ## Lifetime risk
-> A measure of the risk that a certain event will happen during a person’s lifetime. In cancer research, it is usually given as the likelihood that a person who is free of a certain type of cancer will develop or die from that type of cancer during his or her lifetime.
+> A measure of the risk that a certain event will happen during a person’s lifetime. In cancer research, it is usually given as the likelihood that a person who is free of a certain type of cancer will develop or die from that type of cancer during his or her lifetime. [^1]
 
 Estimates of lifetime risk usually expressed as a percentage or as odds
 
 - Percentage, eg.the risk that a man will develop cancer of the pancreas during his lifetime is 1.7%.
 - Odds, 1 out of every 58 (100/1.7) men will develop pancreatic cancer during his lifetime.
+
+[^1]: source:https://www.cancer.gov/publications/dictionaries/cancer-terms/def/lifetime-risk.
 
 ## Lifetime cancer risk
 > The lifetime risk of developing or dying from cancer refers to the chance a person has, over the course of their lifetime (from birth to death), of being diagnosed with or dying from cancer (@tbl-risk1).
@@ -76,23 +72,27 @@ tt
 ```
 
 ## Measures estimate lifetime cancer risk
-> For cancer e
 
-- Cumulative rate
+- Cumulative rate (an approximation of the risk of developing a disease before age b (or between two ages a and b) in the absence of mortality)
 - Cumulative risk
-- Current Probability
-- Devcan
+- Current Probability (IARC scientific publication)
+- Devcan (SEER)
 - AMP method
 
 ## Cumulative rate
+
 
 $$
 \text{Cumrate} = \sum_{i=1}^{A} w_i p_i
 $$
 
 - A is upper age-band limit for summation.
-- $w_i$ is the width of the ith age band in years.
+- $w_i$ is the width of the $i$th age band in years.
 - $p_i$ is the age-specific annual incidence rate in the ith age-band.
+
+
+1. first as a form of directly standardised incidence rate, comparisons between populations are immediately possible;
+1. second it can be interpreted intuitively as an approximation to the cumulative risk an individual has of developing cancer up to a defined age, provided there are no other competing risks.
 
 ## Cumulative risk
 > The cumulative rate can be converted into true cumulative risk using the following formula:
@@ -101,9 +101,36 @@ $$
 \text{Cumrisk} = 1 - e^{\text{-cumrate}}
 $$
 
+> Although the cumulative risk does not give an estimate of the risk of developing cancer over a lifetime, it has been used as an approximation of this when the truncated upper age band is chosen as an age close to the average life expectancy of the population.
+
+## Current probability
+> A realistic estimate of the lifetime risk of getting cancer can be obtained by estimating the number of cancers that would arise during the lifetime of a hypothetical birth cohort.
+This approach was termed ‘current probability’ by Esteve et al (1994).
+
+$$
+p = \frac{1}{\ell_0} \sum_{x=1}^{g} L_x t_x
+$$
+
+- $p$ is the probability of developing a given cancer
+- $t_x$ is the incidence rate in the age group x
+- $L_x$ is the number of years lived by the survivors of age x during the age interval starting at x if they are subject only to the force of mortality of the general population.
+- $\ell_0$ is the size of this population at the beginning of the first age interval under consideration
+
+
 ## Current probability
 
-## Devcan method
+> Two assumptions are made when using routine incidence data
+
+- the incidence rates are based on a denominator of individuals who have never had cancer before
+- the other is that the numerator only counts first cancers
+
+
+## DevCan method
+> The SEER analytical program adjusting the denominator in the current probability method
+
+- Softwar could be download at [https://surveillance.cancer.gov/devcan/download](https://surveillance.cancer.gov/devcan/download)
+- Uses a method that differs from the current probability method only in the way it deals with data in 5-year age bands
+- DevCan assumes that data with only the first primary tumour per individual are available.
 
 ## The AMP method
 > AMP (Adjusted for Multiple Primaries) method can address the issue of multiple primary tumors in the same perions for registries can't precisely identify them or for the situtation that individual data was not available.
@@ -148,11 +175,15 @@ $$
 
 
 ## The AMP method
-> Estimation of $\hat{S}^*_0(a_i)$
 
-$$
-\hat{S}^*_0(a_i) = \exp \left[ -\sum_{j=1}^{i-1} \frac{R_j + (M_j - D_j)}{N_j} \right]
-$$
+> Assumptions for AMP method
+
+- The non-cancer mortality rates are the same in individuals without cancer as they are in the general population
+- the risk of (a new) cancer is the same in individuals who have never previously had cancer as they are in the general population
+
+- one cannot die of cancer if one has never had cancer; 
+- people with cancer have the same risk of developing cancer again as those who have never had cancer before; 
+- the probability of dying from other causes (not cancer) is the same between cancer patients and those who have never had cancer.
 
 
 # Introduction of R package ltRISK 
@@ -214,7 +245,8 @@ cumrisk(r2, mp = 100, decimal = 2)
 
 
 ## Estimate lifetime risk using AMP method
->
+
+> Aggregated data in 5-year age groups was required, number of cancer cases, cancer deaths, all cause mortality, and population.
 
 ```{r}
 #| echo: true
@@ -236,7 +268,18 @@ ri <- c(
 
 ## Estimate lifetime risk using AMP method
 
-> The **ltr** function can estimate lifetime risk using the AMP method and return an object strore the result which is a list of 4 elements including age groups, age conditional propability, and variance in each agegroup.
+> The **ltr** function can estimate lifetime risk using the AMP method and return an object strore the result which is a list of 3 elements including age groups, age conditional propability, and variance in each agegroup.
+
+```r
+# mi	The annual number of all-cause mortality deaths in each age group.
+# di	The annual number of cancer-related deaths in each age group.
+# ri	The annual number of diagnosed cancer cases in each age group.
+# ni	The number of population in each age group.
+# age_width	The age width of each age group.
+# type	Characters "developing" or "dying" indicate estimate the probability of developing cancer or dying from it.
+ltr(mi, di, ri, ni, age_width = 5, type = "developing")
+```
+
 
 ```{r}
 #| echo: true
@@ -246,7 +289,21 @@ names(ll)
 ```
 
 ## Point Estimate and Confidence Interval
-> The **estimate** function can get the estimate value of lifetime risk and its 95%CI from specified agegroup. When a
+> The **estimate** function can get the estimate value of lifetime risk and its 95%CI. When a starting age is specified, it is assumed that the individuals are cancer-free and alive at that age, 
+so the lifetime cancer risk is the risk from that age until death.
+
+- x	 Object of class 'ltr' generated by ltr function, or list of 'ltr's.
+- sage	Initial age of lifetime risk.
+- mp	Multiplier, this parameter scales the estimated result. 
+- decimal	Number of decimals of the result
+
+```r
+estimate(x, sage = 0, mp = 100, decimal = 2)
+```
+
+
+## Point Estimate and Confidence Interval
+> You can aslo use *post_ci* function to wrap the lifetime risk and 95% CI.
 
 ```{r}
 #| echo: true
@@ -261,6 +318,10 @@ post_ci(s3)
 s4 <- estimate(ll, sage = 70)
 post_ci(s4)
 ```
+
+## Test difference between groups
+> You can use *ztest* function to test the difference between two groups.
+
 
 # Practice of lifetime risk estimation using GCO data
 ## Introduction of example data from GCO
@@ -310,9 +371,9 @@ tt <- data |> flextable() |>
 tt
 ```
 
-Suggested citation from Global Cancer Observatory, Cancer Today [^1]
+Suggested citation from Global Cancer Observatory, Cancer Today [^2]
 
-[^1]: Ferlay J, Ervik M, Lam F, Laversanne M, Colombet M, Mery L, Piñeros M, Znaor A, Soerjomataram I, Bray F (2024). Global Cancer Observatory: Cancer Today (version 1.1). Lyon, France: International Agency for Research on Cancer. Available from: https://gco.iarc.who.int/today, accessed [DD Month YYYY].
+[^2]: Ferlay J, Ervik M, Lam F, Laversanne M, Colombet M, Mery L, Piñeros M, Znaor A, Soerjomataram I, Bray F (2024). Global Cancer Observatory: Cancer Today (version 1.1). Lyon, France: International Agency for Research on Cancer. Available from: https://gco.iarc.who.int/today, accessed [DD Month YYYY].
 
 ## Estimate age conditional probability
 ```{r}
@@ -467,5 +528,3 @@ res2 |>
                                "80-death")) |>
   width(j = 2:7, width = 1.5)
 ```
-
-#
