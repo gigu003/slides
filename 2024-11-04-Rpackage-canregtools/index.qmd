@@ -441,7 +441,7 @@ names(asrs2)
 ## Creating quality indicators
 ```{r}
 #| echo: TRUE
-qualities <- create_quality(fbsw, year, sex, collapse=F)
+qualities <- create_quality(fbsw, year, sex)
 qualities
 ```
 
@@ -474,14 +474,14 @@ data <- read_canreg(files[1:10])
 fbsws <- count_canreg(data)
 class(fbsws)
 names(fbsws)
-fbsw <- reframe_fbswicd(fbsws, area_type)
+fbsw <- cr_reframe(fbsws, "area_type")
 class(fbsw)
 ```
 
 ## Ceating asr based on reframed fbsws
 ```{r}
 #| echo: TRUE
-asr <- create_asr(fbsw, area_type, sex)
+asr <- create_asr(fbsw, sex) |> cr_merge()
 head(asr, c(6, 8))
 names(asr)
 ```
